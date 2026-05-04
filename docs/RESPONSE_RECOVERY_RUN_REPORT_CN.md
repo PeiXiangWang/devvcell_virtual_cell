@@ -228,7 +228,27 @@ results/niche_context/tables/cell_autonomous_vs_niche_scores.csv
 
 解释：Tbx4 和 Glis3 均在当前 3,000 gene embryo matrix 中被找到，但 donor/stage niche-mediated correlation 当前不足以支持强结论。正式稿只能写成 unresolved/candidate，不应写直接调控或强 niche-mediated。
 
-## 10. 验证
+## 10. 基础消融
+
+输出：
+
+```text
+results/response_recovery/ablations/ablation_summary.csv
+```
+
+已运行：
+
+| ablation | n cases | reversible | delay | fate deflection | off-manifold |
+|---|---:|---:|---:|---:|---:|
+| main_external_ot | 20,856 | 0.9352 | 0.0280 | 0.0298 | 0.0070 |
+| shuffled_response_vectors | 20,856 | 0.9465 | 0.0251 | 0.0185 | 0.0099 |
+| no_stage_celltype_transfer | 1,896 | 0.9552 | 0.0269 | 0.0179 | 0.0000 |
+| global_mean_response | 1,896 | 0.9889 | 0.0079 | 0.0032 | 0.0000 |
+| no_external_rdeg_proxy | 256 | 0.2227 | 0.3125 | 0.0000 | 0.4648 |
+
+解释：真实 external transfer 相比 global mean response 产生更多 fate deflection 和 off-manifold structure；shuffled response vectors 降低 fate deflection 富集；no-external proxy 的分类结构明显不同，说明当前正式主线已不只是 RDEG-derived proxy。
+
+## 11. 验证
 
 已通过：
 
@@ -250,11 +270,10 @@ python -m compileall scripts src tests
 results/response_recovery/tables/external_validation_report.csv
 ```
 
-## 11. 下一步必须做的正式消融
+## 12. 下一步必须做的正式增强
 
-1. no-OT transfer：用 nearest/mean response 替代 transfer。
-2. shuffled perturbation：打乱 perturbation labels 后重跑 classification。
-3. no external response：与 quick RDEG proxy 对照。
-4. no niche：去掉 niche features 后比较 Tbx4-Glis3 case。
-5. donor/sex covariate control：检查 TS14-TS19 是否仍显著。
-6. module/gene-level shared encoder：修正当前 external latent 与 embryo latent 不是同一训练空间的限制。
+1. donor/sex covariate control：检查 TS14-TS19 是否仍显著。
+2. module/gene-level shared encoder：修正当前 external latent 与 embryo latent 不是同一训练空间的限制。
+3. no-niche statistical control：去掉 niche features 后比较 Tbx4-Glis3 case。
+4. 引入更多 perturbation dictionary，尤其是 Wnt/BMP/FGF/high-glucose 相关数据。
+5. 空间或 fetal gonad 数据验证 Tbx4-Glis3 niche interpretation。

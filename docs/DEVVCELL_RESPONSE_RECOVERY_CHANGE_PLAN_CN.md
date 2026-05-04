@@ -89,6 +89,7 @@ Tbx4-Glis3 不再硬写成直接 TF-target，而是作为 candidate niche-mediat
 - `scripts/compute_minimal_rescue_control.py`
 - `scripts/build_niche_context.py`
 - `scripts/run_response_recovery_pipeline.py`
+- `scripts/run_response_recovery_ablations.py`
 - `scripts/validate_external_perturbation.py`
 - `scripts/download_public_datasets.py`
 - `scripts/convert_seurat_rds_to_h5ad.R`

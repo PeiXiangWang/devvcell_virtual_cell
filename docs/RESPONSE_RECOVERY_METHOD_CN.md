@@ -178,6 +178,25 @@ results/response_recovery/tables/minimal_rescue_control_matrix.csv
 | no sex/donor covariate | centroid 不分 donor/sex 或在统计模型中去掉 covariate |
 | shuffled perturbation | 打乱 perturbation labels 后重跑 classification |
 
+当前基础消融入口：
+
+```bash
+python scripts/run_response_recovery_ablations.py
+```
+
+输出：
+
+```text
+results/response_recovery/ablations/ablation_summary.csv
+```
+
+已实现的基础消融：
+
+- `shuffled_response_vectors`
+- `no_stage_celltype_transfer`
+- `global_mean_response`
+- `no_external_rdeg_proxy`
+
 ## 9. 当前可运行入口
 
 快速检查：
