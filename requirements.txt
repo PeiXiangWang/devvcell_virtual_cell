@@ -1,0 +1,10 @@
+pandas
+numpy
+matplotlib
+scipy
+scikit-learn
+joblib
+anndata
+scanpy
+h5py
+torch

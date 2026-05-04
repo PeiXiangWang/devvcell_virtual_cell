@@ -1,0 +1,604 @@
+1
+
+DevVCell：基于发育单细胞图谱、最优传输和基因
+
+2
+
+调控反馈的可扰动发育虚拟细胞框架
+
+3
+
+作者待定
+
+4
+
+2026 年 5 月 3 日
+
+5
+
+摘要段落。哺乳动物胚胎发育由连续的细胞状态转移、谱系选择和基因调控反馈共同驱动，
+
+6
+
+但大规模单细胞图谱通常只提供横截面观测，难以直接回答特定阶段或转录因子扰动如何
+
+7
+
+改变未来发育轨迹。我们提出 DevVCell，一个面向发育过程的虚拟细胞框架：该框架从小
+
+8
+
+鼠胚胎发育单细胞图谱中学习阶段化细胞状态表示，利用相邻 Theiler stage 的分布匹配
+
+9
+
+构造伪靶标，训练细胞级发育转移算子，并整合 TF 扰动、GRN 证据和反馈恢复指标以
+
+10
+
+预测扰动响应、命运偏移和恢复概率。当前稿件报告 DevVCell-lite 原型及第一版细胞级
+
+11
+
+transition baseline；后续版本将加入 mini-batch Sinkhorn coupling、stimulus-conditioned
+
+12
+
+dynamics 和外部 perturbation benchmark。本文所有当前扰动结论均应解释为计算优先级
+
+13
+
+和模型假设，而非真实湿实验结论。
+
+14
+
+引言
+
+15
+
+单细胞转录组学已经能够以百万级细胞规模描绘胚胎发育图谱 [1]。然而，横截面图
+
+16
+
+谱记录的是不同细胞在不同时间点的状态集合，而不是同一细胞的真实时间轨迹。最优传
+
+17
+
+输、fate mapping 和神经最优传输方法为从未配对分布中恢复发育或扰动动力学提供了重
+
+18
+
+要基础 [2, 3, 4, 5]。因此，发育虚拟细胞需要同时解决三个问题：第一，如何从离散阶段
+
+19
+
+学习连续的发育推进；第二，如何把 TF 或 pathway perturbation 表示为可作用于细胞状
+
+20
+
+态的外部刺激；第三，如何定义扰动后的恢复成本和替代命运风险。
+
+21
+
+本研究以小鼠 Theiler stage 12–27 单细胞图谱为基础，首先构建 DevVCell-lite 原型
+
+22
+
+指标，用于量化阶段脆弱性、扰动优先级和 OT+GRN 系统级发育影响。随后，我们引入
+
+23
+
+细胞级基线模型，从完整 H5AD 中导出阶段/系统平衡的细胞子集，并在低维表达空间中
+
+24
+
+训练相邻阶段 transition operator。
+
+1
+
+25
+
+结果
+
+26
+
+DevVCell 框架概览
+
+27
+
+图 1 展示 DevVCell 的总体路线。输入为发育单细胞表达矩阵及其 stage、cell type、
+
+28
+
+donor 和 UMAP 注释。模型首先对细胞状态编码，然后使用相邻阶段的分布匹配构造 OT
+
+29
+
+pseudo target，再训练 transition operator 预测下一阶段状态。TF/GRN 模块将扰动作
+
+30
+
+为 stimulus embedding 注入转移动力学，并输出 response amplitude、fate displacement、
+
+31
+
+feedback cost 和 recovery probability。
+
+图 1: DevVCell 发育虚拟细胞框架。该图以中文标签展示从小鼠胚胎单细胞图谱、阶段
+平衡采样、细胞状态编码、OT 伪靶标、发育转移算子到 TF/GRN 刺激-反馈模块的完整
+流程。
+
+32
+
+阶段脆弱性图谱
+
+33
+
+DevVCell-lite 将阶段平均 TF 敏感性、多步 rollout 误差、正常发育模块步长、节点
+
+34
+
+outlier 比例和下一步预测误差整合为 stage vulnerability score。当前原型结果显示 TS14–
+
+35
+
+TS19 窗口的平均脆弱性高于窗口外阶段，Theiler stage 15 在当前权重下排名最高。
+
+36
+
+TF 扰动优先级
+
+37
+
+原型扰动优先级结合 global effect、developmental delay、窗口敏感性、feedback cost
+
+38
+
+和 mass shift。当前候选中 Satb2、Rfx4、Eya1、Lef1 和 Prox1 排名靠前。这些结果用于
+
+39
+
+生成后续实验假设和模型训练任务，不应直接解释为实验扰动结论。
+
+2
+
+图 2: 原型阶段脆弱性图谱。 DevVCell-lite 将时间敏感性、rollout 误差、正常发育模块步
+长、outlier 比例和相邻阶段预测误差整合为 stage vulnerability score。TS14–TS19 为当前
+预设关注窗口。
+40
+
+41
+
+OT+GRN 系统级发育影响
+我们进一步整合 system-specific GRN edges、temporal sensitivity、fate mutual informa-
+
+42
+
+tion 和 hub degree，形成 TF-system evidence score。当前证据层提示 Eya1、Lef1、Prdm16、
+
+43
+
+Satb2、Zbtb16、Dach2、Pax3 和 Satb1 在多个系统中具有较高发育影响评分。
+
+44
+
+细胞级 transition baseline
+
+45
+
+第一版 cell-level baseline 从完整 H5AD 中导出 neural、mesoderm/muscle 和 erythroid
+
+46
+
+系统在 Theiler stage 12–19 的平衡子集，共 19,156 个细胞和 3,000 个基因。模型以 sparse
+
+47
+
+TruncatedSVD latent 表示为输入，64 维 latent 解释了 82.3% 的方差。我们使用熵正
+
+48
+
+则 Sinkhorn OT 在相邻阶段之间构造 barycentric pseudo-targets，并在目标阶段为 TS15
+
+49
+
+和 TS18 的 heldout transitions 上评估 4,794 对伪靶标。Ridge 和 MLP 均优于 identity
+
+50
+
+baseline；平均 pseudo-target latent MSE 分别为 0.325、0.330 和 0.381。该实验是后续
+
+51
+
+stimulus-conditioned 模型和更大规模 OT 训练的可复现底座。
+
+52
+
+TF/GRN 刺激响应头
+
+53
+
+为了把 TF 扰动接入细胞级状态空间，我们实现了一个 zero-shot TF/GRN stimulus
+
+54
+
+head。该模块读取已保存的 SVD/scaler/ridge transition 工件，将 TF knockdown 表示
+
+55
+
+为 GRN target gene 的表达扰动方向，再投影到 64 维 latent 空间，并叠加到正常发育
+
+56
+
+transition 预测上。当前版本对 top 12 TF、3 个 DevVCell 系统和 7 个相邻阶段窗口生成
+
+57
+
+252 条 TF–系统–阶段响应记录。按平均细胞级刺激响应强度排序，Eya1、Rfx4、Lef1、Satb2
+
+58
+
+和 Prox1 位于前列；Eya1 在 erythroid TS12→TS13 条件下具有最高响应强度 proxy。该
+
+59
+
+模块未使用外部 perturbation labels，因此属于可复现的机制投影和假设生成层，而不是
+
+3
+
+图 3: TF 扰动候选优先级。当前排名用于确定后续模型训练、消融和外部 perturbation
+验证的候选集合。
+60
+
+已验证的扰动预测器。
+
+61
+
+多随机种子与消融评估
+
+62
+
+为了评估当前 cell-level pipeline 的稳定性，我们运行了一个轻量多 seed 消融套件。
+
+63
+
+transition 部分使用 3 个随机种子、2 种伪靶标构造方式（Sinkhorn OT 与 nearest-neighbor）
+
+64
+
+和 3 个非神经 baseline（identity、
+mean-shift、
+ridge）
+，
+覆盖 3 个系统和 2 个 heldout transition，
+
+65
+
+共 108 个 system-stage-model 评估项。结果显示 ridge 在两种配对方式下均优于 identity
+
+66
+
+与 mean-shift；nearest-neighbor 目标上的平均 MSE 较低，但 Sinkhorn OT 目标更接近分
+
+67
+
+布级伪靶标，因此作为主模型路线保留。stimulus 部分比较完整 GRN、仅全局 GRN 和仅
+
+68
+
+系统特异边三种设置，显示 GRN evidence 组成会改变 TF 响应强度排序和平均恢复概率。
+
+4
+
+图 4: OT+GRN 系统特异调控证据。 heatmap 展示 top TF 在不同发育系统或细胞类型
+中的 system-specific regulatory weight。
+
+图 5: 细胞级相邻阶段 transition baseline。在 heldout target stages 上，ridge 和 MLP
+transition operator 相比 identity 和 mean-shift baseline 降低 Sinkhorn OT pseudo-target
+latent MSE。
+
+5
+
+图 6: 细胞级 TF/GRN 刺激响应热图。每个值为同一 TF knockdown 在对应 DevVCell
+系统内跨阶段的平均 latent response norm。
+
+图 7: TF/GRN 刺激响应与恢复 proxy。横轴为平均刺激响应强度，纵轴为细胞级恢复
+概率 proxy；点大小和颜色由 fate displacement proxy 相关量驱动。
+
+6
+
+图 8: 多 seed transition 消融。每个柱为 3 个 seed、3 个系统和两个 heldout transition
+的平均 heldout latent MSE。
+
+图 9: TF/GRN stimulus head 消融。 heatmap 比较完整 GRN、仅全局 GRN 和仅系
+统边下的 TF 平均响应强度。
+
+7
+
+69
+
+讨论
+
+70
+
+DevVCell 的核心价值在于把静态发育图谱转换为可扰动的计算实验系统。当前版本
+
+71
+
+已经建立原型指标、证据整合层、Sinkhorn OT 细胞级 transition baseline 和 TF/GRN stim-
+
+72
+
+ulus head，但距离正式 Nature 水准仍需要外部 perturbation 验证、严格消融、多随机种
+
+73
+
+子重复、跨系统泛化评估和更完整的统计报告。后续重点是扩大 mini-batch Sinkhorn cou-
+
+74
+
+pling 规模，并将 TF/GRN stimulus 从 zero-shot 投影扩展为可训练的 stimulus-conditioned
+
+75
+
+residual dynamics；这一方向与 CellOT 等从未配对扰动分布学习细胞级响应映射的思想
+
+76
+
+互补 [4]。
+
+77
+
+方法
+
+78
+
+数据
+
+79
+
+本研究使用项目内的 data/scLine_pro.h5ad。该文件包含 11,441,407 个细胞和 3,000
+
+80
+
+个基因，obs 中包含 donor、author day、Theiler stage、cell type、major cluster、sex 和
+
+81
+
+disease 等元数据。数据以 AnnData/H5AD 结构存储，并通过 Scanpy/AnnData 生态读取
+
+82
+
+与管理 [6, 7]。
+
+83
+
+DevVCell-lite 原型指标
+
+84
+
+阶段脆弱性由归一化后的 mean sensitivity、mean rollout error、baseline developmental
+
+85
+
+step norm、mean outlier ratio 和 next-step MSE 加权求和得到。扰动优先级由 global effect、
+
+86
+
+developmental delay、window sensitivity、feedback cost 和 log mass shift 加权求和得到。
+
+87
+
+细胞级子集采样
+
+88
+
+我们按 system-stage 分层采样细胞。初始系统包括 neural、mesoderm/muscle 和 ery-
+
+89
+
+throid；初始阶段包括 Theiler stage 12–19；每个 system-stage 最多采样 800 个细胞。采样
+
+90
+
+使用固定随机种子，并保存 manifest 以记录每个分层的可用细胞数和采样细胞数。
+
+91
+
+细胞级 transition baseline
+
+92
+
+表达矩阵以 sparse CSR 形式读取，并使用 TruncatedSVD 编码到低维 latent 空间。对
+
+93
+
+同一系统内相邻阶段细胞，我们使用熵正则 Sinkhorn OT 构造 barycentric pseudo-targets，
+
+94
+
+这一策略继承了将相邻时间点视为未配对细胞分布并用 OT 估计发育耦合的基本设定
+
+95
+
+[2, 5]。训练集排除 heldout target stages，评估集由目标阶段为 heldout 的相邻阶段对组
+
+96
+
+成。比较模型包括 identity、system-specific mean-shift、ridge regression 和 MLP。评估指
+
+97
+
+标包括 pseudo-target latent MSE、centroid latent MSE 和 RBF-MMD。
+
+8
+
+98
+
+TF/GRN stimulus head
+
+99
+
+TF/GRN stimulus head 使用已有 GRN 边和 system-specific edges 构造 TF knockdown
+
+100
+
+的表达扰动方向。对每个 TF，activator edge 的 target gene 在 knockdown 下被赋予负向
+
+101
+
+delta，repressor edge 的 target gene 被赋予正向 delta。全局 GRN 边和系统特异边按配置权
+
+102
+
+重合并后归一化，并通过已保存的 SVD components 和 scaler scale 投影到 latent 空间。最
+
+103
+
+终 stimulus delta 按 TF response amplitude、阶段 temporal sensitivity、stage vulnerability
+
+104
+
+和正常 transition norm 缩放，并叠加到 ridge transition baseline 上。输出指标包括 stimulus
+
+105
+
+response norm、fate displacement from baseline、cell-level feedback cost proxy、cell-level
+
+106
+
+recovery probability proxy 和 alignment with normal transition。
+
+107
+
+统计与复现
+
+108
+
+所有随机采样、模型初始化和训练均使用配置文件中的固定 seed。除主模型外，我们
+
+109
+
+使用 config/ablation_suite.json 运行多 seed transition 消融和 TF/GRN stimulus 组
+
+110
+
+件消融。当前稿件仍为研究包初稿，消融结果支持工程稳定性评估，但正式投稿前仍需外
+
+111
+
+部 perturbation benchmark、置信区间和更完整统计检验。
+
+112
+
+数据可用性
+
+113
+
+原始 H5AD 当前保存在项目本地路径 data/scLine_pro.h5ad。正式投稿前应提供公
+
+114
+
+开数据来源、访问号或受控访问说明，并保存所有用于生成图表的派生表。
+
+115
+
+代码可用性
+
+116
+
+所有分析脚本、配置文件和论文源文件均位于当前项目目录。正式投稿前应将代码整
+
+117
+
+理为可版本化仓库，并提供固定 release、环境文件和一键复现命令。
+
+118
+
+大语言模型使用声明
+
+119
+
+本文框架图 prompt、中文论文初稿和部分工程脚本由大语言模型辅助生成，并由研
+
+120
+
+究者审查、运行和修订。大语言模型不满足作者资格，不能作为作者列名。
+
+121
+
+利益冲突
+
+122
+
+作者声明无已知竞争性利益冲突。该声明需由真实作者在投稿前确认。
+
+9
+
+123
+
+124
+
+作者贡献
+作者贡献待真实作者列表确定后补充。
+
+125
+
+参考文献
+
+126
+
+[1] Qiu, C. et al. A single-cell time-lapse of mouse prenatal development from gastrula to
+
+127
+
+birth. Nature 626, 1084–1093 (2024). doi:10.1038/s41586-024-07069-w.
+
+128
+
+[2] Schiebinger, G. et al. Optimal-transport analysis of single-cell gene expression
+
+129
+
+identifies developmental trajectories in reprogramming. Cell 176, 928–943 (2019).
+
+130
+
+doi:10.1016/j.cell.2019.01.006.
+
+131
+132
+
+133
+134
+
+[3] Lange, M. et al. CellRank for directed single-cell fate mapping. Nature Methods 19,
+159–170 (2022). doi:10.1038/s41592-021-01346-6.
+[4] Bunne, C. et al. Learning single-cell perturbation responses using neural optimal transport. Nature Methods 20, 1759–1768 (2023). doi:10.1038/s41592-023-01969-x.
+
+135
+
+[5] Bunne, C., Schiebinger, G., Krause, A., Regev, A. et al. Optimal transport for single-cell
+
+136
+
+and spatial omics. Nature Reviews Methods Primers 4, 58 (2024). doi:10.1038/s43586-
+
+137
+
+024-00334-2.
+
+138
+139
+
+140
+141
+
+[6] Wolf, F. A., Angerer, P. & Theis, F. J. SCANPY: large-scale single-cell gene expression
+data analysis. Genome Biology 19, 15 (2018). doi:10.1186/s13059-017-1382-0.
+[7] Virshup, I. et al. anndata: Access and store annotated data matrices. Journal of Open
+Source Software 9, 4371 (2024). doi:10.21105/joss.04371.
+
+10
+
+

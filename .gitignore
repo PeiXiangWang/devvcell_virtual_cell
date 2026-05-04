@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Large local datasets and generated experiment outputs.
+data/
+results/
+
+# Model/checkpoint artifacts.
+*.h5ad
+*.joblib
+*.pt
+*.npz
+
+# LaTeX build intermediates.
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
