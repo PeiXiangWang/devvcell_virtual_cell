@@ -8,3 +8,4 @@ anndata
 scanpy
 h5py
 torch
+pyarrow

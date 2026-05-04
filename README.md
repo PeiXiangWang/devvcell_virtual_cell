@@ -2,6 +2,42 @@
 
 `DevVCell-lite` 是与原 `embryonic_development` 项目平行的新项目，用于把小鼠胚胎发育单细胞图谱从“阶段级 RDEG 重建”推进到“发育虚拟细胞”的原型研究。
 
+## 2026-05-05 正式版方向
+
+项目主线已从 DevVCell-lite 原型升级为 **developmental response-recovery virtual cell**：
+
+> 胚胎细胞受到外部刺激或基因扰动后，能否回到正常发育流形，是否出现发育延迟、命运偏航，或进入正常图谱外异常状态？
+
+`scripts/devvcell_lite.py` 和 `config/devvcell_lite.json` 保留为 RDEG-derived feasibility baseline。正式投稿版主线使用：
+
+```bash
+python scripts/run_response_recovery_pipeline.py --mode quick
+python scripts/run_response_recovery_pipeline.py --mode main
+python scripts/run_response_recovery_pipeline.py --mode full
+```
+
+核心新增文档：
+
+```text
+docs/DEVVCELL_RESPONSE_RECOVERY_CHANGE_PLAN_CN.md
+docs/RESPONSE_RECOVERY_METHOD_CN.md
+docs/EXTERNAL_DATASET_PLAN_CN.md
+docs/EXTERNAL_DATA_DOWNLOAD_LOG_CN.md
+docs/NICHE_AWARE_CASE_STUDY_CN.md
+docs/RESPONSE_RECOVERY_RUN_REPORT_CN.md
+```
+
+核心新增配置：
+
+```text
+config/response_recovery.json
+config/perturbation_transfer.json
+config/niche_context.json
+config/external_datasets.json
+```
+
+正式版要求至少接入一个公开 perturbation scRNA-seq 数据集，优先 `GSE208369`，并完成 response transfer、response-recovery classification、TS14-TS19 vulnerability enrichment、minimal rescue control 和 Tbx4-Glis3 niche-aware case study。
+
 新项目路径：
 
 ```text
