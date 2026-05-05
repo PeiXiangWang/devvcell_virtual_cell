@@ -75,6 +75,26 @@ python scripts/devguard/build_gse123187_h5ad_from_raw_tar.py --mode-filter tomo_
 python scripts/devguard/map_gse123187_spatial_tomo_lineages.py
 ```
 
+## DevSpectrum
+
+DevSpectrum is an independent spectral perturbation profiling layer built on
+top of the DevGuard real-data inputs. DevGuard asks whether perturbed cells
+remain normal, delayed, fate-deviated, or off-normal; DevSpectrum asks how
+developmental module trajectories and endpoint programs were reshaped.
+
+```bash
+python scripts/devspectrum/run_devspectrum_pipeline.py --mode quick
+python scripts/devspectrum/run_devspectrum_pipeline.py --mode main
+```
+
+Key documentation:
+
+```text
+docs/DEVSPECTRUM_METHOD_CN.md
+docs/DEVSPECTRUM_RESULTS_REPORT_CN.md
+docs/DEVSPECTRUM_DATASET_REGISTRY_CN.md
+```
+
 ## Chinese Summary
 
 DevGuard 是一个独立的小鼠发育扰动正常性判定项目。它不使用 RDEG

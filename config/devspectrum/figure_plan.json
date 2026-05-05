@@ -1,0 +1,6 @@
+{
+  "output_dir": "results/devspectrum/figures",
+  "spectral_features": "results/devspectrum/spectral_fits/spectral_features.csv",
+  "reconstruction_summary": "results/devspectrum/missing_stage_reconstruction/reconstruction_summary.csv",
+  "fingerprint": "results/devspectrum/perturbation_spectra/perturbation_spectral_fingerprint.csv"
+}

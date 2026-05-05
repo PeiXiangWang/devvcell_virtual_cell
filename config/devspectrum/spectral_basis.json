@@ -1,0 +1,17 @@
+{
+  "basis_methods": ["dct", "wavelet", "spline"],
+  "dct": {
+    "max_basis": 4,
+    "standardize_time": true
+  },
+  "wavelet": {
+    "wavelet": "haar",
+    "max_level": 2
+  },
+  "spline": {
+    "degree": 3
+  },
+  "feature_scaling": {
+    "zscore_within_module": false
+  }
+}

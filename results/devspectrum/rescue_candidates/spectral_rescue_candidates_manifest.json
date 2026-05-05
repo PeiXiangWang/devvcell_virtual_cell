@@ -1,0 +1,17 @@
+{
+  "name": "compute_spectral_rescue_candidates",
+  "created_utc": "2026-05-05T16:34:56.359061+00:00",
+  "inputs": [
+    "results/devspectrum/chimera_projection/chimera_endpoint_spectral_residuals.csv"
+  ],
+  "outputs": [
+    "results\\devspectrum\\rescue_candidates\\spectral_rescue_candidates.csv",
+    "results\\devspectrum\\rescue_candidates\\tal1_spectral_rescue_report.md"
+  ],
+  "parameters": {
+    "cohort": "Tal1_chimera"
+  },
+  "metrics": {
+    "n_candidates": 13
+  }
+}
