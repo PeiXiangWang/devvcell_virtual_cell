@@ -4,6 +4,7 @@
   "model_path": "results/devguard/normality_reference/devguard_normality_model.joblib",
   "output_dir": "results/devguard/perturbation_classification",
   "score_method": "knn_distance",
+  "ambiguous_margin": 0.02,
   "classification_priority": [
     "within_stage_normal",
     "developmental_delay",

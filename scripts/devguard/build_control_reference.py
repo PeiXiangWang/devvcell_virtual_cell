@@ -36,6 +36,7 @@ def build_control_reference(config_path: str | Path) -> Path:
 
     grouping = config.get("reference_grouping", {})
     splits = config.get("splits", {})
+    sample_split = config.get("sample_split", {})
     groups = build_normality_groups(
         control_embeddings,
         control_obs,
@@ -45,6 +46,9 @@ def build_control_reference(config_path: str | Path) -> Path:
         min_cells_per_group=int(grouping.get("min_cells_per_group", 30)),
         train_fraction=float(splits.get("train_fraction", 0.6)),
         calibration_fraction=float(splits.get("calibration_fraction", 0.2)),
+        split_strategy=sample_split.get("strategy", "cell"),
+        split_unit_column=sample_split.get("unit_column", "sample_id"),
+        allow_cell_split_fallback=bool(sample_split.get("allow_cell_fallback", True)),
         seed=int(config.get("seed", 42)),
         score_methods=config.get("score_methods", ["knn_distance", "mahalanobis"]),
         k=int(config.get("knn", {}).get("k", 15)),

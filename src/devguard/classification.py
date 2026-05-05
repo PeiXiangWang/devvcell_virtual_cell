@@ -5,7 +5,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from devguard.conformal import conformal_p_value
+from devguard.conformal import conformal_p_values
 from devguard.normality import NormalityGroup, score_cells
 
 CLASS_PRIORITY = [
@@ -55,22 +55,26 @@ def classify_cells_against_reference(
     alpha: float = 0.05,
     k: int = 15,
     regularization: float = 0.01,
+    ambiguous_margin: float = 0.02,
 ) -> pd.DataFrame:
+    p_values_by_group: dict[str, np.ndarray] = {}
+    for group_id, group in groups.items():
+        scores = score_cells(
+            embeddings,
+            group.train_embeddings,
+            method=score_method,
+            k=k,
+            regularization=regularization,
+        )
+        p_values_by_group[group_id] = conformal_p_values(group.calibration_scores[score_method], scores)
+
     rows = []
     for row_position, (_, cell_obs) in enumerate(obs.iterrows()):
         time_numeric = float(pd.to_numeric(cell_obs.get("time_numeric"), errors="coerce"))
         lineage = str(cell_obs.get("lineage"))
-        z = embeddings[row_position : row_position + 1]
         p_by_group: dict[str, float] = {}
-        for group_id, group in groups.items():
-            score = score_cells(
-                z,
-                group.train_embeddings,
-                method=score_method,
-                k=k,
-                regularization=regularization,
-            )[0]
-            p_by_group[group_id] = conformal_p_value(group.calibration_scores[score_method], float(score))
+        for group_id, group_p_values in p_values_by_group.items():
+            p_by_group[group_id] = float(group_p_values[row_position])
 
         current_same = []
         early_same = []
@@ -94,13 +98,29 @@ def classify_cells_against_reference(
         late_group, p_late = _best_group(late_same)
         other_group, p_other = _best_group(other_lineage)
         any_group, p_any = _best_group(list(p_by_group.items()))
-        normality_class = classify_cell_from_pvalues(
+        assigned_class_by_priority = classify_cell_from_pvalues(
             p_current_same=p_current,
             p_early_same=p_early,
             p_late_same=p_late,
             p_other_lineage=p_other,
             p_any_normal=p_any,
             alpha=alpha,
+        )
+        class_candidates = {
+            "within_stage_normal": p_current,
+            "developmental_delay": p_early,
+            "developmental_acceleration": p_late,
+            "fate_deviation": p_other,
+        }
+        ranked_candidates = sorted(class_candidates.items(), key=lambda item: item[1], reverse=True)
+        top_class, top_p = ranked_candidates[0]
+        second_p = ranked_candidates[1][1] if len(ranked_candidates) > 1 else 0.0
+        pvalue_margin = float(top_p - second_p)
+        assigned_class_by_max_pvalue = top_class if top_p >= alpha else "abnormal_off_normal"
+        pass_count = int(sum(value >= alpha for value in class_candidates.values()))
+        ambiguous_flag = bool(
+            (pass_count > 1 and pvalue_margin <= ambiguous_margin)
+            or assigned_class_by_priority != assigned_class_by_max_pvalue
         )
         assigned_lookup = {
             "within_stage_normal": current_group,
@@ -112,7 +132,12 @@ def classify_cells_against_reference(
         out = cell_obs.to_dict()
         out.update(
             {
-                "normality_class": normality_class,
+                "normality_class": assigned_class_by_priority,
+                "assigned_class_by_priority": assigned_class_by_priority,
+                "assigned_class_by_max_pvalue": assigned_class_by_max_pvalue,
+                "pvalue_margin": pvalue_margin,
+                "ambiguous_flag": ambiguous_flag,
+                "n_candidate_classes_passing_alpha": pass_count,
                 "score_method": score_method,
                 "alpha": alpha,
                 "p_current_same": p_current,
@@ -124,7 +149,7 @@ def classify_cells_against_reference(
                 "reference_early_same": early_group,
                 "reference_late_same": late_group,
                 "reference_other_lineage": other_group,
-                "assigned_reference_group": assigned_lookup[normality_class],
+                "assigned_reference_group": assigned_lookup[assigned_class_by_priority],
             }
         )
         rows.append(out)

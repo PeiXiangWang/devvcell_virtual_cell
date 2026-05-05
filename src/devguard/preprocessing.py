@@ -128,4 +128,4 @@ def metadata_summary(obs: pd.DataFrame) -> pd.DataFrame:
 
     group_cols = ["dataset_id", "species", "system", "condition", "time_point", "lineage"]
     available = [column for column in group_cols if column in obs.columns]
-    return obs.groupby(available, dropna=False, observed=False).size().reset_index(name="n_cells")
+    return obs.groupby(available, dropna=False, observed=True).size().reset_index(name="n_cells")

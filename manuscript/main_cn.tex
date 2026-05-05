@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage[UTF8]{ctex}
 \usepackage{geometry}
+\usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{hyperref}
@@ -13,45 +14,33 @@
 \begin{document}
 \maketitle
 
-\section*{拟定英文标题}
+\section*{拟定英文题目}
 
 \textbf{DevGuard: stage-specific developmental normality boundaries for perturbed mouse embryonic cells}
 
 \section*{一句话主张}
 
-DevGuard 学习小鼠每个发育时间点和谱系的正常范围，并用 conformal 校准判断扰动细胞是仍然正常、发育延迟、发育提前、命运偏航，还是成为正常图谱外异常状态。
+DevGuard 学习小鼠每个发育时间点和谱系的正常范围，并用 conformal calibration 判断扰动细胞是仍然正常、发育延迟、发育提前、命运偏航，还是成为正常图谱外异常状态。
 
 \section*{路线边界}
 
-新版 DevGuard 是独立的小鼠发育扰动正常性判定项目。它不使用 RDEG pipeline、RDEG-derived node graph、OT transition、GRN dynamics 或 matrix-writeback outputs。旧版 DevVCell response-recovery 原型已经完整归档到：
+新版 DevGuard 是独立的小鼠发育扰动正常性判定项目。它不使用 RDEG pipeline、RDEG-derived node graph、OT transition、GRN dynamics 或 matrix-writeback outputs。旧版 DevVCell response-recovery 原型已经归档到：
 
 \begin{verbatim}
 Old/legacy_devvcell_response_recovery_20260505/
 \end{verbatim}
 
-当前工作稿中的 quick-mode 结果只用于软件和 schema 验证，不作为生物学结论。真实论文结果需要在 E-MTAB-6967、GSE212050、GSE123187 或其他独立公开小鼠扰动数据接入后重新运行。
-
-\section*{核心问题}
-
-给定一个小鼠发育细胞和一个扰动，DevGuard 判断该细胞是否仍处于对应发育阶段和谱系的正常范围内。若不在正常范围内，进一步判定其最符合以下哪一种状态：
-
-\begin{enumerate}
-  \item \texttt{within\_stage\_normal}：当前阶段同谱系正常；
-  \item \texttt{developmental\_delay}：当前阶段异常，但更像早期同谱系；
-  \item \texttt{developmental\_acceleration}：当前阶段异常，但更像晚期同谱系；
-  \item \texttt{fate\_deviation}：当前阶段异常，但更像其他谱系；
-  \item \texttt{abnormal\_off\_normal}：所有正常参考集均不通过。
-\end{enumerate}
+当前 quick/stress fixture 结果只用于软件验证。真实论文主结论必须来自独立公开小鼠数据，并经过 sample-level split、heldout control FPR、organoid heterogeneity control 和 perturbation/control 对比。
 
 \section*{方法概述}
 
-DevGuard 在 control mouse embryo 或 gastruloid time-course 中，按时间点和谱系建立正常参考集：
+对 control mouse embryo 或 gastruloid time-course，DevGuard 按时间点 \(t\) 和谱系 \(l\) 建立正常参考集：
 
 \[
-N(t,l) = \{x_i: x_i \text{ is a control cell at time } t \text{ and lineage } l\}.
+N(t,l)=\{x_i: x_i \text{ is a control cell at time } t \text{ and lineage } l\}.
 \]
 
-每个正常参考集被划分为 training、calibration 和 heldout test 三部分。Training cells 用于学习 embedding 和 reference distribution；calibration cells 用于估计 nonconformity score 的 conformal p-value；heldout test cells 用于检查 control false-positive rate。
+每个正常参考集被划分为 training、calibration 和 heldout test。真实数据优先使用 embryo/organoid/sample-level split，只有在 sample 数不足时才退化到 cell-level fallback，并在 quality table 中标记。
 
 \subsection*{Embedding}
 
@@ -80,7 +69,7 @@ s_{\mathrm{mah}}(x;t,l)=(z_x-\mu_{t,l})^\top \Sigma_{t,l}^{-1}(z_x-\mu_{t,l}).
 
 \subsection*{Conformal p-value}
 
-对 query cell \(x\)，其相对于 stage-lineage reference \(N(t,l)\) 的 conformal p-value 为：
+对 query cell \(x\)，相对于 stage-lineage reference \(N(t,l)\) 的 conformal p-value 为：
 
 \[
 p(x;t,l)=
@@ -90,82 +79,45 @@ p(x;t,l)=
 
 若 \(p(x;t,l)\geq \alpha\)，则认为 \(x\) 仍在该 stage-lineage 正常范围内。当前 MVP 默认 \(\alpha=0.05\)。
 
-\section*{Quick-mode 软件验证结果}
+\section*{扰动细胞分类}
 
-运行命令：
+DevGuard 对每个 perturbed cell 同时计算：
 
-\begin{verbatim}
-python scripts/devguard/run_devguard_pipeline.py --mode quick
-\end{verbatim}
+\begin{enumerate}
+  \item 当前时间、同谱系：\texttt{p\_current\_same}；
+  \item 早期时间、同谱系：\texttt{p\_early\_same}；
+  \item 晚期时间、同谱系：\texttt{p\_late\_same}；
+  \item 其他谱系：\texttt{p\_other\_lineage}；
+  \item 任意正常参考：\texttt{p\_any\_normal}。
+\end{enumerate}
 
-该命令生成 deterministic mouse gastruloid software fixture，并完整执行 prepare、reference building、conformal calibration、perturbed-cell classification、DTI 和 Figure 1--3 草图生成。
-
-\subsection*{Quick fixture 规模}
-
-\begin{center}
-\begin{tabular}{ll}
-\toprule
-项目 & 数值 \\
-\midrule
-species & \textit{Mus musculus} \\
-system & gastruloid \\
-control time points & E6.5, E7.5, E8.5 \\
-lineages & epiblast, mesoderm, neural \\
-control cells & 1,350 \\
-perturbed cells & 120 \\
-genes & 90 \\
-reference groups & 9 \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\subsection*{Heldout control false-positive calibration}
-
-在 quick-mode fixture 中，normality reference quality table 共包含 18 条记录，即 9 个 stage-lineage groups 乘以 2 种 score methods。最大 heldout control false-positive rate 为：
+分类优先级为：
 
 \[
-\max(\mathrm{FPR}_{\mathrm{heldout}})=0.0333.
+\texttt{within\_stage\_normal}
+>
+\texttt{developmental\_delay}
+>
+\texttt{developmental\_acceleration}
+>
+\texttt{fate\_deviation}
+>
+\texttt{abnormal\_off\_normal}.
 \]
 
-该数值低于默认 \(\alpha=0.05\)，说明 quick fixture 下 conformal boundary 的软件行为符合预期。该结论只说明 pipeline 和 calibration 逻辑可运行，不等价于真实公开数据上的统计结论。
+为避免过度解释边界细胞，当前代码同时输出：
 
-\subsection*{Perturbed-cell 五类分类}
+\begin{verbatim}
+assigned_class_by_priority
+assigned_class_by_max_pvalue
+pvalue_margin
+ambiguous_flag
+n_candidate_classes_passing_alpha
+\end{verbatim}
 
-Quick-mode 中设置了一个示例扰动 \texttt{FGF8\_KO}，所有 perturbed cells 的观测时间点和谱系为 E7.5 mesoderm。为了验证五类分类逻辑，fixture 中分别构造了 5 组表达模式，每组 24 个细胞。
+\section*{Developmental Tolerance Index}
 
-\begin{center}
-\begin{tabular}{lll}
-\toprule
-fixture pattern & DevGuard class & cell count \\
-\midrule
-within\_stage\_normal\_like & within\_stage\_normal & 24 \\
-delay\_like & developmental\_delay & 24 \\
-acceleration\_like & developmental\_acceleration & 24 \\
-fate\_deviation\_like & fate\_deviation & 24 \\
-abnormal\_like & abnormal\_off\_normal & 24 \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-Condition-level summary 因此得到五类各占 20\%：
-
-\begin{center}
-\begin{tabular}{lc}
-\toprule
-normality class & fraction \\
-\midrule
-within\_stage\_normal & 0.20 \\
-developmental\_delay & 0.20 \\
-developmental\_acceleration & 0.20 \\
-fate\_deviation & 0.20 \\
-abnormal\_off\_normal & 0.20 \\
-\bottomrule
-\end{tabular}
-\end{center}
-
-\subsection*{Developmental Tolerance Index}
-
-Developmental Tolerance Index 定义为：
+对每个 time point、lineage 和 perturbation，定义：
 
 \[
 \mathrm{DTI}
@@ -176,100 +128,173 @@ Developmental Tolerance Index 定义为：
 -R_{\mathrm{abnormal}}.
 \]
 
-Quick-mode 的 E7.5 mesoderm \texttt{FGF8\_KO} 示例中，每一类比例均为 0.20，因此：
+当前实现已加入 bootstrap confidence interval。若有多个 \texttt{sample\_id}，则优先 sample-level bootstrap；若只有一个 sample，则退化为 cell-level bootstrap，并在输出中记录 \texttt{bootstrap\_level}。
 
-\[
-\mathrm{DTI}=0.20-0.20-0.20-0.20-0.20=-0.60.
-\]
+\section*{当前实跑结果}
 
-这个值用于验证 DTI 汇总代码是否按定义运行。真实论文中 DTI 应在真实 perturbation conditions、time points 和 lineages 上解释。
+\subsection*{Quick fixture}
 
-\section*{当前代码交付}
+Quick fixture 用于验证代码路径和五类分类逻辑。
 
-当前仓库已经包含以下新版 DevGuard 组件：
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+项目 & 数值 \\
+\midrule
+control cells & 1,350 \\
+perturbed cells & 120 \\
+genes & 90 \\
+reference groups & 9 \\
+score-method records & 18 \\
+mean heldout FPR & 0.0019 \\
+max heldout FPR & 0.0333 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+五类 perturbed cells 各 24 个，分别被分到 \texttt{within\_stage\_normal}、\texttt{developmental\_delay}、\texttt{developmental\_acceleration}、\texttt{fate\_deviation} 和 \texttt{abnormal\_off\_normal}。
+
+\subsection*{Stress fixture}
+
+Stress fixture 在 quick fixture 之外加入 Poisson/gamma count noise、batch shift、donor shift、cell-to-cell variation、dropout、ambiguous intermediate cells 和 label noise。
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+项目 & 数值 \\
+\midrule
+mean heldout FPR & 0.0351 \\
+max heldout FPR & 0.2162 \\
+within-stage normal cells & 259 \\
+fate-deviation cells & 19 \\
+developmental-delay cells & 9 \\
+developmental-acceleration cells & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+该结果说明干净 synthetic fixture 会低估 boundary failure risk，因此正式论文必须使用真实 sample-level split。
+
+\subsection*{GSE212050 control reference}
+
+GSE212050 已下载 Seurat RDS，导出 matrix/obs/var，并构建 15,000-cell downsample H5AD。
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+项目 & 数值 \\
+\midrule
+cells & 15,000 \\
+genes & 30,406 \\
+reference groups & 21 \\
+score-method records & 42 \\
+mean heldout FPR & 0.0472 \\
+max heldout FPR & 0.3333 \\
+low-heldout records & 22 / 42 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+平均 heldout FPR 接近 \(\alpha=0.05\)。最大 FPR 来自低 heldout 组，例如 \texttt{d4\_d4.5 / Intermediate mesoderm} 只有 3 个 heldout cells，已用 \texttt{low\_heldout\_flag} 标出。正式结果需要完整数据或更大 downsample，并过滤低 sample-unit group。
+
+\subsection*{MouseGastrulationData WT/Tal1 chimera smoke test}
+
+Bioconductor \texttt{MouseGastrulationData} 已安装，并已导出 embryo atlas sample 1、WT chimera sample 1 和 Tal1 chimera sample 1。WT chimera sample 1 用于 control reference，Tal1 chimera sample 1 用于真实 perturbation classification smoke test。
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+WT chimera reference 项目 & 数值 \\
+\midrule
+reference groups & 12 \\
+score-method records & 24 \\
+mean heldout FPR & 0.0294 \\
+max heldout FPR & 0.1389 \\
+split strategy & cell fallback \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Tal1 classification smoke test：
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+class & cells & fraction \\
+\midrule
+fate\_deviation & 9,325 & 0.6322 \\
+developmental\_delay & 4,862 & 0.3296 \\
+abnormal\_off\_normal & 564 & 0.0382 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Ambiguity output：
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+ambiguous flag & cells & fraction \\
+\midrule
+False & 11,721 & 0.7946 \\
+True & 3,030 & 0.2054 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+这组数值不能作为 Tal1 生物学结论，因为目前只导出一个 WT chimera 样本，无法形成独立 embryo-level split。
+
+\subsection*{GSE123187 spatial/tomo preview}
+
+GSE123187 RAW tar 已下载，并新增 tar parser 生成 4-file preview H5AD。
+
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+项目 & 数值 \\
+\midrule
+cells & 1,536 \\
+genes & 24,086 \\
+samples & 4 \\
+time point & 5dAA \\
+mode & single gastruloid \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+当前 preview 缺少 cell type/lineage 注释，因此只能作为 spatial/tomo 数据入口验证，不能直接用于 fate deviation validation。
+
+\section*{当前文件与验证}
+
+核心代码：
 
 \begin{verbatim}
-config/devguard/
-scripts/devguard/
 src/devguard/
-docs/DEVGUARD_*.md
-manuscript/main_cn.tex
-tests/test_conformal.py
-tests/test_classification.py
-tests/test_tolerance.py
-tests/test_io_contract.py
+scripts/devguard/
+config/devguard/
+docs/DEVGUARD_RESULTS_REPORT_CN.md
 \end{verbatim}
 
-关键输出文件由 quick mode 生成到：
-
-\begin{verbatim}
-data/processed/devguard/devguard_quick_mouse.h5ad
-results/devguard/normality_reference/
-results/devguard/perturbation_classification/
-results/devguard/tolerance_index/
-results/devguard/figures/
-\end{verbatim}
-
-其中 \texttt{data/} 和 \texttt{results/} 按仓库规则仍被 git ignore，不提交大数据和生成结果。
-
-\section*{Figure 草图}
-
-Quick mode 已生成以下草图：
-
-\begin{enumerate}
-  \item Figure 1：DevGuard conformal developmental normality 方法示意图；
-  \item Figure 2：perturbed-cell 五类分类比例；
-  \item Figure 3：Developmental Tolerance Index heatmap。
-\end{enumerate}
-
-这些文件位于：
-
-\begin{verbatim}
-results/devguard/figures/
-\end{verbatim}
-
-\section*{测试结果}
-
-当前单元测试命令：
+验证命令：
 
 \begin{verbatim}
 python -m pytest
 \end{verbatim}
 
-测试结果：
+当前结果：
 
 \begin{verbatim}
-9 passed
+12 passed
 \end{verbatim}
 
-覆盖范围包括 conformal p-value、classification priority、DTI formula、quick fixture obs schema 和 RDEG legacy input rejection。
-
-\section*{下一步真实数据接入}
-
-Quick-mode 之后的真实论文工作应按以下顺序推进：
+\section*{下一步}
 
 \begin{enumerate}
-  \item 接入 E-MTAB-6967 / MouseGastrulationData，作为 main normality reference；
-  \item 接入 GSE212050，使用 individual organoid barcode 做 leave-one-organoid-out false-positive control；
-  \item 接入 GSE123187，做 spatial/tomo axis validation；
-  \item 若小鼠 perturbation 数据不足，再考虑补充 human GSE208369 作为 supplementary cross-species demonstration，但不进入主图核心证据链；
-  \item 每个真实 perturbation 结论均需与 heldout control false-positive rate 和 organoid heterogeneity baseline 对比。
+  \item 导出完整 MouseGastrulationData embryo atlas、WT chimera、Tal1 chimera 和 T chimera；
+  \item 对真实数据强制 embryo/organoid-level split，并过滤低 sample-unit group；
+  \item 用完整 GSE212050 做 leave-one-organoid-out false-positive calibration；
+  \item 为 GSE123187 补充 spatial/tomo axis 和 lineage mapping；
+  \item 所有 perturbation 结论必须与 heldout control FPR 和 organoid heterogeneity FPR 对比后再进入正式 manuscript。
 \end{enumerate}
-
-\section*{稿件写作边界}
-
-正式文章中应使用以下关键词：
-
-\begin{itemize}
-  \item independent public mouse perturbation datasets；
-  \item stage-specific developmental normality；
-  \item conformal calibration；
-  \item perturbed-cell classification；
-  \item developmental tolerance index；
-  \item organoid heterogeneity control；
-  \item spatial/tomo-seq validation。
-\end{itemize}
-
-正式文章中不应写“基于 RDEG”、“继承 RDEG 的 OT”、“用 GRN 动力学推演扰动”、“从第一篇图谱流形出发”或“虚拟细胞生成未来表达矩阵”。
 
 \end{document}

@@ -15,8 +15,18 @@ from validate_spatial_fate_deviation import validate_spatial_fate_deviation
 
 
 def run_pipeline(mode: str) -> None:
-    if mode not in {"quick", "main", "full"}:
-        raise ValueError("mode must be one of: quick, main, full")
+    if mode not in {"quick", "stress", "main", "full"}:
+        raise ValueError("mode must be one of: quick, stress, main, full")
+    if mode == "stress":
+        prepare_registry("config/devguard/datasets_mouse.json", stress_fixture=True)
+        build_control_reference("config/devguard/normality_model_stress.json")
+        classify_perturbed_cells("config/devguard/perturbation_tests_stress.json")
+        compute_dti(
+            "results/devguard_stress/perturbation_classification/cell_normality_classes.csv",
+            "results/devguard_stress/tolerance_index",
+        )
+        build_figures("config/devguard/figure_plan_stress.json")
+        return
     quick = mode == "quick"
     prepare_registry("config/devguard/datasets_mouse.json", quick_fixture=quick)
     build_control_reference("config/devguard/normality_model.json")
@@ -31,7 +41,7 @@ def run_pipeline(mode: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the DevGuard pipeline.")
-    parser.add_argument("--mode", choices=["quick", "main", "full"], default="quick")
+    parser.add_argument("--mode", choices=["quick", "stress", "main", "full"], default="quick")
     args = parser.parse_args()
     run_pipeline(args.mode)
 

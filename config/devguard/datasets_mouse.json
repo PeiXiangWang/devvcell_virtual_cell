@@ -7,9 +7,56 @@
       "system": "embryo",
       "role": "main_normality_reference",
       "source": "Bioconductor MouseGastrulationData",
+      "source_url": "https://bioconductor.org/packages/MouseGastrulationData",
+      "accession_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-6967",
+      "access_method": "R MouseGastrulationData::EmbryoAtlasData",
       "local_path": "data/processed/devguard/E_MTAB_6967.h5ad",
+      "ingestion_test_path": "data/processed/devguard/MouseGastrulationData_embryo_atlas_sample1.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/E_MTAB_6967_metadata.csv",
-      "status": "planned"
+      "status": "bioconductor_package_installed_sample1_exported"
+    },
+    {
+      "dataset_id": "MouseGastrulationData_Tal1Chimera",
+      "name": "Tal1 knockout mouse chimera",
+      "species": "Mus musculus",
+      "system": "embryo_chimera",
+      "role": "real_mouse_perturbation",
+      "source": "Bioconductor MouseGastrulationData",
+      "source_url": "https://bioconductor.org/packages/MouseGastrulationData",
+      "accession_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-7325",
+      "access_method": "R MouseGastrulationData::Tal1ChimeraData",
+      "local_path": "data/processed/devguard/MouseGastrulationData_Tal1Chimera.h5ad",
+      "ingestion_test_path": "data/processed/devguard/MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_Tal1Chimera_metadata.csv",
+      "status": "sample1_exported_classification_smoke_test_available"
+    },
+    {
+      "dataset_id": "MouseGastrulationData_TChimera",
+      "name": "T Brachyury knockout mouse chimera",
+      "species": "Mus musculus",
+      "system": "embryo_chimera",
+      "role": "real_mouse_perturbation",
+      "source": "Bioconductor MouseGastrulationData",
+      "source_url": "https://bioconductor.org/packages/MouseGastrulationData",
+      "accession_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8811",
+      "access_method": "R MouseGastrulationData::TChimeraData",
+      "local_path": "data/processed/devguard/MouseGastrulationData_TChimera.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_TChimera_metadata.csv",
+      "status": "requires_bioconductor_export"
+    },
+    {
+      "dataset_id": "MouseGastrulationData_WTChimera",
+      "name": "wild-type mouse chimera control",
+      "species": "Mus musculus",
+      "system": "embryo_chimera",
+      "role": "chimera_control_reference",
+      "source": "Bioconductor MouseGastrulationData",
+      "source_url": "https://bioconductor.org/packages/MouseGastrulationData",
+      "access_method": "R MouseGastrulationData::WTChimeraData",
+      "local_path": "data/processed/devguard/MouseGastrulationData_WTChimera.h5ad",
+      "ingestion_test_path": "data/processed/devguard/MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_WTChimera_metadata.csv",
+      "status": "sample1_exported_control_reference_smoke_test_available"
     },
     {
       "dataset_id": "GSE212050",
@@ -18,9 +65,37 @@
       "system": "gastruloid",
       "role": "organoid_heterogeneity_control",
       "source": "GEO",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE212050",
+      "public_files": [
+        {
+          "name": "sample_metadata",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212050/suppl/GSE212050_sample_metadata_final.txt.gz",
+          "local_path": "data/external/GSE212050/GSE212050_sample_metadata_final.txt.gz",
+          "size_mb": 18.1
+        },
+        {
+          "name": "feature_metadata",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212050/suppl/GSE212050_feature_metadata_final.txt.gz",
+          "local_path": "data/external/GSE212050/GSE212050_feature_metadata_final.txt.gz",
+          "size_mb": 0.24
+        },
+        {
+          "name": "seurat_object",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212050/suppl/GSE212050_seurat_final.rds.gz",
+          "local_path": "data/external/GSE212050/GSE212050_seurat_final.rds.gz",
+          "size_mb": 1700
+        },
+        {
+          "name": "raw_mtx_tar",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212050/suppl/GSE212050_RAW.tar",
+          "local_path": "data/external/GSE212050/GSE212050_RAW.tar",
+          "size_mb": 1800
+        }
+      ],
       "local_path": "data/processed/devguard/GSE212050.h5ad",
+      "downsample_test_path": "data/processed/devguard/GSE212050_downsample_15000.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/GSE212050_metadata.csv",
-      "status": "planned"
+      "status": "seurat_rds_downloaded_downsample_h5ad_available"
     },
     {
       "dataset_id": "GSE123187",
@@ -29,9 +104,25 @@
       "system": "gastruloid",
       "role": "spatial_tomo_validation",
       "source": "GEO",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123187",
+      "public_files": [
+        {
+          "name": "readme",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE123nnn/GSE123187/suppl/GSE123187_README.txt",
+          "local_path": "data/external/GSE123187/GSE123187_README.txt",
+          "size_mb": 0.01
+        },
+        {
+          "name": "raw_tsv_tar",
+          "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE123nnn/GSE123187/suppl/GSE123187_RAW.tar",
+          "local_path": "data/external/GSE123187/GSE123187_RAW.tar",
+          "size_mb": 351.2
+        }
+      ],
       "local_path": "data/processed/devguard/GSE123187.h5ad",
+      "preview_test_path": "data/processed/devguard/GSE123187_preview_4files.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/GSE123187_metadata.csv",
-      "status": "planned"
+      "status": "raw_tar_downloaded_preview_h5ad_available"
     },
     {
       "dataset_id": "devguard_quick_mouse",
@@ -43,6 +134,17 @@
       "local_path": "data/processed/devguard/devguard_quick_mouse.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/devguard_quick_mouse_metadata.csv",
       "status": "available_via_quick_mode"
+    },
+    {
+      "dataset_id": "devguard_stress_mouse",
+      "name": "synthetic_mouse_stress_fixture",
+      "species": "Mus musculus",
+      "system": "gastruloid",
+      "role": "software_stress_validation_fixture",
+      "source": "generated locally by prepare_mouse_datasets.py --stress-fixture",
+      "local_path": "data/processed/devguard/devguard_stress_mouse.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/devguard_stress_mouse_metadata.csv",
+      "status": "available_via_stress_mode"
     }
   ]
 }

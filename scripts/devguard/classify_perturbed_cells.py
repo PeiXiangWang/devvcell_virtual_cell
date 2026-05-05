@@ -32,6 +32,7 @@ def classify_perturbed_cells(config_path: str | Path) -> Path:
         model["groups"],
         score_method=score_method,
         alpha=float(config.get("alpha", model.get("alpha", 0.05))),
+        ambiguous_margin=float(config.get("ambiguous_margin", 0.02)),
         k=int(model["config"].get("knn", {}).get("k", 15)),
         regularization=float(model["config"].get("mahalanobis", {}).get("regularization", 0.01)),
     )
