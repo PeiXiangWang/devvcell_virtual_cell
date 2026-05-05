@@ -1,0 +1,128 @@
+{
+  "analysis": "cell_level_transition_statistical_summary",
+  "source_metrics": "results/cell_level_v1/tables/cell_level_transition_metrics.csv",
+  "bootstrap_reps": 5000,
+  "best_model_by_pair_latent_mse": "context_residual_mlp",
+  "model_summary": [
+    {
+      "model": "context_residual_mlp",
+      "n_strata": 6,
+      "mean_pair_latent_mse": 0.31390176713466644,
+      "ci95_low_pair_latent_mse": 0.15473505854606626,
+      "ci95_high_pair_latent_mse": 0.48789317657550174,
+      "mean_centroid_latent_mse": 0.017845217720605364,
+      "ci95_low_centroid_latent_mse": 0.009488616643163,
+      "ci95_high_centroid_latent_mse": 0.026183980827530165,
+      "mean_rbf_mmd": 0.02956926822662348,
+      "ci95_low_rbf_mmd": 0.01335936784744255,
+      "ci95_high_rbf_mmd": 0.05484777688980098
+    },
+    {
+      "model": "ridge",
+      "n_strata": 6,
+      "mean_pair_latent_mse": 0.3254404825468858,
+      "ci95_low_pair_latent_mse": 0.16419974962870276,
+      "ci95_high_pair_latent_mse": 0.4966559017387513,
+      "mean_centroid_latent_mse": 0.020748994313180415,
+      "ci95_low_centroid_latent_mse": 0.011443198968966768,
+      "ci95_high_centroid_latent_mse": 0.02922646920972808,
+      "mean_rbf_mmd": 0.04451610644658404,
+      "ci95_low_rbf_mmd": 0.0272859930992126,
+      "ci95_high_rbf_mmd": 0.07327618449926367
+    },
+    {
+      "model": "mlp",
+      "n_strata": 6,
+      "mean_pair_latent_mse": 0.3301703842977683,
+      "ci95_low_pair_latent_mse": 0.16415679082274434,
+      "ci95_high_pair_latent_mse": 0.5281897746026516,
+      "mean_centroid_latent_mse": 0.017716054183741368,
+      "ci95_low_centroid_latent_mse": 0.009321144161125,
+      "ci95_high_centroid_latent_mse": 0.025864241233405885,
+      "mean_rbf_mmd": 0.026277581850687612,
+      "ci95_low_rbf_mmd": 0.013871649901072133,
+      "ci95_high_rbf_mmd": 0.046883145968119246
+    },
+    {
+      "model": "identity",
+      "n_strata": 6,
+      "mean_pair_latent_mse": 0.38130854070186615,
+      "ci95_low_pair_latent_mse": 0.22094353536764777,
+      "ci95_high_pair_latent_mse": 0.552999841670195,
+      "mean_centroid_latent_mse": 0.022964146764328033,
+      "ci95_low_centroid_latent_mse": 0.012898199881116517,
+      "ci95_high_centroid_latent_mse": 0.03212813815722857,
+      "mean_rbf_mmd": 0.03776681423187251,
+      "ci95_low_rbf_mmd": 0.02059870958328242,
+      "ci95_high_rbf_mmd": 0.057012871404488796
+    },
+    {
+      "model": "mean_shift",
+      "n_strata": 6,
+      "mean_pair_latent_mse": 0.3855854372183482,
+      "ci95_low_pair_latent_mse": 0.2235221167405446,
+      "ci95_high_pair_latent_mse": 0.5486687223116556,
+      "mean_centroid_latent_mse": 0.027241044289742864,
+      "ci95_low_centroid_latent_mse": 0.014759198688746688,
+      "ci95_high_centroid_latent_mse": 0.039870915003120865,
+      "mean_rbf_mmd": 0.04443850119908647,
+      "ci95_low_rbf_mmd": 0.02187242110570267,
+      "ci95_high_rbf_mmd": 0.06700458129247026
+    }
+  ],
+  "paired_differences": [
+    {
+      "reference_model": "context_residual_mlp",
+      "competitor_model": "mean_shift",
+      "n_paired_strata": 6,
+      "mean_competitor_minus_reference_mse": 0.07168367008368173,
+      "ci95_low_competitor_minus_reference_mse": 0.038015241424242646,
+      "ci95_high_competitor_minus_reference_mse": 0.09960614889860153,
+      "mean_relative_improvement": 0.2530711140961495,
+      "ci95_low_relative_improvement": 0.13395982271184229,
+      "ci95_high_relative_improvement": 0.3572864595489966,
+      "strata_reference_better": 5
+    },
+    {
+      "reference_model": "context_residual_mlp",
+      "competitor_model": "identity",
+      "n_paired_strata": 6,
+      "mean_competitor_minus_reference_mse": 0.0674067735671997,
+      "ci95_low_competitor_minus_reference_mse": 0.03406937172015504,
+      "ci95_high_competitor_minus_reference_mse": 0.09659411261479062,
+      "mean_relative_improvement": 0.2398610903021973,
+      "ci95_low_relative_improvement": 0.12315480787071459,
+      "ci95_high_relative_improvement": 0.3423232396983591,
+      "strata_reference_better": 5
+    },
+    {
+      "reference_model": "context_residual_mlp",
+      "competitor_model": "mlp",
+      "n_paired_strata": 6,
+      "mean_competitor_minus_reference_mse": 0.016268617163101826,
+      "ci95_low_competitor_minus_reference_mse": 0.00584308927257855,
+      "ci95_high_competitor_minus_reference_mse": 0.03021582961082459,
+      "mean_relative_improvement": 0.04816753176408953,
+      "ci95_low_relative_improvement": 0.024579877117336602,
+      "ci95_high_relative_improvement": 0.0740160454697625,
+      "strata_reference_better": 6
+    },
+    {
+      "reference_model": "context_residual_mlp",
+      "competitor_model": "ridge",
+      "n_paired_strata": 6,
+      "mean_competitor_minus_reference_mse": 0.01153871541221936,
+      "ci95_low_competitor_minus_reference_mse": 0.001394699017206814,
+      "ci95_high_competitor_minus_reference_mse": 0.021110345919926946,
+      "mean_relative_improvement": 0.04946935860596897,
+      "ci95_low_relative_improvement": 0.007635467912396239,
+      "ci95_high_relative_improvement": 0.08926589757140513,
+      "strata_reference_better": 4
+    }
+  ],
+  "outputs": {
+    "summary": "results/cell_level_v1/tables/transition_statistical_summary.csv",
+    "paired_differences": "results/cell_level_v1/tables/transition_paired_bootstrap_differences.csv",
+    "figure": "results/cell_level_v1/figures/transition_bootstrap_ci.png"
+  }
+}

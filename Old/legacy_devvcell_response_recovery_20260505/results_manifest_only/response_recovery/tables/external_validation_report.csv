@@ -1,0 +1,11 @@
+check,status,rows,numeric_finite_fraction,details
+external_response_dictionary,pass,33,1.0,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\perturbation_transfer\tables\external_response_dictionary.parquet
+transferred_response_by_stage_celltype,pass,20856,1.0,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\perturbation_transfer\tables\transferred_response_by_stage_celltype.parquet
+response_recovery_classes,pass,20856,0.9900316455696202,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\response_recovery\tables\response_recovery_classes.csv
+stage_vulnerability_response_recovery,pass,62,1.0,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\response_recovery\tables\stage_vulnerability_response_recovery.csv
+window_enrichment_statistics,pass,9,0.9206349206349206,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\response_recovery\tables\window_enrichment_statistics.csv
+minimal_rescue_control_matrix,pass,1896,1.0,C:\Users\14915\PycharmProjects\devvcell_virtual_cell\results\response_recovery\tables\minimal_rescue_control_matrix.csv
+class_count:reversible_response,info,19505,,response_recovery_classes
+class_count:fate_deflection,info,622,,response_recovery_classes
+class_count:developmental_delay,info,583,,response_recovery_classes
+class_count:off_manifold_collapse,info,146,,response_recovery_classes

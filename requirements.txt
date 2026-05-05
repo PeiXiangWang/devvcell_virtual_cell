@@ -9,3 +9,4 @@ scanpy
 h5py
 torch
 pyarrow
+pytest

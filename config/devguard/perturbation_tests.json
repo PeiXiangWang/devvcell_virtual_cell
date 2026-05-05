@@ -1,0 +1,14 @@
+{
+  "alpha": 0.05,
+  "input_h5ad": "data/processed/devguard/devguard_quick_mouse.h5ad",
+  "model_path": "results/devguard/normality_reference/devguard_normality_model.joblib",
+  "output_dir": "results/devguard/perturbation_classification",
+  "score_method": "knn_distance",
+  "classification_priority": [
+    "within_stage_normal",
+    "developmental_delay",
+    "developmental_acceleration",
+    "fate_deviation",
+    "abnormal_off_normal"
+  ]
+}

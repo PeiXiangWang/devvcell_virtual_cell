@@ -1,0 +1,48 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "E-MTAB-6967",
+      "name": "MouseGastrulationData",
+      "species": "Mus musculus",
+      "system": "embryo",
+      "role": "main_normality_reference",
+      "source": "Bioconductor MouseGastrulationData",
+      "local_path": "data/processed/devguard/E_MTAB_6967.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/E_MTAB_6967_metadata.csv",
+      "status": "planned"
+    },
+    {
+      "dataset_id": "GSE212050",
+      "name": "mouse_gastruloid_time_course",
+      "species": "Mus musculus",
+      "system": "gastruloid",
+      "role": "organoid_heterogeneity_control",
+      "source": "GEO",
+      "local_path": "data/processed/devguard/GSE212050.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/GSE212050_metadata.csv",
+      "status": "planned"
+    },
+    {
+      "dataset_id": "GSE123187",
+      "name": "mouse_gastruloid_spatial_tomoseq",
+      "species": "Mus musculus",
+      "system": "gastruloid",
+      "role": "spatial_tomo_validation",
+      "source": "GEO",
+      "local_path": "data/processed/devguard/GSE123187.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/GSE123187_metadata.csv",
+      "status": "planned"
+    },
+    {
+      "dataset_id": "devguard_quick_mouse",
+      "name": "synthetic_mouse_quick_fixture",
+      "species": "Mus musculus",
+      "system": "gastruloid",
+      "role": "software_validation_fixture",
+      "source": "generated locally by prepare_mouse_datasets.py --quick-fixture",
+      "local_path": "data/processed/devguard/devguard_quick_mouse.h5ad",
+      "metadata_output": "results/devguard/dataset_metadata/devguard_quick_mouse_metadata.csv",
+      "status": "available_via_quick_mode"
+    }
+  ]
+}

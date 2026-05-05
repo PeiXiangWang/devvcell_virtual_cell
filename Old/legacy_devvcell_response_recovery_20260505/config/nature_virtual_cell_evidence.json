@@ -1,0 +1,59 @@
+{
+  "analysis": "devvcell_nature_virtual_cell_evidence_v1",
+  "seed": 42,
+  "bootstrap_reps": 10000,
+  "output_dir": "results/nature_virtual_cell_evidence",
+  "input_tables": {
+    "stage_vulnerability": "results/tables/stage_vulnerability.csv",
+    "stimulus_response": "results/cell_level_v1/tables/cell_level_tf_grn_stimulus_response.csv",
+    "transition_metrics": "results/cell_level_v1/tables/cell_level_transition_metrics.csv",
+    "transition_statistics": "results/cell_level_v1/tables/transition_statistical_summary.json",
+    "transition_ablation": "results/ablation_v1/tables/transition_ablation_summary.csv",
+    "stimulus_ablation": "results/ablation_v1/tables/stimulus_ablation_summary.csv",
+    "external_condition_metrics": "results/external_perturbation_v1/tables/external_perturbation_condition_metrics.csv",
+    "external_summary": "results/external_perturbation_v1/external_perturbation_summary.json",
+    "perturbation_priority": "results/tables/perturbation_priority.csv"
+  },
+  "primary_models": {
+    "transition": "context_residual_mlp",
+    "external_perturbation": "gene_context_ridge_residual"
+  },
+  "baseline_models": {
+    "transition": ["identity", "mean_shift", "ridge", "mlp"],
+    "external_perturbation": ["identity", "global_mean_shift", "gene_context_shift", "gene_context_mlp_residual"]
+  },
+  "competence_window": {
+    "label": "TS14-TS19",
+    "stage_min": 14,
+    "stage_max": 19
+  },
+  "schema": {
+    "minimum_rows": {
+      "stage_vulnerability": 5,
+      "stimulus_response": 100,
+      "transition_metrics": 20,
+      "transition_ablation": 8,
+      "stimulus_ablation": 3,
+      "external_condition_metrics": 100,
+      "perturbation_priority": 5
+    },
+    "nullable_numeric_columns": {
+      "external_condition_metrics": ["effect_cosine"]
+    }
+  },
+  "claim_thresholds": {
+    "minimum_transition_paired_strata": 6,
+    "minimum_external_conditions": 20,
+    "minimum_stimulus_rows": 100,
+    "minimum_competence_window_rows": 20,
+    "minimum_transition_relative_improvement": 0.01,
+    "minimum_external_relative_improvement_vs_identity": 0.05
+  },
+  "failure_policy": {
+    "fail_on_missing_inputs": true,
+    "fail_on_schema_error": true,
+    "fail_on_missing_required_models": true,
+    "fail_on_nonfinite_required_metrics": true,
+    "fail_on_claim_threshold_failure": false
+  }
+}

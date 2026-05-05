@@ -1,0 +1,238 @@
+{
+  "analysis": "devvcell_reproducibility_pipeline",
+  "mode": "quick",
+  "created_utc": "2026-05-03T15:29:19.547964+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "steps": [
+    {
+      "name": "transition statistics",
+      "command": [
+        "C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/summarize_transition_statistics.py",
+        "--metrics",
+        "results/cell_level_v1/tables/cell_level_transition_metrics.csv",
+        "--output-dir",
+        "results/cell_level_v1",
+        "--reference-model",
+        "context_residual_mlp"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "elapsed_seconds": 1.678
+    },
+    {
+      "name": "Formal Nature virtual-cell evidence pipeline",
+      "command": [
+        "C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+        "scripts/run_nature_virtual_cell_evidence_pipeline.py",
+        "--config",
+        "config/nature_virtual_cell_evidence.json"
+      ],
+      "cwd": ".",
+      "returncode": 0,
+      "elapsed_seconds": 3.548
+    }
+  ],
+  "critical_outputs": [
+    {
+      "path": "results/tables/stage_vulnerability.csv",
+      "exists": true,
+      "size_bytes": 3107,
+      "modified_utc": "2026-05-02T16:02:46.054317+00:00"
+    },
+    {
+      "path": "results/tables/perturbation_priority.csv",
+      "exists": true,
+      "size_bytes": 9144,
+      "modified_utc": "2026-05-02T16:02:46.055318+00:00"
+    },
+    {
+      "path": "results/tables/ot_grn_tf_system_developmental_impact.csv",
+      "exists": true,
+      "size_bytes": 100848,
+      "modified_utc": "2026-05-02T16:02:46.131791+00:00"
+    },
+    {
+      "path": "data/processed/cell_level_subset_v1.h5ad",
+      "exists": true,
+      "size_bytes": 5865479,
+      "modified_utc": "2026-05-02T16:01:55.866016+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/tables/cell_level_transition_metrics.csv",
+      "exists": true,
+      "size_bytes": 3108,
+      "modified_utc": "2026-05-02T17:02:18.885097+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/tables/transition_statistical_summary.csv",
+      "exists": true,
+      "size_bytes": 1187,
+      "modified_utc": "2026-05-03T15:29:15.665767+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/tables/transition_paired_bootstrap_differences.csv",
+      "exists": true,
+      "size_bytes": 892,
+      "modified_utc": "2026-05-03T15:29:15.666806+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/figures/transition_bootstrap_ci.png",
+      "exists": true,
+      "size_bytes": 89208,
+      "modified_utc": "2026-05-03T15:29:15.793475+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/models/transition_context_residual_mlp.pt",
+      "exists": true,
+      "size_bytes": 260104,
+      "modified_utc": "2026-05-02T17:02:15.414100+00:00"
+    },
+    {
+      "path": "results/cell_level_v1/tables/cell_level_tf_grn_stimulus_summary.csv",
+      "exists": true,
+      "size_bytes": 1566,
+      "modified_utc": "2026-05-02T16:32:59.404678+00:00"
+    },
+    {
+      "path": "data/external/scperturb/scperturb_benchmark_manifest.json",
+      "exists": true,
+      "size_bytes": 2606,
+      "modified_utc": "2026-05-02T17:38:25.077698+00:00"
+    },
+    {
+      "path": "results/external_perturbation_v1/tables/external_perturbation_metrics.csv",
+      "exists": true,
+      "size_bytes": 597,
+      "modified_utc": "2026-05-02T17:38:48.842956+00:00"
+    },
+    {
+      "path": "results/external_perturbation_v1/tables/external_perturbation_condition_metrics.csv",
+      "exists": true,
+      "size_bytes": 29378,
+      "modified_utc": "2026-05-02T17:38:48.841964+00:00"
+    },
+    {
+      "path": "results/external_perturbation_v1/figures/external_perturbation_benchmark_mse.png",
+      "exists": true,
+      "size_bytes": 110961,
+      "modified_utc": "2026-05-02T17:38:49.113036+00:00"
+    },
+    {
+      "path": "results/external_perturbation_v1/external_perturbation_summary.json",
+      "exists": true,
+      "size_bytes": 17724,
+      "modified_utc": "2026-05-02T17:38:49.123465+00:00"
+    },
+    {
+      "path": "config/external_perturbation_benchmark.json",
+      "exists": true,
+      "size_bytes": 917,
+      "modified_utc": "2026-05-02T17:33:04.842590+00:00"
+    },
+    {
+      "path": "results/ablation_v1/tables/transition_ablation_summary.csv",
+      "exists": true,
+      "size_bytes": 951,
+      "modified_utc": "2026-05-02T17:38:51.563044+00:00"
+    },
+    {
+      "path": "results/ablation_v1/tables/stimulus_ablation_summary.csv",
+      "exists": true,
+      "size_bytes": 290,
+      "modified_utc": "2026-05-02T17:38:51.571655+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/evidence_manifest.json",
+      "exists": true,
+      "size_bytes": 11865,
+      "modified_utc": "2026-05-03T15:29:19.264304+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/paper_methods_evidence_pipeline.md",
+      "exists": true,
+      "size_bytes": 3457,
+      "modified_utc": "2026-05-03T15:29:19.065480+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/input_schema_validation.csv",
+      "exists": true,
+      "size_bytes": 514,
+      "modified_utc": "2026-05-03T15:29:18.118435+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/claim_gate_matrix.csv",
+      "exists": true,
+      "size_bytes": 665,
+      "modified_utc": "2026-05-03T15:29:19.064966+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/fate_recovery_virtual_screen.csv",
+      "exists": true,
+      "size_bytes": 53266,
+      "modified_utc": "2026-05-03T15:29:18.712459+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/external_perturbation_bias_control_summary.csv",
+      "exists": true,
+      "size_bytes": 494,
+      "modified_utc": "2026-05-03T15:29:18.913997+00:00"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/figures/figure_competence_window_response.png",
+      "exists": true,
+      "size_bytes": 120589,
+      "modified_utc": "2026-05-03T15:29:18.700687+00:00"
+    },
+    {
+      "path": "manuscript/figures/devvcell_framework_cn_ai.png",
+      "exists": true,
+      "size_bytes": 1611761,
+      "modified_utc": "2026-05-02T16:09:33.430370+00:00"
+    },
+    {
+      "path": "manuscript/main_cn.tex",
+      "exists": true,
+      "size_bytes": 22914,
+      "modified_utc": "2026-05-03T14:52:29.943172+00:00"
+    },
+    {
+      "path": "manuscript/main_cn.pdf",
+      "exists": true,
+      "size_bytes": 2546159,
+      "modified_utc": "2026-05-03T14:53:27.863047+00:00"
+    },
+    {
+      "path": "docs/COMPLETION_AUDIT_CN.md",
+      "exists": true,
+      "size_bytes": 6974,
+      "modified_utc": "2026-05-02T17:37:57.966473+00:00"
+    },
+    {
+      "path": "docs/EXTERNAL_PERTURBATION_BENCHMARK_CN.md",
+      "exists": true,
+      "size_bytes": 3037,
+      "modified_utc": "2026-05-02T17:35:52.630040+00:00"
+    },
+    {
+      "path": "docs/PEER_METHOD_COMPARISON_CN.md",
+      "exists": true,
+      "size_bytes": 8875,
+      "modified_utc": "2026-05-03T14:49:11.941633+00:00"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY_CN.md",
+      "exists": true,
+      "size_bytes": 6677,
+      "modified_utc": "2026-05-02T17:38:05.223668+00:00"
+    },
+    {
+      "path": "docs/NATURE_DELIVERY_ROADMAP_CN.md",
+      "exists": true,
+      "size_bytes": 7456,
+      "modified_utc": "2026-05-03T14:51:58.104820+00:00"
+    }
+  ],
+  "missing_critical_outputs": []
+}

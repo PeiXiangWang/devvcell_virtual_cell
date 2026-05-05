@@ -1,0 +1,2 @@
+external_h5ad,sampled_cells,n_responses,latent_dim,svd_explained_variance_ratio_sum
+C:\Users\14915\PycharmProjects\devvcell_virtual_cell\data\external\response_transfer\primary_perturbation.h5ad,20000,33,50,0.4857195019721985

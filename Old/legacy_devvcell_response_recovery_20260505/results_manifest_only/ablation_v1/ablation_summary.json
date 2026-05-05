@@ -1,0 +1,17 @@
+{
+  "analysis": "devvcell_ablation_suite_v1",
+  "transition_runs": 6,
+  "stimulus_variants": [
+    "full_grn",
+    "no_system_edges",
+    "no_global_grn"
+  ],
+  "outputs": {
+    "transition_metrics": "results/ablation_v1/tables/transition_ablation_metrics.csv",
+    "transition_summary": "results/ablation_v1/tables/transition_ablation_summary.csv",
+    "stimulus_tf_summary": "results/ablation_v1/tables/stimulus_ablation_tf_summary.csv",
+    "stimulus_summary": "results/ablation_v1/tables/stimulus_ablation_summary.csv",
+    "transition_figure": "results/ablation_v1/figures/transition_ablation_summary.png",
+    "stimulus_figure": "results/ablation_v1/figures/stimulus_ablation_heatmap.png"
+  }
+}

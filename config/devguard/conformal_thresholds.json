@@ -1,0 +1,19 @@
+{
+  "alpha": 0.05,
+  "model_path": "results/devguard/normality_reference/devguard_normality_model.joblib",
+  "output_dir": "results/devguard/normality_reference",
+  "score_methods": ["knn_distance", "mahalanobis"],
+  "knn": {
+    "k": 15
+  },
+  "mahalanobis": {
+    "regularization": 0.01
+  },
+  "classification_priority": [
+    "within_stage_normal",
+    "developmental_delay",
+    "developmental_acceleration",
+    "fate_deviation",
+    "abnormal_off_normal"
+  ]
+}
