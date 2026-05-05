@@ -1,0 +1,21 @@
+{
+  "input_h5ad": "data/processed/devguard/GSE212050_strict_sample_13285.h5ad",
+  "output_dir": "results/devspectrum",
+  "time_column": "time_point",
+  "time_numeric_column": "time_numeric",
+  "lineage_column": "lineage",
+  "sample_column": "sample_id",
+  "condition_column": "condition",
+  "control_condition": "control",
+  "min_cells_per_group": 50,
+  "seed": 42,
+  "features": {
+    "module_scores": true,
+    "latent_dimensions": true,
+    "latent_dim": 5
+  },
+  "modules": {
+    "module_registry": "config/devspectrum/module_registry_mouse.json",
+    "gene_symbol_map": "data/external/GSE212050/GSE212050_feature_metadata_final.txt.gz"
+  }
+}

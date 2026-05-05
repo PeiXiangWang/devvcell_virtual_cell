@@ -1,0 +1,7 @@
+cohort,devguard_metric,spectral_metric,spearman_rho,p_value,n_lineages
+Tal1_chimera,DTI,global_spectral_distance,-0.10375494071146245,0.6375569641629661,23
+Tal1_chimera,DTI,mean_absolute_residual,0.28260869565217395,0.19135298363055425,23
+Tal1_chimera,DTI,max_absolute_residual,-0.049407114624505935,0.8228578988707852,23
+T_chimera,DTI,global_spectral_distance,-0.398127629722241,0.03243578269495784,29
+T_chimera,DTI,mean_absolute_residual,-0.3693027951445788,0.04865490260995335,29
+T_chimera,DTI,max_absolute_residual,-0.29908845450668353,0.11499903009498467,29

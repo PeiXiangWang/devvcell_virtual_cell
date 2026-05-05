@@ -1,0 +1,39 @@
+{
+  "name": "fit_spectral_basis",
+  "created_utc": "2026-05-05T16:34:40.818514+00:00",
+  "inputs": [
+    "results\\devspectrum\\timeseries\\stage_lineage_module_timeseries.csv",
+    "config/devspectrum/spectral_basis.json"
+  ],
+  "outputs": [
+    "results\\devspectrum\\spectral_fits\\spectral_features.csv",
+    "results\\devspectrum\\spectral_fits\\spectral_coefficients.csv",
+    "results\\devspectrum\\spectral_fits\\spectral_fit_quality.csv",
+    "results\\devspectrum\\spectral_fits\\control_spectral_model.joblib"
+  ],
+  "parameters": {
+    "basis_methods": [
+      "dct",
+      "wavelet",
+      "spline"
+    ],
+    "dct": {
+      "max_basis": 4,
+      "standardize_time": true
+    },
+    "wavelet": {
+      "wavelet": "haar",
+      "max_level": 2
+    },
+    "spline": {
+      "degree": 3
+    },
+    "feature_scaling": {
+      "zscore_within_module": false
+    }
+  },
+  "metrics": {
+    "n_feature_rows": 108,
+    "n_models": 108
+  }
+}

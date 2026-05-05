@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{ctex}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{DevSpectrum：发育轨迹的频谱扰动画像}
+\author{DevGuard/DevSpectrum working draft}
+\date{2026-05-06}
+
+\begin{document}
+\maketitle
+
+\section*{核心定位}
+
+DevGuard 判断扰动细胞是否正常、延迟、偏航或异常；DevSpectrum 解释这些失败是由哪些发育时间程序的趋势、相位或局部异常改变造成的。DevSpectrum 不学习 GRN，也不把 Fourier/DCT 系数解释为调控边，而是把 stage-lineage-module 随时间变化的模式视为短发育时间信号。
+
+\section*{MVP 数据}
+
+正常频谱图谱使用 GSE212050 strict sample-level mouse gastruloid control。当前 main run 覆盖 3 个 lineages、5 个 time points、13 个 gene modules 和 5 个 latent dimensions。Tal1/T chimera 由于只有 E8.5 endpoint，当前只做 endpoint spectral projection。
+
+\section*{关键结果}
+
+GSE212050 leave-one-timepoint-out benchmark 中，linear/wavelet baseline 的 mean MSE 为 1.3653，DCT+wavelet 为 1.6267，DCT 为 2.3006。时间打乱后 linear/wavelet mean MSE 上升到 3.1952，说明时间顺序含有真实发育信号。DCT 在部分 lineage/module 上优于 linear，但不是整体最优，因此 DevSpectrum 应被定位为经过 benchmark 的解释层。
+
+Chimera endpoint projection 中，Tal1 的 global spectral distance 为 6.3200，T 为 2.8123。Tal1 的 DevGuard-linked spectral failure burden 为 0.0321，T 为 0.0017。Tal1 top residual module 为 erythroid，符合 Tal1/Scl 对血液发生必需性的已知生物学。
+
+\section*{解释边界}
+
+Tal1/T endpoint projection 不能被写成完整扰动时间频谱。Spectral rescue candidates 只能写成 in silico hypotheses。后续需要加入真正多时间点 perturbation 数据，才能支持完整 perturbation spectral dynamics。
+
+\end{document}

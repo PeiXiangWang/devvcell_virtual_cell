@@ -1,0 +1,54 @@
+{
+  "name": "reconstruct_missing_stages",
+  "created_utc": "2026-05-05T16:34:41.540574+00:00",
+  "inputs": [
+    "results/devspectrum/timeseries/stage_lineage_module_timeseries.csv",
+    "config/devspectrum/missing_stage_reconstruction.json"
+  ],
+  "outputs": [
+    "results\\devspectrum\\missing_stage_reconstruction\\reconstruction_predictions.csv",
+    "results\\devspectrum\\missing_stage_reconstruction\\reconstruction_metrics.csv",
+    "results\\devspectrum\\missing_stage_reconstruction\\reconstruction_summary.csv"
+  ],
+  "parameters": {
+    "timeseries": "results/devspectrum/timeseries/stage_lineage_module_timeseries.csv",
+    "output_dir": "results/devspectrum/missing_stage_reconstruction",
+    "holdout_strategy": "leave_one_timepoint_out",
+    "baseline_methods": [
+      "mean",
+      "linear",
+      "spline"
+    ],
+    "spectral_methods": [
+      "dct",
+      "wavelet",
+      "dct_wavelet"
+    ],
+    "metrics": [
+      "mse",
+      "mae",
+      "pearson",
+      "spearman"
+    ],
+    "basis_config": {
+      "dct": {
+        "max_basis": 4
+      },
+      "wavelet": {
+        "max_level": 2
+      },
+      "spline": {
+        "degree": 3
+      }
+    },
+    "bootstrap": {
+      "level": "sample",
+      "n_bootstrap": 200,
+      "seed": 42
+    }
+  },
+  "metrics": {
+    "n_predictions": 1728,
+    "n_metric_rows": 432
+  }
+}

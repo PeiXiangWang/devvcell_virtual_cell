@@ -1,0 +1,23 @@
+{
+  "name": "build_devspectrum_figures",
+  "created_utc": "2026-05-05T16:34:57.186393+00:00",
+  "inputs": [
+    "config/devspectrum/figure_plan.json"
+  ],
+  "outputs": [
+    "results\\devspectrum\\figures\\figure2_low_frequency_energy.png",
+    "results\\devspectrum\\figures\\figure2_high_frequency_energy.png",
+    "results\\devspectrum\\figures\\figure2_spectral_entropy.png",
+    "results\\devspectrum\\figures\\figure3_missing_stage_reconstruction.png",
+    "results\\devspectrum\\figures\\figure4_perturbation_spectral_fingerprint.png"
+  ],
+  "parameters": {
+    "output_dir": "results/devspectrum/figures",
+    "spectral_features": "results/devspectrum/spectral_fits/spectral_features.csv",
+    "reconstruction_summary": "results/devspectrum/missing_stage_reconstruction/reconstruction_summary.csv",
+    "fingerprint": "results/devspectrum/perturbation_spectra/perturbation_spectral_fingerprint.csv"
+  },
+  "metrics": {
+    "n_figures": 5
+  }
+}

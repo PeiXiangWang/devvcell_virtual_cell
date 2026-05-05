@@ -1,0 +1,47 @@
+{
+  "name": "link_spectrum_to_devguard",
+  "created_utc": "2026-05-05T16:34:56.346547+00:00",
+  "inputs": [
+    "results/devspectrum/chimera_projection/chimera_endpoint_spectral_residuals.csv",
+    "results/devspectrum/chimera_projection/tal1_t_spectral_residual_summary.csv",
+    "results/devguard_real/MouseGastrulationData_tal1_chimera_full_integrated_e85_strict/tolerance_index/developmental_tolerance_index.csv",
+    "results/devguard_real/MouseGastrulationData_t_chimera_full_integrated_e85_strict/tolerance_index/developmental_tolerance_index.csv"
+  ],
+  "outputs": [
+    "results\\devspectrum\\devguard_link\\devguard_spectral_correlation.csv",
+    "results\\devspectrum\\devguard_link\\failure_mode_spectral_signature.csv",
+    "results\\devspectrum\\devguard_link\\devguard_spectrum_link_summary.md"
+  ],
+  "parameters": {
+    "control_spectral_model": "results/devspectrum/spectral_fits/control_spectral_model.joblib",
+    "output_dir": "results/devspectrum/chimera_projection",
+    "devguard_link_output_dir": "results/devspectrum/devguard_link",
+    "residuals_csv": "results/devspectrum/chimera_projection/chimera_endpoint_spectral_residuals.csv",
+    "residual_summary_csv": "results/devspectrum/chimera_projection/tal1_t_spectral_residual_summary.csv",
+    "control_input_h5ad": "data/processed/devguard/MouseGastrulationData_integrated_chimera_controls.h5ad",
+    "chimera_inputs": {
+      "tal1": "data/processed/devguard/MouseGastrulationData_tal1_chimera_full.h5ad",
+      "t": "data/processed/devguard/MouseGastrulationData_t_chimera_full.h5ad"
+    },
+    "devguard_outputs": {
+      "control_classes": "results/devguard_real/MouseGastrulationData_integrated_chimera_controls_e85_strict/heldout_control_classification/heldout_control_normality_classes.csv",
+      "tal1_classes": "results/devguard_real/MouseGastrulationData_tal1_chimera_full_integrated_e85_strict/perturbation_classification/cell_normality_classes.csv",
+      "t_classes": "results/devguard_real/MouseGastrulationData_t_chimera_full_integrated_e85_strict/perturbation_classification/cell_normality_classes.csv",
+      "dti": {
+        "tal1": "results/devguard_real/MouseGastrulationData_tal1_chimera_full_integrated_e85_strict/tolerance_index/developmental_tolerance_index.csv",
+        "t": "results/devguard_real/MouseGastrulationData_t_chimera_full_integrated_e85_strict/tolerance_index/developmental_tolerance_index.csv"
+      }
+    },
+    "time_point": "E8.5",
+    "sample_column": "sample_id",
+    "lineage_column": "lineage",
+    "min_cells_per_group": 10,
+    "modules": {
+      "module_registry": "config/devspectrum/module_registry_mouse.json"
+    }
+  },
+  "metrics": {
+    "n_correlation_rows": 6,
+    "n_signature_rows": 78
+  }
+}

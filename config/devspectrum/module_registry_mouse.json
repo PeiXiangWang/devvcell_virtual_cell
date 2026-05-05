@@ -1,0 +1,17 @@
+{
+  "modules": {
+    "mesoderm": ["T", "Eomes", "Mixl1", "Mesp1", "Msgn1", "Tbx6", "Mesp2", "Pdgfra"],
+    "neural": ["Sox2", "Sox1", "Pax6", "Pou3f1", "Nes", "Otx2", "Six3", "Zic2"],
+    "intermediate": ["Cdx2", "Fgf8", "Wnt3a", "Tbx6", "Pax3", "Meox1", "Nkx1-2"],
+    "stress": ["Fos", "Jun", "Atf3", "Ddit3", "Hspa1a", "Hspa1b", "Hsp90aa1"],
+    "cell_cycle": ["Mki67", "Top2a", "Pcna", "Cdk1", "Ccnb1", "Ccnb2", "Mcm5"],
+    "apoptosis": ["Bax", "Bcl2l11", "Casp3", "Casp7", "Trp53", "Pmaip1", "Bbc3"],
+    "haematoendothelial": ["Tal1", "Lmo2", "Kdr", "Etv2", "Pecam1", "Cdh5", "Runx1", "Gata2"],
+    "erythroid": ["Gata1", "Klf1", "Hba-x", "Hbb-bh1", "Hbb-y", "Alas2", "Nfe2"],
+    "endothelial": ["Kdr", "Pecam1", "Cdh5", "Sox7", "Sox17", "Tek", "Egfl7", "Flt1"],
+    "cardiac": ["Mesp1", "Nkx2-5", "Tbx5", "Tnnt2", "Myh6", "Hand2", "Isl1"],
+    "extraembryonic_mesoderm": ["Tbx4", "Hand1", "Cdx2", "Bmp4", "Pdgfra", "T", "Prdm1"],
+    "paraxial_mesoderm": ["Msgn1", "Tbx6", "Meox1", "Mesp2", "Uncx", "Pax3"],
+    "wnt_response": ["Axin2", "Sp5", "Lef1", "Tcf7", "Wnt3", "Cdx2", "T"]
+  }
+}
