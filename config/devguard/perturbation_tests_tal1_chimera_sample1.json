@@ -1,0 +1,15 @@
+{
+  "alpha": 0.05,
+  "input_h5ad": "data/processed/devguard/MouseGastrulationData_tal1_chimera_sample1.h5ad",
+  "model_path": "results/devguard_real/MouseGastrulationData_wt_chimera_sample1/normality_reference/devguard_normality_model.joblib",
+  "output_dir": "results/devguard_real/MouseGastrulationData_tal1_chimera_sample1/perturbation_classification",
+  "score_method": "knn_distance",
+  "ambiguous_margin": 0.02,
+  "classification_priority": [
+    "within_stage_normal",
+    "developmental_delay",
+    "developmental_acceleration",
+    "fate_deviation",
+    "abnormal_off_normal"
+  ]
+}

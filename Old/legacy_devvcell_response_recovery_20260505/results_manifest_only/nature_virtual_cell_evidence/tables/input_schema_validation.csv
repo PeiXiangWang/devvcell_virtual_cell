@@ -1,0 +1,8 @@
+input_name,n_rows,n_columns,minimum_rows,missing_columns,nullable_numeric_columns,missing_required_numeric_columns,invalid_or_nonfinite_required_numeric_columns,too_few_rows,schema_pass
+stage_vulnerability,16,13,5,,,,,False,True
+stimulus_response,252,25,100,,,,,False,True
+transition_metrics,30,9,20,,,,,False,True
+transition_ablation,8,7,8,,,,,False,True
+stimulus_ablation,3,5,3,,,,,False,True
+external_condition_metrics,195,10,100,,effect_cosine,,,False,True
+perturbation_priority,49,15,5,,,,,False,True

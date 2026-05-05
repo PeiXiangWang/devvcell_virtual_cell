@@ -1,0 +1,6 @@
+virtual_cell_component,implemented_object,formal_output,evidence_table,status
+normal_next_state,stage/system-conditioned residual transition operator,predicted latent state at target stage,transition_model_performance.csv,implemented
+perturbed_state,TF/GRN stimulus-conditioned latent projection,perturbed latent state proxy,fate_recovery_virtual_screen.csv,implemented_computational_proxy
+fate_displacement,distance from normal transition baseline,fate_displacement,fate_recovery_virtual_screen.csv,implemented_computational_proxy
+recovery_cost,cell-level feedback cost and recovery probability,recovery_cost; recovery_probability,fate_recovery_virtual_screen.csv,implemented_computational_proxy
+perturbation_calibration,external scPerturb guide-transfer benchmark,paired improvement over naive baselines,external_perturbation_paired_statistical_tests.csv,implemented_first_dataset

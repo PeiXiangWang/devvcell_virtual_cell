@@ -1,0 +1,37 @@
+{
+  "seed": 42,
+  "input_h5ad": "data/processed/devguard/devguard_stress_mouse.h5ad",
+  "output_dir": "results/devguard_stress/normality_reference",
+  "model_output": "results/devguard_stress/normality_reference/devguard_normality_model.joblib",
+  "embedding": {
+    "method": "truncated_svd",
+    "n_hvg": 3000,
+    "latent_dim": 20,
+    "normalize_total": 10000,
+    "log1p": true
+  },
+  "reference_grouping": {
+    "time_column": "time_point",
+    "time_numeric_column": "time_numeric",
+    "lineage_column": "lineage",
+    "min_cells_per_group": 30
+  },
+  "splits": {
+    "train_fraction": 0.5,
+    "calibration_fraction": 0.25,
+    "test_fraction": 0.25
+  },
+  "sample_split": {
+    "strategy": "sample",
+    "unit_column": "sample_id",
+    "allow_cell_fallback": false
+  },
+  "score_methods": ["knn_distance", "mahalanobis"],
+  "knn": {
+    "k": 15
+  },
+  "mahalanobis": {
+    "regularization": 0.05
+  },
+  "alpha": 0.05
+}

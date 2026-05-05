@@ -1,0 +1,11 @@
+model_group,model,present_in_main_metrics,present_in_ablation
+transition,context_residual_mlp,True,True
+transition,identity,True,True
+transition,mean_shift,True,True
+transition,ridge,True,True
+transition,mlp,True,False
+external_perturbation,gene_context_ridge_residual,True,
+external_perturbation,identity,True,
+external_perturbation,global_mean_shift,True,
+external_perturbation,gene_context_shift,True,
+external_perturbation,gene_context_mlp_residual,True,

@@ -1,0 +1,24 @@
+{
+  "schema_version": "devguard.obs.v1",
+  "default_species": "Mus musculus",
+  "default_system": "gastruloid",
+  "required_obs_columns": [
+    "cell_id",
+    "dataset_id",
+    "species",
+    "system",
+    "time_point",
+    "time_numeric",
+    "condition",
+    "perturbation_name",
+    "perturbation_type",
+    "dose",
+    "duration",
+    "sample_id",
+    "batch",
+    "cell_type",
+    "lineage",
+    "is_control",
+    "is_perturbed"
+  ]
+}

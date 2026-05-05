@@ -1,0 +1,57 @@
+{
+  "project": "DevVCell-lite",
+  "source_run": "artifacts/rdeg_runs/rdeg_20260327_neural_cell_mvp",
+  "n_stages": 16,
+  "n_tf_candidates": 49,
+  "top_vulnerability_stage": {
+    "stage": "Theiler stage 15",
+    "stage_num": 15,
+    "window": "TS14-TS19",
+    "vulnerability_score": 0.6049293945595217,
+    "mean_sensitivity": 0.0001506613109085941,
+    "mean_rollout_error": 0.00032345736601032,
+    "baseline_dev_step_norm": 0.0595456505419047,
+    "mean_outlier_ratio": 0.03102332402328198,
+    "next_step_mse": 0.0013360610490626,
+    "ot_reg_gain": 0.6810045633398538,
+    "n_sensitive_tfs": 10,
+    "n_nodes": 25,
+    "total_cells": 50000
+  },
+  "window_vulnerability_mean": 0.5050633979214095,
+  "outside_vulnerability_mean": 0.36658744777785873,
+  "window_vs_outside_ratio": 1.3777432942206553,
+  "top_perturbation": {
+    "tf_name": "Satb2",
+    "devvcell_priority_score": 0.8485568526711808,
+    "response_amplitude_proxy": 1.0,
+    "fate_displacement_proxy": 0.9348120673961704,
+    "feedback_cost": 0.8786047234975314,
+    "recovery_probability_proxy": 0.15954607099193716,
+    "global_effect_score": 0.0280801113694906,
+    "developmental_delay_score": 0.0039700246416032,
+    "mass_shift_mean": 1343450.046127319,
+    "window_sensitivity": 0.00015191371494434837,
+    "peak_stage": "Theiler stage 23",
+    "peak_sensitivity": 0.0002020103129325,
+    "best_rescuer_tf": "Zbtb16",
+    "best_rescue_fraction": 0.1213952765024686,
+    "n_affected_genes": 755
+  },
+  "top_rollout_proxy": {
+    "stage": "Theiler stage 12",
+    "stage_num": 12,
+    "tf_name": "Satb2",
+    "virtual_cell_response_proxy": 0.34661769672124176,
+    "feedback_cost_proxy": 0.30453994558711783,
+    "recovery_probability_proxy": 0.025874965854109568,
+    "baseline_dev_step_norm": 0.1332543624548394,
+    "stage_vulnerability_score": 0.6011733524950248,
+    "tf_priority_score": 0.8485568526711808
+  },
+  "outputs": {
+    "stage_vulnerability": "results/tables/stage_vulnerability.csv",
+    "perturbation_priority": "results/tables/perturbation_priority.csv",
+    "virtual_cell_rollout_proxy": "results/tables/virtual_cell_rollout_proxy.csv"
+  }
+}

@@ -1,0 +1,8 @@
+claim,gate,observed,threshold,pass,hard_failure
+stage_conditioned_transition_operator,minimum paired heldout strata,6.0,6.0,True,False
+stage_conditioned_transition_operator,relative improvement versus ridge,0.0354556855432297,0.01,True,False
+competence_window_response,minimum stimulus rows,252.0,100.0,True,False
+competence_window_response,minimum competence window rows,180.0,20.0,True,False
+external_perturbation_calibration,minimum external conditions,39.0,20.0,True,False
+external_perturbation_calibration,relative improvement versus identity,0.7200291180134879,0.05,True,False
+competence_window_response,statistical tests completed,5.0,5.0,True,False

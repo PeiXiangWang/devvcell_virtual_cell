@@ -1,0 +1,307 @@
+{
+  "analysis": "devvcell_nature_virtual_cell_evidence_v1",
+  "started_utc": "2026-05-03T15:29:18.075395+00:00",
+  "completed_utc": "2026-05-03T15:29:19.233956+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "command": "scripts/run_nature_virtual_cell_evidence_pipeline.py --config config/nature_virtual_cell_evidence.json",
+  "cwd": "C:\\Users\\14915\\PycharmProjects\\devvcell_virtual_cell",
+  "config_path": "config/nature_virtual_cell_evidence.json",
+  "config_sha256": "7aa38e21b4305f1ae8dfadca9a8a9d5c8582fdb1e1a75a1523f4eabc125fab3f",
+  "input_files": [
+    {
+      "input_name": "stage_vulnerability",
+      "path": "results/tables/stage_vulnerability.csv",
+      "exists": true,
+      "size_bytes": 3107,
+      "modified_utc": "2026-05-02T16:02:46.054317+00:00",
+      "sha256": "08f675a4596dea38b8a4997ca81de60d3c203caa6caaf61a3f7409afa6a186f8"
+    },
+    {
+      "input_name": "stimulus_response",
+      "path": "results/cell_level_v1/tables/cell_level_tf_grn_stimulus_response.csv",
+      "exists": true,
+      "size_bytes": 105121,
+      "modified_utc": "2026-05-02T16:32:59.400003+00:00",
+      "sha256": "6916765fd77654ee92a94bfb19cf058d9c69c4684bff816d1264cd76e1e256c6"
+    },
+    {
+      "input_name": "transition_metrics",
+      "path": "results/cell_level_v1/tables/cell_level_transition_metrics.csv",
+      "exists": true,
+      "size_bytes": 3108,
+      "modified_utc": "2026-05-02T17:02:18.885097+00:00",
+      "sha256": "156e77fd26d8ce94af765c428817ea11b75d227b0e70b84f76ed68a3b06c8852"
+    },
+    {
+      "input_name": "transition_statistics",
+      "path": "results/cell_level_v1/tables/transition_statistical_summary.json",
+      "exists": true,
+      "size_bytes": 5551,
+      "modified_utc": "2026-05-03T15:29:15.798467+00:00",
+      "sha256": "ecdc3397dff192fe1308b3cc07c567d4ade0d912bb5d1e02a416ea241c753142"
+    },
+    {
+      "input_name": "transition_ablation",
+      "path": "results/ablation_v1/tables/transition_ablation_summary.csv",
+      "exists": true,
+      "size_bytes": 951,
+      "modified_utc": "2026-05-02T17:38:51.563044+00:00",
+      "sha256": "b11c8323bb7922cf8a265e9892a8fc7f81fcb13f384900eb1156397867fdc362"
+    },
+    {
+      "input_name": "stimulus_ablation",
+      "path": "results/ablation_v1/tables/stimulus_ablation_summary.csv",
+      "exists": true,
+      "size_bytes": 290,
+      "modified_utc": "2026-05-02T17:38:51.571655+00:00",
+      "sha256": "6ee84dca63f8fcfba8cdb44b9e3a75a15c125f3ecbcfcba5f210697890290787"
+    },
+    {
+      "input_name": "external_condition_metrics",
+      "path": "results/external_perturbation_v1/tables/external_perturbation_condition_metrics.csv",
+      "exists": true,
+      "size_bytes": 29378,
+      "modified_utc": "2026-05-02T17:38:48.841964+00:00",
+      "sha256": "add126952dc2f9a699c30c91ff3b16a371fc0c98b73bb7799564ad2d9ace726b"
+    },
+    {
+      "input_name": "external_summary",
+      "path": "results/external_perturbation_v1/external_perturbation_summary.json",
+      "exists": true,
+      "size_bytes": 17724,
+      "modified_utc": "2026-05-02T17:38:49.123465+00:00",
+      "sha256": "e326d6971133f3c8236a74d7c4c2c8c449415f32e0bad99476c652d952b99c67"
+    },
+    {
+      "input_name": "perturbation_priority",
+      "path": "results/tables/perturbation_priority.csv",
+      "exists": true,
+      "size_bytes": 9144,
+      "modified_utc": "2026-05-02T16:02:46.055318+00:00",
+      "sha256": "a77dda00d3a8236e9fd9b427e8546d03869412a411632d1cdd11afc0ef86b563"
+    }
+  ],
+  "validation_summary": {
+    "schema_pass": true,
+    "required_models_pass": true,
+    "claim_gates_pass": true
+  },
+  "summaries": {
+    "virtual_cell_contract_rows": 5,
+    "transition": {
+      "primary_model": "context_residual_mlp",
+      "primary_mean_mse": 0.31390176713466644,
+      "model_summary_rows": 5,
+      "paired_tests_rows": 4
+    },
+    "competence": {
+      "stimulus_rows": 252,
+      "competence_window_rows": 180,
+      "outside_rows": 72
+    },
+    "fate_recovery": {
+      "screen_rows": 252,
+      "tf_summary_rows": 12,
+      "top_tf": "Eya1"
+    },
+    "external": {
+      "primary_model": "gene_context_ridge_residual",
+      "primary_mean_mse": 0.22087359695862496,
+      "n_external_conditions": 39
+    },
+    "ablation": {
+      "transition_ablation_rows": 8,
+      "stimulus_ablation_rows": 3,
+      "best_transition_ablation": {
+        "pairing_method": "nearest",
+        "model": "ridge",
+        "mean_pair_latent_mse": 0.1413096057044134,
+        "sd_pair_latent_mse": 0.0913853270312139,
+        "mean_centroid_latent_mse": 0.0023511908431019,
+        "mean_rbf_mmd": 0.0170272191365559,
+        "n_evaluations": 18
+      }
+    }
+  },
+  "claim_gates": [
+    {
+      "claim": "stage_conditioned_transition_operator",
+      "gate": "minimum paired heldout strata",
+      "observed": 6.0,
+      "threshold": 6.0,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "stage_conditioned_transition_operator",
+      "gate": "relative improvement versus ridge",
+      "observed": 0.0354556855432297,
+      "threshold": 0.01,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "competence_window_response",
+      "gate": "minimum stimulus rows",
+      "observed": 252.0,
+      "threshold": 100.0,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "competence_window_response",
+      "gate": "minimum competence window rows",
+      "observed": 180.0,
+      "threshold": 20.0,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "external_perturbation_calibration",
+      "gate": "minimum external conditions",
+      "observed": 39.0,
+      "threshold": 20.0,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "external_perturbation_calibration",
+      "gate": "relative improvement versus identity",
+      "observed": 0.7200291180134879,
+      "threshold": 0.05,
+      "pass": true,
+      "hard_failure": false
+    },
+    {
+      "claim": "competence_window_response",
+      "gate": "statistical tests completed",
+      "observed": 5.0,
+      "threshold": 5.0,
+      "pass": true,
+      "hard_failure": false
+    }
+  ],
+  "output_files": [
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/claim_gate_matrix.csv",
+      "size_bytes": 665,
+      "sha256": "956f5b7caa4faf2db50ac8402b5e8087864a00520bd8d6ec69c52987988f7365"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/competence_window_group_statistics.csv",
+      "size_bytes": 1298,
+      "sha256": "b090efe4650081df9553542f124fcfa288302e6451138750ee96d4db4ff724d8"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/competence_window_statistical_tests.csv",
+      "size_bytes": 1232,
+      "sha256": "6e4dda709fcae5fece71f6ef734238391cfd3be65b58640ccc94e54cf4d9f4b4"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/external_perturbation_bias_control_summary.csv",
+      "size_bytes": 494,
+      "sha256": "180112b94795a86f827af7b144008e4e9b6757265c86fa8fb5c3efec59af6faf"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/external_perturbation_condition_centered_metrics.csv",
+      "size_bytes": 36315,
+      "sha256": "ae0011f8d8eb621ed5a4a4cf9f76eb6ef2f3507bb0d97e314209463def256698"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/external_perturbation_model_performance.csv",
+      "size_bytes": 636,
+      "sha256": "fade71436219680ee3c3d659d6d898c9c4a09e276ccc3c24a77ae06f7a01fd02"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/external_perturbation_paired_statistical_tests.csv",
+      "size_bytes": 1218,
+      "sha256": "e314b1ad1fa7a7c068ceea3868b077a5d017cefcbe369972f0dbec46f099b401"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/fate_recovery_tf_summary.csv",
+      "size_bytes": 1931,
+      "sha256": "7bfede55b7c34cdf0b4138271952674f5ce0ecca550537c1345eabdcc180b8f4"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/fate_recovery_virtual_screen.csv",
+      "size_bytes": 53266,
+      "sha256": "86c7af8f606e6d6caf20f3d657bcdd5615c6393fea7b5fd6a20c2abb982f9c3c"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/input_file_inventory.csv",
+      "size_bytes": 1766,
+      "sha256": "fb0a69a36e379249f948f78393ff79345ae3b0976e0c6d1ec58f4754aee588ab"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/input_schema_validation.csv",
+      "size_bytes": 514,
+      "sha256": "8be9fc8ce8b201ed9d17c276bf1b2837f15fc0e2f670a733e2e5087c39642507"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/required_model_validation.csv",
+      "size_bytes": 470,
+      "sha256": "a196e5282399576664c91550b2f0a7fbf3dd334337b919ce07cec0ec55957471"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/stage_response_summary.csv",
+      "size_bytes": 870,
+      "sha256": "de9915f1642fcabb7940e1848764081c1c8a9c8c7a36e1a408052972ff52412c"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/stimulus_ablation_formal_summary.csv",
+      "size_bytes": 286,
+      "sha256": "8e234bd0115f3f88e43449315f9a81f3c1318bdd4541d4c082de440937bbb907"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/transition_ablation_formal_summary.csv",
+      "size_bytes": 916,
+      "sha256": "c931484175308cb1008013a731a7d30918a9abe2d05a38be3d9e58bbb5140eef"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/transition_model_performance.csv",
+      "size_bytes": 483,
+      "sha256": "df8a03e7a8c04acacfcd47b9ab86bc6c566dba614db8a01b3baf4f74272be114"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/transition_paired_statistical_tests.csv",
+      "size_bytes": 1050,
+      "sha256": "e621f2ad6f65470fe69b06ca0a44ed37dd8e833aab069a77f464cc7eafe550ba"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/virtual_cell_component_contract.csv",
+      "size_bytes": 889,
+      "sha256": "4f20f9b14f32ebe6565c6d29dd22c2e5f0e4a97576f76cf6409695e7706ffe48"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/tables/vulnerability_response_correlation_tests.csv",
+      "size_bytes": 1480,
+      "sha256": "66e8c6dabef237d76b85d5692101aeb8c584d67955623e2aad39832e7e859113"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/figures/figure_competence_window_response.png",
+      "size_bytes": 120589,
+      "sha256": "1d415166a39973d2a8839e2c13407e091aa3ec94588562430c70def2edc642ee"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/figures/figure_external_perturbation_paired_tests.png",
+      "size_bytes": 117121,
+      "sha256": "091645082c7f60393498477219d0cdec32949aa351148f9cf48f42c49fe86edc"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/figures/figure_fate_recovery_virtual_screen.png",
+      "size_bytes": 133329,
+      "sha256": "e1b6ba142ad435e7eb72580e7efee54a55970be9d9125982b50223a576771b09"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/figures/figure_transition_formal_benchmark.png",
+      "size_bytes": 94642,
+      "sha256": "9495feaab038656ea5c391de6324fb775c3752a6acbf70688b8918149151a350"
+    },
+    {
+      "path": "results/nature_virtual_cell_evidence/paper_methods_evidence_pipeline.md",
+      "size_bytes": 3457,
+      "sha256": "4dd0cc5b8a615fb07202e5e34904e3c5c4d8d8aa2b6a7a9fdc5f825357d56618"
+    }
+  ]
+}

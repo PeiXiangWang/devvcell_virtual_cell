@@ -1,0 +1,6 @@
+metric,value,description
+sampled_cells,80000.0,Cells sampled into the DevVCell developmental manifold.
+centroids,632.0,Stage/cell-type centroids with enough sampled cells.
+svd_explained_variance_ratio_sum,0.8277299404144287,Variance captured by the latent SVD components.
+stage_classifier_accuracy,0.2192,Held-out logistic-regression accuracy for Theiler stage labels.
+cell_type_classifier_accuracy,0.7857,Held-out logistic-regression accuracy for cell type labels.

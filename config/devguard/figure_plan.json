@@ -1,0 +1,23 @@
+{
+  "classification_csv": "results/devguard/perturbation_classification/cell_normality_classes.csv",
+  "condition_summary_csv": "results/devguard/perturbation_classification/condition_class_summary.csv",
+  "dti_csv": "results/devguard/tolerance_index/developmental_tolerance_index.csv",
+  "output_dir": "results/devguard/figures",
+  "figures": [
+    {
+      "figure_id": "Figure_1",
+      "title": "DevGuard method schematic",
+      "output": "results/devguard/figures/figure1_devguard_method.png"
+    },
+    {
+      "figure_id": "Figure_2",
+      "title": "Perturbed-cell normality classes",
+      "output": "results/devguard/figures/figure2_perturbation_classes.png"
+    },
+    {
+      "figure_id": "Figure_3",
+      "title": "Developmental Tolerance Index",
+      "output": "results/devguard/figures/figure3_dti_heatmap.png"
+    }
+  ]
+}
