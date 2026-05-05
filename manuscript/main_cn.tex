@@ -199,52 +199,72 @@ max heldout FPR & 0.0723 \\
 
 严格 sample-level rerun 的平均 heldout FPR 接近 \(\alpha=0.05\)，最大 FPR 从早期随机 downsample 的 0.3333 降到 0.0723。所有 reference groups 均使用独立 sample units 进行 train/calibration/test split，且 \texttt{low\_heldout\_flag=False}。这组结果可作为当前真实 control calibration 的主结果，但正式论文仍应在完整数据或更大采样上复核。
 
-\subsection*{MouseGastrulationData WT/Tal1 chimera smoke test}
+\subsection*{MouseGastrulationData integrated chimera perturbation analysis}
 
-Bioconductor \texttt{MouseGastrulationData} 已安装，并已导出 embryo atlas sample 1、WT chimera sample 1 和 Tal1 chimera sample 1。WT chimera sample 1 用于 control reference，Tal1 chimera sample 1 用于真实 perturbation classification smoke test。
+Bioconductor \texttt{MouseGastrulationData} 已安装，并已全量导出 WT chimera、Tal1 chimera 和 T chimera 数据。主分析使用 integrated chimera controls：WT control cells 加 Tal1/T chimera tomato-negative host controls。为降低数据源偏移，SVD embedding 后按 source dataset 做 latent centering，再建立 E8.5 strict sample-level normality reference。
 
 \begin{center}
 \begin{tabular}{lr}
 \toprule
-WT chimera reference 项目 & 数值 \\
+Integrated control reference 项目 & 数值 \\
 \midrule
-reference groups & 12 \\
-score-method records & 24 \\
-mean heldout FPR & 0.0294 \\
-max heldout FPR & 0.1389 \\
-split strategy & cell fallback \\
+control cells & 76,514 \\
+E8.5 reference groups & 28 \\
+score method & KNN distance, \(k=30\) \\
+split strategy & sample-level only \\
+cell fallback groups & 0 \\
+mean heldout FPR & 0.0547 \\
+max heldout FPR & 0.1946 \\
+high-FPR groups & 4 / 28 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Tal1 classification smoke test：
+Heldout control baseline：
 
 \begin{center}
 \begin{tabular}{lrr}
 \toprule
 class & cells & fraction \\
 \midrule
-fate\_deviation & 9,325 & 0.6322 \\
-developmental\_delay & 4,862 & 0.3296 \\
-abnormal\_off\_normal & 564 & 0.0382 \\
+within\_stage\_normal & 19,061 & 0.9548 \\
+fate\_deviation & 675 & 0.0338 \\
+abnormal\_off\_normal & 228 & 0.0114 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Ambiguity output：
+Tal1 E8.5 tomato-positive cells show strong loss of normality:
 
 \begin{center}
 \begin{tabular}{lrr}
 \toprule
-ambiguous flag & cells & fraction \\
+class & cells & fraction \\
 \midrule
-False & 11,721 & 0.7946 \\
-True & 3,030 & 0.2054 \\
+within\_stage\_normal & 16,297 & 0.5758 \\
+fate\_deviation & 7,415 & 0.2620 \\
+abnormal\_off\_normal & 4,593 & 0.1623 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-这组数值不能作为 Tal1 生物学结论，因为目前只导出一个 WT chimera 样本，无法形成独立 embryo-level split。
+Compared with heldout controls, Tal1 has strong enrichment of \texttt{abnormal\_off\_normal} cells (odds ratio 16.77, FDR reported as 0 by numerical underflow) and \texttt{fate\_deviation} cells (odds ratio 10.14, FDR reported as 0).
+
+T E8.5 tomato-positive cells are mostly retained within normality:
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+class & cells & fraction \\
+\midrule
+within\_stage\_normal & 14,922 & 0.9434 \\
+fate\_deviation & 674 & 0.0426 \\
+abnormal\_off\_normal & 221 & 0.0140 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+T shows only modest enrichment over heldout controls: \texttt{abnormal\_off\_normal} odds ratio 1.23 and \texttt{fate\_deviation} odds ratio 1.27. Thus DevGuard separates a strong Tal1 abnormality/deviation phenotype from a largely tolerated T/Brachyury chimera state at E8.5.
 
 \subsection*{GSE123187 spatial/tomo preview}
 
@@ -286,17 +306,16 @@ python -m pytest
 当前结果：
 
 \begin{verbatim}
-12 passed
+14 passed
 \end{verbatim}
 
 \section*{下一步}
 
 \begin{enumerate}
-  \item 导出完整 MouseGastrulationData embryo atlas、WT chimera、Tal1 chimera 和 T chimera；
-  \item 对真实数据强制 embryo/organoid-level split，并过滤低 sample-unit group；
   \item 用完整 GSE212050 做 leave-one-organoid-out false-positive calibration；
   \item 为 GSE123187 补充 spatial/tomo axis 和 lineage mapping；
-  \item 所有 perturbation 结论必须与 heldout control FPR 和 organoid heterogeneity FPR 对比后再进入正式 manuscript。
+  \item 对 high-FPR lineages 做 sensitivity analysis 或从主 lineage-level 解释中降权；
+  \item 继续追加更多公开小鼠 genetic/chemical perturbation datasets，扩大扰动类型覆盖。
 \end{enumerate}
 
 \end{document}

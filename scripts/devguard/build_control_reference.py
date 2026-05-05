@@ -6,7 +6,7 @@ from pathlib import Path
 import _bootstrap  # noqa: F401
 import joblib
 
-from devguard.embedding import SVDEmbeddingModel
+from devguard.embedding import SVDEmbeddingModel, apply_batch_centering, fit_batch_centering
 from devguard.io import ensure_dir, load_json, read_h5ad, write_dataframe, write_manifest
 from devguard.normality import build_normality_groups, centroids_frame, quality_frame, reference_cells_frame, thresholds_frame
 from devguard.preprocessing import standardize_obs
@@ -33,6 +33,13 @@ def build_control_reference(config_path: str | Path) -> Path:
         random_state=int(config.get("seed", 42)),
     )
     control_embeddings = embedding_model.fit_transform(control)
+    batch_centering = None
+    batch_center_column = embedding_cfg.get("batch_center_column")
+    if batch_center_column:
+        if batch_center_column not in control_obs.columns:
+            raise ValueError(f"batch_center_column not found in obs: {batch_center_column}")
+        batch_centering = fit_batch_centering(control_embeddings, control_obs, column=batch_center_column)
+        control_embeddings = apply_batch_centering(control_embeddings, control_obs, batch_centering)
 
     grouping = config.get("reference_grouping", {})
     splits = config.get("splits", {})
@@ -81,6 +88,7 @@ def build_control_reference(config_path: str | Path) -> Path:
             "input_h5ad": str(input_h5ad),
             "score_methods": config.get("score_methods", ["knn_distance", "mahalanobis"]),
             "alpha": alpha,
+            "batch_centering": batch_centering,
         },
         model_output,
     )

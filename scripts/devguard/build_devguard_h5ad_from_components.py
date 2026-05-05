@@ -102,7 +102,7 @@ def infer_public_obs(obs: pd.DataFrame, *, dataset_id: str, dataset_kind: str, p
         obs["condition"] = np.where(tomato_bool & is_real_ko, "perturbation", "control")
         obs["perturbation_name"] = np.where(obs["condition"].eq("perturbation"), perturbation_name, "control")
         obs["perturbation_type"] = np.where(obs["condition"].eq("perturbation"), "genetic", "none")
-        obs["sample_id"] = _column(obs, "pool", "sample", default=obs.index.astype(str)).astype(str)
+        obs["sample_id"] = _column(obs, "sample", "pool", default=obs.index.astype(str)).astype(str)
         obs["batch"] = _column(obs, "sequencing.batch", default="NA").astype(str)
         obs["cell_type"] = _column(obs, "celltype", "celltype.mapped", "cluster", default="NA").astype(str)
         obs["lineage"] = obs["cell_type"]

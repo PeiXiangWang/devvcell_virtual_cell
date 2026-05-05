@@ -30,6 +30,10 @@ config/devguard/datasets_mouse.json
 ```text
 data/processed/devguard/GSE212050_strict_sample_13285.h5ad
 data/processed/devguard/GSE212050_downsample_15000.h5ad
+data/processed/devguard/MouseGastrulationData_integrated_chimera_controls.h5ad
+data/processed/devguard/MouseGastrulationData_wt_chimera_full.h5ad
+data/processed/devguard/MouseGastrulationData_tal1_chimera_full.h5ad
+data/processed/devguard/MouseGastrulationData_t_chimera_full.h5ad
 data/processed/devguard/MouseGastrulationData_embryo_atlas_sample1.h5ad
 data/processed/devguard/MouseGastrulationData_wt_chimera_sample1.h5ad
 data/processed/devguard/MouseGastrulationData_tal1_chimera_sample1.h5ad
@@ -85,5 +89,5 @@ config/devguard/normality_model_gse212050_strict_sample.json
 ## 当前限制
 
 - `GSE212050_strict_sample_13285` 是目前最可靠的真实 control calibration 入口，但仍是从 full Seurat object 中筛出的 balanced subset；正式论文应继续在完整数据或更大采样上复核。
-- `MouseGastrulationData` chimera smoke test 目前只导出 sample 1，不能形成真正 embryo-level split。
+- `MouseGastrulationData` full chimera 数据已经导出。当前主分析使用 integrated matched controls 和 E8.5 strict sample-level split；E7.5 WT chimera 只有 4 个 control sample units，不作为同等强度主校准。
 - `GSE123187_preview_4files` 已进入 H5AD schema，但尚缺 cell type/lineage 注释和 axis mapping，不能直接作为 fate deviation validation。

@@ -324,6 +324,7 @@ def quality_frame(groups: dict[str, NormalityGroup], alpha: float) -> pd.DataFra
         for method, cal_scores in group.calibration_scores.items():
             test_scores = group.test_scores[method]
             p_values = conformal_p_values(cal_scores, test_scores)
+            heldout_fpr = false_positive_rate(cal_scores, test_scores, alpha)
             rows.append(
                 {
                     "reference_group": group.group_id,
@@ -341,7 +342,9 @@ def quality_frame(groups: dict[str, NormalityGroup], alpha: float) -> pd.DataFra
                     "n_calibration_units": len(group.calibration_units),
                     "n_test_units": len(group.test_units),
                     "low_heldout_flag": bool(group.n_test < 20 or (group.split_strategy == "sample" and len(group.test_units) < 2)),
-                    "heldout_control_fpr": false_positive_rate(cal_scores, test_scores, alpha),
+                    "heldout_control_fpr": heldout_fpr,
+                    "calibration_excess_fpr": float(heldout_fpr - alpha),
+                    "high_fpr_flag": bool(heldout_fpr > alpha + 0.05),
                     "median_heldout_p_value": float(np.median(p_values)) if p_values.size else float("nan"),
                 }
             )

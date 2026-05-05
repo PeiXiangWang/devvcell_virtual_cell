@@ -27,8 +27,9 @@
       "access_method": "R MouseGastrulationData::Tal1ChimeraData",
       "local_path": "data/processed/devguard/MouseGastrulationData_Tal1Chimera.h5ad",
       "ingestion_test_path": "data/processed/devguard/MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "full_path": "data/processed/devguard/MouseGastrulationData_tal1_chimera_full.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_Tal1Chimera_metadata.csv",
-      "status": "sample1_exported_classification_smoke_test_available"
+      "status": "full_exported_integrated_control_classification_available"
     },
     {
       "dataset_id": "MouseGastrulationData_TChimera",
@@ -41,8 +42,9 @@
       "accession_url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-8811",
       "access_method": "R MouseGastrulationData::TChimeraData",
       "local_path": "data/processed/devguard/MouseGastrulationData_TChimera.h5ad",
+      "full_path": "data/processed/devguard/MouseGastrulationData_t_chimera_full.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_TChimera_metadata.csv",
-      "status": "requires_bioconductor_export"
+      "status": "full_exported_integrated_control_classification_available"
     },
     {
       "dataset_id": "MouseGastrulationData_WTChimera",
@@ -55,8 +57,9 @@
       "access_method": "R MouseGastrulationData::WTChimeraData",
       "local_path": "data/processed/devguard/MouseGastrulationData_WTChimera.h5ad",
       "ingestion_test_path": "data/processed/devguard/MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "full_path": "data/processed/devguard/MouseGastrulationData_wt_chimera_full.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/MouseGastrulationData_WTChimera_metadata.csv",
-      "status": "sample1_exported_control_reference_smoke_test_available"
+      "status": "full_exported_integrated_control_reference_available"
     },
     {
       "dataset_id": "GSE212050",

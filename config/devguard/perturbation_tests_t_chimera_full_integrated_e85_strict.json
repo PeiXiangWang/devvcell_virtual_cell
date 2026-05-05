@@ -1,0 +1,16 @@
+{
+  "alpha": 0.05,
+  "input_h5ad": "data/processed/devguard/MouseGastrulationData_t_chimera_full.h5ad",
+  "model_path": "results/devguard_real/MouseGastrulationData_integrated_chimera_controls_e85_strict/normality_reference/devguard_normality_model.joblib",
+  "output_dir": "results/devguard_real/MouseGastrulationData_t_chimera_full_integrated_e85_strict/perturbation_classification",
+  "score_method": "knn_distance",
+  "obs_query": "time_point == 'E8.5'",
+  "ambiguous_margin": 0.02,
+  "classification_priority": [
+    "within_stage_normal",
+    "developmental_delay",
+    "developmental_acceleration",
+    "fate_deviation",
+    "abnormal_off_normal"
+  ]
+}

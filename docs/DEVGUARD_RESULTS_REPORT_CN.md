@@ -4,9 +4,11 @@
 
 ## 当前结论边界
 
-本仓库已经完成 DevGuard 的代码重构、旧版 DevVCell response-recovery 归档、conformal normality MVP、stress fixture、sample-level split、分类歧义输出、DTI bootstrap CI，以及三个真实公开数据入口的本地 smoke test。
+本仓库已经完成 DevGuard 的代码重构、旧版 DevVCell response-recovery 归档、conformal normality MVP、stress fixture、sample-level split、分类歧义输出、DTI bootstrap CI，以及真实公开小鼠数据接入。
 
 本轮又完成了 GSE212050 的严格 sample-level rerun：只保留能够形成独立 sample-level train/cal/test 的 stage-lineage 组，不允许 cell-level fallback。
+
+本轮还完成了 MouseGastrulationData chimera 全量干实验：WT chimera 10 个样本、Tal1 chimera 4 个样本、T chimera 14 个非 QC-fail 样本均已导出并转为 DevGuard H5AD。主 perturbation 分析使用 integrated chimera controls，即 WT control cells 加 Tal1/T chimera tomato-negative host controls，按 source-level latent centering 校正数据源偏移后建立 E8.5 strict sample-level normality boundary。
 
 ## Quick Fixture
 
@@ -129,27 +131,106 @@ results/devguard_real/GSE212050_strict_sample/normality_reference/
 
 该结果说明随机 downsample 会产生低 sample-unit 组，不能作为主结果。
 
-## MouseGastrulationData WT/Tal1 Chimera Smoke Test
+## MouseGastrulationData Integrated Chimera Main Analysis
 
 已完成：
 
 - 安装 Bioconductor `MouseGastrulationData`；
-- 导出 embryo atlas sample 1；
-- 导出 WT chimera sample 1；
-- 导出 Tal1 chimera sample 1；
-- 用 WT chimera sample 1 构建 control reference；
-- 用 Tal1 chimera sample 1 做 perturbation classification；
-- 输出 DTI 和 bootstrap CI。
+- 导出 WT chimera full：30,703 cells，10 samples；
+- 导出 Tal1 chimera full：56,122 cells，4 samples；
+- 导出 T chimera full：36,931 cells，14 non-QC-fail samples；
+- 合并 WT controls、Tal1 tomato-negative controls 和 T tomato-negative controls，得到 76,514 control cells；
+- 用 source-level latent centering 校正 WT/Tal1/T 数据源差异；
+- 在 E8.5 组构建 strict sample-level reference；
+- 分类 Tal1/T tomato-positive E8.5 perturbation cells；
+- 输出 DTI、bootstrap CI 和 perturbation-vs-heldout-control Fisher/FDR。
 
-WT chimera reference：
+关键文件：
+
+```text
+data/processed/devguard/MouseGastrulationData_wt_chimera_full.h5ad
+data/processed/devguard/MouseGastrulationData_tal1_chimera_full.h5ad
+data/processed/devguard/MouseGastrulationData_t_chimera_full.h5ad
+data/processed/devguard/MouseGastrulationData_integrated_chimera_controls.h5ad
+config/devguard/normality_model_mouse_gastrulation_integrated_chimera_controls_e85_strict.json
+config/devguard/perturbation_tests_tal1_chimera_full_integrated_e85_strict.json
+config/devguard/perturbation_tests_t_chimera_full_integrated_e85_strict.json
+```
+
+Integrated chimera control reference：
 
 | 项目 | 数值 |
 |---|---:|
-| reference groups | 12 |
-| score-method records | 24 |
-| mean heldout FPR | 0.0294 |
-| max heldout FPR | 0.1389 |
-| split strategy | cell_fallback |
+| control cells | 76,514 |
+| E8.5 reference groups | 28 |
+| score method | KNN distance |
+| k | 30 |
+| split strategy | sample-level only |
+| cell fallback groups | 0 |
+| mean heldout FPR | 0.0547 |
+| max heldout FPR | 0.1946 |
+
+解释：
+
+WT-only strict reference 的平均 FPR 为 0.149，不适合作主结果。Integrated matched-control reference 通过加入 Tal1/T host controls 和 source-level centering，将 KNN mean FPR 降到 0.0547，接近 alpha=0.05。少数 lineages 仍存在高 heldout FPR，应在解释 perturbation lineage-level 结果时作为 calibration-risk flag。
+
+Heldout control baseline：
+
+| class | cells | fraction |
+|---|---:|---:|
+| within_stage_normal | 19,061 | 0.9548 |
+| fate_deviation | 675 | 0.0338 |
+| abnormal_off_normal | 228 | 0.0114 |
+
+Tal1 E8.5 tomato-positive classification：
+
+| class | cells | fraction |
+|---|---:|---:|
+| within_stage_normal | 16,297 | 0.5758 |
+| fate_deviation | 7,415 | 0.2620 |
+| abnormal_off_normal | 4,593 | 0.1623 |
+
+Tal1 vs heldout control enrichment：
+
+| class | perturbation fraction | control fraction | odds ratio | FDR |
+|---|---:|---:|---:|---:|
+| abnormal_off_normal | 0.1623 | 0.0114 | 16.77 | 0 |
+| fate_deviation | 0.2620 | 0.0338 | 10.14 | 0 |
+| within_stage_normal | 0.5758 | 0.9548 | 0.064 | 0 |
+
+T E8.5 tomato-positive classification：
+
+| class | cells | fraction |
+|---|---:|---:|
+| within_stage_normal | 14,922 | 0.9434 |
+| fate_deviation | 674 | 0.0426 |
+| abnormal_off_normal | 221 | 0.0140 |
+
+T vs heldout control enrichment：
+
+| class | perturbation fraction | control fraction | odds ratio | FDR |
+|---|---:|---:|---:|---:|
+| abnormal_off_normal | 0.0140 | 0.0114 | 1.23 | 0.0353 |
+| fate_deviation | 0.0426 | 0.0338 | 1.27 | 0.0000248 |
+| within_stage_normal | 0.9434 | 0.9548 | 0.790 | 0.00000365 |
+
+Interpretation：
+
+Tal1 chimera 显示强烈的 off-normal 和 fate-deviation enrichment，远高于 heldout control baseline。T chimera 在 E8.5 以 normal retention 为主，仅有小幅但统计显著的 fate-deviation/abnormal enrichment。这提供了一个更强的论文叙事：DevGuard 不只是检测“是否异常”，还可区分强扰动 Tal1 与相对耐受的 T/Brachyury chimera 细胞状态。
+
+Tal1 DTI 中最脆弱的大细胞数 lineages 包括 Allantois、ExE mesoderm、Cardiomyocytes 和 Paraxial mesoderm；高保留 lineages 包括 Spinal cord、Mesenchyme、Surface ectoderm、NMP 和 Haematoendothelial progenitors。T 的大多数 E8.5 lineages DTI 为正，整体更接近 control normality。
+
+## MouseGastrulationData Early Smoke Test
+
+早期 sample 1 smoke test 仍保留为开发记录：
+
+| 项目 | 数值 |
+|---|---:|
+| WT sample 1 reference groups | 12 |
+| WT sample 1 mean heldout FPR | 0.0294 |
+| Tal1 sample 1 perturbed cells | 14,751 |
+
+这组早期结果已不再作为主分析使用。
 
 Tal1 classification smoke test：
 
@@ -186,15 +267,18 @@ GSE123187 已经进入 DevGuard schema，但 preview 目前没有 cell type/line
 - `build_normality_groups` 支持 `min_units_per_group`，可强制过滤低 sample-unit 组；
 - 新增 `select_gse212050_strict_sample_cells.py`，把严格 sample-level 选择流程脚本化；
 - `export_seurat_rds_components.R` 支持 cell-list subset；
-- 新增 `normality_model_gse212050_strict_sample.json`；
-- 重跑 GSE212050 strict sample-level reference，并确认无 cell fallback；
-- 保留 quality table 中的 split unit counts 和 `low_heldout_flag`。
+- 新增 full chimera export/convert/classification configs；
+- 新增 `combine_control_h5ads.py` 合并 matched chimera controls；
+- 新增 source-level latent centering，用 Tal1/T host controls 校正数据源偏移；
+- 新增 `classify_reference_test_cells.py` 输出 heldout control baseline；
+- 新增 `compare_perturbation_to_control_baseline.py` 输出 Fisher exact test 和 BH FDR；
+- quality table 输出 split unit counts、`low_heldout_flag`、`calibration_excess_fpr` 和 `high_fpr_flag`。
 
 ## 验证
 
 ```text
 python -m pytest
-13 passed
+14 passed
 python -m compileall src scripts/devguard
 ```
 
@@ -208,10 +292,9 @@ xelatex -interaction=nonstopmode -halt-on-error main_cn.tex
 
 ## 下一步
 
-正式结果仍需要：
+仍可继续增强的方向：
 
-- 导出完整 MouseGastrulationData embryo atlas 和 WT/Tal1/T chimera 数据；
-- 对真实 perturbation 数据做 embryo-level split 或 matched control reference；
 - 对 GSE212050 做 leave-one-organoid-out false-positive calibration；
 - 为 GSE123187 补充 spatial/tomo axis 注释和 lineage mapping；
-- 所有 perturbation 结论必须和 heldout control FPR、organoid heterogeneity FPR 对比后再写入 manuscript。
+- 对 high-FPR lineages 做 sensitivity analysis 或从主 lineage-level 解释中降权；
+- 追加更多公开小鼠 perturbation 数据集，扩大扰动类型覆盖。

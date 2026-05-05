@@ -7,6 +7,7 @@ import _bootstrap  # noqa: F401
 import joblib
 
 from devguard.classification import classify_cells_against_reference, summarize_classes
+from devguard.embedding import apply_batch_centering
 from devguard.io import ensure_dir, load_json, read_h5ad, write_dataframe, write_manifest
 from devguard.preprocessing import standardize_obs
 
@@ -21,10 +22,20 @@ def classify_perturbed_cells(config_path: str | Path) -> Path:
     dataset_id = str(adata.obs["dataset_id"].iloc[0]) if "dataset_id" in adata.obs else input_h5ad.stem
     adata = standardize_obs(adata, dataset_id=dataset_id)
     perturbed = adata[adata.obs["is_perturbed"].astype(bool).to_numpy()].copy()
+    obs_query = config.get("obs_query")
+    if obs_query:
+        keep_index = perturbed.obs.query(obs_query).index
+        perturbed = perturbed[keep_index].copy()
     if perturbed.n_obs == 0:
         raise ValueError("No perturbed cells found for classification.")
-    embeddings = model["embedding_model"].transform(perturbed)
     obs = perturbed.obs.copy().reset_index(drop=True)
+    embeddings = model["embedding_model"].transform(perturbed)
+    embeddings = apply_batch_centering(
+        embeddings,
+        obs,
+        model.get("batch_centering"),
+        fallback_columns=model.get("config", {}).get("embedding", {}).get("batch_center_fallback_columns", ["dataset_id"]),
+    )
     score_method = config.get("score_method", "knn_distance")
     results = classify_cells_against_reference(
         embeddings,

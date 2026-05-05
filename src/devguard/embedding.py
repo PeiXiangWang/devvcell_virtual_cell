@@ -90,3 +90,39 @@ class SVDEmbeddingModel:
         matrix = _normalize_total_log1p(_as_matrix(adata), self.normalize_total, self.log1p)
         selected = matrix[:, selected_idx]
         return np.asarray(self.svd_.transform(selected), dtype=float)
+
+
+def fit_batch_centering(embeddings: np.ndarray, obs, *, column: str) -> dict:
+    labels = obs[column].astype("string").fillna("NA").astype(str)
+    global_center = np.asarray(embeddings.mean(axis=0), dtype=float)
+    centers = {}
+    for label in sorted(labels.unique()):
+        mask = labels.eq(label).to_numpy()
+        centers[label] = np.asarray(embeddings[mask].mean(axis=0), dtype=float)
+    return {"column": column, "global_center": global_center, "centers": centers}
+
+
+def apply_batch_centering(
+    embeddings: np.ndarray,
+    obs,
+    state: dict | None,
+    *,
+    fallback_columns: list[str] | tuple[str, ...] = (),
+) -> np.ndarray:
+    if not state:
+        return embeddings
+    columns = [state["column"], *fallback_columns]
+    labels = None
+    for column in columns:
+        if column in obs.columns:
+            labels = obs[column].astype("string").fillna("NA").astype(str)
+            break
+    if labels is None:
+        return embeddings - state["global_center"]
+    centered = np.asarray(embeddings, dtype=float).copy()
+    centers = state["centers"]
+    global_center = state["global_center"]
+    for label in sorted(labels.unique()):
+        mask = labels.eq(label).to_numpy()
+        centered[mask] = centered[mask] - centers.get(label, global_center)
+    return centered
