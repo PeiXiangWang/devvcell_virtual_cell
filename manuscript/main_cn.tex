@@ -175,27 +175,29 @@ developmental-acceleration cells & 1 \\
 
 该结果说明干净 synthetic fixture 会低估 boundary failure risk，因此正式论文必须使用真实 sample-level split。
 
-\subsection*{GSE212050 control reference}
+\subsection*{GSE212050 strict sample-level control reference}
 
-GSE212050 已下载 Seurat RDS，导出 matrix/obs/var，并构建 15,000-cell downsample H5AD。
+GSE212050 已下载 Seurat RDS，并在完整元数据中筛选能形成严格 sample-level train/cal/test 的 stage-lineage 组。筛选条件为每组至少 200 cells、至少 8 个 sample units，每组最多均衡抽取 1,500 cells，并禁止 cell-level fallback。
 
 \begin{center}
 \begin{tabular}{lr}
 \toprule
 项目 & 数值 \\
 \midrule
-cells & 15,000 \\
+cells & 13,285 \\
 genes & 30,406 \\
-reference groups & 21 \\
-score-method records & 42 \\
-mean heldout FPR & 0.0472 \\
-max heldout FPR & 0.3333 \\
-low-heldout records & 22 / 42 \\
+reference groups & 9 \\
+score-method records & 18 \\
+split strategy & sample-level only \\
+cell fallback groups & 0 \\
+low-heldout records & 0 / 18 \\
+mean heldout FPR & 0.0487 \\
+max heldout FPR & 0.0723 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-平均 heldout FPR 接近 \(\alpha=0.05\)。最大 FPR 来自低 heldout 组，例如 \texttt{d4\_d4.5 / Intermediate mesoderm} 只有 3 个 heldout cells，已用 \texttt{low\_heldout\_flag} 标出。正式结果需要完整数据或更大 downsample，并过滤低 sample-unit group。
+严格 sample-level rerun 的平均 heldout FPR 接近 \(\alpha=0.05\)，最大 FPR 从早期随机 downsample 的 0.3333 降到 0.0723。所有 reference groups 均使用独立 sample units 进行 train/calibration/test split，且 \texttt{low\_heldout\_flag=False}。这组结果可作为当前真实 control calibration 的主结果，但正式论文仍应在完整数据或更大采样上复核。
 
 \subsection*{MouseGastrulationData WT/Tal1 chimera smoke test}
 

@@ -20,7 +20,7 @@ config/devguard/datasets_mouse.json
 | `MouseGastrulationData_WTChimera` | chimera control reference | WT chimera sample 1 已导出并完成 reference smoke test |
 | `MouseGastrulationData_Tal1Chimera` | real mouse perturbation | Tal1 chimera sample 1 已导出并完成 classification smoke test |
 | `MouseGastrulationData_TChimera` | real mouse perturbation | 已注册，尚未导出 |
-| `GSE212050` | organoid heterogeneity negative control | Seurat RDS 已下载，15k downsample H5AD 已构建，control reference 已跑通 |
+| `GSE212050` | organoid heterogeneity negative control | Seurat RDS 已下载，strict sample-level H5AD 已构建，control reference 已重跑 |
 | `GSE123187` | spatial/tomo validation | RAW tar 已下载，4-file preview H5AD 已构建 |
 | `devguard_quick_mouse` | software fixture | quick mode 可生成 |
 | `devguard_stress_mouse` | software stress fixture | stress mode 可生成 |
@@ -28,6 +28,7 @@ config/devguard/datasets_mouse.json
 ## 已验证的本地入口
 
 ```text
+data/processed/devguard/GSE212050_strict_sample_13285.h5ad
 data/processed/devguard/GSE212050_downsample_15000.h5ad
 data/processed/devguard/MouseGastrulationData_embryo_atlas_sample1.h5ad
 data/processed/devguard/MouseGastrulationData_wt_chimera_sample1.h5ad
@@ -36,6 +37,26 @@ data/processed/devguard/GSE123187_preview_4files.h5ad
 ```
 
 这些文件均属于生成数据或下载数据，受 `.gitignore` 控制，不提交 Git。
+
+## GSE212050 Strict Sample-Level Selection
+
+用于当前真实 control calibration 主结果的入口是：
+
+```text
+scripts/devguard/select_gse212050_strict_sample_cells.py
+config/devguard/normality_model_gse212050_strict_sample.json
+```
+
+筛选要求：
+
+| 参数 | 数值 |
+|---|---:|
+| min cells per stage-lineage group | 200 |
+| min sample units per stage-lineage group | 8 |
+| max cells per stage-lineage group | 1,500 |
+| allow cell fallback | false |
+
+重跑结果中 9 / 9 个 reference groups 使用 `split_strategy=sample`，0 个 group 使用 cell fallback。
 
 ## 统一 obs schema
 
@@ -63,6 +84,6 @@ data/processed/devguard/GSE123187_preview_4files.h5ad
 
 ## 当前限制
 
-- `GSE212050_downsample_15000` 是可运行的真实 control reference，但一部分 stage-lineage group 的 sample-unit/heldout cell 数较低，正式结果需要完整数据或更大 downsample。
-- `MouseGastrulationData` chimera smoke test 目前只导出 sample 1，不能形成真正 embryo-level split，reference 会退化为 cell-level fallback。
+- `GSE212050_strict_sample_13285` 是目前最可靠的真实 control calibration 入口，但仍是从 full Seurat object 中筛出的 balanced subset；正式论文应继续在完整数据或更大采样上复核。
+- `MouseGastrulationData` chimera smoke test 目前只导出 sample 1，不能形成真正 embryo-level split。
 - `GSE123187_preview_4files` 已进入 H5AD schema，但尚缺 cell type/lineage 注释和 axis mapping，不能直接作为 fate deviation validation。

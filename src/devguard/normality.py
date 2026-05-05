@@ -157,6 +157,7 @@ def build_normality_groups(
     split_strategy: str = "cell",
     split_unit_column: str = "sample_id",
     allow_cell_split_fallback: bool = True,
+    min_units_per_group: int = 0,
     seed: int = 42,
     score_methods: list[str] | tuple[str, ...] = SCORE_METHODS,
     k: int = 15,
@@ -177,6 +178,14 @@ def build_normality_groups(
     for (time_point, lineage), frame in grouped:
         if frame.shape[0] < min_cells_per_group:
             continue
+        if split_strategy == "sample" and min_units_per_group > 0:
+            if split_unit_column not in frame.columns:
+                if not allow_cell_split_fallback:
+                    raise ValueError(f"Missing split unit column for sample-level split: {split_unit_column}")
+            else:
+                n_units = frame[split_unit_column].astype("string").fillna("NA").nunique()
+                if n_units < min_units_per_group:
+                    continue
         resolved_strategy = split_strategy
         train_units: list[str] = []
         calibration_units: list[str] = []

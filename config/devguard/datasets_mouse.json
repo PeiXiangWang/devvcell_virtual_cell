@@ -94,8 +94,9 @@
       ],
       "local_path": "data/processed/devguard/GSE212050.h5ad",
       "downsample_test_path": "data/processed/devguard/GSE212050_downsample_15000.h5ad",
+      "strict_sample_test_path": "data/processed/devguard/GSE212050_strict_sample_13285.h5ad",
       "metadata_output": "results/devguard/dataset_metadata/GSE212050_metadata.csv",
-      "status": "seurat_rds_downloaded_downsample_h5ad_available"
+      "status": "seurat_rds_downloaded_strict_sample_reference_rerun_available"
     },
     {
       "dataset_id": "GSE123187",

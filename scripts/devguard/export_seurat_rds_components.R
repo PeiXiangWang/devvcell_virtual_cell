@@ -11,6 +11,7 @@ input <- if (length(args) >= 1) args[[1]] else "data/external/GSE212050/GSE21205
 out_dir <- if (length(args) >= 2) args[[2]] else "data/external/GSE212050/components"
 max_cells <- if (length(args) >= 3 && nzchar(args[[3]]) && args[[3]] != "all") as.integer(args[[3]]) else NA_integer_
 seed <- if (length(args) >= 4) as.integer(args[[4]]) else 42L
+cell_list_path <- if (length(args) >= 5 && nzchar(args[[5]]) && args[[5]] != "none") args[[5]] else NA_character_
 
 required <- c("SeuratObject", "Matrix")
 missing <- required[!vapply(required, requireNamespace, logical(1), quietly = TRUE)]
@@ -62,6 +63,16 @@ extract_assay_matrix <- function(obj, assay) {
 
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 obj <- read_rds_auto(input)
+if (!is.na(cell_list_path)) {
+  keep_cells <- readLines(cell_list_path, warn = FALSE)
+  keep_cells <- unique(keep_cells[nzchar(keep_cells)])
+  keep_cells <- intersect(keep_cells, colnames(obj))
+  if (length(keep_cells) == 0) {
+    stop("None of the requested cell IDs are present in the Seurat object.", call. = FALSE)
+  }
+  obj <- obj[, keep_cells]
+  message("Subset Seurat object to ", length(keep_cells), " requested cells from ", cell_list_path, ".")
+}
 if (!is.na(max_cells) && ncol(obj) > max_cells) {
   set.seed(seed)
   keep_cells <- sample(colnames(obj), max_cells)

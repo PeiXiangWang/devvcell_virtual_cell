@@ -86,6 +86,50 @@ def test_sample_split_indices_are_global_positions_with_string_index():
         assert observed_units == set(units)
 
 
+def test_sample_split_can_require_minimum_units():
+    rows = []
+    embeddings = []
+    for sample_idx in range(2):
+        for cell_idx in range(6):
+            rows.append(
+                {
+                    "time_point": "E6.5",
+                    "time_numeric": 6.5,
+                    "lineage": "epiblast",
+                    "is_control": True,
+                    "sample_id": f"low_{sample_idx}",
+                }
+            )
+            embeddings.append([sample_idx, cell_idx / 10])
+    for sample_idx in range(6):
+        for cell_idx in range(6):
+            rows.append(
+                {
+                    "time_point": "E7.5",
+                    "time_numeric": 7.5,
+                    "lineage": "mesoderm",
+                    "is_control": True,
+                    "sample_id": f"embryo_{sample_idx}",
+                }
+            )
+            embeddings.append([10 + sample_idx, cell_idx / 10])
+
+    groups = build_normality_groups(
+        np.asarray(embeddings, dtype=float),
+        pd.DataFrame(rows),
+        min_cells_per_group=12,
+        split_strategy="sample",
+        split_unit_column="sample_id",
+        min_units_per_group=3,
+        allow_cell_split_fallback=False,
+        score_methods=["knn_distance"],
+        k=3,
+    )
+
+    assert "E6.5__epiblast" not in groups
+    assert groups["E7.5__mesoderm"].split_strategy == "sample"
+
+
 def test_bootstrap_dti_ci_returns_sample_level_interval():
     frame = pd.DataFrame(
         {

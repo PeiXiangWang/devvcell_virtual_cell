@@ -49,6 +49,7 @@ def build_control_reference(config_path: str | Path) -> Path:
         split_strategy=sample_split.get("strategy", "cell"),
         split_unit_column=sample_split.get("unit_column", "sample_id"),
         allow_cell_split_fallback=bool(sample_split.get("allow_cell_fallback", True)),
+        min_units_per_group=int(sample_split.get("min_units_per_group", 0)),
         seed=int(config.get("seed", 42)),
         score_methods=config.get("score_methods", ["knn_distance", "mahalanobis"]),
         k=int(config.get("knn", {}).get("k", 15)),
