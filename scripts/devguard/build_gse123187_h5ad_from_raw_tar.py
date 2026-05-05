@@ -41,6 +41,24 @@ def _mode_from_name(name: str) -> str:
     return "unknown"
 
 
+def _axis_annotations(positions: pd.Index, mode: str) -> tuple[list[float], list[str]]:
+    if mode != "tomo_seq":
+        return [float("nan")] * len(positions), ["NA"] * len(positions)
+    numeric = pd.to_numeric(pd.Series(positions.astype(str)), errors="coerce")
+    if numeric.notna().sum() >= 2:
+        denominator = max(float(numeric.max() - numeric.min()), 1.0)
+        fraction = ((numeric - numeric.min()) / denominator).astype(float)
+    else:
+        denominator = max(len(positions) - 1, 1)
+        fraction = pd.Series(np.arange(len(positions), dtype=float) / denominator)
+    bins = pd.cut(
+        fraction,
+        bins=[-0.001, 0.2, 0.4, 0.6, 0.8, 1.001],
+        labels=["axis_00_20", "axis_20_40", "axis_40_60", "axis_60_80", "axis_80_100"],
+    )
+    return fraction.tolist(), bins.astype(str).tolist()
+
+
 def _read_count_member(tar: tarfile.TarFile, name: str) -> tuple[sparse.csr_matrix, pd.DataFrame, pd.DataFrame]:
     member = tar.extractfile(name)
     if member is None:
@@ -59,6 +77,8 @@ def _read_count_member(tar: tarfile.TarFile, name: str) -> tuple[sparse.csr_matr
     )
     sample_id = _sample_id_from_name(name)
     time_point = _time_point_from_name(name)
+    mode = _mode_from_name(name)
+    axis_fraction, axis_bin = _axis_annotations(frame.columns, mode)
     obs = pd.DataFrame(
         {
             "cell_id": [f"{sample_id}_{cell}" for cell in frame.columns.astype(str)],
@@ -78,9 +98,11 @@ def _read_count_member(tar: tarfile.TarFile, name: str) -> tuple[sparse.csr_matr
             "lineage": "NA",
             "is_control": True,
             "is_perturbed": False,
-            "gse123187_mode": _mode_from_name(name),
+            "gse123187_mode": mode,
             "source_member": name,
             "tomo_position": list(frame.columns.astype(str)),
+            "tomo_axis_fraction": axis_fraction,
+            "tomo_axis_bin": axis_bin,
         }
     )
     obs.index = obs["cell_id"].astype(str)
@@ -93,6 +115,8 @@ def build_gse123187_h5ad_from_raw_tar(
     *,
     max_files: int | None = None,
     count_suffix: str = ".coutb.tsv.gz",
+    member_pattern: str | None = None,
+    mode_filter: str | None = None,
 ) -> Path:
     raw_tar = Path(raw_tar)
     matrices = []
@@ -101,6 +125,11 @@ def build_gse123187_h5ad_from_raw_tar(
     selected_names = []
     with tarfile.open(raw_tar) as tar:
         names = [name for name in tar.getnames() if name.endswith(count_suffix)]
+        if member_pattern:
+            regex = re.compile(member_pattern)
+            names = [name for name in names if regex.search(name)]
+        if mode_filter and mode_filter != "any":
+            names = [name for name in names if _mode_from_name(name) == mode_filter]
         names = sorted(names)
         if max_files is not None:
             names = names[:max_files]
@@ -131,7 +160,7 @@ def build_gse123187_h5ad_from_raw_tar(
         name="build_gse123187_h5ad_from_raw_tar",
         inputs=[str(raw_tar)],
         outputs=[str(output_path), str(metadata_path)],
-        parameters={"max_files": max_files, "count_suffix": count_suffix},
+        parameters={"max_files": max_files, "count_suffix": count_suffix, "member_pattern": member_pattern, "mode_filter": mode_filter},
         metrics={"n_cells": int(adata.n_obs), "n_genes": int(adata.n_vars), "n_files": len(selected_names)},
     )
     return output_path
@@ -143,12 +172,16 @@ def main() -> None:
     parser.add_argument("--output", default="data/processed/devguard/GSE123187_preview.h5ad")
     parser.add_argument("--max-files", type=int, default=4)
     parser.add_argument("--count-suffix", default=".coutb.tsv.gz")
+    parser.add_argument("--member-pattern", default=None)
+    parser.add_argument("--mode-filter", default=None, choices=[None, "any", "tomo_seq", "single_gastruloid", "unknown"])
     args = parser.parse_args()
     build_gse123187_h5ad_from_raw_tar(
         args.raw_tar,
         args.output,
         max_files=args.max_files,
         count_suffix=args.count_suffix,
+        member_pattern=args.member_pattern,
+        mode_filter=args.mode_filter,
     )
 
 

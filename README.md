@@ -56,6 +56,25 @@ python scripts/devguard/compute_developmental_tolerance_index.py
 python scripts/devguard/build_devguard_figures.py
 ```
 
+## Current Real-Data Extensions
+
+Additional Tal1/T robustness, GSE212050 organoid heterogeneity, and GSE123187
+tomo-seq lineage-mapping outputs are documented in:
+
+```text
+docs/DEVGUARD_TAL1_T_ROBUSTNESS_AND_VALIDATION_CN.md
+```
+
+The corresponding entry points are:
+
+```bash
+python scripts/devguard/analyze_chimera_robustness.py
+python scripts/devguard/analyze_tal1_marker_modules.py
+python scripts/devguard/analyze_gse212050_organoid_heterogeneity.py
+python scripts/devguard/build_gse123187_h5ad_from_raw_tar.py --mode-filter tomo_seq --max-files 4 --output data/processed/devguard/GSE123187_tomo_3files.h5ad
+python scripts/devguard/map_gse123187_spatial_tomo_lineages.py
+```
+
 ## Chinese Summary
 
 DevGuard 是一个独立的小鼠发育扰动正常性判定项目。它不使用 RDEG
