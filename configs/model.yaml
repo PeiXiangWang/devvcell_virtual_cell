@@ -3,15 +3,20 @@ model_dir: results/swarmlineage/models
 simulation_dir: results/swarmlineage/simulations
 metrics_path: tables/final_metrics.csv
 holdout_time: 15.0
+split_mode: strict_time_holdout
 time_key: time_numeric
 cell_type_key: lineage
 latent_key: X_pca
 teacher_velocity_key: X_ot_velocity
 seeds: [7, 17, 23, 42, 99]
 epochs: 45
+quick_epochs: 8
+rollout_steps: 4
+dt: 0.25
 batch_size: 512
 learning_rate: 0.001
 hidden_dim: 96
 simulation_cells_per_seed: 900
 metric_sample_size: 700
-
+event_log_path: tables/birth_death_event_log.csv
+baseline_execution_matrix_path: reports/baseline_execution_matrix.csv

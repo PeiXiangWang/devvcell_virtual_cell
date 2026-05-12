@@ -11,11 +11,14 @@ from src.utils.config import ensure_dir, load_config, write_text
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/model.yaml")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
     _ = load_config(args.config)
-    ensure_dir("reports")
-    lr = pd.read_csv("tables/lr_knockout_predictions.csv") if Path("tables/lr_knockout_predictions.csv").exists() else pd.DataFrame()
-    gene = pd.read_csv("tables/gene_perturbation_candidates.csv") if Path("tables/gene_perturbation_candidates.csv").exists() else pd.DataFrame()
+    report_dir = "reports/quick_fixture" if args.quick_fixture else "reports"
+    table_dir = "tables/quick_fixture" if args.quick_fixture else "tables"
+    ensure_dir(report_dir)
+    lr = pd.read_csv(f"{table_dir}/lr_knockout_predictions.csv") if Path(f"{table_dir}/lr_knockout_predictions.csv").exists() else pd.DataFrame()
+    gene = pd.read_csv(f"{table_dir}/gene_perturbation_candidates.csv") if Path(f"{table_dir}/gene_perturbation_candidates.csv").exists() else pd.DataFrame()
     text = [
         "# Perturbation Evaluation",
         "",
@@ -30,8 +33,8 @@ def main() -> None:
         gene.to_markdown(index=False) if not gene.empty else "No gene perturbation candidates generated.",
         "",
     ]
-    write_text("reports/perturbation_evaluation.md", "\n".join(text))
-    print({"report": "reports/perturbation_evaluation.md"})
+    write_text(f"{report_dir}/perturbation_evaluation.md", "\n".join(text))
+    print({"report": f"{report_dir}/perturbation_evaluation.md"})
 
 
 if __name__ == "__main__":

@@ -9,6 +9,10 @@ data/
 !src/data/
 !src/data/*.py
 results/
+figures/
+processed/
+reports/quick_fixture/
+tables/quick_fixture/
 Old/*.zip
 
 # Model/checkpoint artifacts.

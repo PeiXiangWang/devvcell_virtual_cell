@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 from sklearn.neighbors import NearestNeighbors
 
+from src.model.cci import cci_context
 from src.ot_teacher.diagnostics import coupling_lineage_edges, js_divergence
 from src.utils.config import ensure_dir, load_config, write_json, write_text
 
@@ -92,10 +93,17 @@ def build_teacher(cfg: dict) -> dict:
     time_key = cfg.get("time_key", "time_numeric")
     cell_type_key = cfg.get("cell_type_key", "lineage")
     coupling_dir = Path(cfg.get("couplings_dir", "processed/ot_couplings"))
-    index_path = coupling_dir / "moscot_coupling_index.csv"
+    index_path = Path(cfg.get("teacher_index_path", coupling_dir / "teacher_coupling_index.csv"))
     if not index_path.exists():
-        raise FileNotFoundError(f"Missing coupling index: {index_path}. Run run_moscot first.")
+        legacy = coupling_dir / "moscot_coupling_index.csv"
+        if legacy.exists():
+            index_path = legacy
+        else:
+            raise FileNotFoundError(f"Missing coupling index: {index_path}. Run run_moscot first.")
     index = pd.read_csv(index_path)
+    index = index[index["file"].astype(str).str.len() > 0].copy()
+    if index.empty:
+        raise ValueError("No teacher couplings available after held-out edge filtering.")
     terminal_time = float(pd.to_numeric(obs[time_key], errors="coerce").max())
     terminal_counts = obs.loc[pd.to_numeric(obs[time_key], errors="coerce") == terminal_time, cell_type_key].astype(str).value_counts()
     terminal_fates = terminal_counts.head(int(cfg.get("max_terminal_fates", 8))).index.tolist()
@@ -163,12 +171,15 @@ def build_teacher(cfg: dict) -> dict:
     for j, col in enumerate(fate_cols):
         adata.obs[col] = fate_probs[:, j]
     adata.obs["ot_fate_max"] = np.array(terminal_fates, dtype=object)[np.argmax(fate_probs, axis=1)]
+    cci_signal, lr_pairs = cci_context(adata, obs[cell_type_key].astype(str).to_numpy())
+    adata.obs["cci_signal"] = cci_signal
     adata.uns["swarmlineage_ot_teacher"] = {
-        "backend": "moscot_entrypoint_with_pot_fallback",
+        "backend": str(index.get("teacher_backend", pd.Series(["toy_sinkhorn_fallback"])).iloc[0]),
         "terminal_time": terminal_time,
         "terminal_fates": terminal_fates,
         "coupling_index": str(index_path),
-        "warning": "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage.",
+        "lr_pairs_detected": [f"{a}-{b}" for a, b in lr_pairs],
+        "warning": "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage. toy_sinkhorn_fallback is not a native moscot/WOT result.",
     }
     out_path = cfg.get("teacher_path", "processed/ot_teacher.h5ad")
     adata.write_h5ad(out_path)
@@ -196,13 +207,14 @@ def build_teacher(cfg: dict) -> dict:
     report = [
         "# OT Teacher Report",
         "",
-        "The teacher was built from adjacent developmental-stage entropic OT couplings. Native moscot availability is recorded, but quick execution uses a POT/SciPy fallback plan when native moscot is too slow or unavailable.",
+        "The teacher was built from adjacent developmental-stage entropic OT couplings. If native moscot is unavailable, couplings are explicitly labelled toy_sinkhorn_fallback and cannot support high-level moscot claims.",
         "",
         f"- cells: {adata.n_obs}",
         f"- latent dimensions: {d}",
         f"- terminal pseudo-fates: {', '.join(terminal_fates)}",
         f"- mean transition entropy: {float(np.nanmean(entropy)):.4f}",
         f"- mean growth proxy: {float(np.nanmean(growth)):.4f}",
+        f"- teacher backend: {adata.uns['swarmlineage_ot_teacher']['backend']}",
         f"- teacher reliability score, heuristic not a publication claim: {reliability_score:.4f}",
         "",
         "## Caveats",
@@ -217,7 +229,14 @@ def build_teacher(cfg: dict) -> dict:
         sens.to_csv("tables/ot_teacher_sensitivity.csv", index=False)
         report += ["## WOT-Style Sensitivity", "", sens.to_markdown(index=False), ""]
     write_text("reports/ot_teacher_report.md", "\n".join(report))
-    payload = {"teacher_path": out_path, "reliability_score": reliability_score, "terminal_fates": terminal_fates, "n_pairs": int(index.shape[0])}
+    payload = {
+        "teacher_path": out_path,
+        "teacher_backend": adata.uns["swarmlineage_ot_teacher"]["backend"],
+        "high_level_claims_allowed": adata.uns["swarmlineage_ot_teacher"]["backend"] in {"native_moscot", "native_wot"},
+        "reliability_score": reliability_score,
+        "terminal_fates": terminal_fates,
+        "n_pairs": int(index.shape[0]),
+    }
     write_json("processed/ot_teacher_summary.json", payload)
     return payload
 
@@ -225,8 +244,17 @@ def build_teacher(cfg: dict) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/ot_teacher.yaml")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
     cfg = load_config(args.config)
+    if args.quick_fixture:
+        cfg = dict(cfg)
+        cfg["adata_path"] = "processed/quick_fixture/swarmlineage_input.h5ad"
+        cfg["teacher_path"] = "processed/quick_fixture/ot_teacher.h5ad"
+        cfg["couplings_dir"] = "processed/quick_fixture/ot_couplings"
+        cfg["fate_probabilities_path"] = "processed/quick_fixture/ot_fate_probabilities.parquet"
+        cfg["teacher_index_path"] = "processed/quick_fixture/ot_couplings/teacher_coupling_index.csv"
+        cfg["holdout_time"] = 14.0
     result = build_teacher(cfg)
     print(json.dumps(result, indent=2))
 

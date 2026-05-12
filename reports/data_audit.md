@@ -4,12 +4,12 @@ This audit was generated from local files only. It records fields that are avail
 
 ## Summary
 
-- Files scanned: 84
-- Readable expression objects: 25
-- Time/stage-capable files: 21
-- Perturbation/condition-capable files: 23
+- Files scanned: 86
+- Readable expression objects: 28
+- Time/stage-capable files: 24
+- Perturbation/condition-capable files: 26
 - Spatial candidate files: 2
-- Ligand-receptor candidate files: 11
+- Ligand-receptor candidate files: 14
 
 ## File-Level Schema
 
@@ -761,6 +761,22 @@ This audit was generated from local files only. It records fields that are avail
 - true lineage tracing likely present: False
 - perturb-seq/treatment labels likely present: True
 
+### `data\fixtures\swarmlineage_synthetic.h5ad`
+
+- format: h5ad
+- readable: True
+- shape: 450 cells/rows × 120 genes/features
+- time/day/stage/pseudotime: time_point, time_numeric, stage_num
+- cell type/cluster/fate/lineage: lineage, cell_type
+- lineage/barcode: not detected
+- batch/donor/condition/treatment/perturbation: condition, batch, is_perturbed
+- spatial coordinates: not detected
+- multimodal fields: not detected
+- cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
+- ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Cxcr4, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, CXCR4, KDR
+- true lineage tracing likely present: False
+- perturb-seq/treatment labels likely present: True
+
 ### `data\processed\cell_level_subset_v1.h5ad`
 
 - format: h5ad
@@ -1221,7 +1237,23 @@ This audit was generated from local files only. It records fields that are avail
 - true lineage tracing likely present: False
 - perturb-seq/treatment labels likely present: False
 
-### `processed\ot_couplings\moscot_coupling_index.csv`
+### `processed\ot_teacher.h5ad`
+
+- format: h5ad
+- readable: True
+- shape: 8000 cells/rows × 2000 genes/features
+- time/day/stage/pseudotime: author_day, author_somite_count, development_stage, stage_num, time_numeric, time_point, ot_target_time
+- cell type/cluster/fate/lineage: author_major_cell_cluster, author_cell_type, cell_type, lineage, fate_prob_neural, fate_prob_erythroid, fate_prob_mesoderm_muscle, ot_fate_max
+- lineage/barcode: not detected
+- batch/donor/condition/treatment/perturbation: donor_id, disease, condition, batch, is_perturbed
+- spatial coordinates: not detected
+- multimodal fields: not detected
+- cell-cycle/proliferation markers: not detected
+- ligand-receptor genes: Kitl, Kit, Kdr, KIT, KDR
+- true lineage tracing likely present: False
+- perturb-seq/treatment labels likely present: True
+
+### `processed\quick_fixture\ot_couplings\teacher_coupling_index.csv`
 
 - format: csv
 - readable: False
@@ -1236,22 +1268,7 @@ This audit was generated from local files only. It records fields that are avail
 - true lineage tracing likely present: False
 - perturb-seq/treatment labels likely present: False
 
-### `processed\ot_couplings\wot_coupling_index.csv`
-
-- format: csv
-- readable: False
-- time/day/stage/pseudotime: not detected
-- cell type/cluster/fate/lineage: not detected
-- lineage/barcode: not detected
-- batch/donor/condition/treatment/perturbation: not detected
-- spatial coordinates: not detected
-- multimodal fields: not detected
-- cell-cycle/proliferation markers: not detected
-- ligand-receptor genes: not detected
-- true lineage tracing likely present: False
-- perturb-seq/treatment labels likely present: False
-
-### `processed\ot_fate_probabilities.parquet`
+### `processed\quick_fixture\ot_fate_probabilities.parquet`
 
 - format: parquet
 - readable: False
@@ -1266,19 +1283,35 @@ This audit was generated from local files only. It records fields that are avail
 - true lineage tracing likely present: False
 - perturb-seq/treatment labels likely present: False
 
-### `processed\ot_teacher.h5ad`
+### `processed\quick_fixture\ot_teacher.h5ad`
 
 - format: h5ad
 - readable: True
-- shape: 8000 cells/rows × 2000 genes/features
-- time/day/stage/pseudotime: author_day, author_somite_count, development_stage, stage_num, time_numeric, time_point, ot_target_time
-- cell type/cluster/fate/lineage: author_major_cell_cluster, author_cell_type, cell_type, lineage, fate_prob_neural, fate_prob_erythroid, fate_prob_mesoderm_muscle, ot_fate_max
+- shape: 450 cells/rows × 100 genes/features
+- time/day/stage/pseudotime: time_point, time_numeric, stage_num, ot_target_time
+- cell type/cluster/fate/lineage: lineage, cell_type, fate_prob_neural, fate_prob_mesoderm_muscle, ot_fate_max
 - lineage/barcode: not detected
-- batch/donor/condition/treatment/perturbation: donor_id, disease, condition, batch, is_perturbed
+- batch/donor/condition/treatment/perturbation: condition, batch, is_perturbed
 - spatial coordinates: not detected
 - multimodal fields: not detected
-- cell-cycle/proliferation markers: not detected
-- ligand-receptor genes: Kitl, Kit, Kdr, KIT, KDR
+- cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
+- ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, KDR
+- true lineage tracing likely present: False
+- perturb-seq/treatment labels likely present: True
+
+### `processed\quick_fixture\swarmlineage_input.h5ad`
+
+- format: h5ad
+- readable: True
+- shape: 450 cells/rows × 100 genes/features
+- time/day/stage/pseudotime: time_point, time_numeric, stage_num
+- cell type/cluster/fate/lineage: lineage, cell_type
+- lineage/barcode: not detected
+- batch/donor/condition/treatment/perturbation: condition, batch, is_perturbed
+- spatial coordinates: not detected
+- multimodal fields: not detected
+- cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
+- ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, KDR
 - true lineage tracing likely present: False
 - perturb-seq/treatment labels likely present: True
 

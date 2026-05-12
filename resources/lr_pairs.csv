@@ -1,0 +1,13 @@
+ligand,receptor,source
+Fgf8,Fgfr1,curated_mouse_development
+Wnt3,Fzd1,curated_mouse_development
+Kitl,Kit,curated_mouse_development
+Cxcl12,Cxcr4,curated_mouse_development
+Vegfa,Kdr,curated_mouse_development
+Dll1,Notch1,curated_mouse_development
+FGF8,FGFR1,curated_human_development
+WNT3,FZD1,curated_human_development
+KITLG,KIT,curated_human_development
+CXCL12,CXCR4,curated_human_development
+VEGFA,KDR,curated_human_development
+DLL1,NOTCH1,curated_human_development

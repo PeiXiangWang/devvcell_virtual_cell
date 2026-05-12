@@ -1,10 +1,10 @@
 {
   "summary": {
-    "n_files_scanned": 84,
-    "n_readable_expression_objects": 25,
+    "n_files_scanned": 86,
+    "n_readable_expression_objects": 28,
     "formats": {
-      "csv": 48,
-      "h5ad": 20,
+      "csv": 47,
+      "h5ad": 23,
       "mtx": 10,
       "gz": 5,
       "parquet": 1
@@ -19,6 +19,7 @@
       "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\matrix.mtx",
       "data\\external\\MouseGastrulationData\\wt_chimera_full\\matrix.mtx",
       "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
+      "data\\fixtures\\swarmlineage_synthetic.h5ad",
       "data\\processed\\cell_level_subset_v1.h5ad",
       "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
       "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
@@ -30,6 +31,8 @@
       "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
       "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
       "processed\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\swarmlineage_input.h5ad",
       "processed\\swarmlineage_input.h5ad"
     ],
     "perturbation_capable_files": [
@@ -44,6 +47,7 @@
       "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
       "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
       "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\fixtures\\swarmlineage_synthetic.h5ad",
       "data\\processed\\cell_level_subset_v1.h5ad",
       "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
       "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
@@ -55,6 +59,8 @@
       "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
       "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
       "processed\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\swarmlineage_input.h5ad",
       "processed\\swarmlineage_input.h5ad"
     ],
     "lineage_or_celltype_files": [
@@ -71,6 +77,7 @@
       "data\\external\\response_transfer\\primary_perturbation.h5ad",
       "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
       "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\fixtures\\swarmlineage_synthetic.h5ad",
       "data\\processed\\cell_level_subset_v1.h5ad",
       "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
       "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
@@ -82,6 +89,8 @@
       "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
       "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
       "processed\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\swarmlineage_input.h5ad",
       "processed\\swarmlineage_input.h5ad"
     ],
     "spatial_candidate_files": [
@@ -92,6 +101,7 @@
       "data\\external\\response_transfer\\primary_perturbation.h5ad",
       "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
       "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\fixtures\\swarmlineage_synthetic.h5ad",
       "data\\processed\\cell_level_subset_v1.h5ad",
       "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
       "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
@@ -99,6 +109,8 @@
       "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
       "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
       "processed\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\ot_teacher.h5ad",
+      "processed\\quick_fixture\\swarmlineage_input.h5ad",
       "processed\\swarmlineage_input.h5ad"
     ]
   },
@@ -1317,6 +1329,76 @@
         "KDR",
         "DLL1",
         "NOTCH1"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\fixtures\\swarmlineage_synthetic.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        450,
+        120
+      ],
+      "obs_columns": [
+        "time_point",
+        "time_numeric",
+        "stage_num",
+        "lineage",
+        "cell_type",
+        "condition",
+        "batch",
+        "cell_cycle_score_seed",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "swarm_gene_symbol"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric",
+        "stage_num"
+      ],
+      "cell_type_fields": [
+        "lineage",
+        "cell_type"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "Mki67",
+        "Top2a",
+        "Pcna"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Cxcl12",
+        "Cxcr4",
+        "Kdr",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "CXCL12",
+        "CXCR4",
+        "KDR"
       ],
       "has_lineage_tracing": false,
       "has_perturbation_labels": true
@@ -2553,24 +2635,6 @@
       ]
     },
     {
-      "path": "processed\\ot_couplings\\moscot_coupling_index.csv",
-      "format": "csv",
-      "readable": false,
-      "note": "catalogued but not deeply inspected"
-    },
-    {
-      "path": "processed\\ot_couplings\\wot_coupling_index.csv",
-      "format": "csv",
-      "readable": false,
-      "note": "catalogued but not deeply inspected"
-    },
-    {
-      "path": "processed\\ot_fate_probabilities.parquet",
-      "format": "parquet",
-      "readable": false,
-      "note": "catalogued but not deeply inspected"
-    },
-    {
       "path": "processed\\ot_teacher.h5ad",
       "format": "h5ad",
       "readable": true,
@@ -2677,6 +2741,192 @@
         "Kit",
         "Kdr",
         "KIT",
+        "KDR"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "processed\\quick_fixture\\ot_couplings\\teacher_coupling_index.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "processed\\quick_fixture\\ot_fate_probabilities.parquet",
+      "format": "parquet",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "processed\\quick_fixture\\ot_teacher.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        450,
+        100
+      ],
+      "obs_columns": [
+        "time_point",
+        "time_numeric",
+        "stage_num",
+        "lineage",
+        "cell_type",
+        "condition",
+        "batch",
+        "cell_cycle_score_seed",
+        "is_perturbed",
+        "split_role",
+        "n_counts",
+        "n_genes",
+        "pct_mito",
+        "cell_cycle_score",
+        "ot_transition_entropy",
+        "ot_growth",
+        "ot_target_time",
+        "fate_prob_neural",
+        "fate_prob_mesoderm_muscle",
+        "ot_fate_max",
+        "cci_signal"
+      ],
+      "var_columns": [
+        "swarm_gene_symbol",
+        "highly_variable"
+      ],
+      "obsm_keys": [
+        "X_ot_barycentric",
+        "X_ot_velocity",
+        "X_pca",
+        "X_umap"
+      ],
+      "layers": [],
+      "uns_keys": [
+        "pca_variance_ratio",
+        "swarmlineage_ot_teacher",
+        "swarmlineage_preprocess"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric",
+        "stage_num",
+        "ot_target_time"
+      ],
+      "cell_type_fields": [
+        "lineage",
+        "cell_type",
+        "fate_prob_neural",
+        "fate_prob_mesoderm_muscle",
+        "ot_fate_max"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "Mki67",
+        "Top2a",
+        "Pcna"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Cxcl12",
+        "Kdr",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "CXCL12",
+        "KDR"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "processed\\quick_fixture\\swarmlineage_input.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        450,
+        100
+      ],
+      "obs_columns": [
+        "time_point",
+        "time_numeric",
+        "stage_num",
+        "lineage",
+        "cell_type",
+        "condition",
+        "batch",
+        "cell_cycle_score_seed",
+        "is_perturbed",
+        "split_role",
+        "n_counts",
+        "n_genes",
+        "pct_mito",
+        "cell_cycle_score"
+      ],
+      "var_columns": [
+        "swarm_gene_symbol",
+        "highly_variable"
+      ],
+      "obsm_keys": [
+        "X_pca",
+        "X_umap"
+      ],
+      "layers": [],
+      "uns_keys": [
+        "pca_variance_ratio",
+        "swarmlineage_preprocess"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric",
+        "stage_num"
+      ],
+      "cell_type_fields": [
+        "lineage",
+        "cell_type"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "Mki67",
+        "Top2a",
+        "Pcna"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Cxcl12",
+        "Kdr",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "CXCL12",
         "KDR"
       ],
       "has_lineage_tracing": false,

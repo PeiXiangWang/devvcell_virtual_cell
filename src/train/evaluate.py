@@ -3,153 +3,172 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
-from src.utils.config import load_config, write_text
+from src.utils.config import ensure_dir, load_config, write_text
+
+
+CORE = ["sinkhorn", "mmd_rbf", "energy", "celltype_composition_rmse"]
 
 
 def _best_model(metrics: pd.DataFrame) -> str:
-    score = metrics.groupby("model")[["sinkhorn", "mmd_rbf", "energy", "celltype_composition_rmse"]].mean()
+    score = metrics.groupby("model")[CORE].mean()
     ranks = score.rank(axis=0, ascending=True).mean(axis=1)
     return str(ranks.sort_values().index[0])
+
+
+def _strongest_baseline(metrics: pd.DataFrame) -> str:
+    candidates = ["M0_linear_label_interpolation", "M0b_ot_interpolation", "M1_intrinsic_neural", "M2_ot_teacher_force"]
+    sub = metrics[metrics["model"].isin(candidates)]
+    return _best_model(sub)
+
+
+def _diagnose(metrics: pd.DataFrame, full: str, baseline: str) -> list[str]:
+    mean = metrics.groupby("model")[CORE].mean()
+    lines = []
+    if full not in mean.index or baseline not in mean.index:
+        return ["- Full model or strongest baseline missing from metrics."]
+    diff = mean.loc[full] - mean.loc[baseline]
+    worse = diff[diff > 0].sort_values(ascending=False)
+    if worse.empty:
+        lines.append("- Full model improves all core distance/composition metrics relative to the strongest baseline.")
+    else:
+        lines.append(f"- Full model is worse than `{baseline}` on: " + ", ".join(f"{k} (+{v:.4g})" for k, v in worse.items()))
+        if "M7_ot_swarm_birth_death_diffusion" in mean.index and mean.loc["M7_ot_swarm_birth_death_diffusion", "sinkhorn"] > mean.loc[baseline, "sinkhorn"]:
+            lines.append("- Diagnostic: swarm/birth/diffusion coefficients or noise are likely too strong for the current teacher; inspect event counts and sigma calibration.")
+        if "M8_ot_swarm_birth_death_diffusion_cci" in mean.index and mean.loc["M8_ot_swarm_birth_death_diffusion_cci", "sinkhorn"] > mean.loc["M7_ot_swarm_birth_death_diffusion", "sinkhorn"]:
+            lines.append("- Diagnostic: CCI graph is not improving reconstruction; LR edges may be sparse, mis-specified or not relevant to this dataset.")
+        if "M9_full_memory" in mean.index and mean.loc["M9_full_memory", "sinkhorn"] > mean.loc["M8_ot_swarm_birth_death_diffusion_cci", "sinkhorn"]:
+            lines.append("- Diagnostic: memory field is over-steering or poorly calibrated; no_memory vs memory ablation does not support retaining memory.")
+    return lines
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/train.yaml")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
     cfg = load_config(args.config)
     model_cfg = load_config(cfg.get("model_config", "configs/model.yaml"))
+    if args.quick_fixture:
+        cfg = dict(cfg)
+        model_cfg = dict(model_cfg)
+        model_cfg["metrics_path"] = "tables/quick_fixture/final_metrics.csv"
+        cfg["baseline_execution_matrix_path"] = "reports/quick_fixture/baseline_execution_matrix.csv"
+        cfg["module_contribution_report"] = "reports/quick_fixture/module_contribution_audit.md"
+        cfg["scientific_gap_report"] = "reports/quick_fixture/scientific_gap_audit.md"
+    ensure_dir("reports/quick_fixture" if args.quick_fixture else "reports")
     metrics_path = model_cfg.get("metrics_path", "tables/final_metrics.csv")
     metrics = pd.read_csv(metrics_path)
     best = _best_model(metrics)
+    strongest = _strongest_baseline(metrics)
+    full = "M9_full_memory"
     mean = metrics.groupby("model")[["sinkhorn", "mmd_rbf", "energy", "knn_two_sample_accuracy", "celltype_composition_rmse"]].agg(["mean", "std"])
-    mean.to_csv("tables/final_model_metric_summary.csv")
-    baseline = "M0_ot_interpolation"
-    full = "M9_full_pheromone"
-    comparison = metrics[metrics["model"].isin([baseline, full])].groupby("model")[["sinkhorn", "mmd_rbf", "energy", "celltype_composition_rmse"]].mean()
+    ensure_dir("tables/quick_fixture" if args.quick_fixture else "tables")
+    mean.to_csv("tables/quick_fixture/final_model_metric_summary.csv" if args.quick_fixture else "tables/final_model_metric_summary.csv")
+    comparison = metrics[metrics["model"].isin([strongest, full])].groupby("model")[CORE].mean()
     supported = False
-    if baseline in comparison.index and full in comparison.index:
-        supported = bool((comparison.loc[full] < comparison.loc[baseline]).sum() >= 2)
+    wins = 0
+    if strongest in comparison.index and full in comparison.index:
+        wins = int((comparison.loc[full] < comparison.loc[strongest]).sum())
+        supported = bool(wins >= 2)
+    diagnostics = _diagnose(metrics, full, strongest)
+    baseline_path = cfg.get("baseline_execution_matrix_path", "reports/baseline_execution_matrix.csv")
+    baseline_matrix = pd.read_csv(baseline_path) if Path(baseline_path).exists() else pd.DataFrame()
+
+    module_report = [
+        "# Module Contribution Audit",
+        "",
+        f"- strongest baseline: `{strongest}`",
+        f"- full model: `{full}`",
+        f"- full-model core metric wins over strongest baseline: {wins}/4",
+        "",
+        "## Mean Metrics",
+        "",
+        metrics.groupby("model")[CORE].mean().to_markdown(),
+        "",
+        "## Diagnostics",
+        "",
+        *diagnostics,
+        "",
+    ]
+    write_text(cfg.get("module_contribution_report", "reports/module_contribution_audit.md"), "\n".join(module_report))
+
+    scientific_gap = [
+        "# Scientific Gap Audit",
+        "",
+        f"- Best mean-rank model: `{best}`.",
+        f"- Strongest baseline: `{strongest}`.",
+        f"- Full model passes the predefined gate of beating the strongest baseline on at least two core metrics: {supported}.",
+        "- High-level claims are allowed only with native_moscot/native_wot or externally validated teacher. The current fallback teacher remains toy_sinkhorn_fallback unless reports say otherwise.",
+        "",
+        "## Baseline Execution Matrix",
+        "",
+        baseline_matrix.to_markdown(index=False) if not baseline_matrix.empty else "No baseline execution matrix found.",
+        "",
+        "## Required Next Steps Before Strong Claims",
+        "",
+        "- Run native moscot TemporalProblem and extract native transport plans, or validate the fallback teacher externally.",
+        "- Add real external held-out dataset validation and lineage/perturbation validation.",
+        "- Tune trainable swarm, event and memory coefficients only on training times, then re-run the strict holdout gate.",
+        "- Keep negative controls in the report; shuffled time/LR controls must degrade performance.",
+        "",
+    ]
+    write_text(cfg.get("scientific_gap_report", "reports/scientific_gap_audit.md"), "\n".join(scientific_gap))
+
     editorial = [
         "# Editorial Assessment",
         "",
-        f"- Best mean-rank model in current quick run: `{best}`.",
-        f"- Full model beats OT interpolation on at least two core metrics: {supported}.",
-        "- Current evidence level: computational prototype on a subsampled real mouse developmental dataset.",
+        f"- Best mean-rank model in current run: `{best}`.",
+        f"- Full model beats strongest baseline `{strongest}` on at least two core metrics: {supported}.",
+        "- Current evidence level: computational research prototype.",
         "",
-        "## Nature/Nature Methods/Nature Biotechnology Readiness",
+        "## Readiness",
         "",
-    ]
-    if supported:
-        editorial.append("The quick run supports further development, but it is still not sufficient for a Nature-level submission without native moscot/WOT runs, external validation, lineage or perturbation validation, and stronger baseline execution.")
-    else:
-        editorial.append("Not sufficient for Nature-level submission. The current evidence does not pass the predefined superiority gate for the full model, or the comparison remains too lightweight.")
-    editorial += [
-        "",
-        "## Largest Shortfalls",
-        "",
-        "- Native moscot, WOT, TIGON, TrajectoryNet/MIOFlow and CellRank2 baselines are not all executed end-to-end in this quick prototype.",
-        "- The teacher is pseudo-lineage from stage snapshots, not lineage tracing.",
-        "- Perturbation validation is exploratory unless a matched perturbation time-series is added.",
-        "- The agent simulator is intentionally minimal and requires scalability and hyperparameter sensitivity before a methods-journal claim.",
+        "Not sufficient for Nature/Nature Methods/Nature Biotechnology unless the gate is passed with native or externally validated teacher and strong baselines.",
         "",
     ]
-    write_text("reports/editorial_assessment.md", "\n".join(editorial))
-    wet = [
-        "# Next Wet-Lab Validation",
-        "",
-        "Minimal validation should test model-predicted shifts in fate, growth and diffusion rather than only expression.",
-        "",
-        "| priority | perturbation | expected readout | assay | decision criterion |",
-        "|---:|---|---|---|---|",
-        "| 1 | FGF/FGFR modulation in gastruloid or embryo-derived culture | mesoderm/neural fate ratio, MKI67/TOP2A, branch entropy | perturb-and-profile scRNA-seq time course | direction matches SwarmLineage-OT and negative LR control fails |",
-        "| 2 | CXCL12/CXCR4 niche-axis perturbation | migration/dispersion and lineage bias | spatial transcriptomics or barcoded live endpoint | spatial/latent dispersion changes in predicted direction |",
-        "| 3 | WNT/FZD perturbation | primitive streak/mesoderm branch probability | short time-course scRNA-seq | branch probability and proliferation marker shift |",
-        "| 4 | density titration | density-dependent birth/death hazard | controlled aggregate size series | hazard changes with density after cell-cycle adjustment |",
-        "| 5 | lineage barcoding follow-up | ancestor-descendant calibration | CellTag/CRISPR barcode with snapshots | OT teacher and simulator improve over interpolation |",
-        "",
-    ]
-    write_text("reports/next_wetlab_validation.md", "\n".join(wet))
+    write_text("reports/quick_fixture/editorial_assessment.md" if args.quick_fixture else "reports/editorial_assessment.md", "\n".join(editorial))
+
     retained = [
         "# Final Retained Results and Methods",
         "",
-        "This document keeps only the current retained prototype results and methods. Installation failures and exploratory noise are kept in `logs/` and `reports/negative_results.md` rather than used as claims.",
+        "This document reports only retained methods and results from the current run. It does not present fallback teacher results as native moscot/WOT.",
         "",
-        "## Data and Preprocessing",
+        "## Data Split",
         "",
-        "Default input: `data/processed/cell_level_subset_v1.h5ad`, subsampled and processed into `processed/swarmlineage_input.h5ad`. The dataset contains ordered developmental stages and lineage/cell-type labels. Stage is used as ordered developmental time.",
+        "The pipeline supports `strict_time_holdout` and `teacher_edge_holdout`. Under strict holdout, held-out cells are excluded from HVG/SVD fitting, teacher construction, model training and hyperparameter selection; they are transformed only for evaluation.",
         "",
-        "## OT Teacher",
+        "## Teacher",
         "",
-        "Adjacent-stage entropic OT couplings are computed through the `run_moscot` entry point. In the current quick prototype, native moscot availability is recorded but an auditable POT/SciPy fallback generates the couplings. Outputs are `processed/ot_teacher.h5ad`, `processed/ot_couplings/*.npz`, and `processed/ot_fate_probabilities.parquet`.",
+        "Teacher backend is recorded in `processed/**/ot_teacher_summary.json` and AnnData `uns['swarmlineage_ot_teacher']['backend']`. toy_sinkhorn_fallback is a toy fallback and cannot support high-level moscot/WOT claims.",
         "",
-        "## SwarmLineage-OT Model",
+        "## Model",
         "",
-        "A minimal PyTorch velocity model is trained to match OT barycentric descendant vectors. Agent simulations add optional birth/death resampling, adaptive diffusion, local swarm rules, CCI modulation and phenomenological memory.",
-        "",
-        "## Main Quantitative Results",
-        "",
-        f"Best mean-rank model: `{best}`.",
-        "",
-        mean.to_markdown(),
-        "",
-        "## Gate Status",
-        "",
-        f"Full model passes the quick superiority gate over OT interpolation on at least two core metrics: {supported}.",
-        "",
-        "## Limitations",
-        "",
-        "- Current results are computational evidence only.",
-        "- Teacher lineage is OT-inferred pseudo-lineage, not true lineage tracing.",
-        "- Native moscot/WOT/TIGON/TrajectoryNet/MIOFlow/CellRank2 baselines remain required for high-impact claims.",
-        "- Perturbation predictions are exploratory until matched perturbation time-series or wet-lab validation is performed.",
-        "",
-        "## Reproducibility",
-        "",
-        "Run `bash reproducibility/run_all.sh` on Unix/WSL systems, or `powershell -ExecutionPolicy Bypass -File .\\reproducibility\\run_all.ps1` on this Windows environment. The PowerShell run was verified locally. Manifest is written to `reproducibility/manifest.json`.",
-        "",
-    ]
-    write_text("manuscript/final_retained_results_and_methods.md", "\n".join(retained))
-    manuscript = [
-        "# SwarmLineage-OT: lineage-supervised swarm virtual cells from optimal transport pseudo-lineages",
-        "",
-        "## Abstract",
-        "",
-        "Optimal transport can infer pseudo-lineage maps from destructive single-cell snapshots, but it does not by itself produce an executable virtual cell population. We introduce SwarmLineage-OT, a prototype lineage-supervised swarm virtual-cell model in which finite cellular agents use local rules, density-dependent birth-death, adaptive diffusion and cell-cell communication to generate developmental trajectories constrained by OT-inferred couplings.",
+        "M1 intrinsic dynamics is trained without OT velocity targets. M2 and later variants can use OT teacher velocity. Birth/death uses stochastic event simulation; memory is a fate-specific kNN field; CCI uses sender-receiver LR graph signals.",
         "",
         "## Results",
         "",
-        "We audited local single-cell resources, built a real-data stage-based OT teacher, trained a minimal finite-agent simulator, and evaluated held-out stage reconstruction across eleven ablations and negative controls. The current quick-run result is a research prototype, not a final Nature-level result.",
+        f"- best mean-rank model: `{best}`",
+        f"- strongest baseline: `{strongest}`",
+        f"- full model gate passed: {supported}",
         "",
-        "## Discussion",
+        metrics.groupby("model")[CORE].mean().to_markdown(),
         "",
-        "The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision. The main limitation is that validation remains computational and relies on fallback OT couplings in the quick run.",
+        "## Interpretation",
         "",
-    ]
-    write_text("manuscript/manuscript.md", "\n".join(manuscript))
-    methods = [
-        "# Methods",
+        "\n".join(diagnostics),
         "",
-        "See `manuscript/theory.md` and `manuscript/methods_theory.tex` for the mathematical formulation. The implemented pipeline uses AnnData preprocessing, PCA latent states, adjacent-stage entropic OT, PyTorch velocity fitting, and agent-level ablations.",
+        "## Limitations",
         "",
-        "Statistical summaries use paired seed-level comparisons, bootstrap confidence intervals and Benjamini-Hochberg correction where applicable.",
-        "",
-    ]
-    write_text("manuscript/methods.md", "\n".join(methods))
-    supplementary = [
-        "# Supplementary",
-        "",
-        "- Data audit: `reports/data_audit.md`",
-        "- Literature positioning: `reports/literature_positioning.md`",
-        "- OT teacher report: `reports/ot_teacher_report.md`",
-        "- Ablation interpretation: `reports/ablation_interpretation.md`",
-        "- Negative results: `reports/negative_results.md`",
-        "- Perturbation evaluation: `reports/perturbation_evaluation.md`",
+        "- No result is written as a success if the full model does not beat the strongest baseline.",
+        "- Native CellRank2/TrajectoryNet/MIOFlow/TIGON are only counted as compared methods if marked `executed=True` in the baseline matrix.",
+        "- Perturbation and CCI results are exploratory until validated by matched perturbation or spatial data.",
         "",
     ]
-    write_text("manuscript/supplementary.md", "\n".join(supplementary))
-    print({"best_model": best, "full_model_gate_supported": supported})
+    write_text("manuscript/final_retained_results_and_methods.md", "\n".join(retained))
+    print({"best_model": best, "strongest_baseline": strongest, "full_model_gate_supported": supported, "wins": wins})
 
 
 if __name__ == "__main__":

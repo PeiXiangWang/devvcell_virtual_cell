@@ -1,24 +1,10 @@
-# Final Retained Results and Methods
+# Module Contribution Audit
 
-This document reports only retained methods and results from the current run. It does not present fallback teacher results as native moscot/WOT.
-
-## Data Split
-
-The pipeline supports `strict_time_holdout` and `teacher_edge_holdout`. Under strict holdout, held-out cells are excluded from HVG/SVD fitting, teacher construction, model training and hyperparameter selection; they are transformed only for evaluation.
-
-## Teacher
-
-Teacher backend is recorded in `processed/**/ot_teacher_summary.json` and AnnData `uns['swarmlineage_ot_teacher']['backend']`. toy_sinkhorn_fallback is a toy fallback and cannot support high-level moscot/WOT claims.
-
-## Model
-
-M1 intrinsic dynamics is trained without OT velocity targets. M2 and later variants can use OT teacher velocity. Birth/death uses stochastic event simulation; memory is a fate-specific kNN field; CCI uses sender-receiver LR graph signals.
-
-## Results
-
-- best mean-rank model: `M0b_ot_interpolation`
 - strongest baseline: `M0b_ot_interpolation`
-- full model gate passed: False
+- full model: `M9_full_memory`
+- full-model core metric wins over strongest baseline: 0/4
+
+## Mean Metrics
 
 | model                                 |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
 |:--------------------------------------|-----------:|-----------:|---------:|----------------------------:|
@@ -36,14 +22,8 @@ M1 intrinsic dynamics is trained without OT velocity targets. M2 and later varia
 | M8_ot_swarm_birth_death_diffusion_cci |   0.284235 | 0.0183179  | 0.632942 |                  0.0200099  |
 | M9_full_memory                        |   0.28393  | 0.0183946  | 0.637903 |                  0.0200099  |
 
-## Interpretation
+## Diagnostics
 
 - Full model is worse than `M0b_ot_interpolation` on: energy (+0.302), sinkhorn (+0.02885), celltype_composition_rmse (+0.01653), mmd_rbf (+0.00961)
 - Diagnostic: swarm/birth/diffusion coefficients or noise are likely too strong for the current teacher; inspect event counts and sigma calibration.
 - Diagnostic: CCI graph is not improving reconstruction; LR edges may be sparse, mis-specified or not relevant to this dataset.
-
-## Limitations
-
-- No result is written as a success if the full model does not beat the strongest baseline.
-- Native CellRank2/TrajectoryNet/MIOFlow/TIGON are only counted as compared methods if marked `executed=True` in the baseline matrix.
-- Perturbation and CCI results are exploratory until validated by matched perturbation or spatial data.

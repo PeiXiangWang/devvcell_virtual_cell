@@ -12,4 +12,7 @@ max_terminal_fates: 8
 native_moscot_timeout_seconds: 45
 use_native_moscot: false
 random_seed: 17
-
+split_mode: strict_time_holdout
+holdout_time: 15.0
+teacher_backend: auto
+teacher_index_path: processed/ot_couplings/teacher_coupling_index.csv

@@ -4,4 +4,6 @@ ablation_stats_path: tables/ablation_statistical_tests.csv
 negative_results_report: reports/negative_results.md
 ablation_report: reports/ablation_interpretation.md
 random_seed: 17
-
+baseline_execution_matrix_path: reports/baseline_execution_matrix.csv
+module_contribution_report: reports/module_contribution_audit.md
+scientific_gap_report: reports/scientific_gap_audit.md

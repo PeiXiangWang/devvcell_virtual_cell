@@ -1,0 +1,18 @@
+baseline,available,executed,status,module
+M0_linear_label_interpolation,True,True,evaluated_in_this_run,
+M0b_ot_interpolation,True,True,evaluated_in_this_run,
+M10_shuffled_time_ot,True,True,evaluated_in_this_run,
+M11_random_lr_labels,True,True,evaluated_in_this_run,
+M1_intrinsic_neural,True,True,evaluated_in_this_run,
+M2_ot_teacher_force,True,True,evaluated_in_this_run,
+M3_ot_birth_death,True,True,evaluated_in_this_run,
+M4_ot_adaptive_diffusion,True,True,evaluated_in_this_run,
+M5_ot_swarm,True,True,evaluated_in_this_run,
+M6_ot_swarm_birth_death,True,True,evaluated_in_this_run,
+M7_ot_swarm_birth_death_diffusion,True,True,evaluated_in_this_run,
+M8_ot_swarm_birth_death_diffusion_cci,True,True,evaluated_in_this_run,
+M9_full_memory,True,True,evaluated_in_this_run,
+CellRank2,False,False,import_timeout>45s,cellrank
+TrajectoryNet,False,False,"CalledProcessError:Command '['C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-c', ""import TrajectoryNet; print(getattr(TrajectoryNet, '__version__', 'unknown'))""]' returned non-zero exit status 1.",TrajectoryNet
+MIOFlow,False,False,"CalledProcessError:Command '['C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-c', ""import mioflow; print(getattr(mioflow, '__version__', 'unknown'))""]' returned non-zero exit status 1.",mioflow
+TIGON,False,False,"CalledProcessError:Command '['C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-c', ""import tigon; print(getattr(tigon, '__version__', 'unknown'))""]' returned non-zero exit status 1.",tigon

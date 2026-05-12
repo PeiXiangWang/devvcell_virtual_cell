@@ -1,104 +1,53 @@
-# DevGuard
+# SwarmLineage-OT
 
-DevGuard is an independent mouse developmental perturbation-normality
-project. It does not use the RDEG pipeline, RDEG-derived node graphs, OT
-transitions, GRN dynamics, or matrix-writeback outputs. Instead, DevGuard
-learns stage- and lineage-specific normality boundaries from public mouse
-embryo and gastruloid control time-course datasets, then classifies
-perturbed cells as within-stage normal, developmentally delayed,
-accelerated, fate-deviated, or abnormal/off-normal.
+SwarmLineage-OT is a research prototype for converting single-cell optimal-transport pseudo-lineages into an executable finite-agent virtual-cell population model.
 
-The previous DevVCell response-recovery prototype has been archived under:
+The current branch is intentionally conservative: if the full swarm model does not beat the strongest baseline, the reports say so. Fallback teachers are labelled `toy_sinkhorn_fallback` and must not be described as native moscot or WOT results.
 
-```text
-Old/legacy_devvcell_response_recovery_20260505/
-```
+## What Is Implemented
 
-## Current MVP
+- strict held-out-time preprocessing with leakage audit;
+- native-backend status tracking for moscot/WOT and explicit toy Sinkhorn fallback;
+- separate ablation definitions for linear interpolation, OT interpolation, intrinsic neural dynamics, teacher-velocity dynamics and swarm modules;
+- `SwarmLineageDynamics`, a trainable PyTorch module with intrinsic velocity, teacher velocity, swarm terms, stochastic birth/death hazards, adaptive diffusion, CCI modulation and memory-field support;
+- multi-step finite-agent rollout with birth/death event logs;
+- baseline execution matrix and scientific gap audit;
+- synthetic quick fixture for CI and smoke testing.
 
-The first DevGuard implementation provides a conformal normality baseline:
+## Quick Reproduction
 
-- unified mouse developmental metadata schema;
-- control-only SVD embedding;
-- stage-lineage KNN and Mahalanobis nonconformity scores;
-- conformal p-values and heldout control false-positive calibration;
-- five-class perturbed-cell assignment;
-- Developmental Tolerance Index (DTI);
-- quick-mode synthetic mouse fixture for code and schema validation.
-
-Quick mode intentionally does not depend on `data/scLine_pro.h5ad` or any
-RDEG-derived tables.
-
-## Quick Start
+Unix/WSL:
 
 ```bash
-python scripts/devguard/run_devguard_pipeline.py --mode quick
+bash reproducibility/run_all.sh --quick-fixture
 ```
 
-Expected quick-mode outputs:
+Windows PowerShell:
 
-```text
-data/processed/devguard/devguard_quick_mouse.h5ad
-results/devguard/normality_reference/
-results/devguard/perturbation_classification/
-results/devguard/tolerance_index/
-results/devguard/figures/
+```powershell
+powershell -ExecutionPolicy Bypass -File .\reproducibility\run_all.ps1 -QuickFixture
 ```
 
-## Main Commands
+Main real-data path:
 
 ```bash
-python scripts/devguard/prepare_mouse_datasets.py --config config/devguard/datasets_mouse.json
-python scripts/devguard/build_control_reference.py --config config/devguard/normality_model.json
-python scripts/devguard/calibrate_conformal_boundaries.py --config config/devguard/conformal_thresholds.json
-python scripts/devguard/classify_perturbed_cells.py --config config/devguard/perturbation_tests.json
-python scripts/devguard/compute_developmental_tolerance_index.py
-python scripts/devguard/build_devguard_figures.py
+python -m src.data.preprocess --config configs/data.yaml
+python -m src.ot_teacher.run_moscot --config configs/ot_teacher.yaml
+python -m src.ot_teacher.run_wot --config configs/ot_teacher.yaml
+python -m src.ot_teacher.build_teacher --config configs/ot_teacher.yaml
+python -m src.train.train_model --config configs/model.yaml
+python -m src.train.ablations --config configs/train.yaml
+python -m src.train.evaluate --config configs/train.yaml
 ```
 
-## Current Real-Data Extensions
+## Key Reports
 
-Additional Tal1/T robustness, GSE212050 organoid heterogeneity, and GSE123187
-tomo-seq lineage-mapping outputs are documented in:
+- `reports/leakage_audit.md`
+- `reports/scientific_gap_audit.md`
+- `reports/baseline_execution_matrix.csv`
+- `reports/module_contribution_audit.md`
+- `manuscript/final_retained_results_and_methods.md`
 
-```text
-docs/DEVGUARD_TAL1_T_ROBUSTNESS_AND_VALIDATION_CN.md
-```
+## Archived Prior Work
 
-The corresponding entry points are:
-
-```bash
-python scripts/devguard/analyze_chimera_robustness.py
-python scripts/devguard/analyze_tal1_marker_modules.py
-python scripts/devguard/analyze_gse212050_organoid_heterogeneity.py
-python scripts/devguard/build_gse123187_h5ad_from_raw_tar.py --mode-filter tomo_seq --max-files 4 --output data/processed/devguard/GSE123187_tomo_3files.h5ad
-python scripts/devguard/map_gse123187_spatial_tomo_lineages.py
-```
-
-## DevSpectrum
-
-DevSpectrum is an independent spectral perturbation profiling layer built on
-top of the DevGuard real-data inputs. DevGuard asks whether perturbed cells
-remain normal, delayed, fate-deviated, or off-normal; DevSpectrum asks how
-developmental module trajectories and endpoint programs were reshaped.
-
-```bash
-python scripts/devspectrum/run_devspectrum_pipeline.py --mode quick
-python scripts/devspectrum/run_devspectrum_pipeline.py --mode main
-```
-
-Key documentation:
-
-```text
-docs/DEVSPECTRUM_METHOD_CN.md
-docs/DEVSPECTRUM_RESULTS_REPORT_CN.md
-docs/DEVSPECTRUM_DATASET_REGISTRY_CN.md
-```
-
-## Chinese Summary
-
-DevGuard 是一个独立的小鼠发育扰动正常性判定项目。它不使用 RDEG
-管线、RDEG 状态节点、OT 正常发育转运、GRN 动力学或矩阵回写结果。
-DevGuard 从公开小鼠胚胎和 gastruloid control time-course 数据中学习阶段
-和谱系特异的正常性边界，然后将扰动细胞分类为：当前阶段正常、发育延迟、
-发育提前、命运偏航或正常图谱外异常。
+Earlier DevGuard and DevSpectrum materials remain in `docs/`, `scripts/devguard`, `scripts/devspectrum`, and `src/devguard`/`src/devspectrum` for provenance. They are no longer the root README focus of this branch.

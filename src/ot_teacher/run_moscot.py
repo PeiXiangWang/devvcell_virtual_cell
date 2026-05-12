@@ -75,9 +75,15 @@ def compute_pair_coupling(
     max_cells: int,
     epsilon: float,
     seed: int,
+    allowed_mask: np.ndarray | None = None,
 ) -> dict:
     idx0_all = np.where(obs[time_key].to_numpy(dtype=float) == float(t0))[0]
     idx1_all = np.where(obs[time_key].to_numpy(dtype=float) == float(t1))[0]
+    if allowed_mask is not None:
+        idx0_all = idx0_all[allowed_mask[idx0_all]]
+        idx1_all = idx1_all[allowed_mask[idx1_all]]
+    if idx0_all.size == 0 or idx1_all.size == 0:
+        raise ValueError(f"Cannot build teacher edge {t0}->{t1}: one side has no allowed cells.")
     sub0 = obs.iloc[idx0_all]
     sub1 = obs.iloc[idx1_all]
     idx0 = idx0_all[_stratified_idx(sub0, max_cells, seed, cell_type_key)]
@@ -128,16 +134,51 @@ def compute_pair_coupling(
     }
 
 
-def run_ot(cfg: dict, label: str = "moscot") -> dict:
+def _skip_edge_for_holdout(t0: float, t1: float, cfg: dict) -> bool:
+    split_mode = str(cfg.get("split_mode", "none"))
+    holdout = cfg.get("holdout_time")
+    if holdout is None:
+        return False
+    holdout = float(holdout)
+    if split_mode == "teacher_edge_holdout" and float(t0) < holdout < float(t1):
+        return True
+    if split_mode == "teacher_edge_holdout" and (np.isclose(float(t0), holdout) or np.isclose(float(t1), holdout)):
+        return True
+    if split_mode == "strict_time_holdout" and (np.isclose(float(t0), holdout) or np.isclose(float(t1), holdout)):
+        return True
+    return False
+
+
+def run_toy_sinkhorn_teacher(cfg: dict, label: str = "teacher") -> dict:
     ensure_dir(cfg.get("couplings_dir", "processed/ot_couplings"))
     adata = ad.read_h5ad(cfg["adata_path"])
     z = np.asarray(adata.obsm[cfg.get("latent_key", "X_pca")], dtype=float)
     obs = adata.obs.copy()
     time_key = cfg.get("time_key", "time_numeric")
     cell_type_key = cfg.get("cell_type_key", "lineage")
-    times = sorted(pd.to_numeric(obs[time_key], errors="coerce").dropna().unique())
+    allowed_mask = np.ones(adata.n_obs, dtype=bool)
+    if "split_role" in obs:
+        allowed_mask &= obs["split_role"].astype(str).to_numpy() != "eval_holdout"
+    times = sorted(pd.to_numeric(obs.loc[allowed_mask, time_key], errors="coerce").dropna().unique())
     rows = []
     for pair_i, (t0, t1) in enumerate(zip(times[:-1], times[1:])):
+        if _skip_edge_for_holdout(float(t0), float(t1), cfg):
+            rows.append(
+                {
+                    "method_label": label,
+                    "source_time": t0,
+                    "target_time": t1,
+                    "file": "",
+                    "n_source": 0,
+                    "n_target": 0,
+                    "solver": "heldout_edge_skipped",
+                    "teacher_backend": "toy_sinkhorn_fallback",
+                    "transport_cost": np.nan,
+                    "mean_entropy": np.nan,
+                    "mean_growth": np.nan,
+                }
+            )
+            continue
         result = compute_pair_coupling(
             z=z,
             obs=obs,
@@ -148,6 +189,7 @@ def run_ot(cfg: dict, label: str = "moscot") -> dict:
             max_cells=int(cfg.get("max_cells_per_time", 650)),
             epsilon=float(cfg.get("epsilon", 0.08)),
             seed=int(cfg.get("random_seed", 17)) + pair_i,
+            allowed_mask=allowed_mask,
         )
         out = Path(cfg.get("couplings_dir", "processed/ot_couplings")) / f"{label}_t{t0:g}_to_t{t1:g}.npz"
         np.savez_compressed(
@@ -174,30 +216,71 @@ def run_ot(cfg: dict, label: str = "moscot") -> dict:
                 "n_source": int(result["source_indices"].size),
                 "n_target": int(result["target_indices"].size),
                 "solver": result["method"],
+                "teacher_backend": "toy_sinkhorn_fallback",
                 "transport_cost": result["mean_cost"],
                 "mean_entropy": float(np.mean(result["entropy"])),
                 "mean_growth": float(np.mean(result["growth"])),
             }
         )
     index = pd.DataFrame(rows)
-    index_path = Path(cfg.get("couplings_dir", "processed/ot_couplings")) / f"{label}_coupling_index.csv"
+    index_path = Path(cfg.get("teacher_index_path", Path(cfg.get("couplings_dir", "processed/ot_couplings")) / f"{label}_coupling_index.csv"))
     index.to_csv(index_path, index=False)
-    return {"index_path": str(index_path), "pairs": rows}
+    return {"index_path": str(index_path), "pairs": rows, "teacher_backend": "toy_sinkhorn_fallback"}
+
+
+def _try_native_moscot(cfg: dict) -> dict:
+    """Attempt native moscot execution, returning a status record.
+
+    The current quick CI path does not rely on this. If it fails or times out,
+    the caller must mark the teacher as toy fallback rather than a moscot result.
+    """
+    if not bool(cfg.get("use_native_moscot", False)):
+        return {"attempted": False, "success": False, "reason": "use_native_moscot=false"}
+    try:
+        import moscot  # noqa: F401
+        from moscot.problems.time import TemporalProblem
+
+        adata = ad.read_h5ad(cfg["adata_path"])
+        if "split_role" in adata.obs:
+            adata = adata[adata.obs["split_role"].astype(str).to_numpy() != "eval_holdout"].copy()
+        problem = TemporalProblem(adata)
+        problem = problem.prepare(time_key=cfg.get("time_key", "time_numeric"), joint_attr=cfg.get("latent_key", "X_pca"))
+        problem = problem.solve(epsilon=float(cfg.get("epsilon", 0.08)))
+        return {
+            "attempted": True,
+            "success": False,
+            "teacher_backend": "native_moscot_unextracted",
+            "reason": "TemporalProblem prepared and solved, but native plan extraction is not implemented in this path; failing closed to avoid labelling toy plans as native moscot.",
+        }
+    except Exception as exc:
+        return {"attempted": True, "success": False, "reason": f"{type(exc).__name__}: {exc}"}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/ot_teacher.yaml")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
     cfg = load_config(args.config)
+    if args.quick_fixture:
+        cfg = dict(cfg)
+        cfg["adata_path"] = "processed/quick_fixture/swarmlineage_input.h5ad"
+        cfg["teacher_path"] = "processed/quick_fixture/ot_teacher.h5ad"
+        cfg["couplings_dir"] = "processed/quick_fixture/ot_couplings"
+        cfg["fate_probabilities_path"] = "processed/quick_fixture/ot_fate_probabilities.parquet"
+        cfg["teacher_index_path"] = "processed/quick_fixture/ot_couplings/teacher_coupling_index.csv"
+        cfg["holdout_time"] = 14.0
+        cfg["max_cells_per_time"] = 80
     ensure_dir("logs")
     native = _native_status(int(cfg.get("native_moscot_timeout_seconds", 45)))
-    summary = run_ot(cfg, label="moscot")
+    native_result = _try_native_moscot(cfg)
+    summary = run_toy_sinkhorn_teacher(cfg, label="teacher")
     summary["native_moscot_status"] = native
-    summary["native_moscot_used"] = False
-    summary["note"] = "Native moscot is recorded but this prototype uses auditable POT/SciPy fallback couplings for reproducible quick execution."
+    summary["native_moscot_execution"] = native_result
+    summary["native_moscot_used"] = bool(native_result.get("success", False))
+    summary["note"] = "Fallback couplings are explicitly labelled toy_sinkhorn_fallback and must not be reported as moscot results."
     write_json(Path(cfg.get("couplings_dir", "processed/ot_couplings")) / "moscot_run_summary.json", summary)
-    print(json.dumps({"moscot_fallback_pairs": len(summary["pairs"]), "native": native}, indent=2))
+    print(json.dumps({"teacher_pairs": len(summary["pairs"]), "teacher_backend": summary["teacher_backend"], "native": native}, indent=2))
 
 
 if __name__ == "__main__":

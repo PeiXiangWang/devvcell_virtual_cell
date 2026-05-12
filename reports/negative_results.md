@@ -4,5 +4,5 @@ Negative controls are retained and reported. Lower metric values are better for 
 
 | model                |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
 |:---------------------|-----------:|-----------:|---------:|----------------------------:|
-| M10_shuffled_time_ot |   0.316176 | 0.00513459 | 0.218758 |                  0.0108743  |
-| M11_random_lr_labels |   0.301723 | 0.0277966  | 0.94278  |                  0.00983581 |
+| M10_shuffled_time_ot |   0.31024  | 0.00516795 | 0.204379 |                   0.018496  |
+| M11_random_lr_labels |   0.289617 | 0.0172297  | 0.628864 |                   0.0233767 |

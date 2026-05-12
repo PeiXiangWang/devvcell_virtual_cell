@@ -15,6 +15,7 @@ from scipy import sparse
 from sklearn.decomposition import TruncatedSVD
 
 from src.data.load import audit_data_files, discover_data_files, first_existing_column, load_h5ad
+from src.data.fixtures import write_synthetic_fixture
 from src.data.schema import CELL_CYCLE_MARKERS, gene_symbols
 from src.utils.config import ensure_dir, load_config, write_json, write_text
 
@@ -69,6 +70,23 @@ def _standardize_obs(adata: ad.AnnData, cfg: dict) -> dict[str, str | None]:
     return {"time_key": time_key, "cell_type_key": cell_type_key, "condition_key": condition_key, "batch_key": batch_key}
 
 
+def _split_roles(adata: ad.AnnData, cfg: dict) -> dict:
+    split_mode = str(cfg.get("split_mode", "none"))
+    holdout = cfg.get("holdout_time")
+    role = np.full(adata.n_obs, "train", dtype=object)
+    if split_mode in {"strict_time_holdout", "teacher_edge_holdout"} and holdout is not None:
+        time = pd.to_numeric(adata.obs["time_numeric"], errors="coerce").to_numpy(dtype=float)
+        role[np.isclose(time, float(holdout))] = "eval_holdout"
+    adata.obs["split_role"] = role
+    train_mask = role == "train"
+    return {
+        "split_mode": split_mode,
+        "holdout_time": None if holdout is None else float(holdout),
+        "n_train_cells": int(train_mask.sum()),
+        "n_eval_holdout_cells": int((role == "eval_holdout").sum()),
+    }
+
+
 def _qc_and_embed(adata: ad.AnnData, cfg: dict) -> ad.AnnData:
     symbols = gene_symbols(adata)
     adata.var["swarm_gene_symbol"] = symbols
@@ -100,14 +118,18 @@ def _qc_and_embed(adata: ad.AnnData, cfg: dict) -> ad.AnnData:
         adata.obs["cell_cycle_score"] = score
     else:
         adata.obs["cell_cycle_score"] = 0.0
+    train_mask = adata.obs.get("split_role", pd.Series("train", index=adata.obs_names)).astype(str).to_numpy() == "train"
+    if not train_mask.any():
+        train_mask = np.ones(adata.n_obs, dtype=bool)
     n_top = min(int(cfg.get("n_top_genes", 2000)), adata.n_vars)
     try:
         x_norm = adata.X
         if sparse.issparse(x_norm):
-            mean = np.asarray(x_norm.mean(axis=0)).ravel()
-            mean_sq = np.asarray(x_norm.power(2).mean(axis=0)).ravel()
+            x_fit = x_norm[train_mask]
+            mean = np.asarray(x_fit.mean(axis=0)).ravel()
+            mean_sq = np.asarray(x_fit.power(2).mean(axis=0)).ravel()
         else:
-            arr = np.asarray(x_norm)
+            arr = np.asarray(x_norm)[train_mask]
             mean = arr.mean(axis=0)
             mean_sq = (arr**2).mean(axis=0)
         var = np.maximum(mean_sq - mean**2, 0.0)
@@ -122,7 +144,8 @@ def _qc_and_embed(adata: ad.AnnData, cfg: dict) -> ad.AnnData:
         logging.warning("HVG selection failed and all genes are retained: %s", exc)
     n_pcs = min(int(cfg.get("n_pcs", 30)), adata.n_vars - 1, adata.n_obs - 1)
     svd = TruncatedSVD(n_components=n_pcs, random_state=int(cfg.get("random_seed", 17)))
-    adata.obsm["X_pca"] = svd.fit_transform(adata.X).astype(np.float32)
+    svd.fit(adata.X[train_mask])
+    adata.obsm["X_pca"] = svd.transform(adata.X).astype(np.float32)
     adata.uns["pca_variance_ratio"] = svd.explained_variance_ratio_.astype(float)
     if "X_umap" not in adata.obsm:
         adata.obsm["X_umap"] = adata.obsm["X_pca"][:, :2].copy()
@@ -165,8 +188,24 @@ def _plot_overview(adata: ad.AnnData, figures_dir: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/data.yaml")
+    parser.add_argument("--quick-fixture", action="store_true", help="Generate and preprocess a small synthetic AnnData fixture.")
     args = parser.parse_args()
     cfg = load_config(args.config)
+    if args.quick_fixture:
+        cfg = dict(cfg)
+        cfg["quick_fixture"] = True
+        cfg["input_path"] = "data/fixtures/swarmlineage_synthetic.h5ad"
+        cfg["output_path"] = "processed/quick_fixture/swarmlineage_input.h5ad"
+        cfg["schema_json"] = "reports/quick_fixture/data_schema.json"
+        cfg["audit_report"] = "reports/quick_fixture/data_audit.md"
+        cfg["loading_log"] = "logs/quick_fixture_data_loading.log"
+        cfg["figures_dir"] = "figures/quick_fixture"
+        cfg["max_cells"] = 450
+        cfg["n_top_genes"] = 100
+        cfg["n_pcs"] = 12
+        cfg["holdout_time"] = 14.0
+        cfg["split_mode"] = "strict_time_holdout"
+        write_synthetic_fixture(cfg["input_path"], seed=int(cfg.get("random_seed", 17)))
     _setup_log(cfg.get("loading_log", "logs/data_loading.log"))
     ensure_dir("reports")
     ensure_dir("figures")
@@ -182,6 +221,7 @@ def main() -> None:
     sample_idx = _stratified_sample(adata.obs, int(cfg.get("max_cells", adata.n_obs)), int(cfg.get("random_seed", 17)), ["time_point", "lineage"])
     if sample_idx.size < adata.n_obs:
         adata = adata[sample_idx].copy()
+    split_summary = _split_roles(adata, cfg)
     adata = _qc_and_embed(adata, cfg)
     adata.uns["swarmlineage_preprocess"] = {
         "input_path": cfg["input_path"],
@@ -189,11 +229,25 @@ def main() -> None:
         "n_cells_after_sampling": int(adata.n_obs),
         "n_genes_after_hvg": int(adata.n_vars),
         "stage_is_fallback_time": inferred["time_key"] not in {"time_numeric", "time", "day"},
+        **split_summary,
     }
     _plot_overview(adata, cfg.get("figures_dir", "figures"))
     out = Path(cfg.get("output_path", "processed/swarmlineage_input.h5ad"))
     out.parent.mkdir(parents=True, exist_ok=True)
     adata.write_h5ad(out)
+    leakage = [
+        "# Leakage Audit",
+        "",
+        f"- split_mode: `{split_summary['split_mode']}`",
+        f"- holdout_time: `{split_summary['holdout_time']}`",
+        f"- preprocessing HVG/SVD fit cells: {split_summary['n_train_cells']} train cells only",
+        f"- evaluation-only held-out cells present in output for scoring: {split_summary['n_eval_holdout_cells']}",
+        "- held-out cells are transformed by the train-fitted SVD but do not contribute to HVG selection or SVD fitting.",
+        "- teacher construction must additionally exclude `split_role == eval_holdout` cells.",
+        "",
+    ]
+    leak_path = "reports/quick_fixture/leakage_audit.md" if cfg.get("quick_fixture") else "reports/leakage_audit.md"
+    write_text(leak_path, "\n".join(leakage))
     logging.info("Wrote preprocessed AnnData to %s", out)
     print({"output": str(out), "n_obs": adata.n_obs, "n_vars": adata.n_vars, "time_key": inferred["time_key"]})
 

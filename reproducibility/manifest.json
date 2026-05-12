@@ -1,6 +1,6 @@
 {
   "project": "SwarmLineage-OT",
-  "created_utc": "2026-05-11T16:40:23.318151+00:00",
+  "created_utc": "2026-05-12T04:01:44.323102+00:00",
   "random_seeds": [
     7,
     17,
@@ -15,7 +15,7 @@
     "machine": "AMD64",
     "cwd": "C:\\Users\\14915\\PycharmProjects\\devvcell_virtual_cell"
   },
-  "git_commit": "3f8728cae4b7555d754ae6fef56263df802d6d5e",
+  "git_commit": "9b985fad2de69f8b5e2c5886c3ee4a3ad44fcad6",
   "data_paths": {
     "default_input": "data/processed/cell_level_subset_v1.h5ad",
     "large_reference": "data/scLine_pro.h5ad",

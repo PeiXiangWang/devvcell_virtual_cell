@@ -13,4 +13,6 @@ batch_key_candidates: [batch, donor_id, sample_id, author_experimental_id]
 n_top_genes: 2000
 n_pcs: 30
 normalize_total: 10000.0
-
+split_mode: strict_time_holdout
+holdout_time: 15.0
+quick_fixture: false

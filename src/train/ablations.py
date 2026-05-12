@@ -19,9 +19,18 @@ PRIMARY_METRICS = ["sinkhorn", "mmd_rbf", "energy", "celltype_composition_rmse"]
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="configs/train.yaml")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
     cfg = load_config(args.config)
     model_cfg = load_config(cfg.get("model_config", "configs/model.yaml"))
+    if args.quick_fixture:
+        model_cfg = dict(model_cfg)
+        model_cfg["metrics_path"] = "tables/quick_fixture/final_metrics.csv"
+        cfg = dict(cfg)
+        cfg["ablation_metrics_path"] = "tables/quick_fixture/ablation_metrics.csv"
+        cfg["ablation_stats_path"] = "tables/quick_fixture/ablation_statistical_tests.csv"
+        cfg["negative_results_report"] = "reports/quick_fixture/negative_results.md"
+        cfg["ablation_report"] = "reports/quick_fixture/ablation_interpretation.md"
     ensure_dir("figures")
     ensure_dir("tables")
     ensure_dir("reports")
@@ -29,8 +38,9 @@ def main() -> None:
     out_path = cfg.get("ablation_metrics_path", "tables/ablation_metrics.csv")
     metrics.to_csv(out_path, index=False)
     tests = []
-    best_baseline = "M0_ot_interpolation"
-    challenger = "M9_full_pheromone"
+    baseline_candidates = ["M0_linear_label_interpolation", "M0b_ot_interpolation", "M1_intrinsic_neural", "M2_ot_teacher_force"]
+    best_baseline = metrics[metrics["model"].isin(baseline_candidates)].groupby("model")["sinkhorn"].mean().sort_values().index[0]
+    challenger = "M9_full_memory"
     for metric in PRIMARY_METRICS:
         tests.append(paired_test(metrics, metric, best_baseline, challenger))
     stat = pd.DataFrame(tests)
@@ -88,7 +98,7 @@ def main() -> None:
         "",
         "## Current Interpretation",
         "",
-        "Modules are retained only when they improve held-out reconstruction or provide a mechanistic diagnostic. If the full model does not beat the strongest baseline on at least two primary metrics, the manuscript must state that the Nature-level claim is not supported.",
+        f"Strongest baseline for paired gate: `{best_baseline}`. Modules are retained only when they improve held-out reconstruction or provide a mechanistic diagnostic. If the full model does not beat the strongest baseline on at least two primary metrics, the manuscript must state that the high-level claim is not supported.",
         "",
     ]
     write_text(cfg.get("ablation_report", "reports/ablation_interpretation.md"), "\n".join(report))
