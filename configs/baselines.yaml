@@ -1,0 +1,12 @@
+teacher_path: processed/ot_teacher.h5ad
+output_dir: results/baselines
+time_key: time_numeric
+cell_type_key: lineage
+latent_key: X_pca
+holdout_time: 15.0
+native_methods:
+  cellrank: optional
+  tigon: optional
+  trajectorynet: optional
+  mioflow: optional
+

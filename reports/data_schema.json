@@ -1,0 +1,2783 @@
+{
+  "summary": {
+    "n_files_scanned": 84,
+    "n_readable_expression_objects": 25,
+    "formats": {
+      "csv": 48,
+      "h5ad": 20,
+      "mtx": 10,
+      "gz": 5,
+      "parquet": 1
+    },
+    "time_capable_files": [
+      "data\\external\\GSE212050\\components\\matrix.mtx",
+      "data\\external\\GSE212050\\components_downsample_15000\\matrix.mtx",
+      "data\\external\\GSE212050\\components_strict_sample\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\t_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
+      "data\\processed\\cell_level_subset_v1.h5ad",
+      "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
+      "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
+      "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
+      "data\\processed\\devguard\\GSE212050_downsample_15000.h5ad",
+      "data\\processed\\devguard\\GSE212050_strict_sample_13285.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_embryo_atlas_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "processed\\ot_teacher.h5ad",
+      "processed\\swarmlineage_input.h5ad"
+    ],
+    "perturbation_capable_files": [
+      "data\\external\\GSE212050\\components\\matrix.mtx",
+      "data\\external\\GSE212050\\components_downsample_15000\\matrix.mtx",
+      "data\\external\\GSE212050\\components_strict_sample\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\t_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
+      "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
+      "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\processed\\cell_level_subset_v1.h5ad",
+      "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
+      "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
+      "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
+      "data\\processed\\devguard\\GSE212050_downsample_15000.h5ad",
+      "data\\processed\\devguard\\GSE212050_strict_sample_13285.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_embryo_atlas_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "processed\\ot_teacher.h5ad",
+      "processed\\swarmlineage_input.h5ad"
+    ],
+    "lineage_or_celltype_files": [
+      "data\\external\\GSE212050\\components\\matrix.mtx",
+      "data\\external\\GSE212050\\components_downsample_15000\\matrix.mtx",
+      "data\\external\\GSE212050\\components_strict_sample\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\t_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_full\\matrix.mtx",
+      "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
+      "data\\external\\response_transfer\\GSE208369_components\\matrix.mtx",
+      "data\\external\\response_transfer\\primary_perturbation.h5ad",
+      "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
+      "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\processed\\cell_level_subset_v1.h5ad",
+      "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
+      "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
+      "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
+      "data\\processed\\devguard\\GSE212050_downsample_15000.h5ad",
+      "data\\processed\\devguard\\GSE212050_strict_sample_13285.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_embryo_atlas_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "processed\\ot_teacher.h5ad",
+      "processed\\swarmlineage_input.h5ad"
+    ],
+    "spatial_candidate_files": [
+      "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad"
+    ],
+    "ligand_receptor_candidate_files": [
+      "data\\external\\response_transfer\\primary_perturbation.h5ad",
+      "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
+      "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "data\\processed\\cell_level_subset_v1.h5ad",
+      "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_embryo_atlas_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "processed\\ot_teacher.h5ad",
+      "processed\\swarmlineage_input.h5ad"
+    ]
+  },
+  "files": [
+    {
+      "path": "data\\external\\download_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE208369\\GSE208369_KO_merged.RDS.gz",
+      "format": "gz",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        30406,
+        77683
+      ],
+      "obs_columns": [
+        "cell",
+        "X1",
+        "X2",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "barcode",
+        "experiment",
+        "timepoint",
+        "organoid",
+        "tech",
+        "class",
+        "lane",
+        "batch",
+        "percent.mt",
+        "percent.ribo",
+        "ident",
+        "cxds_score",
+        "cxds_call",
+        "bcds_score",
+        "bcds_call",
+        "hybrid_score",
+        "hybrid_call",
+        "pass_QC",
+        "hybrid_map",
+        "hybrid_call2",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "MULTI_class",
+        "timepoint.base",
+        "sample",
+        "timepoint.demultiplexed",
+        "RNA_snn_res.0.6",
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "stage.mapped.original",
+        "closest.cell.original",
+        "celltype.score.original",
+        "cellstage.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "stage.mapped.meso",
+        "closest.cell.meso",
+        "celltype.score.meso",
+        "cellstage.score.meso",
+        "celltype.mapped.extended",
+        "stage.mapped.extended",
+        "closest.cell.extended",
+        "celltype.score.extended",
+        "cellstage.score.extended",
+        "celltype.mapped.descendant.extended",
+        "stage.mapped.descendant.extended",
+        "closest.cell.descendant.extended",
+        "celltype.score.descendant",
+        "cellstage.score.descendant",
+        "gastr_type",
+        "cellscore",
+        "percent.mt.normed",
+        "nFeature_RNA.normed",
+        "percent.ribo.normed",
+        "nCount_RNA.normed",
+        "initial_size_spliced",
+        "initial_size_unspliced",
+        "initial_size",
+        "n_counts",
+        "velocity_self_transition",
+        "root_cells",
+        "end_points",
+        "velocity_pseudotime",
+        "day",
+        "proliferation_score",
+        "apoptosis_score",
+        "growth_rate_init",
+        "estimated_growth_rates",
+        "cell_barcode"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "timepoint",
+        "timepoint.base",
+        "timepoint.demultiplexed",
+        "stage.mapped.original",
+        "cellstage.score.original",
+        "stage.mapped.meso",
+        "cellstage.score.meso",
+        "stage.mapped.extended",
+        "cellstage.score.extended",
+        "stage.mapped.descendant.extended",
+        "cellstage.score.descendant",
+        "velocity_pseudotime",
+        "day"
+      ],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "celltype.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "celltype.score.meso",
+        "celltype.mapped.extended",
+        "celltype.score.extended",
+        "celltype.mapped.descendant.extended",
+        "celltype.score.descendant"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "batch",
+        "sample",
+        "estimated_growth_rates"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\GSE212050\\components\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_downsample_15000\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_downsample_15000\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        30406,
+        15000
+      ],
+      "obs_columns": [
+        "cell",
+        "X1",
+        "X2",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "barcode",
+        "experiment",
+        "timepoint",
+        "organoid",
+        "tech",
+        "class",
+        "lane",
+        "batch",
+        "percent.mt",
+        "percent.ribo",
+        "ident",
+        "cxds_score",
+        "cxds_call",
+        "bcds_score",
+        "bcds_call",
+        "hybrid_score",
+        "hybrid_call",
+        "pass_QC",
+        "hybrid_map",
+        "hybrid_call2",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "MULTI_class",
+        "timepoint.base",
+        "sample",
+        "timepoint.demultiplexed",
+        "RNA_snn_res.0.6",
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "stage.mapped.original",
+        "closest.cell.original",
+        "celltype.score.original",
+        "cellstage.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "stage.mapped.meso",
+        "closest.cell.meso",
+        "celltype.score.meso",
+        "cellstage.score.meso",
+        "celltype.mapped.extended",
+        "stage.mapped.extended",
+        "closest.cell.extended",
+        "celltype.score.extended",
+        "cellstage.score.extended",
+        "celltype.mapped.descendant.extended",
+        "stage.mapped.descendant.extended",
+        "closest.cell.descendant.extended",
+        "celltype.score.descendant",
+        "cellstage.score.descendant",
+        "gastr_type",
+        "cellscore",
+        "percent.mt.normed",
+        "nFeature_RNA.normed",
+        "percent.ribo.normed",
+        "nCount_RNA.normed",
+        "initial_size_spliced",
+        "initial_size_unspliced",
+        "initial_size",
+        "n_counts",
+        "velocity_self_transition",
+        "root_cells",
+        "end_points",
+        "velocity_pseudotime",
+        "day",
+        "proliferation_score",
+        "apoptosis_score",
+        "growth_rate_init",
+        "estimated_growth_rates",
+        "cell_barcode"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "timepoint",
+        "timepoint.base",
+        "timepoint.demultiplexed",
+        "stage.mapped.original",
+        "cellstage.score.original",
+        "stage.mapped.meso",
+        "cellstage.score.meso",
+        "stage.mapped.extended",
+        "cellstage.score.extended",
+        "stage.mapped.descendant.extended",
+        "cellstage.score.descendant",
+        "velocity_pseudotime",
+        "day"
+      ],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "celltype.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "celltype.score.meso",
+        "celltype.mapped.extended",
+        "celltype.score.extended",
+        "celltype.mapped.descendant.extended",
+        "celltype.score.descendant"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "batch",
+        "sample",
+        "estimated_growth_rates"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_downsample_15000\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_downsample_15000\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_strict_sample\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_strict_sample\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        30406,
+        13285
+      ],
+      "obs_columns": [
+        "cell",
+        "X1",
+        "X2",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "barcode",
+        "experiment",
+        "timepoint",
+        "organoid",
+        "tech",
+        "class",
+        "lane",
+        "batch",
+        "percent.mt",
+        "percent.ribo",
+        "ident",
+        "cxds_score",
+        "cxds_call",
+        "bcds_score",
+        "bcds_call",
+        "hybrid_score",
+        "hybrid_call",
+        "pass_QC",
+        "hybrid_map",
+        "hybrid_call2",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "MULTI_class",
+        "timepoint.base",
+        "sample",
+        "timepoint.demultiplexed",
+        "RNA_snn_res.0.6",
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "stage.mapped.original",
+        "closest.cell.original",
+        "celltype.score.original",
+        "cellstage.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "stage.mapped.meso",
+        "closest.cell.meso",
+        "celltype.score.meso",
+        "cellstage.score.meso",
+        "celltype.mapped.extended",
+        "stage.mapped.extended",
+        "closest.cell.extended",
+        "celltype.score.extended",
+        "cellstage.score.extended",
+        "celltype.mapped.descendant.extended",
+        "stage.mapped.descendant.extended",
+        "closest.cell.descendant.extended",
+        "celltype.score.descendant",
+        "cellstage.score.descendant",
+        "gastr_type",
+        "cellscore",
+        "percent.mt.normed",
+        "nFeature_RNA.normed",
+        "percent.ribo.normed",
+        "nCount_RNA.normed",
+        "initial_size_spliced",
+        "initial_size_unspliced",
+        "initial_size",
+        "n_counts",
+        "velocity_self_transition",
+        "root_cells",
+        "end_points",
+        "velocity_pseudotime",
+        "day",
+        "proliferation_score",
+        "apoptosis_score",
+        "growth_rate_init",
+        "estimated_growth_rates",
+        "cell_barcode"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "timepoint",
+        "timepoint.base",
+        "timepoint.demultiplexed",
+        "stage.mapped.original",
+        "cellstage.score.original",
+        "stage.mapped.meso",
+        "cellstage.score.meso",
+        "stage.mapped.extended",
+        "cellstage.score.extended",
+        "stage.mapped.descendant.extended",
+        "cellstage.score.descendant",
+        "velocity_pseudotime",
+        "day"
+      ],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "celltype.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "celltype.score.meso",
+        "celltype.mapped.extended",
+        "celltype.score.extended",
+        "celltype.mapped.descendant.extended",
+        "celltype.score.descendant"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "batch",
+        "sample",
+        "estimated_growth_rates"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_strict_sample\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\components_strict_sample\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\GSE212050_feature_metadata_final.txt.gz",
+      "format": "gz",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\GSE212050_sample_metadata_final.txt.gz",
+      "format": "gz",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\GSE212050\\GSE212050_seurat_final.rds.gz",
+      "format": "gz",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\metadata\\GSE212050_sample_metadata_final.txt.gz",
+      "format": "gz",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29452,
+        360
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "pool",
+        "stage",
+        "sequencing.batch",
+        "theiler",
+        "doub.density",
+        "doublet",
+        "cluster",
+        "cluster.sub",
+        "cluster.stage",
+        "cluster.theiler",
+        "stripped",
+        "celltype",
+        "colour",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "theiler",
+        "cluster.stage",
+        "cluster.theiler"
+      ],
+      "cell_type_fields": [
+        "cluster",
+        "cluster.sub",
+        "cluster.stage",
+        "cluster.theiler",
+        "celltype"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample",
+        "sequencing.batch"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\embryo_atlas_sample1\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\t_chimera_full\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\t_chimera_full\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29453,
+        36931
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "pool",
+        "stage.mapped",
+        "celltype.mapped",
+        "closest.cell",
+        "doub.density",
+        "trajectory.mapped",
+        "somite.subct.mapped",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "stage.mapped",
+        "somite.subct.mapped"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\t_chimera_full\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\t_chimera_full\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_full\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_full\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29453,
+        56122
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "stage.mapped",
+        "celltype.mapped",
+        "pool",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "stage.mapped"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_full\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_full\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29453,
+        14751
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "stage.mapped",
+        "celltype.mapped",
+        "pool",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "stage.mapped"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\tal1_chimera_sample1\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_full\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_full\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29453,
+        30703
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "pool",
+        "stage.mapped",
+        "celltype.mapped",
+        "closest.cell",
+        "doub.density",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "stage.mapped"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_full\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_full\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        29453,
+        2882
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "pool",
+        "stage.mapped",
+        "celltype.mapped",
+        "closest.cell",
+        "doub.density",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [
+        "stage",
+        "stage.mapped"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\MouseGastrulationData\\wt_chimera_sample1\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\response_transfer\\GSE208369_components\\component_manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\response_transfer\\GSE208369_components\\matrix.mtx",
+      "format": "mtx",
+      "readable": true,
+      "shape": [
+        33577,
+        20000
+      ],
+      "obs_columns": [
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "doublet.score",
+        "percent.mt",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "old.ident",
+        "nCount_SCT",
+        "nFeature_SCT",
+        "SCT_snn_res.0.8",
+        "seurat_clusters",
+        "orig.clusters",
+        "RNA_snn_res.1.2",
+        "RNA_snn_res.1.5",
+        "cell_type",
+        "replicate",
+        "SCT_snn_res.1",
+        "SCT_snn_res.2",
+        "cell_barcode"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "expression_matrix": "matrix.mtx",
+      "time_fields": [],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "orig.clusters",
+        "cell_type"
+      ],
+      "lineage_barcode_fields": [
+        "cell_barcode"
+      ],
+      "condition_fields": [],
+      "spatial_fields": [],
+      "multimodal_fields": []
+    },
+    {
+      "path": "data\\external\\response_transfer\\GSE208369_components\\obs.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\response_transfer\\GSE208369_components\\var.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\external\\response_transfer\\primary_perturbation.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        20000,
+        33577
+      ],
+      "obs_columns": [
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "doublet.score",
+        "percent.mt",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "old.ident",
+        "nCount_SCT",
+        "nFeature_SCT",
+        "SCT_snn_res.0.8",
+        "seurat_clusters",
+        "orig.clusters",
+        "RNA_snn_res.1.2",
+        "RNA_snn_res.1.5",
+        "cell_type",
+        "replicate",
+        "SCT_snn_res.1",
+        "SCT_snn_res.2",
+        "cell_barcode"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [
+        "source"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "orig.clusters",
+        "cell_type"
+      ],
+      "lineage_barcode_fields": [
+        "cell_barcode"
+      ],
+      "condition_fields": [],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "Pcna",
+        "Mcm5",
+        "Tyms"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KITLG",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": false
+    },
+    {
+      "path": "data\\external\\scperturb\\AdamsonWeissman2016_GSM2406675_10X001.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        5768,
+        35635
+      ],
+      "obs_columns": [
+        "perturbation",
+        "read count",
+        "UMI count",
+        "tissue_type",
+        "cell_line",
+        "cancer",
+        "disease",
+        "perturbation_type",
+        "celltype",
+        "organism",
+        "ncounts",
+        "ngenes",
+        "percent_mito",
+        "percent_ribo",
+        "nperts"
+      ],
+      "var_columns": [
+        "ensembl_id",
+        "ncounts",
+        "ncells"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [],
+      "cell_type_fields": [
+        "celltype"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "perturbation",
+        "disease",
+        "perturbation_type"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KITLG",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\external\\scperturb\\DatlingerBock2021.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        39194,
+        25904
+      ],
+      "obs_columns": [
+        "sample",
+        "cell_line",
+        "perturbation",
+        "perturbation_2",
+        "tissue_type",
+        "cancer",
+        "celltype",
+        "disease",
+        "organism",
+        "perturbation_type",
+        "perturbation_type_2",
+        "ncounts",
+        "ngenes",
+        "percent_mito",
+        "percent_ribo",
+        "nperts"
+      ],
+      "var_columns": [
+        "ensembl_id",
+        "ncounts",
+        "ncells"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [],
+      "cell_type_fields": [
+        "celltype"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "sample",
+        "perturbation",
+        "perturbation_2",
+        "disease",
+        "perturbation_type",
+        "perturbation_type_2"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KITLG",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\cell_level_subset_v1.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        19156,
+        3000
+      ],
+      "obs_columns": [
+        "donor_id",
+        "author_experimental_id",
+        "author_day",
+        "author_somite_count",
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type",
+        "disease",
+        "sex",
+        "development_stage",
+        "devvcell_system",
+        "stage_num"
+      ],
+      "var_columns": [
+        "gene_short_name",
+        "chr",
+        "start",
+        "end",
+        "strand",
+        "gene_type",
+        "feature_is_filtered",
+        "feature_name",
+        "feature_reference",
+        "feature_biotype",
+        "feature_length",
+        "feature_type"
+      ],
+      "obsm_keys": [
+        "X_umap"
+      ],
+      "layers": [],
+      "uns_keys": [
+        "devvcell_selected_cells",
+        "devvcell_selected_genes",
+        "devvcell_source_h5ad",
+        "devvcell_subset_config"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [
+        "author_day",
+        "author_somite_count",
+        "development_stage",
+        "stage_num"
+      ],
+      "cell_type_fields": [
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "donor_id",
+        "disease"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [
+        "Kitl",
+        "Kit",
+        "Kdr",
+        "KIT",
+        "KDR"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": false
+    },
+    {
+      "path": "data\\processed\\cell_level_subset_v1.manifest.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\processed\\devguard\\devguard_quick_mouse.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        1470,
+        90
+      ],
+      "obs_columns": [
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "dose",
+        "duration",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "is_control",
+        "is_perturbed",
+        "quick_fixture_expected_pattern"
+      ],
+      "var_columns": [],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\devguard_stress_mouse.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        2178,
+        120
+      ],
+      "obs_columns": [
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "dose",
+        "duration",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "is_control",
+        "is_perturbed",
+        "stress_fixture_truth_time",
+        "stress_fixture_truth_lineage",
+        "stress_fixture_expected_pattern"
+      ],
+      "var_columns": [],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric",
+        "stress_fixture_truth_time"
+      ],
+      "cell_type_fields": [
+        "cell_type",
+        "lineage",
+        "stress_fixture_truth_lineage"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\GSE123187_preview_4files.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        1536,
+        24086
+      ],
+      "obs_columns": [
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "dose",
+        "duration",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "is_control",
+        "is_perturbed",
+        "gse123187_mode",
+        "source_member",
+        "tomo_position"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_symbol",
+        "raw_feature_id"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [
+        "tomo_position"
+      ],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kitl",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\GSE123187_tomo_3files.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        1146,
+        37581
+      ],
+      "obs_columns": [
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "dose",
+        "duration",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "is_control",
+        "is_perturbed",
+        "gse123187_mode",
+        "source_member",
+        "tomo_position",
+        "tomo_axis_fraction",
+        "tomo_axis_bin"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_symbol",
+        "raw_feature_id"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [
+        "tomo_position",
+        "tomo_axis_fraction",
+        "tomo_axis_bin"
+      ],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kitl",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\GSE212050_downsample_15000.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        15000,
+        30406
+      ],
+      "obs_columns": [
+        "cell",
+        "X1",
+        "X2",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "barcode",
+        "experiment",
+        "timepoint",
+        "organoid",
+        "tech",
+        "class",
+        "lane",
+        "batch",
+        "percent.mt",
+        "percent.ribo",
+        "ident",
+        "cxds_score",
+        "cxds_call",
+        "bcds_score",
+        "bcds_call",
+        "hybrid_score",
+        "hybrid_call",
+        "pass_QC",
+        "hybrid_map",
+        "hybrid_call2",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "MULTI_class",
+        "timepoint.base",
+        "sample",
+        "timepoint.demultiplexed",
+        "RNA_snn_res.0.6",
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "stage.mapped.original",
+        "closest.cell.original",
+        "celltype.score.original",
+        "cellstage.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "stage.mapped.meso",
+        "closest.cell.meso",
+        "celltype.score.meso",
+        "cellstage.score.meso",
+        "celltype.mapped.extended",
+        "stage.mapped.extended",
+        "closest.cell.extended",
+        "celltype.score.extended",
+        "cellstage.score.extended",
+        "celltype.mapped.descendant.extended",
+        "stage.mapped.descendant.extended",
+        "closest.cell.descendant.extended",
+        "celltype.score.descendant",
+        "cellstage.score.descendant",
+        "gastr_type",
+        "cellscore",
+        "percent.mt.normed",
+        "nFeature_RNA.normed",
+        "percent.ribo.normed",
+        "nCount_RNA.normed",
+        "initial_size_spliced",
+        "initial_size_unspliced",
+        "initial_size",
+        "n_counts",
+        "velocity_self_transition",
+        "root_cells",
+        "end_points",
+        "velocity_pseudotime",
+        "day",
+        "proliferation_score",
+        "apoptosis_score",
+        "growth_rate_init",
+        "estimated_growth_rates",
+        "cell_barcode",
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "cell_type",
+        "lineage",
+        "dose",
+        "duration",
+        "is_control",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "timepoint",
+        "timepoint.base",
+        "timepoint.demultiplexed",
+        "stage.mapped.original",
+        "cellstage.score.original",
+        "stage.mapped.meso",
+        "cellstage.score.meso",
+        "stage.mapped.extended",
+        "cellstage.score.extended",
+        "stage.mapped.descendant.extended",
+        "cellstage.score.descendant",
+        "velocity_pseudotime",
+        "day",
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "celltype.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "celltype.score.meso",
+        "celltype.mapped.extended",
+        "celltype.score.extended",
+        "celltype.mapped.descendant.extended",
+        "celltype.score.descendant",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "batch",
+        "sample",
+        "estimated_growth_rates",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\GSE212050_strict_sample_13285.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        13285,
+        30406
+      ],
+      "obs_columns": [
+        "cell",
+        "X1",
+        "X2",
+        "orig.ident",
+        "nCount_RNA",
+        "nFeature_RNA",
+        "barcode",
+        "experiment",
+        "timepoint",
+        "organoid",
+        "tech",
+        "class",
+        "lane",
+        "batch",
+        "percent.mt",
+        "percent.ribo",
+        "ident",
+        "cxds_score",
+        "cxds_call",
+        "bcds_score",
+        "bcds_call",
+        "hybrid_score",
+        "hybrid_call",
+        "pass_QC",
+        "hybrid_map",
+        "hybrid_call2",
+        "S.Score",
+        "G2M.Score",
+        "Phase",
+        "MULTI_class",
+        "timepoint.base",
+        "sample",
+        "timepoint.demultiplexed",
+        "RNA_snn_res.0.6",
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "stage.mapped.original",
+        "closest.cell.original",
+        "celltype.score.original",
+        "cellstage.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "stage.mapped.meso",
+        "closest.cell.meso",
+        "celltype.score.meso",
+        "cellstage.score.meso",
+        "celltype.mapped.extended",
+        "stage.mapped.extended",
+        "closest.cell.extended",
+        "celltype.score.extended",
+        "cellstage.score.extended",
+        "celltype.mapped.descendant.extended",
+        "stage.mapped.descendant.extended",
+        "closest.cell.descendant.extended",
+        "celltype.score.descendant",
+        "cellstage.score.descendant",
+        "gastr_type",
+        "cellscore",
+        "percent.mt.normed",
+        "nFeature_RNA.normed",
+        "percent.ribo.normed",
+        "nCount_RNA.normed",
+        "initial_size_spliced",
+        "initial_size_unspliced",
+        "initial_size",
+        "n_counts",
+        "velocity_self_transition",
+        "root_cells",
+        "end_points",
+        "velocity_pseudotime",
+        "day",
+        "proliferation_score",
+        "apoptosis_score",
+        "growth_rate_init",
+        "estimated_growth_rates",
+        "cell_barcode",
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "cell_type",
+        "lineage",
+        "dose",
+        "duration",
+        "is_control",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "gene_id",
+        "gene_name"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "timepoint",
+        "timepoint.base",
+        "timepoint.demultiplexed",
+        "stage.mapped.original",
+        "cellstage.score.original",
+        "stage.mapped.meso",
+        "cellstage.score.meso",
+        "stage.mapped.extended",
+        "cellstage.score.extended",
+        "stage.mapped.descendant.extended",
+        "cellstage.score.descendant",
+        "velocity_pseudotime",
+        "day",
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "seurat_clusters",
+        "cluster",
+        "celltype.mapped.original",
+        "celltype.score.original",
+        "celltype.mapped.original.base",
+        "celltype.mapped.original.meso",
+        "celltype.score.meso",
+        "celltype.mapped.extended",
+        "celltype.score.extended",
+        "celltype.mapped.descendant.extended",
+        "celltype.score.descendant",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "batch",
+        "sample",
+        "estimated_growth_rates",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_embryo_atlas_sample1.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        360,
+        29452
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "pool",
+        "stage",
+        "sequencing.batch",
+        "theiler",
+        "doub.density",
+        "doublet",
+        "cluster",
+        "cluster.sub",
+        "cluster.stage",
+        "cluster.theiler",
+        "stripped",
+        "celltype",
+        "colour",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset",
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "dose",
+        "duration",
+        "is_control",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "stage",
+        "theiler",
+        "cluster.stage",
+        "cluster.theiler",
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "cluster",
+        "cluster.sub",
+        "cluster.stage",
+        "cluster.theiler",
+        "celltype",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample",
+        "sequencing.batch",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kitl",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_integrated_chimera_controls.h5ad",
+      "format": "h5ad",
+      "readable": false,
+      "size_bytes": 3548948734,
+      "note": "deep inspection skipped for >1.1GB file during quick audit; file remains catalogued for full audit"
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_t_chimera_full.h5ad",
+      "format": "h5ad",
+      "readable": false,
+      "size_bytes": 1899437558,
+      "note": "deep inspection skipped for >1.1GB file during quick audit; file remains catalogued for full audit"
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_full.h5ad",
+      "format": "h5ad",
+      "readable": false,
+      "size_bytes": 2231005058,
+      "note": "deep inspection skipped for >1.1GB file during quick audit; file remains catalogued for full audit"
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_tal1_chimera_sample1.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        14751,
+        29453
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "stage.mapped",
+        "celltype.mapped",
+        "pool",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset",
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "dose",
+        "duration",
+        "is_control",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "stage",
+        "stage.mapped",
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kitl",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_full.h5ad",
+      "format": "h5ad",
+      "readable": false,
+      "size_bytes": 1531757754,
+      "note": "deep inspection skipped for >1.1GB file during quick audit; file remains catalogued for full audit"
+    },
+    {
+      "path": "data\\processed\\devguard\\MouseGastrulationData_wt_chimera_sample1.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        2882,
+        29453
+      ],
+      "obs_columns": [
+        "cell",
+        "barcode",
+        "sample",
+        "stage",
+        "tomato",
+        "pool",
+        "stage.mapped",
+        "celltype.mapped",
+        "closest.cell",
+        "doub.density",
+        "sizeFactor",
+        "cell_barcode",
+        "mouse_gastrulation_dataset",
+        "cell_id",
+        "dataset_id",
+        "species",
+        "system",
+        "time_point",
+        "time_numeric",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "cell_type",
+        "lineage",
+        "dose",
+        "duration",
+        "is_control",
+        "is_perturbed"
+      ],
+      "var_columns": [
+        "ENSEMBL",
+        "SYMBOL",
+        "gene_id"
+      ],
+      "obsm_keys": [],
+      "layers": [],
+      "uns_keys": [],
+      "expression_matrix": "X",
+      "time_fields": [
+        "stage",
+        "stage.mapped",
+        "time_point",
+        "time_numeric"
+      ],
+      "cell_type_fields": [
+        "celltype.mapped",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [
+        "barcode",
+        "cell_barcode"
+      ],
+      "condition_fields": [
+        "sample",
+        "condition",
+        "perturbation_name",
+        "perturbation_type",
+        "sample_id",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [
+        "MKI67",
+        "TOP2A",
+        "PCNA",
+        "MCM5",
+        "TYMS",
+        "UBE2C",
+        "Mki67",
+        "Top2a",
+        "Pcna",
+        "Mcm5",
+        "Tyms",
+        "Ube2c"
+      ],
+      "ligand_receptor_gene_hits": [
+        "Fgf8",
+        "Fgfr1",
+        "Wnt3",
+        "Fzd1",
+        "Kitl",
+        "Kit",
+        "Cxcl12",
+        "Cxcr4",
+        "Vegfa",
+        "Kdr",
+        "Dll1",
+        "Notch1",
+        "FGF8",
+        "FGFR1",
+        "WNT3",
+        "FZD1",
+        "KIT",
+        "CXCL12",
+        "CXCR4",
+        "VEGFA",
+        "KDR",
+        "DLL1",
+        "NOTCH1"
+      ],
+      "has_lineage_tracing": true,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\edge_importance_scores.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\grn_learned_network.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\hub_tf_ranking.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\next_step_pair_metrics.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\nodes_summary.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\ot_pair_metrics.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\perturbation_scores.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\rescue_experiments.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\rollout_error_matrix.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\stage_module_means.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\system_specific_edges.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\temporal_sensitivity.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\tf_fate_mutual_info.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\rdeg_neural_cell_mvp\\tf_knockout_results.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "data\\scLine_pro.h5ad",
+      "format": "h5ad",
+      "readable": false,
+      "size_bytes": 12620552772,
+      "note": "large 12GB atlas catalogued; use data/processed/cell_level_subset_v1.h5ad for default deep quick audit",
+      "time_fields": [
+        "author_day",
+        "development_stage"
+      ],
+      "cell_type_fields": [
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type"
+      ],
+      "condition_fields": [
+        "donor_id",
+        "author_experimental_id",
+        "sex"
+      ]
+    },
+    {
+      "path": "processed\\ot_couplings\\moscot_coupling_index.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "processed\\ot_couplings\\wot_coupling_index.csv",
+      "format": "csv",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "processed\\ot_fate_probabilities.parquet",
+      "format": "parquet",
+      "readable": false,
+      "note": "catalogued but not deeply inspected"
+    },
+    {
+      "path": "processed\\ot_teacher.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        8000,
+        2000
+      ],
+      "obs_columns": [
+        "donor_id",
+        "author_experimental_id",
+        "author_day",
+        "author_somite_count",
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type",
+        "disease",
+        "sex",
+        "development_stage",
+        "devvcell_system",
+        "stage_num",
+        "time_numeric",
+        "time_point",
+        "lineage",
+        "condition",
+        "batch",
+        "is_perturbed",
+        "n_counts",
+        "n_genes",
+        "pct_mito",
+        "cell_cycle_score",
+        "ot_transition_entropy",
+        "ot_growth",
+        "ot_target_time",
+        "fate_prob_neural",
+        "fate_prob_erythroid",
+        "fate_prob_mesoderm_muscle",
+        "ot_fate_max"
+      ],
+      "var_columns": [
+        "gene_short_name",
+        "chr",
+        "start",
+        "end",
+        "strand",
+        "gene_type",
+        "feature_is_filtered",
+        "feature_name",
+        "feature_reference",
+        "feature_biotype",
+        "feature_length",
+        "feature_type",
+        "swarm_gene_symbol",
+        "highly_variable"
+      ],
+      "obsm_keys": [
+        "X_ot_barycentric",
+        "X_ot_velocity",
+        "X_pca",
+        "X_umap"
+      ],
+      "layers": [],
+      "uns_keys": [
+        "devvcell_selected_cells",
+        "devvcell_selected_genes",
+        "devvcell_source_h5ad",
+        "devvcell_subset_config",
+        "pca_variance_ratio",
+        "swarmlineage_ot_teacher",
+        "swarmlineage_preprocess"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [
+        "author_day",
+        "author_somite_count",
+        "development_stage",
+        "stage_num",
+        "time_numeric",
+        "time_point",
+        "ot_target_time"
+      ],
+      "cell_type_fields": [
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type",
+        "lineage",
+        "fate_prob_neural",
+        "fate_prob_erythroid",
+        "fate_prob_mesoderm_muscle",
+        "ot_fate_max"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "donor_id",
+        "disease",
+        "condition",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [
+        "Kitl",
+        "Kit",
+        "Kdr",
+        "KIT",
+        "KDR"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    },
+    {
+      "path": "processed\\swarmlineage_input.h5ad",
+      "format": "h5ad",
+      "readable": true,
+      "shape": [
+        8000,
+        2000
+      ],
+      "obs_columns": [
+        "donor_id",
+        "author_experimental_id",
+        "author_day",
+        "author_somite_count",
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type",
+        "disease",
+        "sex",
+        "development_stage",
+        "devvcell_system",
+        "stage_num",
+        "time_numeric",
+        "time_point",
+        "lineage",
+        "condition",
+        "batch",
+        "is_perturbed",
+        "n_counts",
+        "n_genes",
+        "pct_mito",
+        "cell_cycle_score"
+      ],
+      "var_columns": [
+        "gene_short_name",
+        "chr",
+        "start",
+        "end",
+        "strand",
+        "gene_type",
+        "feature_is_filtered",
+        "feature_name",
+        "feature_reference",
+        "feature_biotype",
+        "feature_length",
+        "feature_type",
+        "swarm_gene_symbol",
+        "highly_variable"
+      ],
+      "obsm_keys": [
+        "X_pca",
+        "X_umap"
+      ],
+      "layers": [],
+      "uns_keys": [
+        "devvcell_selected_cells",
+        "devvcell_selected_genes",
+        "devvcell_source_h5ad",
+        "devvcell_subset_config",
+        "pca_variance_ratio",
+        "swarmlineage_preprocess"
+      ],
+      "expression_matrix": "X",
+      "time_fields": [
+        "author_day",
+        "author_somite_count",
+        "development_stage",
+        "stage_num",
+        "time_numeric",
+        "time_point"
+      ],
+      "cell_type_fields": [
+        "author_major_cell_cluster",
+        "author_cell_type",
+        "cell_type",
+        "lineage"
+      ],
+      "lineage_barcode_fields": [],
+      "condition_fields": [
+        "donor_id",
+        "disease",
+        "condition",
+        "batch",
+        "is_perturbed"
+      ],
+      "spatial_fields": [],
+      "multimodal_fields": [],
+      "cell_cycle_marker_hits": [],
+      "ligand_receptor_gene_hits": [
+        "Kitl",
+        "Kit",
+        "Kdr",
+        "KIT",
+        "KDR"
+      ],
+      "has_lineage_tracing": false,
+      "has_perturbation_labels": true
+    }
+  ]
+}

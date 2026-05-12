@@ -1,0 +1,184 @@
+{
+  "project": "SwarmLineage-OT",
+  "created_utc": "2026-05-11T16:40:23.318151+00:00",
+  "random_seeds": [
+    7,
+    17,
+    23,
+    42,
+    99
+  ],
+  "system": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9",
+    "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+    "machine": "AMD64",
+    "cwd": "C:\\Users\\14915\\PycharmProjects\\devvcell_virtual_cell"
+  },
+  "git_commit": "3f8728cae4b7555d754ae6fef56263df802d6d5e",
+  "data_paths": {
+    "default_input": "data/processed/cell_level_subset_v1.h5ad",
+    "large_reference": "data/scLine_pro.h5ad",
+    "preprocessed": "processed/swarmlineage_input.h5ad",
+    "teacher": "processed/ot_teacher.h5ad"
+  },
+  "output_paths": [
+    "processed",
+    "figures",
+    "tables",
+    "reports",
+    "results/swarmlineage",
+    "manuscript"
+  ],
+  "methods": [
+    {
+      "name": "scvi-tools",
+      "module": "scvi",
+      "dist": "scvi-tools",
+      "install_command": "pip install scvi-tools",
+      "citation": "Gayoso et al., Nature Biotechnology, 2022.",
+      "role": "optional latent batch-corrected embedding backend",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "moscot",
+      "module": "moscot",
+      "dist": "moscot",
+      "install_command": "pip install moscot",
+      "citation": "Klein et al., Mapping cells through time and space with moscot, Nature, 2025.",
+      "role": "preferred multi-omics single-cell optimal transport backend",
+      "installed": true,
+      "version": "0.5.0",
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "Waddington-OT/wot",
+      "module": "wot",
+      "dist": "wot",
+      "install_command": "pip install wot",
+      "citation": "Schiebinger et al., Cell, 2019.",
+      "role": "temporal coupling and ancestor-descendant baseline",
+      "installed": true,
+      "version": "1.0.8.post2",
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "POT",
+      "module": "ot",
+      "dist": "POT",
+      "install_command": "pip install pot",
+      "citation": "Flamary et al., JMLR, 2021.",
+      "role": "fallback entropic OT solver used by this reproducible prototype",
+      "installed": true,
+      "version": "0.9.6.post1",
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "CellRank 2",
+      "module": "cellrank",
+      "dist": "cellrank",
+      "install_command": "pip install cellrank",
+      "citation": "Weiler et al., Nature Methods, 2024.",
+      "role": "multiview fate-mapping baseline",
+      "installed": true,
+      "version": "2.0.7",
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "COMMOT",
+      "module": "commot",
+      "dist": "commot",
+      "install_command": "pip install commot",
+      "citation": "Cang et al., Nature Methods, 2023.",
+      "role": "collective OT cell-cell communication reference",
+      "installed": true,
+      "version": "0.0.3",
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "TIGON",
+      "module": "tigon",
+      "dist": "tigon",
+      "install_command": "pip install tigon",
+      "citation": "Chen et al., Nature Machine Intelligence, 2024.",
+      "role": "dynamic unbalanced OT plus growth/GRN comparator",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "TrajectoryNet",
+      "module": "TrajectoryNet",
+      "dist": "TrajectoryNet",
+      "install_command": "pip install git+https://github.com/KrishnaswamyLab/TrajectoryNet.git",
+      "citation": "Tong et al., ICML workshop/arXiv, 2020.",
+      "role": "continuous-flow trajectory baseline",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "MIOFlow",
+      "module": "mioflow",
+      "dist": "mioflow",
+      "install_command": "pip install git+https://github.com/KrishnaswamyLab/MIOFlow.git",
+      "citation": "Huguet et al., ICML workshop/arXiv, 2022.",
+      "role": "manifold interpolation optimal-flow baseline",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "GEARS",
+      "module": "gears",
+      "dist": "gears",
+      "install_command": "pip install gears",
+      "citation": "Roohani et al., Nature Biotechnology, 2023/2024.",
+      "role": "perturbation-expression prediction reference",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "scGPT",
+      "module": "scgpt",
+      "dist": "scgpt",
+      "install_command": "pip install scgpt",
+      "citation": "Cui et al., Nature Methods, 2024.",
+      "role": "optional foundation-model embedding reference",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    },
+    {
+      "name": "scFoundation",
+      "module": "scfoundation",
+      "dist": "scfoundation",
+      "install_command": "install from the maintained scFoundation repository/release",
+      "citation": "Hao et al., Nature Methods, 2024.",
+      "role": "optional foundation-model embedding reference",
+      "installed": false,
+      "version": null,
+      "git_commit_hash": null,
+      "exact_config": "configs/*.yaml"
+    }
+  ],
+  "integrity": {
+    "no_fabricated_data": true,
+    "native_missing_methods_are_recorded": true,
+    "prototype_uses_fallback_when_native_backend_is_unavailable_or_too_slow": true
+  }
+}

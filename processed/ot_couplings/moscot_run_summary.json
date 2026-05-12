@@ -1,0 +1,96 @@
+{
+  "index_path": "processed\\ot_couplings\\moscot_coupling_index.csv",
+  "pairs": [
+    {
+      "method_label": "moscot",
+      "source_time": 12.0,
+      "target_time": 13.0,
+      "file": "processed\\ot_couplings\\moscot_t12_to_t13.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.3254189664048879,
+      "mean_entropy": 0.7259092330932617,
+      "mean_growth": 0.9999936819076538
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 13.0,
+      "target_time": 14.0,
+      "file": "processed\\ot_couplings\\moscot_t13_to_t14.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.2764765920461592,
+      "mean_entropy": 0.6979821920394897,
+      "mean_growth": 1.0
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 14.0,
+      "target_time": 15.0,
+      "file": "processed\\ot_couplings\\moscot_t14_to_t15.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.28279726147572787,
+      "mean_entropy": 0.7018197774887085,
+      "mean_growth": 0.9999983310699463
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 15.0,
+      "target_time": 16.0,
+      "file": "processed\\ot_couplings\\moscot_t15_to_t16.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.27317547365936656,
+      "mean_entropy": 0.7097445726394653,
+      "mean_growth": 1.0009934902191162
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 16.0,
+      "target_time": 17.0,
+      "file": "processed\\ot_couplings\\moscot_t16_to_t17.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.2679633728080414,
+      "mean_entropy": 0.718131422996521,
+      "mean_growth": 0.9980190992355347
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 17.0,
+      "target_time": 18.0,
+      "file": "processed\\ot_couplings\\moscot_t17_to_t18.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.25866483769191945,
+      "mean_entropy": 0.7037391662597656,
+      "mean_growth": 1.0010056495666504
+    },
+    {
+      "method_label": "moscot",
+      "source_time": 18.0,
+      "target_time": 19.0,
+      "file": "processed\\ot_couplings\\moscot_t18_to_t19.npz",
+      "n_source": 650,
+      "n_target": 650,
+      "solver": "numpy_sinkhorn",
+      "transport_cost": 0.2758126795847882,
+      "mean_entropy": 0.7001169919967651,
+      "mean_growth": 1.0000028610229492
+    }
+  ],
+  "native_moscot_status": {
+    "available": false,
+    "detail": "import timed out after 45s",
+    "timeout_seconds": 45
+  },
+  "native_moscot_used": false,
+  "note": "Native moscot is recorded but this prototype uses auditable POT/SciPy fallback couplings for reproducible quick execution."
+}

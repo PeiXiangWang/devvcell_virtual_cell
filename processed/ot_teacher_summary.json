@@ -1,0 +1,10 @@
+{
+  "teacher_path": "processed/ot_teacher.h5ad",
+  "reliability_score": 0.6899505853652954,
+  "terminal_fates": [
+    "neural",
+    "erythroid",
+    "mesoderm_muscle"
+  ],
+  "n_pairs": 7
+}

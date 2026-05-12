@@ -1,0 +1,7 @@
+model_config: configs/model.yaml
+ablation_metrics_path: tables/ablation_metrics.csv
+ablation_stats_path: tables/ablation_statistical_tests.csv
+negative_results_report: reports/negative_results.md
+ablation_report: reports/ablation_interpretation.md
+random_seed: 17
+

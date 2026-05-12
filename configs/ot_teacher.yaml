@@ -1,0 +1,15 @@
+adata_path: processed/swarmlineage_input.h5ad
+teacher_path: processed/ot_teacher.h5ad
+couplings_dir: processed/ot_couplings
+fate_probabilities_path: processed/ot_fate_probabilities.parquet
+time_key: time_numeric
+time_label_key: time_point
+cell_type_key: lineage
+latent_key: X_pca
+epsilon: 0.08
+max_cells_per_time: 650
+max_terminal_fates: 8
+native_moscot_timeout_seconds: 45
+use_native_moscot: false
+random_seed: 17
+

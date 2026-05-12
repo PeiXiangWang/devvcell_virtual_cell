@@ -1,0 +1,4 @@
+gene_or_axis,expected_effect,evidence
+Mki67/Top2a proliferation module,growth hazard calibration,cell-cycle marker proxy in current AnnData
+Fgf8-Fgfr1,mesoderm/neural fate-balance shift,curated LR axis if genes are present
+Cxcl12-Cxcr4,dispersion/niche migration shift,curated LR axis if genes are present

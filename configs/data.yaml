@@ -1,0 +1,16 @@
+input_path: data/processed/cell_level_subset_v1.h5ad
+output_path: processed/swarmlineage_input.h5ad
+schema_json: reports/data_schema.json
+audit_report: reports/data_audit.md
+loading_log: logs/data_loading.log
+figures_dir: figures
+max_cells: 8000
+random_seed: 17
+time_key_candidates: [time_numeric, stage_num, stage, day, author_day, development_stage, pseudotime]
+cell_type_key_candidates: [lineage, devvcell_system, cell_type, author_major_cell_cluster, author_cell_type, cluster]
+condition_key_candidates: [condition, treatment, perturbation, perturbation_name, disease]
+batch_key_candidates: [batch, donor_id, sample_id, author_experimental_id]
+n_top_genes: 2000
+n_pcs: 30
+normalize_total: 10000.0
+

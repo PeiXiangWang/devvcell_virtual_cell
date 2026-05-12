@@ -1,0 +1,8 @@
+method_label,source_time,target_time,file,n_source,n_target,solver,transport_cost,mean_entropy,mean_growth
+wot,12.0,13.0,processed\ot_couplings\wot_t12_to_t13.npz,650,650,numpy_sinkhorn,0.3254189664048879,0.7259092330932617,0.9999936819076538
+wot,13.0,14.0,processed\ot_couplings\wot_t13_to_t14.npz,650,650,numpy_sinkhorn,0.2764765920461592,0.6979821920394897,1.0
+wot,14.0,15.0,processed\ot_couplings\wot_t14_to_t15.npz,650,650,numpy_sinkhorn,0.28279726147572787,0.7018197774887085,0.9999983310699463
+wot,15.0,16.0,processed\ot_couplings\wot_t15_to_t16.npz,650,650,numpy_sinkhorn,0.27317547365936656,0.7097445726394653,1.0009934902191162
+wot,16.0,17.0,processed\ot_couplings\wot_t16_to_t17.npz,650,650,numpy_sinkhorn,0.2679633728080414,0.718131422996521,0.9980190992355347
+wot,17.0,18.0,processed\ot_couplings\wot_t17_to_t18.npz,650,650,numpy_sinkhorn,0.25866483769191945,0.7037391662597656,1.0010056495666504
+wot,18.0,19.0,processed\ot_couplings\wot_t18_to_t19.npz,650,650,numpy_sinkhorn,0.2758126795847882,0.7001169919967651,1.0000028610229492

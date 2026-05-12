@@ -1,0 +1,15 @@
+\section{SwarmLineage-OT finite-agent dynamics}
+Each virtual cell agent \(i\) has latent state \(z_i(t)\), fate belief \(q_i(t)\), age or cell-cycle state \(a_i(t)\), local density/resource score \(r_i(t)\), optional spatial coordinate \(s_i(t)\), and memory exposure \(m_i(t)\). We model the latent dynamics as
+\[
+dz_i =
+\left[
+v_{\theta}^{\mathrm{intrinsic}}(z_i,t)
++ v^{\mathrm{OT}}(z_i,t)
++ v_{\theta}^{\mathrm{swarm}}(z_i,\mathcal{N}_i,r_i,q_i)
++ v_{\theta}^{\mathrm{CCI}}(z_i,\mathcal{C}_i)
+- \nabla U_{\mathrm{manifold}}(z_i)
+\right]dt
++ \sigma_{\theta}(z_i,t,H_i,r_i,a_i)dW_i .
+\]
+The birth and death hazards are non-negative softplus functions of lineage pressure, local density, cell-cycle score, OT growth proxy and fate uncertainty. In the mean-field limit, the empirical cell distribution satisfies a continuity-diffusion-reaction equation with birth and death source terms. The OT teacher supplies pseudo-lineage supervision through temporal couplings, barycentric descendant targets, fate probabilities, transition entropy and mass expansion estimates.
+

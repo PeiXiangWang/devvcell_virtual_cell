@@ -1,0 +1,35 @@
+name: swarmlineage-ot
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python>=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - anndata
+  - scanpy
+  - matplotlib
+  - seaborn
+  - statsmodels
+  - networkx
+  - pyarrow
+  - h5py
+  - pyyaml
+  - tqdm
+  - rich
+  - pytorch
+  - pytorch-lightning
+  - pip:
+      - moscot
+      - ott-jax
+      - pot
+      - cellrank
+      - wot
+      - commot
+      - scvi-tools
+      - gseapy
+      - decoupler
+
