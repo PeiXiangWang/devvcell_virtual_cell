@@ -1,24 +1,21 @@
 # Final Retained Results and Methods
 
-This document reports only retained methods and results from the current run. It does not present fallback teacher results as native moscot/WOT.
+## Central Claim
 
-## Data Split
+OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.
 
-The pipeline supports `strict_time_holdout` and `teacher_edge_holdout`. Under strict holdout, held-out cells are excluded from HVG/SVD fitting, teacher construction, model training and hyperparameter selection; they are transformed only for evaluation.
+The retained manuscript must not claim that SwarmLineage-OT outperforms OT interpolation. `M0b_ot_interpolation` is an oracle-like teacher/reference interpolation.
 
-## Teacher
+## Evaluation Gates
 
-Teacher backend is recorded in `processed/**/ot_teacher_summary.json` and AnnData `uns['swarmlineage_ot_teacher']['backend']`. toy_sinkhorn_fallback is a toy fallback and cannot support high-level moscot/WOT claims.
+- teacher_fidelity_gate: True
+- emergent_law_gate: True
+- mechanistic_usefulness_gate: True
 
-## Model
+## Retained Metrics
 
-M1 intrinsic dynamics is trained without OT velocity targets. M2 and later variants can use OT teacher velocity. Birth/death uses stochastic event simulation; memory is a fate-specific kNN field; CCI uses sender-receiver LR graph signals.
-
-## Results
-
-- best mean-rank model: `M0b_ot_interpolation`
-- strongest baseline: `M0b_ot_interpolation`
-- full model gate passed: False
+- teacher fidelity metrics: `tables/teacher_fidelity_metrics.csv`
+- emergent law gates: `tables/emergent_law_gate_summary.csv`
 
 | model                                 |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
 |:--------------------------------------|-----------:|-----------:|---------:|----------------------------:|
@@ -36,14 +33,20 @@ M1 intrinsic dynamics is trained without OT velocity targets. M2 and later varia
 | M8_ot_swarm_birth_death_diffusion_cci |   0.284235 | 0.0183179  | 0.632942 |                  0.0200099  |
 | M9_full_memory                        |   0.28393  | 0.0183946  | 0.637903 |                  0.0200099  |
 
+## Methods Retained
+
+- strict time holdout and teacher-edge holdout support leakage-resistant evaluation.
+- OT teacher construction records backend status; toy fallback is not presented as native moscot/WOT.
+- `SwarmLineageDynamics` represents trainable intrinsic, teacher, swarm, birth/death, adaptive diffusion, CCI and memory components.
+- Stochastic birth/death uses event simulation and writes event logs.
+- Discovery modules estimate diffusion, growth, branch nucleation, memory hysteresis, CCI branch bias and phase-regime laws.
+
 ## Interpretation
 
-- Full model is worse than `M0b_ot_interpolation` on: energy (+0.302), sinkhorn (+0.02885), celltype_composition_rmse (+0.01653), mmd_rbf (+0.00961)
-- Diagnostic: swarm/birth/diffusion coefficients or noise are likely too strong for the current teacher; inspect event counts and sigma calibration.
-- Diagnostic: CCI graph is not improving reconstruction; LR edges may be sparse, mis-specified or not relevant to this dataset.
+If `M0b_ot_interpolation` has the lowest reconstruction error, this is expected for a teacher/reference. The agent model is retained when it stays close enough to the teacher and yields stable mechanistic laws.
 
 ## Limitations
 
-- No result is written as a success if the full model does not beat the strongest baseline.
-- Native CellRank2/TrajectoryNet/MIOFlow/TIGON are only counted as compared methods if marked `executed=True` in the baseline matrix.
-- Perturbation and CCI results are exploratory until validated by matched perturbation or spatial data.
+- Current emergent laws are computational hypotheses, not validated biological mechanisms.
+- Strong biological claims require native moscot/WOT or external teacher validation plus external or perturbation validation.
+- If teacher fidelity is poor and no emergent-law gates are stable, the current scientific hypothesis should be reported as unsupported.

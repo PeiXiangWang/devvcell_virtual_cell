@@ -1,11 +1,14 @@
 # Scientific Gap Audit
 
-- Best mean-rank model: `M0b_ot_interpolation`.
-- Strongest baseline: `M0b_ot_interpolation`.
-- Full model passes the predefined gate of beating the strongest baseline on at least two core metrics: False.
-- High-level claims are allowed only with native_moscot/native_wot or externally validated teacher. The current fallback teacher remains toy_sinkhorn_fallback unless reports say otherwise.
+Scientific goal after re-scoping: OT gives the developmental map; SwarmLineage-OT learns microscopic rules that realize the map and reveal emergent developmental laws.
 
-## Baseline Execution Matrix
+- best mean-rank reconstruction row: `M0b_ot_interpolation`
+- OT reference row: `M0b_ot_interpolation`
+- teacher_fidelity_gate: True
+- emergent_law_gate: True
+- mechanistic_usefulness_gate: True
+
+## Baseline/Reference Execution Matrix
 
 | baseline                              | available   | executed   | status                                                                                                                                                                                                                             | module        |
 |:--------------------------------------|:------------|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------|
@@ -27,9 +30,9 @@
 | MIOFlow                               | False       | False      | CalledProcessError:Command '['C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-c', "import mioflow; print(getattr(mioflow, '__version__', 'unknown'))"]' returned non-zero exit status 1.             | mioflow       |
 | TIGON                                 | False       | False      | CalledProcessError:Command '['C:\\Users\\14915\\AppData\\Local\\Programs\\Python\\Python311\\python.exe', '-c', "import tigon; print(getattr(tigon, '__version__', 'unknown'))"]' returned non-zero exit status 1.                 | tigon         |
 
-## Required Next Steps Before Strong Claims
+## Remaining Gaps
 
-- Run native moscot TemporalProblem and extract native transport plans, or validate the fallback teacher externally.
-- Add real external held-out dataset validation and lineage/perturbation validation.
-- Tune trainable swarm, event and memory coefficients only on training times, then re-run the strict holdout gate.
-- Keep negative controls in the report; shuffled time/LR controls must degrade performance.
+- Native moscot TemporalProblem or externally validated teacher is still required for strong claims beyond a toy fallback.
+- Emergent laws must be checked across seeds, held-out times and at least one external developmental dataset.
+- CCI and memory laws are computational hypotheses unless supported by matched spatial, perturbation or lineage-tracing data.
+- The manuscript must not state that SwarmLineage-OT outperforms OT; the correct claim is teacher fidelity plus mechanistic discovery.

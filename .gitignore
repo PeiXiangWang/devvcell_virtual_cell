@@ -13,6 +13,7 @@ figures/
 processed/
 reports/quick_fixture/
 tables/quick_fixture/
+manuscript/*.quick_fixture.md
 Old/*.zip
 
 # Model/checkpoint artifacts.

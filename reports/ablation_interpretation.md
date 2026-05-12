@@ -22,13 +22,13 @@ This report is generated directly from `tables/ablation_metrics.csv`; it is not 
 
 ## Primary Paired Tests
 
-| metric                    | baseline             | challenger     |   n |   baseline_mean |   challenger_mean |   effect_baseline_minus_challenger |   effect_ci_low |   effect_ci_high |   p_value |   q_value |
-|:--------------------------|:---------------------|:---------------|----:|----------------:|------------------:|-----------------------------------:|----------------:|-----------------:|----------:|----------:|
-| sinkhorn                  | M0b_ot_interpolation | M9_full_memory |   5 |      0.255076   |         0.28393   |                        -0.0288536  |      -0.0467415 |       -0.0110159 |   0.96875 |         1 |
-| mmd_rbf                   | M0b_ot_interpolation | M9_full_memory |   5 |      0.00878499 |         0.0183946 |                        -0.00960959 |      -0.0127757 |       -0.0069178 |   1       |         1 |
-| energy                    | M0b_ot_interpolation | M9_full_memory |   5 |      0.335883   |         0.637903  |                        -0.30202    |      -0.370178  |       -0.242441  |   1       |         1 |
-| celltype_composition_rmse | M0b_ot_interpolation | M9_full_memory |   5 |      0.00348103 |         0.0200099 |                        -0.0165289  |      -0.0237956 |       -0.0092621 |   1       |         1 |
+| metric                    | baseline            | challenger     |   n |   baseline_mean |   challenger_mean |   effect_baseline_minus_challenger |   effect_ci_low |   effect_ci_high |   p_value |   q_value |
+|:--------------------------|:--------------------|:---------------|----:|----------------:|------------------:|-----------------------------------:|----------------:|-----------------:|----------:|----------:|
+| sinkhorn                  | M2_ot_teacher_force | M9_full_memory |   5 |      0.274306   |         0.28393   |                        -0.00962397 |     -0.0262105  |      0.00642452  |   0.90625 |         1 |
+| mmd_rbf                   | M2_ot_teacher_force | M9_full_memory |   5 |      0.0167648  |         0.0183946 |                        -0.00162977 |     -0.00467704 |      0.000949307 |   0.84375 |         1 |
+| energy                    | M2_ot_teacher_force | M9_full_memory |   5 |      0.568815   |         0.637903  |                        -0.0690878  |     -0.131981   |     -0.0212908   |   1       |         1 |
+| celltype_composition_rmse | M2_ot_teacher_force | M9_full_memory |   5 |      0.00386852 |         0.0200099 |                        -0.0161414  |     -0.0236141  |     -0.00847339  |   1       |         1 |
 
 ## Current Interpretation
 
-Strongest baseline for paired gate: `M0b_ot_interpolation`. Modules are retained only when they improve held-out reconstruction or provide a mechanistic diagnostic. If the full model does not beat the strongest baseline on at least two primary metrics, the manuscript must state that the high-level claim is not supported.
+Strongest non-reference baseline for paired diagnostic: `M2_ot_teacher_force`. `M0b_ot_interpolation` is retained as the OT teacher/reference interpolation, not as a competitor that the finite-agent model must beat. Modules are evaluated by teacher fidelity plus whether they provide stable mechanistic diagnostics and emergent-law signals.

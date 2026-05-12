@@ -87,6 +87,12 @@ def build_teacher(cfg: dict) -> dict:
     ensure_dir("figures")
     ensure_dir("reports")
     ensure_dir("tables")
+    out_path = cfg.get("teacher_path", "processed/ot_teacher.h5ad")
+    quick_outputs = "quick_fixture" in str(out_path).replace("\\", "/")
+    figure_dir = ensure_dir("figures/quick_fixture") if quick_outputs else ensure_dir("figures")
+    report_dir = ensure_dir("reports/quick_fixture") if quick_outputs else ensure_dir("reports")
+    table_dir = ensure_dir("tables/quick_fixture") if quick_outputs else ensure_dir("tables")
+    summary_path = Path(out_path).with_name("ot_teacher_summary.json") if quick_outputs else Path("processed/ot_teacher_summary.json")
     adata = ad.read_h5ad(cfg["adata_path"])
     z = np.asarray(adata.obsm[cfg.get("latent_key", "X_pca")], dtype=float)
     obs = adata.obs.copy()
@@ -181,16 +187,15 @@ def build_teacher(cfg: dict) -> dict:
         "lr_pairs_detected": [f"{a}-{b}" for a, b in lr_pairs],
         "warning": "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage. toy_sinkhorn_fallback is not a native moscot/WOT result.",
     }
-    out_path = cfg.get("teacher_path", "processed/ot_teacher.h5ad")
     adata.write_h5ad(out_path)
     fate_frame = adata.obs[[time_key, cell_type_key, "ot_transition_entropy", "ot_growth", "ot_fate_max"] + fate_cols].copy()
     fate_frame.to_parquet(cfg.get("fate_probabilities_path", "processed/ot_fate_probabilities.parquet"), index=True)
     edges = pd.concat(edge_frames, ignore_index=True) if edge_frames else pd.DataFrame()
     if not edges.empty:
-        edges.to_csv("tables/ot_lineage_edges.csv", index=False)
-    _plot_lineage_graph(edges, Path("figures/ot_lineage_graph.png"))
-    _plot_umap_scalar(adata, entropy, "OT transition entropy / fate uncertainty", Path("figures/ot_fate_umap.png"), cmap="magma")
-    _plot_umap_scalar(adata, growth, "OT mass expansion proxy", Path("figures/ot_growth_map.png"), cmap="viridis")
+        edges.to_csv(table_dir / "ot_lineage_edges.csv", index=False)
+    _plot_lineage_graph(edges, figure_dir / "ot_lineage_graph.png")
+    _plot_umap_scalar(adata, entropy, "OT transition entropy / fate uncertainty", figure_dir / "ot_fate_umap.png", cmap="magma")
+    _plot_umap_scalar(adata, growth, "OT mass expansion proxy", figure_dir / "ot_growth_map.png", cmap="viridis")
 
     reliability_score = float(max(0.0, min(1.0, 1.0 - np.nanmean(entropy) * 0.5 - np.nanstd(growth) * 0.1)))
     sensitivity = []
@@ -226,9 +231,9 @@ def build_teacher(cfg: dict) -> dict:
     ]
     if sensitivity:
         sens = pd.DataFrame(sensitivity)
-        sens.to_csv("tables/ot_teacher_sensitivity.csv", index=False)
+        sens.to_csv(table_dir / "ot_teacher_sensitivity.csv", index=False)
         report += ["## WOT-Style Sensitivity", "", sens.to_markdown(index=False), ""]
-    write_text("reports/ot_teacher_report.md", "\n".join(report))
+    write_text(report_dir / "ot_teacher_report.md", "\n".join(report))
     payload = {
         "teacher_path": out_path,
         "teacher_backend": adata.uns["swarmlineage_ot_teacher"]["backend"],
@@ -237,7 +242,7 @@ def build_teacher(cfg: dict) -> dict:
         "terminal_fates": terminal_fates,
         "n_pairs": int(index.shape[0]),
     }
-    write_json("processed/ot_teacher_summary.json", payload)
+    write_json(summary_path, payload)
     return payload
 
 

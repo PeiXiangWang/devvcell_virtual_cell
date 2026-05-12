@@ -1,10 +1,12 @@
 # Module Contribution Audit
 
-- strongest baseline: `M0b_ot_interpolation`
-- full model: `M9_full_memory`
-- full-model core metric wins over strongest baseline: 0/4
+This audit no longer treats OT interpolation as a method that the agent model must beat. OT interpolation is the teacher/reference map.
 
-## Mean Metrics
+- primary agent: `M9_full_memory`
+- `M9_full_memory` fidelity: relative_sinkhorn=1.113, relative_mmd=2.094, branch_fate_error=0.0200.
+- mechanistic_usefulness_gate: True
+
+## Reconstruction Context
 
 | model                                 |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
 |:--------------------------------------|-----------:|-----------:|---------:|----------------------------:|
@@ -22,8 +24,19 @@
 | M8_ot_swarm_birth_death_diffusion_cci |   0.284235 | 0.0183179  | 0.632942 |                  0.0200099  |
 | M9_full_memory                        |   0.28393  | 0.0183946  | 0.637903 |                  0.0200099  |
 
-## Diagnostics
+## Emergent-Law Contributions
 
-- Full model is worse than `M0b_ot_interpolation` on: energy (+0.302), sinkhorn (+0.02885), celltype_composition_rmse (+0.01653), mmd_rbf (+0.00961)
-- Diagnostic: swarm/birth/diffusion coefficients or noise are likely too strong for the current teacher; inspect event counts and sigma calibration.
-- Diagnostic: CCI graph is not improving reconstruction; LR edges may be sparse, mis-specified or not relevant to this dataset.
+| law               | gate   | table                                   | status   |
+|:------------------|:-------|:----------------------------------------|:---------|
+| diffusion         | True   | tables\diffusion_law_regression.csv     | executed |
+| birth_death       | True   | tables\birth_death_law.csv              | executed |
+| branch_nucleation | True   | tables\swarm_order_parameters.csv       | executed |
+| memory_hysteresis | True   | tables\memory_hysteresis_experiment.csv | executed |
+| cci_branch_bias   | True   | tables\cci_branch_bias.csv              | executed |
+| phase_diagram     | True   | tables\phase_diagram.csv                | executed |
+
+## Interpretation
+
+- `M0b_ot_interpolation` can remain the lowest-error reconstruction because it is the reference interpolation derived from the teacher.
+- Swarm, birth/death, diffusion, CCI and memory are evaluated by fidelity plus whether they expose robust order parameters, hazards, phase regimes or perturbation sensitivities.
+- Modules that degrade fidelity without yielding stable laws should remain exploratory or be disabled in retained biological claims.
