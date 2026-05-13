@@ -1,6 +1,6 @@
 {
   "project": "SwarmLineage-OT",
-  "created_utc": "2026-05-13T09:43:29.207419+00:00",
+  "created_utc": "2026-05-13T18:18:20.994130+00:00",
   "random_seeds": [
     7,
     17,
@@ -15,7 +15,7 @@
     "machine": "AMD64",
     "cwd": "C:\\Users\\14915\\PycharmProjects\\devvcell_virtual_cell"
   },
-  "git_commit": "4d3dabdbc7be322f65db39f98688351316f0a9d2",
+  "git_commit": "9267528179c072ed896fe9f6c79120eab25644c3",
   "data_paths": {
     "default_input": "data/processed/cell_level_subset_v1.h5ad",
     "large_reference": "data/scLine_pro.h5ad",
@@ -174,6 +174,38 @@
       "exact_config": "configs/*.yaml"
     }
   ],
+  "native_teacher_environment": {
+    "requirements_file": "reproducibility\\native_moscot_requirements.txt",
+    "requirements": [
+      "# Pinned CPU-only stack for native moscot TemporalProblem extraction.",
+      "# This deliberately avoids the current global jax==0.10.0 stack, which hangs",
+      "# during import on the Windows test host.",
+      "moscot==0.3.5",
+      "ott-jax==0.4.6",
+      "jax[cpu]==0.4.35",
+      "jaxlib==0.4.35",
+      "lineax==0.0.7",
+      "equinox==0.11.10",
+      "optax==0.2.4",
+      "jaxopt==0.8.3",
+      "numpy==1.26.4",
+      "scipy==1.13.1",
+      "pandas==2.2.3",
+      "anndata==0.10.9",
+      "scanpy==1.10.4",
+      "PyYAML==6.0.3"
+    ],
+    "local_venv_path": ".venv_moscot_native",
+    "teacher_summary": "processed\\quick_fixture\\ot_couplings\\moscot_run_summary.json",
+    "teacher_backend": "toy_sinkhorn_fallback",
+    "native_moscot_used": false,
+    "native_moscot_status": {
+      "available": false,
+      "detail": "import timed out after 45s",
+      "timeout_seconds": 45
+    },
+    "note": "The native teacher can be generated from the pinned CPU stack even if the global Python environment contains a different moscot/JAX stack."
+  },
   "integrity": {
     "no_fabricated_data": true,
     "native_missing_methods_are_recorded": true,

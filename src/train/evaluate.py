@@ -230,14 +230,27 @@ def _teacher_backend_status(model_cfg: dict, table_dir: Path, report_dir: Path) 
                 payload = {}
     backend = str(payload.get("teacher_backend", "unknown"))
     native_validated = backend in {"native_moscot", "native_wot"}
+    teacher_path = Path(model_cfg.get("teacher_path", "processed/ot_teacher.h5ad"))
+    run_summary_path = Path("processed/quick_fixture/ot_couplings/moscot_run_summary.json") if "quick_fixture" in str(teacher_path) else Path("processed/ot_couplings/moscot_run_summary.json")
+    run_summary = {}
+    if run_summary_path.exists():
+        try:
+            run_summary = json.loads(run_summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            run_summary = {}
+    native_pairs = run_summary.get("pairs", [])
+    native_status = run_summary.get("native_moscot_status", {})
     table = pd.DataFrame(
         [
             {
                 "teacher_backend": backend,
                 "native_teacher_available": native_validated,
                 "external_teacher_validation": False,
-                "strong_biological_claims_allowed": native_validated,
+                "native_teacher_claims_allowed": native_validated,
+                "strong_biological_claims_allowed": False,
                 "nature_level_claim_allowed": False,
+                "native_temporalproblem_pairs": len(native_pairs) if native_validated else 0,
+                "native_requirements_file": "reproducibility/native_moscot_requirements.txt",
                 "status": "native teacher pending" if not native_validated else "native teacher available; external validation still required",
             }
         ]
@@ -252,7 +265,11 @@ def _teacher_backend_status(model_cfg: dict, table_dir: Path, report_dir: Path) 
                 f"- teacher_backend: {backend}",
                 f"- native_teacher_available: {native_validated}",
                 "- external_teacher_validation: False",
-                "- strong biological claims forbidden when backend is toy_sinkhorn_fallback.",
+                f"- native TemporalProblem pairs extracted: {len(native_pairs) if native_validated else 0}",
+                f"- native moscot status: {native_status}",
+                "- clean native stack: `reproducibility/native_moscot_requirements.txt`",
+                "- Native moscot/WOT teacher claims are allowed only when `native_teacher_available=True`.",
+                "- Strong biological claims remain forbidden without external, lineage, perturbation or wet-lab validation.",
                 "- Nature-level claims are forbidden for the current prototype.",
                 "",
             ]
@@ -358,10 +375,10 @@ def _write_reports(
                 "",
                 "## Remaining Gaps",
                 "",
-                "- Native moscot/WOT or external teacher validation remains pending unless `teacher_backend_status.csv` says otherwise.",
+                "- Native moscot/WOT or external teacher validation status is reported in `teacher_backend_status.csv`.",
                 "- CCI and memory are computational probes, not wet-lab validated mechanisms.",
                 "- No manuscript claim may state that SwarmLineage-OT outperforms OT.",
-                "- Nature-ready claims are forbidden for the current toy fallback teacher.",
+                "- Nature-ready claims remain forbidden without external lineage, perturbation or wet-lab validation.",
                 "",
             ]
         ),
@@ -399,7 +416,7 @@ def _write_reports(
         "",
         "- Current results are computational hypotheses.",
         "- Some laws are encoded control-law recoveries and must not be written as independent biological discoveries.",
-        "- toy_sinkhorn_fallback is not native moscot/WOT.",
+        "- Native moscot teacher extraction removes the toy-fallback blocker for teacher construction, but not the need for external validation.",
         "- No wet-lab validation or causal mechanism is claimed.",
         "",
     ]

@@ -12,4 +12,4 @@ In the current discovery-hardened run, teacher fidelity is acceptable, emergent-
 
 ## Discussion
 
-The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision and a falsifiable mechanism-discovery audit. The main limitation is that validation remains computational, the current teacher backend is toy_sinkhorn_fallback, and strong biological claims require native moscot/WOT or external teacher validation plus external lineage, spatial or perturbation evidence.
+The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision and a falsifiable mechanism-discovery audit. The current teacher backend is native moscot on a downsampled main AnnData run, which removes the toy-fallback blocker for teacher construction. The main limitation is that validation remains computational, and strong biological claims still require external lineage, spatial, perturbation or wet-lab evidence.

@@ -151,6 +151,14 @@ def build_manifest(quick_fixture: bool = False) -> dict[str, Any]:
                 f"- {item['name']}: not importable in the current Python environment. "
                 f"Suggested command: `{item['install_command']}`."
             )
+    native_req = Path("reproducibility/native_moscot_requirements.txt")
+    native_summary_path = Path("processed/quick_fixture/ot_couplings/moscot_run_summary.json" if quick_fixture else "processed/ot_couplings/moscot_run_summary.json")
+    native_summary: dict[str, Any] = {}
+    if native_summary_path.exists():
+        try:
+            native_summary = json.loads(native_summary_path.read_text(encoding="utf-8"))
+        except Exception:
+            native_summary = {}
     manifest = {
         "project": "SwarmLineage-OT",
         "created_utc": datetime.now(timezone.utc).isoformat(),
@@ -171,6 +179,16 @@ def build_manifest(quick_fixture: bool = False) -> dict[str, Any]:
         },
         "output_paths": ["figures/quick_fixture", "tables/quick_fixture", "reports/quick_fixture", "manuscript/*.quick_fixture.md"] if quick_fixture else ["processed", "figures", "tables", "reports", "results/swarmlineage", "manuscript"],
         "methods": package_records,
+        "native_teacher_environment": {
+            "requirements_file": str(native_req),
+            "requirements": native_req.read_text(encoding="utf-8").splitlines() if native_req.exists() else [],
+            "local_venv_path": ".venv_moscot_native",
+            "teacher_summary": str(native_summary_path),
+            "teacher_backend": native_summary.get("teacher_backend", "unknown"),
+            "native_moscot_used": bool(native_summary.get("native_moscot_used", False)),
+            "native_moscot_status": native_summary.get("native_moscot_status", {}),
+            "note": "The native teacher can be generated from the pinned CPU stack even if the global Python environment contains a different moscot/JAX stack.",
+        },
         "integrity": {
             "no_fabricated_data": True,
             "native_missing_methods_are_recorded": True,

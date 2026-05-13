@@ -7,11 +7,11 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 - teacher_fidelity_tier: acceptable
 - emergent_law_tier: weak
 - mechanistic_usefulness_tier: weak
-- native_or_external_teacher_validation: False
+- native_or_external_teacher_validation: True
 
 ## Remaining Gaps
 
-- Native moscot/WOT or external teacher validation remains pending unless `teacher_backend_status.csv` says otherwise.
+- Native moscot/WOT or external teacher validation status is reported in `teacher_backend_status.csv`.
 - CCI and memory are computational probes, not wet-lab validated mechanisms.
 - No manuscript claim may state that SwarmLineage-OT outperforms OT.
-- Nature-ready claims are forbidden for the current toy fallback teacher.
+- Nature-ready claims remain forbidden without external lineage, perturbation or wet-lab validation.

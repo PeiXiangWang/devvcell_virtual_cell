@@ -15,8 +15,8 @@ Memory hysteresis now uses actual MemoryField deposit, decay and diffusion over 
 
 |   seed |   paired_branch_probability_effect |   paired_diffusion_effect |
 |-------:|-----------------------------------:|--------------------------:|
-|      7 |                                  0 |                 0.0170789 |
-|     17 |                                  0 |                 0.0161711 |
-|     23 |                                  0 |                 0.0175336 |
-|     42 |                                  0 |                 0.0167229 |
-|     99 |                                  0 |                 0.0178742 |
+|      7 |                                  0 |                 0.0165538 |
+|     17 |                                  0 |                 0.0170253 |
+|     23 |                                  0 |                 0.0178694 |
+|     42 |                                  0 |                 0.0205637 |
+|     99 |                                  0 |                 0.0175393 |

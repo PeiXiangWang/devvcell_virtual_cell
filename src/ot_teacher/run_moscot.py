@@ -401,13 +401,13 @@ def main() -> None:
     native = _native_status(int(cfg.get("native_moscot_timeout_seconds", 45)))
     native_result = run_native_moscot_teacher(cfg, native, label="teacher")
     if native_result.get("success", False):
-        summary = native_result
+        summary = dict(native_result)
         summary["note"] = "Native moscot TemporalProblem transport matrices were extracted and written to teacher NPZ files."
     else:
         summary = run_toy_sinkhorn_teacher(cfg, label="teacher")
         summary["note"] = "Fallback couplings are explicitly labelled toy_sinkhorn_fallback and must not be reported as moscot results."
     summary["native_moscot_status"] = native
-    summary["native_moscot_execution"] = native_result
+    summary["native_moscot_execution"] = {k: v for k, v in native_result.items() if k != "pairs"}
     summary["native_moscot_used"] = bool(native_result.get("success", False))
     write_json(Path(cfg.get("couplings_dir", "processed/ot_couplings")) / "moscot_run_summary.json", summary)
     print(json.dumps({"teacher_pairs": len(summary["pairs"]), "teacher_backend": summary["teacher_backend"], "native": native}, indent=2))

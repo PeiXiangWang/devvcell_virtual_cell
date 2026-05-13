@@ -179,13 +179,18 @@ def build_teacher(cfg: dict) -> dict:
     adata.obs["ot_fate_max"] = np.array(terminal_fates, dtype=object)[np.argmax(fate_probs, axis=1)]
     cci_signal, lr_pairs = cci_context(adata, obs[cell_type_key].astype(str).to_numpy())
     adata.obs["cci_signal"] = cci_signal
+    backend = str(index.get("teacher_backend", pd.Series(["toy_sinkhorn_fallback"])).iloc[0])
+    if backend in {"native_moscot", "native_wot"}:
+        warning = "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage. Native OT extraction succeeded, but biological validation is still absent."
+    else:
+        warning = "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage. toy_sinkhorn_fallback is not a native moscot/WOT result."
     adata.uns["swarmlineage_ot_teacher"] = {
-        "backend": str(index.get("teacher_backend", pd.Series(["toy_sinkhorn_fallback"])).iloc[0]),
+        "backend": backend,
         "terminal_time": terminal_time,
         "terminal_fates": terminal_fates,
         "coupling_index": str(index_path),
         "lr_pairs_detected": [f"{a}-{b}" for a, b in lr_pairs],
-        "warning": "Fate probabilities are OT-teacher pseudo-labels, not experimentally traced lineage. toy_sinkhorn_fallback is not a native moscot/WOT result.",
+        "warning": warning,
     }
     adata.write_h5ad(out_path)
     fate_frame = adata.obs[[time_key, cell_type_key, "ot_transition_entropy", "ot_growth", "ot_fate_max"] + fate_cols].copy()
@@ -212,7 +217,7 @@ def build_teacher(cfg: dict) -> dict:
     report = [
         "# OT Teacher Report",
         "",
-        "The teacher was built from adjacent developmental-stage entropic OT couplings. If native moscot is unavailable, couplings are explicitly labelled toy_sinkhorn_fallback and cannot support high-level moscot claims.",
+        "The teacher was built from adjacent developmental-stage entropic OT couplings. Native moscot/WOT backends are reported explicitly; fallback couplings are labelled toy_sinkhorn_fallback and cannot support high-level moscot claims.",
         "",
         f"- cells: {adata.n_obs}",
         f"- latent dimensions: {d}",
@@ -226,7 +231,7 @@ def build_teacher(cfg: dict) -> dict:
         "",
         "- These couplings are OT-inferred pseudo-lineage, not true lineage tracing.",
         "- `stage_num`/Theiler stage is treated as real ordered developmental stage for this dataset; it is still coarser than dense experimental time.",
-        "- Native moscot/WOT baselines should be rerun without quick fallback before any high-impact claim.",
+        "- External lineage, perturbation or independent teacher validation is still required before any high-impact biological claim.",
         "",
     ]
     if sensitivity:
