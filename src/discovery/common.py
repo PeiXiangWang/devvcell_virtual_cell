@@ -41,6 +41,8 @@ def configure_paths(config_path: str, quick_fixture: bool = False) -> tuple[dict
         model_cfg["order_log_path"] = "tables/quick_fixture/rollout_order_parameters.csv"
         model_cfg["metrics_path"] = "tables/quick_fixture/final_metrics.csv"
         train_cfg["discovery_prefix"] = "quick_fixture"
+        train_cfg["module_contribution_report"] = "reports/quick_fixture/module_contribution_audit.md"
+        train_cfg["scientific_gap_report"] = "reports/quick_fixture/scientific_gap_audit.md"
     return train_cfg, model_cfg, discovery_cfg
 
 

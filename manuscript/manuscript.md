@@ -8,7 +8,7 @@ Optimal transport can infer pseudo-lineage maps from destructive single-cell sna
 
 We audited local single-cell resources, built a stage-based OT teacher, trained a finite-agent simulator, and evaluated the model with tiered evidence gates: teacher fidelity, emergent-law robustness and mechanistic usefulness. OT interpolation is treated as an oracle-like teacher/reference interpolation, not as a competitor that the agent model must outperform.
 
-In the current discovery-hardened run, teacher fidelity is acceptable, emergent-law evidence is weak overall, and mechanistic usefulness is weak. Diffusion is retained only as an encoded control-law recovery; branch nucleation, CCI bias and phase regimes remain exploratory; birth/death and memory hysteresis are unsupported in the current evidence table.
+In the current discovery-hardened run, teacher fidelity is acceptable, emergent-law evidence is weak overall, and mechanistic usefulness is weak. Diffusion is retained only as an encoded control-law recovery; branch nucleation and phase regimes remain exploratory rollout-based probes; birth/death, memory hysteresis and CCI branch bias are unsupported in the current evidence table.
 
 ## Discussion
 

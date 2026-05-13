@@ -11,6 +11,10 @@ max_cells_per_time: 650
 max_terminal_fates: 8
 native_moscot_timeout_seconds: 45
 use_native_moscot: false
+native_max_cells_per_time: 350
+native_max_iterations: 800
+native_jit: false
+native_device: cpu
 random_seed: 17
 split_mode: strict_time_holdout
 holdout_time: 15.0

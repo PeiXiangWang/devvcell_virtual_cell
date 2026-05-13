@@ -22,8 +22,7 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 
 | law               | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |
 |:------------------|:-------|:------------------------|:----------------|:---------------------------------|
-| branch_nucleation | weak   | exploratory_sensitivity | False           | False                            |
-| cci_branch_bias   | weak   | exploratory_sensitivity | False           | False                            |
+| branch_nucleation | weak   | exploratory_sensitivity | True            | False                            |
 | phase_diagram     | weak   | exploratory_sensitivity | True            | False                            |
 
 ## Unsupported Claims
@@ -32,6 +31,7 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 |:------------------|:-------|:---------|
 | birth_death       | fail   | executed |
 | memory_hysteresis | fail   | executed |
+| cci_branch_bias   | fail   | executed |
 
 ## Core Metrics
 
