@@ -69,6 +69,7 @@ def main() -> None:
         cfg["simulation_dir"] = "results/quick_fixture/simulations"
         cfg["metrics_path"] = "tables/quick_fixture/final_metrics.csv"
         cfg["event_log_path"] = "tables/quick_fixture/birth_death_event_log.csv"
+        cfg["order_log_path"] = "tables/quick_fixture/rollout_order_parameters.csv"
         cfg["baseline_execution_matrix_path"] = "reports/quick_fixture/baseline_execution_matrix.csv"
         cfg["holdout_time"] = 14.0
         cfg["seeds"] = [7, 17]
@@ -83,6 +84,7 @@ def main() -> None:
     rows: list[dict] = []
     train_summaries = []
     all_events = []
+    all_order_rows = []
     for seed in cfg.get("seeds", [7, 17, 23, 42, 99]):
         intrinsic, intrinsic_summary = train_dynamics_model(adata, cfg, int(seed), "intrinsic")
         teacher, teacher_summary = train_dynamics_model(adata, cfg, int(seed), "teacher")
@@ -121,18 +123,29 @@ def main() -> None:
             )
             for event in meta["event_rows"]:
                 all_events.append({"seed": int(seed), **event})
+            for order_row in meta.get("order_rows", []):
+                all_order_rows.append(order_row)
     metrics_frame = pd.DataFrame(rows)
     metrics_path = Path(cfg.get("metrics_path", "tables/final_metrics.csv"))
     metrics_frame.to_csv(metrics_path, index=False)
     event_path = Path(cfg.get("event_log_path", "tables/birth_death_event_log.csv"))
     ensure_dir(event_path.parent)
     pd.DataFrame(all_events).to_csv(event_path, index=False)
+    order_path = Path(cfg.get("order_log_path", "tables/rollout_order_parameters.csv"))
+    ensure_dir(order_path.parent)
+    pd.DataFrame(all_order_rows).to_csv(order_path, index=False)
     matrix = _execution_matrix(rows, cfg)
     write_json(
         Path(cfg.get("model_dir", "results/swarmlineage/models")) / "training_summary.json",
-        {"seeds": train_summaries, "metrics_path": str(metrics_path), "event_log_path": str(event_path), "baseline_execution_matrix_rows": int(matrix.shape[0])},
+        {
+            "seeds": train_summaries,
+            "metrics_path": str(metrics_path),
+            "event_log_path": str(event_path),
+            "order_log_path": str(order_path),
+            "baseline_execution_matrix_rows": int(matrix.shape[0]),
+        },
     )
-    print(json.dumps({"metrics": str(metrics_path), "rows": int(metrics_frame.shape[0]), "events": int(len(all_events))}, indent=2))
+    print(json.dumps({"metrics": str(metrics_path), "rows": int(metrics_frame.shape[0]), "events": int(len(all_events)), "order_rows": int(len(all_order_rows))}, indent=2))
 
 
 if __name__ == "__main__":

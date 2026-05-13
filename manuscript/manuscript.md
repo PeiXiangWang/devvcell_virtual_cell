@@ -6,10 +6,10 @@ Optimal transport can infer pseudo-lineage maps from destructive single-cell sna
 
 ## Results
 
-We audited local single-cell resources, built a stage-based OT teacher, trained a finite-agent simulator, and evaluated the model with three gates: teacher fidelity, emergent-law robustness and mechanistic usefulness. OT interpolation is treated as an oracle-like teacher/reference interpolation, not as a competitor that the agent model must outperform.
+We audited local single-cell resources, built a stage-based OT teacher, trained a finite-agent simulator, and evaluated the model with tiered evidence gates: teacher fidelity, emergent-law robustness and mechanistic usefulness. OT interpolation is treated as an oracle-like teacher/reference interpolation, not as a competitor that the agent model must outperform.
 
-Discovery analyses estimate fate-uncertainty-driven diffusion, density-dependent birth/death, branch nucleation order parameters, CCI-mediated branch bias, memory-dependent hysteresis and finite-agent phase regimes.
+In the current discovery-hardened run, teacher fidelity is acceptable, emergent-law evidence is weak overall, and mechanistic usefulness is weak. Diffusion is retained only as an encoded control-law recovery; branch nucleation, CCI bias and phase regimes remain exploratory; birth/death and memory hysteresis are unsupported in the current evidence table.
 
 ## Discussion
 
-The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision and mechanistic law discovery. The main limitation is that validation remains computational and strong biological claims require native moscot/WOT or external teacher validation plus external lineage, spatial or perturbation evidence.
+The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision and a falsifiable mechanism-discovery audit. The main limitation is that validation remains computational, the current teacher backend is toy_sinkhorn_fallback, and strong biological claims require native moscot/WOT or external teacher validation plus external lineage, spatial or perturbation evidence.

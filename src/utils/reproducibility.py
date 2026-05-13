@@ -137,7 +137,7 @@ def _git_commit() -> str | None:
         return None
 
 
-def build_manifest() -> dict[str, Any]:
+def build_manifest(quick_fixture: bool = False) -> dict[str, Any]:
     package_records = []
     failures = []
     for item in METHODS:
@@ -166,10 +166,10 @@ def build_manifest() -> dict[str, Any]:
         "data_paths": {
             "default_input": "data/processed/cell_level_subset_v1.h5ad",
             "large_reference": "data/scLine_pro.h5ad",
-            "preprocessed": "processed/swarmlineage_input.h5ad",
-            "teacher": "processed/ot_teacher.h5ad",
+            "preprocessed": "processed/quick_fixture/swarmlineage_input.h5ad" if quick_fixture else "processed/swarmlineage_input.h5ad",
+            "teacher": "processed/quick_fixture/ot_teacher.h5ad" if quick_fixture else "processed/ot_teacher.h5ad",
         },
-        "output_paths": ["processed", "figures", "tables", "reports", "results/swarmlineage", "manuscript"],
+        "output_paths": ["figures/quick_fixture", "tables/quick_fixture", "reports/quick_fixture", "manuscript/*.quick_fixture.md"] if quick_fixture else ["processed", "figures", "tables", "reports", "results/swarmlineage", "manuscript"],
         "methods": package_records,
         "integrity": {
             "no_fabricated_data": True,
@@ -183,9 +183,12 @@ def build_manifest() -> dict[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="reproducibility/manifest.json")
+    parser.add_argument("--quick-fixture", action="store_true")
     args = parser.parse_args()
+    if args.quick_fixture and args.output == "reproducibility/manifest.json":
+        args.output = "reproducibility/manifest.quick_fixture.json"
     ensure_dir("logs")
-    manifest = build_manifest()
+    manifest = build_manifest(args.quick_fixture)
     write_json(args.output, manifest)
     failures = [
         f"- {m['name']}: not installed. Suggested command: `{m['install_command']}`."
@@ -203,7 +206,7 @@ def main() -> None:
         "",
     ]
     write_text(
-        "logs/install_failures.md",
+        "reports/quick_fixture/install_failures.md" if args.quick_fixture else "logs/install_failures.md",
         "# Optional Method Installation Status\n\n"
         "This file records unavailable optional methods and does not claim successful execution.\n\n"
         + "\n".join(failures)

@@ -1,13 +1,15 @@
 # Discovery Phase Diagram
 
-A coarse parameter scan classifies finite-agent dynamics into faithful flow, over-diffusion, collapsed branch, premature branching, population explosion and lineage extinction regimes.
+The phase diagram now classifies regimes from rollout outputs, not directly from input parameters.
 
-| system_state                  |   count |
-|:------------------------------|--------:|
-| faithful flow                 |     286 |
-| over-diffusion                |      81 |
-| collapsed branch              |      48 |
-| unstable population explosion |      45 |
-| premature branching           |      26 |
+## Tier
 
-- phase_diagram_gate: True
+- tier: weak
+- faithful-flow fraction effect: 1 [1, 1]
+- permutation_q: 1
+- seed_stability_pass: True (sign consistency=1.000)
+- negative_control_pass: False
+
+| system_state   |   count |
+|:---------------|--------:|
+| faithful_flow  |     320 |

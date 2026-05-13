@@ -16,6 +16,6 @@ python -m src.train.evaluate --config configs/train.yaml ${QUICK_FLAG}
 python -m src.perturbation.simulate_lr_knockout --config configs/model.yaml ${QUICK_FLAG}
 python -m src.perturbation.simulate_gene_perturb --config configs/model.yaml ${QUICK_FLAG}
 python -m src.perturbation.evaluate_perturbation --config configs/model.yaml ${QUICK_FLAG}
-python -m src.plotting.figures_main
-python -m src.plotting.figures_extended
-python -m src.utils.reproducibility
+python -m src.plotting.figures_main ${QUICK_FLAG}
+python -m src.plotting.figures_extended ${QUICK_FLAG}
+python -m src.utils.reproducibility ${QUICK_FLAG}

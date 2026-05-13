@@ -1,0 +1,51 @@
+teacher_fidelity:
+  strong:
+    relative_sinkhorn_max: 1.10
+    relative_mmd_max: 1.50
+    relative_energy_max: 1.25
+    composition_rmse_max: 0.005
+    manifold_escape_rate_max: 0.08
+  acceptable:
+    relative_sinkhorn_max: 1.25
+    relative_mmd_max: 2.50
+    relative_energy_max: 2.50
+    composition_rmse_max: 0.025
+    manifold_escape_rate_max: 0.20
+  weak:
+    relative_sinkhorn_max: 1.50
+    relative_mmd_max: 4.00
+    relative_energy_max: 4.00
+    composition_rmse_max: 0.05
+    manifold_escape_rate_max: 0.35
+  fail_above_weak: true
+
+emergent_law:
+  min_seed_count: 5
+  quick_min_seed_count: 2
+  min_effect_size_for_acceptable: 0.01
+  min_effect_size_for_strong: 0.03
+  max_permutation_q_for_acceptable: 0.10
+  max_permutation_q_for_strong: 0.05
+  require_negative_control_for_strong: true
+  require_rollout_based_evidence_for_strong: true
+  permutation_repeats: 100
+  bootstrap_repeats: 500
+
+mechanistic_usefulness:
+  acceptable_requires:
+    teacher_fidelity_tier_at_least: acceptable
+    emergent_laws_at_least_acceptable: 3
+    emergent_laws_at_least_strong: 1
+  strong_requires:
+    teacher_fidelity_tier_at_least: acceptable
+    emergent_laws_at_least_acceptable: 4
+    emergent_laws_at_least_strong: 2
+    external_or_native_teacher_validation: true
+
+output:
+  tables_dir: tables
+  reports_dir: reports
+  figures_dir: figures/discovery
+  quick_tables_dir: tables/quick_fixture
+  quick_reports_dir: reports/quick_fixture
+  quick_figures_dir: figures/quick_fixture/discovery

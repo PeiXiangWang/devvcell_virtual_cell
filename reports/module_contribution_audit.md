@@ -1,10 +1,10 @@
 # Module Contribution Audit
 
-This audit no longer treats OT interpolation as a method that the agent model must beat. OT interpolation is the teacher/reference map.
+OT interpolation is the teacher/reference map, not a competitor to beat.
 
-- primary agent: `M9_full_memory`
-- `M9_full_memory` fidelity: relative_sinkhorn=1.113, relative_mmd=2.094, branch_fate_error=0.0200.
-- mechanistic_usefulness_gate: True
+- teacher_fidelity_tier: acceptable
+- emergent_law_tier: weak
+- mechanistic_usefulness_tier: weak
 
 ## Reconstruction Context
 
@@ -24,19 +24,13 @@ This audit no longer treats OT interpolation as a method that the agent model mu
 | M8_ot_swarm_birth_death_diffusion_cci |   0.284235 | 0.0183179  | 0.632942 |                  0.0200099  |
 | M9_full_memory                        |   0.28393  | 0.0183946  | 0.637903 |                  0.0200099  |
 
-## Emergent-Law Contributions
+## Discovery Tiers
 
-| law               | gate   | table                                   | status   |
-|:------------------|:-------|:----------------------------------------|:---------|
-| diffusion         | True   | tables\diffusion_law_regression.csv     | executed |
-| birth_death       | True   | tables\birth_death_law.csv              | executed |
-| branch_nucleation | True   | tables\swarm_order_parameters.csv       | executed |
-| memory_hysteresis | True   | tables\memory_hysteresis_experiment.csv | executed |
-| cci_branch_bias   | True   | tables\cci_branch_bias.csv              | executed |
-| phase_diagram     | True   | tables\phase_diagram.csv                | executed |
-
-## Interpretation
-
-- `M0b_ot_interpolation` can remain the lowest-error reconstruction because it is the reference interpolation derived from the teacher.
-- Swarm, birth/death, diffusion, CCI and memory are evaluated by fidelity plus whether they expose robust order parameters, hazards, phase regimes or perturbation sensitivities.
-- Modules that degrade fidelity without yielding stable laws should remain exploratory or be disabled in retained biological claims.
+| law               | tier       | gate_pass   | strong_gate   |   effect_size |   effect_ci_low |   effect_ci_high |   permutation_p |   permutation_q | negative_control_pass   | seed_stability_pass   | rollout_based   | directly_supervised_or_encoded   | interpretation_level         | table                                   | report                                 | status   |
+|:------------------|:-----------|:------------|:--------------|--------------:|----------------:|-----------------:|----------------:|----------------:|:------------------------|:----------------------|:----------------|:---------------------------------|:-----------------------------|:----------------------------------------|:---------------------------------------|:---------|
+| diffusion         | acceptable | True        | False         |   0.0288975   |     0.0286935   |      0.0290633   |      0.00990099 |       0.0594059 | True                    | True                  | False           | True                             | encoded_control_law_recovery | tables\diffusion_law_regression.csv     | reports\discovery_diffusion_law.md     | executed |
+| birth_death       | fail       | False       | False         |   9.33802e-05 |    -0.000395111 |      0.000551136 |      0.019802   |       0.0594059 | True                    | False                 | True            | False                            | unsupported                  | tables\birth_death_law.csv              | reports\discovery_birth_death_law.md   | executed |
+| branch_nucleation | weak       | False       | False         |   0.185351    |     0.185351    |      0.185351    |      0.732673   |       1         | False                   | False                 | False           | False                            | exploratory_sensitivity      | tables\swarm_order_parameters.csv       | reports\discovery_branch_nucleation.md | executed |
+| memory_hysteresis | fail       | False       | False         |   0           |     0           |      0           |      1          |       1         | False                   | False                 | True            | False                            | unsupported                  | tables\memory_hysteresis_experiment.csv | reports\discovery_memory_hysteresis.md | executed |
+| cci_branch_bias   | weak       | False       | False         |  -0.0290759   |    -0.0290759   |     -0.0290759   |      0.0625     |       0.125     | True                    | True                  | False           | False                            | exploratory_sensitivity      | tables\cci_branch_bias.csv              | reports\discovery_cci_branch_bias.md   | executed |
+| phase_diagram     | weak       | False       | False         |   1           |     1           |      1           |      1          |       1         | False                   | True                  | True            | False                            | exploratory_sensitivity      | tables\phase_diagram.csv                | reports\discovery_phase_diagram.md     | executed |

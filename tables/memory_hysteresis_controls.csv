@@ -1,0 +1,16 @@
+seed,control,effect
+7,zero_memory_control,0.0
+7,random_memory_control,-0.002061804861939917
+7,swapped_memory_control,-0.0
+17,zero_memory_control,0.0
+17,random_memory_control,-0.0004014620975610012
+17,swapped_memory_control,-0.0
+23,zero_memory_control,0.0
+23,random_memory_control,-0.0016071940519981
+23,swapped_memory_control,-0.0
+42,zero_memory_control,0.0
+42,random_memory_control,-0.0011374807201503607
+42,swapped_memory_control,-0.0
+99,zero_memory_control,0.0
+99,random_memory_control,-0.00013005079601731287
+99,swapped_memory_control,-0.0

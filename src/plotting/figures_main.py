@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 import matplotlib
@@ -20,8 +21,8 @@ def _copy_panel(src: str, dst: str) -> None:
         shutil.copyfile(path, dst)
 
 
-def concept_figure() -> None:
-    ensure_dir("figures/main")
+def concept_figure(out_root: Path) -> None:
+    ensure_dir(out_root / "main")
     fig, ax = plt.subplots(figsize=(10, 4.8), dpi=180)
     ax.axis("off")
     boxes = [
@@ -41,13 +42,13 @@ def concept_figure() -> None:
     ax.text(0.05, 0.93, "SwarmLineage-OT", fontsize=18, weight="bold")
     ax.text(0.05, 0.88, "OT-inferred pseudo-lineage supervises an executable swarm virtual-cell population", fontsize=10)
     fig.tight_layout()
-    fig.savefig("figures/main/figure1_concept.png")
+    fig.savefig(out_root / "main/figure1_concept.png")
     plt.close(fig)
 
 
-def metrics_figure() -> None:
-    ensure_dir("figures/main")
-    path = Path("tables/final_metrics.csv")
+def metrics_figure(out_root: Path, table_root: Path) -> None:
+    ensure_dir(out_root / "main")
+    path = table_root / "final_metrics.csv"
     if not path.exists():
         return
     data = pd.read_csv(path)
@@ -64,16 +65,18 @@ def metrics_figure() -> None:
         ax.set_ylabel(metric)
         ax.set_title(metric)
     fig.tight_layout()
-    fig.savefig("figures/main/figure3_heldout_reconstruction.png")
+    fig.savefig(out_root / "main/figure3_heldout_reconstruction.png")
     plt.close(fig)
 
 
-def mechanism_figure() -> None:
-    ensure_dir("figures/main")
-    if Path("figures/ot_growth_map.png").exists():
-        _copy_panel("figures/ot_growth_map.png", "figures/main/figure4_growth_diffusion.png")
-    if Path("tables/lr_knockout_predictions.csv").exists():
-        data = pd.read_csv("tables/lr_knockout_predictions.csv")
+def mechanism_figure(out_root: Path, table_root: Path) -> None:
+    ensure_dir(out_root / "main")
+    growth = out_root / "ot_growth_map.png"
+    if growth.exists():
+        _copy_panel(str(growth), str(out_root / "main/figure4_growth_diffusion.png"))
+    lr_path = table_root / "lr_knockout_predictions.csv"
+    if lr_path.exists():
+        data = pd.read_csv(lr_path)
         fig, ax = plt.subplots(figsize=(6.5, 4), dpi=180)
         labels = [f"{r.ligand}-{r.receptor}" for r in data.itertuples(index=False)]
         ax.bar(range(len(data)), data["predicted_entropy_change"], color="#8fbf9f", edgecolor="#244", linewidth=0.4)
@@ -81,19 +84,24 @@ def mechanism_figure() -> None:
         ax.set_ylabel("predicted entropy change")
         ax.set_title("Exploratory LR control-layer perturbation")
         fig.tight_layout()
-        fig.savefig("figures/main/figure5_cci_perturbation.png")
+        fig.savefig(out_root / "main/figure5_cci_perturbation.png")
         plt.close(fig)
 
 
 def main() -> None:
-    ensure_dir("figures/main")
-    concept_figure()
-    _copy_panel("figures/ot_lineage_graph.png", "figures/main/figure2_ot_teacher_lineage_graph.png")
-    _copy_panel("figures/ot_fate_umap.png", "figures/main/figure2_ot_fate_umap.png")
-    metrics_figure()
-    mechanism_figure()
-    _copy_panel("figures/ablation_barplots.png", "figures/main/figure6_ablation_summary.png")
-    print({"figures_main": str(Path("figures/main").resolve())})
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--quick-fixture", action="store_true")
+    args = parser.parse_args()
+    out_root = Path("figures/quick_fixture") if args.quick_fixture else Path("figures")
+    table_root = Path("tables/quick_fixture") if args.quick_fixture else Path("tables")
+    ensure_dir(out_root / "main")
+    concept_figure(out_root)
+    _copy_panel(str(out_root / "ot_lineage_graph.png"), str(out_root / "main/figure2_ot_teacher_lineage_graph.png"))
+    _copy_panel(str(out_root / "ot_fate_umap.png"), str(out_root / "main/figure2_ot_fate_umap.png"))
+    metrics_figure(out_root, table_root)
+    mechanism_figure(out_root, table_root)
+    _copy_panel(str(out_root / "ablation_barplots.png"), str(out_root / "main/figure6_ablation_summary.png"))
+    print({"figures_main": str((out_root / "main").resolve())})
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 model_config: configs/model.yaml
+discovery_config: configs/discovery.yaml
 ablation_metrics_path: tables/ablation_metrics.csv
 ablation_stats_path: tables/ablation_statistical_tests.csv
 negative_results_report: reports/negative_results.md

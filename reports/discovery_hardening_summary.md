@@ -1,10 +1,8 @@
-# Emergent Law Summary
+# Discovery Hardening Summary
 
-Discovery modules are graded as fail, weak, acceptable or strong using effect size, seed stability, negative controls and rollout support.
-
-- emergent_law_tier: weak
-- laws at least acceptable: 1/6
-- strong laws: 0/6
+| teacher_fidelity_tier   | emergent_law_tier   | mechanistic_usefulness_tier   | mechanistic_gate_pass   | strong_gate   |   laws_at_least_acceptable |   laws_strong | native_or_external_teacher_validation   |
+|:------------------------|:--------------------|:------------------------------|:------------------------|:--------------|---------------------------:|--------------:|:----------------------------------------|
+| acceptable              | weak                | weak                          | False                   | False         |                          1 |             0 | False                                   |
 
 | law               | tier       | gate_pass   | strong_gate   |   effect_size |   effect_ci_low |   effect_ci_high |   permutation_p |   permutation_q | negative_control_pass   | seed_stability_pass   | rollout_based   | directly_supervised_or_encoded   | interpretation_level         | table                                   | report                                 | status   |
 |:------------------|:-----------|:------------|:--------------|--------------:|----------------:|-----------------:|----------------:|----------------:|:------------------------|:----------------------|:----------------|:---------------------------------|:-----------------------------|:----------------------------------------|:---------------------------------------|:---------|

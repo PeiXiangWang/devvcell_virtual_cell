@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -183,6 +184,62 @@ def _classify_labels(train_z: np.ndarray, train_labels: np.ndarray, pred_z: np.n
     return np.asarray(out, dtype=object)
 
 
+def _velocity_alignment(z: np.ndarray, v: np.ndarray, k: int = 12) -> float:
+    if z.shape[0] <= 2:
+        return 1.0
+    k = min(k, z.shape[0] - 1)
+    neigh = NearestNeighbors(n_neighbors=k + 1).fit(z).kneighbors(z, return_distance=False)[:, 1:]
+    vn = v / np.maximum(np.linalg.norm(v, axis=1, keepdims=True), 1e-8)
+    values = [(vn[i] * vn[neigh[i]].mean(axis=0)).sum() for i in range(z.shape[0])]
+    return float(np.nanmean(values))
+
+
+def _lineage_separation(z: np.ndarray, labels: np.ndarray) -> float:
+    centers = []
+    for label in sorted(set(labels.astype(str))):
+        mask = labels.astype(str) == label
+        if mask.any():
+            centers.append(z[mask].mean(axis=0))
+    if len(centers) < 2:
+        return 0.0
+    centers = np.asarray(centers)
+    d = centers[:, None, :] - centers[None, :, :]
+    return float(np.sqrt((d**2).sum(axis=2)).mean())
+
+
+def _order_parameter_row(
+    seed: int,
+    variant: str,
+    step: int,
+    time_value: float,
+    z: np.ndarray,
+    labels: np.ndarray,
+    fate: np.ndarray,
+    velocity: np.ndarray,
+    density: np.ndarray,
+) -> dict:
+    counts = pd.Series(labels.astype(str)).value_counts()
+    freq = counts / max(counts.sum(), 1)
+    imbalance = float(freq.max() - freq.min()) if freq.size > 1 else 1.0
+    fate_entropy = _fate_entropy(fate)
+    cohesion = 1.0 - float(pd.Series(density).groupby(pd.Series(labels.astype(str))).std().fillna(0).mean())
+    return {
+        "seed": int(seed),
+        "variant": variant,
+        "step": int(step),
+        "time": float(time_value),
+        "local_velocity_alignment_A": _velocity_alignment(z, velocity),
+        "branch_cohesion_C": cohesion,
+        "lineage_separation_S": _lineage_separation(z, labels),
+        "fate_entropy_H": float(np.nanmean(fate_entropy)) if fate_entropy.size else 0.0,
+        "branch_imbalance_B": imbalance,
+        "local_density_mean": float(np.nanmean(density)),
+        "local_density_var": float(np.nanvar(density)),
+        "n_agents": int(z.shape[0]),
+        "per_lineage_counts": json.dumps(counts.to_dict(), sort_keys=True),
+    }
+
+
 def _split_times(adata: ad.AnnData, cfg: dict) -> tuple[float, float, float]:
     time = _time_values(adata, cfg)
     holdout = float(cfg.get("holdout_time"))
@@ -227,6 +284,34 @@ def _agent_state(adata: ad.AnnData, idx: np.ndarray, cfg: dict) -> dict:
     }
 
 
+def _apply_cci_perturbation(cci: np.ndarray, labels: np.ndarray, cfg: dict, rng: np.random.Generator) -> np.ndarray:
+    perturb = cfg.get("cci_perturbation")
+    if not perturb:
+        return cci
+    if isinstance(perturb, str):
+        perturb = {"mode": perturb}
+    mode = str(perturb.get("mode", "none"))
+    out = cci.copy()
+    if mode == "zero_cci_signal":
+        out[:] = 0.0
+    elif mode in {"shuffle_receiver", "degree_preserving_random_lr"}:
+        out = rng.permutation(out)
+    elif mode in {"remove_receiver", "remove_sender"}:
+        target = str(perturb.get("lineage", perturb.get("target", "")))
+        if target:
+            out[labels.astype(str) == target] = 0.0
+    elif mode == "remove_lr_edge":
+        sender = str(perturb.get("sender", ""))
+        receiver = str(perturb.get("receiver", ""))
+        mask = np.zeros(labels.shape[0], dtype=bool)
+        if sender:
+            mask |= labels.astype(str) == sender
+        if receiver:
+            mask |= labels.astype(str) == receiver
+        out[mask] *= float(perturb.get("residual_fraction", 0.0))
+    return out
+
+
 def _rollout(
     adata: ad.AnnData,
     cfg: dict,
@@ -250,8 +335,10 @@ def _rollout(
     all_labels = labels_all
     cci_graph, cci_all, lr_pairs = sender_receiver_graph(adata, all_z, all_labels)
     state["cci"] = cci_all[source_idx] if cci_all.size == adata.n_obs else state["cci"]
+    state["cci"] = _apply_cci_perturbation(state["cci"], labels, cfg, rng)
     memory = MemoryField(max(state["fate"].shape[1], 1))
     event_rows: list[dict] = []
+    order_rows: list[dict] = []
     steps = int(cfg.get("rollout_steps", 4))
     dt = float(cfg.get("dt", 0.25))
     for step in range(steps):
@@ -282,6 +369,7 @@ def _rollout(
             sigma = model.sigma(xt, variant.flags).cpu().numpy()
         if variant.negative_control == "time":
             v = rng.permutation(v)
+        order_rows.append(_order_parameter_row(seed, variant.name, step, current_time, z, labels, state["fate"], v, density))
         z = z + dt * v
         if variant.flags.use_diffusion:
             z = z + rng.normal(scale=np.maximum(sigma, 1e-5)[:, None] * np.sqrt(dt), size=z.shape)
@@ -293,6 +381,17 @@ def _rollout(
             daughter_labels = labels[daughter_idx].copy()
             z = np.vstack([z[keep], daughters]) if daughters.size else z[keep]
             labels = np.r_[labels[keep], daughter_labels] if daughters.size else labels[keep]
+            event_context = {
+                int(i): {
+                    "local_density": float(density[i]),
+                    "birth_hazard": float(birth[i]),
+                    "death_hazard": float(death[i]),
+                    "fate_entropy": float(fate_entropy[i]) if i < fate_entropy.size else 0.0,
+                    "cci_signal": float(state["cci"][i]) if i < state["cci"].size else 0.0,
+                    "n_agents_pre": int(density.size),
+                }
+                for i in range(density.size)
+            }
             for key in ("entropy", "growth", "cycle", "cci"):
                 vals = state[key]
                 state[key] = np.r_[vals[keep], vals[daughter_idx]] if daughter_idx.size else vals[keep]
@@ -304,12 +403,14 @@ def _rollout(
                     daughter_fate = np.clip(daughter_fate + noise, 1e-6, None)
                     daughter_fate /= daughter_fate.sum(axis=1, keepdims=True)
                 state["fate"] = np.vstack([fate[keep], daughter_fate]) if daughter_idx.size else fate[keep]
-            event_rows.extend([{**row, "variant": variant.name, "step": step} for row in bd.event_rows])
+            for row in bd.event_rows:
+                context = event_context.get(int(row["parent_index"]), {})
+                event_rows.append({**row, **context, "variant": variant.name, "step": step})
             if z.shape[0] == 0:
                 z = z_all[source_idx[:1]].copy()
                 labels = labels_all[source_idx[:1]].copy()
                 state = _agent_state(adata, source_idx[:1], cfg)
-    return z, labels, event_rows
+    return z, labels, event_rows, order_rows
 
 
 def simulate_variant(adata: ad.AnnData, cfg: dict, models: dict[str, SwarmLineageDynamics], variant: Variant, seed: int) -> tuple[np.ndarray, np.ndarray, dict]:
@@ -333,7 +434,7 @@ def simulate_variant(adata: ad.AnnData, cfg: dict, models: dict[str, SwarmLineag
         event_rows = []
     else:
         model = models[variant.model_role]
-        pred, pred_labels, event_rows = _rollout(adata, cfg, model, variant, source_idx, seed, prev_time, holdout, next_time)
+        pred, pred_labels, event_rows, order_rows = _rollout(adata, cfg, model, variant, source_idx, seed, prev_time, holdout, next_time)
     z_all = np.asarray(adata.obsm[cfg.get("latent_key", "X_pca")], dtype=float)
     true_z = z_all[true_idx]
     true_labels = labels_all[true_idx]
@@ -347,6 +448,6 @@ def simulate_variant(adata: ad.AnnData, cfg: dict, models: dict[str, SwarmLineag
         "pred_labels": pred_labels,
         "true_labels": true_labels,
         "event_rows": event_rows,
+        "order_rows": order_rows if variant.baseline is None else [],
     }
     return pred, true_z, meta
-

@@ -4,18 +4,36 @@
 
 OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.
 
-The retained manuscript must not claim that SwarmLineage-OT outperforms OT interpolation. `M0b_ot_interpolation` is an oracle-like teacher/reference interpolation.
+`M0b_ot_interpolation` is an oracle-like OT teacher/reference interpolation. The finite-agent model is evaluated by teacher fidelity, emergent-law robustness and mechanistic usefulness, not by beating the OT reference.
 
-## Evaluation Gates
+## Tier Summary
 
-- teacher_fidelity_gate: True
-- emergent_law_gate: True
-- mechanistic_usefulness_gate: True
+| teacher_fidelity_tier   | emergent_law_tier   | mechanistic_usefulness_tier   | mechanistic_gate_pass   | strong_gate   |   laws_at_least_acceptable |   laws_strong | native_or_external_teacher_validation   |
+|:------------------------|:--------------------|:------------------------------|:------------------------|:--------------|---------------------------:|--------------:|:----------------------------------------|
+| acceptable              | weak                | weak                          | False                   | False         |                          1 |             0 | False                                   |
 
-## Retained Metrics
+## Retained Computational Hypotheses
 
-- teacher fidelity metrics: `tables/teacher_fidelity_metrics.csv`
-- emergent law gates: `tables/emergent_law_gate_summary.csv`
+| law       | tier       | interpretation_level         | rollout_based   | directly_supervised_or_encoded   |
+|:----------|:-----------|:-----------------------------|:----------------|:---------------------------------|
+| diffusion | acceptable | encoded_control_law_recovery | False           | True                             |
+
+## Exploratory / Demonstration Only
+
+| law               | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |
+|:------------------|:-------|:------------------------|:----------------|:---------------------------------|
+| branch_nucleation | weak   | exploratory_sensitivity | False           | False                            |
+| cci_branch_bias   | weak   | exploratory_sensitivity | False           | False                            |
+| phase_diagram     | weak   | exploratory_sensitivity | True            | False                            |
+
+## Unsupported Claims
+
+| law               | tier   | status   |
+|:------------------|:-------|:---------|
+| birth_death       | fail   | executed |
+| memory_hysteresis | fail   | executed |
+
+## Core Metrics
 
 | model                                 |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
 |:--------------------------------------|-----------:|-----------:|---------:|----------------------------:|
@@ -33,20 +51,9 @@ The retained manuscript must not claim that SwarmLineage-OT outperforms OT inter
 | M8_ot_swarm_birth_death_diffusion_cci |   0.284235 | 0.0183179  | 0.632942 |                  0.0200099  |
 | M9_full_memory                        |   0.28393  | 0.0183946  | 0.637903 |                  0.0200099  |
 
-## Methods Retained
-
-- strict time holdout and teacher-edge holdout support leakage-resistant evaluation.
-- OT teacher construction records backend status; toy fallback is not presented as native moscot/WOT.
-- `SwarmLineageDynamics` represents trainable intrinsic, teacher, swarm, birth/death, adaptive diffusion, CCI and memory components.
-- Stochastic birth/death uses event simulation and writes event logs.
-- Discovery modules estimate diffusion, growth, branch nucleation, memory hysteresis, CCI branch bias and phase-regime laws.
-
-## Interpretation
-
-If `M0b_ot_interpolation` has the lowest reconstruction error, this is expected for a teacher/reference. The agent model is retained when it stays close enough to the teacher and yields stable mechanistic laws.
-
 ## Limitations
 
-- Current emergent laws are computational hypotheses, not validated biological mechanisms.
-- Strong biological claims require native moscot/WOT or external teacher validation plus external or perturbation validation.
-- If teacher fidelity is poor and no emergent-law gates are stable, the current scientific hypothesis should be reported as unsupported.
+- Current results are computational hypotheses.
+- Some laws are encoded control-law recoveries and must not be written as independent biological discoveries.
+- toy_sinkhorn_fallback is not native moscot/WOT.
+- No wet-lab validation or causal mechanism is claimed.

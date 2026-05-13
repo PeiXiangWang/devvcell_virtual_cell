@@ -31,9 +31,10 @@ def main() -> None:
         cfg["ablation_stats_path"] = "tables/quick_fixture/ablation_statistical_tests.csv"
         cfg["negative_results_report"] = "reports/quick_fixture/negative_results.md"
         cfg["ablation_report"] = "reports/quick_fixture/ablation_interpretation.md"
-    ensure_dir("figures")
-    ensure_dir("tables")
-    ensure_dir("reports")
+    figure_dir = "figures/quick_fixture" if args.quick_fixture else "figures"
+    ensure_dir(figure_dir)
+    ensure_dir("tables/quick_fixture" if args.quick_fixture else "tables")
+    ensure_dir("reports/quick_fixture" if args.quick_fixture else "reports")
     metrics = pd.read_csv(model_cfg.get("metrics_path", "tables/final_metrics.csv"))
     out_path = cfg.get("ablation_metrics_path", "tables/ablation_metrics.csv")
     metrics.to_csv(out_path, index=False)
@@ -58,7 +59,7 @@ def main() -> None:
     ax.set_ylabel("Sinkhorn distance lower is better")
     ax.set_title("Held-out reconstruction ablation")
     fig.tight_layout()
-    fig.savefig("figures/ablation_barplots.png")
+    fig.savefig(f"{figure_dir}/ablation_barplots.png")
     plt.close(fig)
 
     heat = metrics.groupby("model")[PRIMARY_METRICS].mean().reindex(order)
@@ -70,7 +71,7 @@ def main() -> None:
     fig.colorbar(im, ax=ax, fraction=0.035, label="normalized error")
     ax.set_title("Ablation metric heatmap")
     fig.tight_layout()
-    fig.savefig("figures/ablation_radar_or_heatmap.png")
+    fig.savefig(f"{figure_dir}/ablation_radar_or_heatmap.png")
     plt.close(fig)
 
     negative = metrics[metrics["model"].isin(["M10_shuffled_time_ot", "M11_random_lr_labels"])]
