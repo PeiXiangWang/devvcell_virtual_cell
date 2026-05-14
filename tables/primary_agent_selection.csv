@@ -1,0 +1,5 @@
+model,teacher_fidelity_tier,relative_sinkhorn,relative_mmd,composition_rmse,branch_nucleation_tier,branch_nucleation_effect,branch_nucleation_seed_stability,unsupported_module_burden,complexity_penalty,uses_unsupported_modules,selection_score,mean_sinkhorn,recommendation
+M5_ot_swarm,acceptable,1.1317365547042475,1.5612948927694457,0.0040253218733119,strong,-0.2658223551991732,True,0,0,False,13.732604706736646,0.2886787432045227,primary_mechanistic_model
+M9_full_memory,acceptable,1.2036307706484026,1.6225734265023068,0.0217414313759374,strong,-0.207680717671473,True,1,1,True,11.840333050246546,0.30701722649921215,secondary_exploratory_model
+M7_ot_swarm_birth_death_diffusion,acceptable,1.2049655976142806,1.5979547040208502,0.0219324713500089,strong,-0.2157195656363633,True,1,1,True,11.839671128350982,0.30735770871594664,models_not_retained_for_main_claim
+M8_ot_swarm_birth_death_diffusion_cci,acceptable,1.2049811004205604,1.5981353080519607,0.0219324713500089,strong,-0.215771614864019,True,2,2,True,10.339637836623805,0.30736166310852536,models_not_retained_for_main_claim

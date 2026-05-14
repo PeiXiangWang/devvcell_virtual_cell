@@ -12,6 +12,6 @@ The teacher was built from adjacent developmental-stage entropic OT couplings. N
 
 ## Caveats
 
-- These couplings are OT-inferred pseudo-lineage, not true lineage tracing.
+- These couplings are OT-inferred pseudo-lineage, not experimental lineage tracing.
 - `stage_num`/Theiler stage is treated as real ordered developmental stage for this dataset; it is still coarser than dense experimental time.
 - External lineage, perturbation or independent teacher validation is still required before any high-impact biological claim.

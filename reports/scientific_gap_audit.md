@@ -12,6 +12,6 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 ## Remaining Gaps
 
 - Native moscot/WOT or external teacher validation status is reported in `teacher_backend_status.csv`.
-- CCI and memory are computational probes, not wet-lab validated mechanisms.
-- No manuscript claim may state that SwarmLineage-OT outperforms OT.
-- Nature-ready claims remain forbidden without external lineage, perturbation or wet-lab validation.
+- CCI and memory are computational probes; experimental validation is absent.
+- No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.
+- High-impact submission claims remain unsupported without external lineage, perturbation or experimental validation.

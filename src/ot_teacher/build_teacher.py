@@ -89,10 +89,18 @@ def build_teacher(cfg: dict) -> dict:
     ensure_dir("tables")
     out_path = cfg.get("teacher_path", "processed/ot_teacher.h5ad")
     quick_outputs = "quick_fixture" in str(out_path).replace("\\", "/")
-    figure_dir = ensure_dir("figures/quick_fixture") if quick_outputs else ensure_dir("figures")
-    report_dir = ensure_dir("reports/quick_fixture") if quick_outputs else ensure_dir("reports")
-    table_dir = ensure_dir("tables/quick_fixture") if quick_outputs else ensure_dir("tables")
-    summary_path = Path(out_path).with_name("ot_teacher_summary.json") if quick_outputs else Path("processed/ot_teacher_summary.json")
+    default_figure_dir = "figures/quick_fixture" if quick_outputs else "figures"
+    default_report_dir = "reports/quick_fixture" if quick_outputs else "reports"
+    default_table_dir = "tables/quick_fixture" if quick_outputs else "tables"
+    figure_dir = ensure_dir(cfg.get("figure_dir", default_figure_dir))
+    report_dir = ensure_dir(cfg.get("report_dir", default_report_dir))
+    table_dir = ensure_dir(cfg.get("table_dir", default_table_dir))
+    summary_path = Path(
+        cfg.get(
+            "summary_path",
+            Path(out_path).with_name("ot_teacher_summary.json") if quick_outputs else Path("processed/ot_teacher_summary.json"),
+        )
+    )
     adata = ad.read_h5ad(cfg["adata_path"])
     z = np.asarray(adata.obsm[cfg.get("latent_key", "X_pca")], dtype=float)
     obs = adata.obs.copy()
@@ -229,7 +237,7 @@ def build_teacher(cfg: dict) -> dict:
         "",
         "## Caveats",
         "",
-        "- These couplings are OT-inferred pseudo-lineage, not true lineage tracing.",
+        "- These couplings are OT-inferred pseudo-lineage, not experimental lineage tracing.",
         "- `stage_num`/Theiler stage is treated as real ordered developmental stage for this dataset; it is still coarser than dense experimental time.",
         "- External lineage, perturbation or independent teacher validation is still required before any high-impact biological claim.",
         "",

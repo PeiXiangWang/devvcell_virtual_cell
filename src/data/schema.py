@@ -201,7 +201,7 @@ def markdown_audit(records: list[dict[str, Any]], summary: dict[str, Any]) -> st
         ]:
             vals = r.get(key) or []
             lines.append(f"- {label}: {', '.join(map(str, vals[:20])) if vals else 'not detected'}")
-        lines.append(f"- true lineage tracing likely present: {bool(r.get('has_lineage_tracing'))}")
+        lines.append(f"- lineage-tracing evidence likely present: {bool(r.get('has_lineage_tracing'))}")
         lines.append(f"- perturb-seq/treatment labels likely present: {bool(r.get('has_perturbation_labels'))}")
         lines.append("")
     lines += [

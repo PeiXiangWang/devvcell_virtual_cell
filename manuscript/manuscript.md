@@ -1,15 +1,15 @@
-# SwarmLineage-OT: lineage-supervised swarm virtual cells from optimal transport pseudo-lineages
+# SwarmLineage-OT: native-OT-guided finite-agent virtual cells reveal a branch-nucleation computational signature
 
 ## Abstract
 
-Optimal transport can infer pseudo-lineage maps from destructive single-cell snapshots, but it does not by itself produce an executable virtual cell population or expose microscopic developmental control laws. We introduce SwarmLineage-OT, a prototype lineage-supervised swarm virtual-cell model in which finite cellular agents use local rules, density-dependent birth-death, adaptive diffusion, memory fields and cell-cell communication to realize OT-inferred couplings and probe emergent developmental laws.
+Optimal transport can infer pseudo-lineage maps from destructive single-cell snapshots, but it does not by itself produce an executable virtual cell population or expose microscopic developmental control laws. We introduce SwarmLineage-OT v0.6, a native-moscot-guided finite-agent simulator that realizes an OT-inferred developmental map and audits emergent laws through rollout-based controls.
 
 ## Results
 
-We audited local single-cell resources, built a stage-based OT teacher, trained a finite-agent simulator, and evaluated the model with tiered evidence gates: teacher fidelity, emergent-law robustness and mechanistic usefulness. OT interpolation is treated as an oracle-like teacher/reference interpolation, not as a competitor that the agent model must outperform.
+Native moscot TemporalProblem extraction is available for the main teacher, and the current evidence-selected primary mechanistic model is `M5_ot_swarm`. Teacher fidelity is acceptable. The retained computational hypothesis is a branch-nucleation order-parameter signature; current event-window analysis supports a transient condensation-before-divergence interpretation that requires external validation. Architectural controls show that module necessity is not yet established.
 
-In the current discovery-hardened run, teacher fidelity is acceptable, emergent-law evidence is weak overall, and mechanistic usefulness is weak. Diffusion is retained only as an encoded control-law recovery; branch nucleation and phase regimes remain exploratory rollout-based probes; birth/death, memory hysteresis and CCI branch bias are unsupported in the current evidence table.
+Diffusion remains an encoded control-law recovery. Birth/death, memory hysteresis and CCI branch bias are unsupported in the current evidence table and are excluded from the main claim.
 
 ## Discussion
 
-The central contribution is the conversion of OT pseudo-lineage into executable finite-agent supervision and a falsifiable mechanism-discovery audit. The current teacher backend is native moscot on a downsampled main AnnData run, which removes the toy-fallback blocker for teacher construction. The main limitation is that validation remains computational, and strong biological claims still require external lineage, spatial, perturbation or wet-lab evidence.
+The current system is not ready for high-impact submission and does not prove a biological mechanism. The next required step is external time-series or lineage-tracing validation of the branch-nucleation signature.

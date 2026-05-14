@@ -1,0 +1,4 @@
+dataset,external_validation_tier,branch_nucleation_direction_consistent,lineage_validated,status,blocker
+Waddington-OT iPSC reprogramming,pending,not_tested,False,registry_confirmed_download_not_completed,Google Drive/Terra download requires manual or network-enabled retrieval; not ingested in this run.
+scLTdb lineage tracing datasets,pending,not_tested,False,registry_confirmed_download_not_completed,Dataset-specific selection/download not automated yet; no matrix was fabricated.
+Tempora sample time-course scRNA-seq datasets,pending,not_tested,False,registry_confirmed_download_not_completed,Not yet converted to project AnnData schema in this run.

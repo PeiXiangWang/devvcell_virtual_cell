@@ -1,8 +1,14 @@
 # Leakage Audit
 
-- split_mode: `strict_time_holdout`
-- holdout_time: `15.0`
-- preprocessing HVG/SVD fit cells: 7000 train cells only
-- evaluation-only held-out cells present in output for scoring: 1000
-- held-out cells are transformed by the train-fitted SVD but do not contribute to HVG selection or SVD fitting.
-- teacher construction must additionally exclude `split_role == eval_holdout` cells.
+- split_mode: strict_time_holdout
+- native teacher excludes obs rows marked `eval_holdout` in `run_native_moscot_teacher`.
+- holdout gap bridge edge is labelled below and must not be described as an ordinary adjacent observed edge.
+
+|   source_time |   target_time | teacher_backend   | edge_type              |
+|--------------:|--------------:|:------------------|:-----------------------|
+|            13 |            14 | native_moscot     | adjacent_observed_edge |
+|            12 |            13 | native_moscot     | adjacent_observed_edge |
+|            14 |            16 | native_moscot     | holdout_gap_bridge     |
+|            18 |            19 | native_moscot     | adjacent_observed_edge |
+|            17 |            18 | native_moscot     | adjacent_observed_edge |
+|            16 |            17 | native_moscot     | adjacent_observed_edge |

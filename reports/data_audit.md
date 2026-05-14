@@ -25,7 +25,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE208369\GSE208369_KO_merged.RDS.gz`
@@ -40,7 +40,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components\component_manifest.csv`
@@ -55,7 +55,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components\matrix.mtx`
@@ -71,7 +71,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components\obs.csv`
@@ -86,7 +86,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components\var.csv`
@@ -101,7 +101,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_downsample_15000\component_manifest.csv`
@@ -116,7 +116,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_downsample_15000\matrix.mtx`
@@ -132,7 +132,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_downsample_15000\obs.csv`
@@ -147,7 +147,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_downsample_15000\var.csv`
@@ -162,7 +162,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_strict_sample\component_manifest.csv`
@@ -177,7 +177,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_strict_sample\matrix.mtx`
@@ -193,7 +193,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_strict_sample\obs.csv`
@@ -208,7 +208,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\components_strict_sample\var.csv`
@@ -223,7 +223,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\GSE212050_feature_metadata_final.txt.gz`
@@ -238,7 +238,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\GSE212050_sample_metadata_final.txt.gz`
@@ -253,7 +253,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\GSE212050\GSE212050_seurat_final.rds.gz`
@@ -268,7 +268,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\metadata\GSE212050_sample_metadata_final.txt.gz`
@@ -283,7 +283,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\embryo_atlas_sample1\component_manifest.csv`
@@ -298,7 +298,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\embryo_atlas_sample1\matrix.mtx`
@@ -314,7 +314,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\embryo_atlas_sample1\obs.csv`
@@ -329,7 +329,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\embryo_atlas_sample1\var.csv`
@@ -344,7 +344,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\t_chimera_full\component_manifest.csv`
@@ -359,7 +359,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\t_chimera_full\matrix.mtx`
@@ -375,7 +375,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\t_chimera_full\obs.csv`
@@ -390,7 +390,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\t_chimera_full\var.csv`
@@ -405,7 +405,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_full\component_manifest.csv`
@@ -420,7 +420,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_full\matrix.mtx`
@@ -436,7 +436,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_full\obs.csv`
@@ -451,7 +451,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_full\var.csv`
@@ -466,7 +466,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_sample1\component_manifest.csv`
@@ -481,7 +481,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_sample1\matrix.mtx`
@@ -497,7 +497,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_sample1\obs.csv`
@@ -512,7 +512,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\tal1_chimera_sample1\var.csv`
@@ -527,7 +527,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_full\component_manifest.csv`
@@ -542,7 +542,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_full\matrix.mtx`
@@ -558,7 +558,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_full\obs.csv`
@@ -573,7 +573,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_full\var.csv`
@@ -588,7 +588,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_sample1\component_manifest.csv`
@@ -603,7 +603,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_sample1\matrix.mtx`
@@ -619,7 +619,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_sample1\obs.csv`
@@ -634,7 +634,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\MouseGastrulationData\wt_chimera_sample1\var.csv`
@@ -649,7 +649,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\response_transfer\GSE208369_components\component_manifest.csv`
@@ -664,7 +664,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\response_transfer\GSE208369_components\matrix.mtx`
@@ -680,7 +680,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\response_transfer\GSE208369_components\obs.csv`
@@ -695,7 +695,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\response_transfer\GSE208369_components\var.csv`
@@ -710,7 +710,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\response_transfer\primary_perturbation.h5ad`
@@ -726,7 +726,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: PCNA, MCM5, TYMS, Pcna, Mcm5, Tyms
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KITLG, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: False
 
 ### `data\external\scperturb\AdamsonWeissman2016_GSM2406675_10X001.h5ad`
@@ -742,7 +742,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KITLG, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\external\scperturb\DatlingerBock2021.h5ad`
@@ -758,7 +758,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KITLG, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\fixtures\swarmlineage_synthetic.h5ad`
@@ -774,7 +774,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Cxcr4, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, CXCR4, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\cell_level_subset_v1.h5ad`
@@ -790,7 +790,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: Kitl, Kit, Kdr, KIT, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\cell_level_subset_v1.manifest.csv`
@@ -805,7 +805,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\devguard\devguard_quick_mouse.h5ad`
@@ -821,7 +821,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\devguard_stress_mouse.h5ad`
@@ -837,7 +837,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\GSE123187_preview_4files.h5ad`
@@ -853,7 +853,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kitl, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\GSE123187_tomo_3files.h5ad`
@@ -869,7 +869,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kitl, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\GSE212050_downsample_15000.h5ad`
@@ -885,7 +885,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\GSE212050_strict_sample_13285.h5ad`
@@ -901,7 +901,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\MouseGastrulationData_embryo_atlas_sample1.h5ad`
@@ -917,7 +917,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kitl, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\MouseGastrulationData_integrated_chimera_controls.h5ad`
@@ -932,7 +932,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\devguard\MouseGastrulationData_t_chimera_full.h5ad`
@@ -947,7 +947,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\devguard\MouseGastrulationData_tal1_chimera_full.h5ad`
@@ -962,7 +962,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\devguard\MouseGastrulationData_tal1_chimera_sample1.h5ad`
@@ -978,7 +978,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kitl, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: True
 
 ### `data\processed\devguard\MouseGastrulationData_wt_chimera_full.h5ad`
@@ -993,7 +993,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\processed\devguard\MouseGastrulationData_wt_chimera_sample1.h5ad`
@@ -1009,7 +1009,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, MCM5, TYMS, UBE2C, Mki67, Top2a, Pcna, Mcm5, Tyms, Ube2c
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Kitl, Kit, Cxcl12, Cxcr4, Vegfa, Kdr, Dll1, Notch1, FGF8, FGFR1, WNT3, FZD1, KIT, CXCL12, CXCR4, VEGFA
-- true lineage tracing likely present: True
+- lineage-tracing evidence likely present: True
 - perturb-seq/treatment labels likely present: True
 
 ### `data\rdeg_neural_cell_mvp\edge_importance_scores.csv`
@@ -1024,7 +1024,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\grn_learned_network.csv`
@@ -1039,7 +1039,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\hub_tf_ranking.csv`
@@ -1054,7 +1054,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\next_step_pair_metrics.csv`
@@ -1069,7 +1069,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\nodes_summary.csv`
@@ -1084,7 +1084,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\ot_pair_metrics.csv`
@@ -1099,7 +1099,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\perturbation_scores.csv`
@@ -1114,7 +1114,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\rescue_experiments.csv`
@@ -1129,7 +1129,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\rollout_error_matrix.csv`
@@ -1144,7 +1144,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\stage_module_means.csv`
@@ -1159,7 +1159,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\system_specific_edges.csv`
@@ -1174,7 +1174,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\temporal_sensitivity.csv`
@@ -1189,7 +1189,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\tf_fate_mutual_info.csv`
@@ -1204,7 +1204,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\rdeg_neural_cell_mvp\tf_knockout_results.csv`
@@ -1219,7 +1219,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `data\scLine_pro.h5ad`
@@ -1234,7 +1234,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `processed\ot_teacher.h5ad`
@@ -1250,7 +1250,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: Kitl, Kit, Kdr, KIT, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `processed\quick_fixture\ot_couplings\teacher_coupling_index.csv`
@@ -1265,7 +1265,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `processed\quick_fixture\ot_fate_probabilities.parquet`
@@ -1280,7 +1280,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: not detected
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: False
 
 ### `processed\quick_fixture\ot_teacher.h5ad`
@@ -1296,7 +1296,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `processed\quick_fixture\swarmlineage_input.h5ad`
@@ -1312,7 +1312,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: MKI67, TOP2A, PCNA, Mki67, Top2a, Pcna
 - ligand-receptor genes: Fgf8, Fgfr1, Wnt3, Fzd1, Cxcl12, Kdr, FGF8, FGFR1, WNT3, FZD1, CXCL12, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ### `processed\swarmlineage_input.h5ad`
@@ -1328,7 +1328,7 @@ This audit was generated from local files only. It records fields that are avail
 - multimodal fields: not detected
 - cell-cycle/proliferation markers: not detected
 - ligand-receptor genes: Kitl, Kit, Kdr, KIT, KDR
-- true lineage tracing likely present: False
+- lineage-tracing evidence likely present: False
 - perturb-seq/treatment labels likely present: True
 
 ## Main Modelling Input Decision

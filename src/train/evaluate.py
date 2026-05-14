@@ -376,9 +376,9 @@ def _write_reports(
                 "## Remaining Gaps",
                 "",
                 "- Native moscot/WOT or external teacher validation status is reported in `teacher_backend_status.csv`.",
-                "- CCI and memory are computational probes, not wet-lab validated mechanisms.",
-                "- No manuscript claim may state that SwarmLineage-OT outperforms OT.",
-                "- Nature-ready claims remain forbidden without external lineage, perturbation or wet-lab validation.",
+                "- CCI and memory are computational probes; experimental validation is absent.",
+                "- No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.",
+                "- High-impact submission claims remain unsupported without external lineage, perturbation or experimental validation.",
                 "",
             ]
         ),
@@ -437,7 +437,7 @@ def _write_reports(
                 f"- teacher_fidelity_tier: {teacher_tier}",
                 f"- emergent_law_tier: {emergent_tier}",
                 f"- mechanistic_usefulness_tier: {mechanistic_tier}",
-                "- Not Nature-ready without native/external teacher validation and biological validation.",
+                "- Not ready for high-impact submission without external teacher validation and biological validation.",
                 "",
             ]
         ),
