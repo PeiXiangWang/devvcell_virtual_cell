@@ -74,7 +74,7 @@ def main() -> None:
 
     st.warning(
         "This dashboard summarizes computational evidence only. It does not claim "
-        "experimental validation, causal proof, or high-impact submission readiness."
+        "experimental validation, established causality, or high-impact submission readiness."
     )
 
     tabs = st.tabs(

@@ -35,9 +35,10 @@ OT interpolation is the teacher/reference map, not a competitor to beat.
 | cci_branch_bias   | fail       | False       | False         |   0           |     0           |      0           |      1          |        1        | False                   | False                 | True            | False                            | unsupported                       | tables\cci_branch_bias.csv              | reports\discovery_cci_branch_bias.md   | executed |
 | phase_diagram     | weak       | False       | False         |   1           |     1           |      1           |      1          |        1        | False                   | True                  | True            | False                            | exploratory_sensitivity           | tables\phase_diagram.csv                | reports\discovery_phase_diagram.md     | executed |
 
-## v0.6 Primary Mechanism Interpretation
+## External Experiment E1
 
-- evidence-selected primary mechanistic model: `M5_ot_swarm`
-- retained main mechanism: rollout-supported branch-nucleation order-parameter signature.
-- diffusion remains encoded control-law recovery.
-- birth/death, memory and CCI branch bias are unsupported and excluded from main claims.
+- E1 selected MouseGastrulationData WT chimera sample 1 as an independent public time-series developmental dataset.
+- External teacher backend: native_moscot.
+- External validation tier: acceptable.
+- Condensation-before-divergence direction was reproduced in M5_ot_swarm, but lineage barcode validation was unavailable.
+- Unsupported modules remain excluded from the retained main claim: birth/death, memory and CCI.

@@ -15,3 +15,13 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 - CCI and memory are computational probes; experimental validation is absent.
 - No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.
 - High-impact submission claims remain unsupported without external lineage, perturbation or experimental validation.
+
+## External Experiment E1
+
+Branch nucleation, interpreted as transient condensation-before-divergence, is supported internally under native moscot teacher sensitivity and receives external time-series support in MouseGastrulationData WT chimera sample 1. This remains computational evidence, not experimental validation.
+
+- selected external dataset: MouseGastrulationData WT chimera sample 1.
+- external teacher backend: native_moscot.
+- external validation tier: acceptable.
+- no experimental lineage tracing or experimental validation is claimed; causality and high-impact readiness are not established.
+- diffusion remains encoded control-law recovery; birth/death, memory and CCI remain unsupported.

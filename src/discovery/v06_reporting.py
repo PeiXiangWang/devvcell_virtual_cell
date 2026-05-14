@@ -389,7 +389,7 @@ def manuscript_updates(primary: pd.DataFrame, external: pd.DataFrame) -> None:
         "## Limitations",
         "",
         "- Native moscot teacher extraction removes the toy-fallback blocker, but native downsample sensitivity and external validation remain incomplete.",
-        "- Experimental lineage tracing, wet-lab validation, causal proof and high-impact readiness are not claimed.",
+        "- Experimental lineage tracing and experimental validation are not claimed; causality and high-impact readiness are not established.",
         "",
     ]
     write_text("manuscript/final_retained_results_and_methods.md", "\n".join(final))

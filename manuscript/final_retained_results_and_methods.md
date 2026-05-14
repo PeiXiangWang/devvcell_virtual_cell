@@ -2,50 +2,68 @@
 
 ## Central Claim
 
-OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveals a rollout-supported branch-nucleation order-parameter signature.
+OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.
 
 `M0b_ot_interpolation` is an oracle-like OT teacher/reference interpolation. The finite-agent model is evaluated by teacher fidelity, emergent-law robustness and mechanistic usefulness, not by beating the OT reference.
 
-## Native Teacher
+## Tier Summary
 
-| teacher_backend   | native_teacher_available   | external_teacher_validation   | native_teacher_claims_allowed   | strong_biological_claims_allowed   | nature_level_claim_allowed   |   native_temporalproblem_pairs | native_requirements_file                       | status                                                       |
-|:------------------|:---------------------------|:------------------------------|:--------------------------------|:-----------------------------------|:-----------------------------|-------------------------------:|:-----------------------------------------------|:-------------------------------------------------------------|
-| native_moscot     | True                       | False                         | True                            | False                              | False                        |                              6 | reproducibility/native_moscot_requirements.txt | native teacher available; external validation still required |
-
-## Primary Mechanistic Model
-
-- primary_model: M5_ot_swarm
-- full model is not automatically the primary model.
-- unsupported modules are excluded from retained main claims.
-- architectural controls can show related condensation signals, so module necessity is not claimed.
-
-| model                                 | teacher_fidelity_tier   |   relative_sinkhorn |   relative_mmd |   composition_rmse | branch_nucleation_tier   |   branch_nucleation_effect | branch_nucleation_seed_stability   |   unsupported_module_burden |   complexity_penalty | uses_unsupported_modules   |   selection_score |   mean_sinkhorn | recommendation                     |
-|:--------------------------------------|:------------------------|--------------------:|---------------:|-------------------:|:-------------------------|---------------------------:|:-----------------------------------|----------------------------:|---------------------:|:---------------------------|------------------:|----------------:|:-----------------------------------|
-| M5_ot_swarm                           | acceptable              |             1.13174 |        1.56129 |         0.00402532 | strong                   |                  -0.265822 | True                               |                           0 |                    0 | False                      |           13.7326 |        0.288679 | primary_mechanistic_model          |
-| M9_full_memory                        | acceptable              |             1.20363 |        1.62257 |         0.0217414  | strong                   |                  -0.207681 | True                               |                           1 |                    1 | True                       |           11.8403 |        0.307017 | secondary_exploratory_model        |
-| M7_ot_swarm_birth_death_diffusion     | acceptable              |             1.20497 |        1.59795 |         0.0219325  | strong                   |                  -0.21572  | True                               |                           1 |                    1 | True                       |           11.8397 |        0.307358 | models_not_retained_for_main_claim |
-| M8_ot_swarm_birth_death_diffusion_cci | acceptable              |             1.20498 |        1.59814 |         0.0219325  | strong                   |                  -0.215772 | True                               |                           2 |                    2 | True                       |           10.3396 |        0.307362 | models_not_retained_for_main_claim |
+| teacher_fidelity_tier   | emergent_law_tier   | mechanistic_usefulness_tier   | mechanistic_gate_pass   | strong_gate   |   laws_at_least_acceptable |   laws_strong | native_or_external_teacher_validation   |
+|:------------------------|:--------------------|:------------------------------|:------------------------|:--------------|---------------------------:|--------------:|:----------------------------------------|
+| acceptable              | weak                | weak                          | False                   | False         |                          2 |             1 | True                                    |
 
 ## Retained Computational Hypotheses
 
-- branch_nucleation: strong tier; interpretation=retained_computational_hypothesis; rollout_based=True; best mechanistic reading is a transient condensation-before-divergence order-parameter signature.
-- diffusion: acceptable but encoded_control_law_recovery; not an independent discovery.
+| law               | tier       | interpretation_level              | rollout_based   | directly_supervised_or_encoded   |
+|:------------------|:-----------|:----------------------------------|:----------------|:---------------------------------|
+| diffusion         | acceptable | encoded_control_law_recovery      | False           | True                             |
+| branch_nucleation | strong     | retained_computational_hypothesis | True            | False                            |
 
-## Unsupported Modules
+## Exploratory / Demonstration Only
 
-- birth/death, memory hysteresis and CCI branch bias are unsupported under current evidence and excluded from main claims.
+| law           | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |
+|:--------------|:-------|:------------------------|:----------------|:---------------------------------|
+| phase_diagram | weak   | exploratory_sensitivity | True            | False                            |
 
-## External Validation
+## Unsupported Claims
 
-External validation has been initiated through a public dataset registry but remains pending.
+| law               | tier   | status   |
+|:------------------|:-------|:---------|
+| birth_death       | fail   | executed |
+| memory_hysteresis | fail   | executed |
+| cci_branch_bias   | fail   | executed |
 
-| dataset                                       | accession_or_url                                                 | doi_or_reference                                              | public_availability   | expression_matrix_availability           | metadata_availability                                  | time_stage_column_availability   | cell_type_fate_lineage_label_availability                | attempt_status                            | usable_for_main_validation      | blocker                                                                                             |
-|:----------------------------------------------|:-----------------------------------------------------------------|:--------------------------------------------------------------|:----------------------|:-----------------------------------------|:-------------------------------------------------------|:---------------------------------|:---------------------------------------------------------|:------------------------------------------|:--------------------------------|:----------------------------------------------------------------------------------------------------|
-| Waddington-OT iPSC reprogramming              | https://broadinstitute.github.io/wot/tutorial/                   | Schiebinger et al., Cell 2019, DOI:10.1016/j.cell.2019.01.006 | True                  | tutorial input data link provided        | cell_days/time metadata described                      | True                             | cell sets/signatures; no direct lineage tracing evidence | registry_confirmed_download_not_completed | potential                       | Google Drive/Terra download requires manual or network-enabled retrieval; not ingested in this run. |
-| scLTdb lineage tracing datasets               | https://scltdb.com/scLT/ and https://zenodo.org/records/12176634 | scLTdb public database; record URL verified                   | True                  | h5ad/rds reported by database            | time, celltype and barcode fields reported by database | True                             | lineage barcodes reported                                | registry_confirmed_download_not_completed | potential_lineage_validation    | Dataset-specific selection/download not automated yet; no matrix was fabricated.                    |
-| Tempora sample time-course scRNA-seq datasets | https://baderlab.org/Software/Tempora                            | Tran and Bader, Nucleic Acids Research 2020                   | True                  | supplementary/sample data links reported | time-course metadata expected                          | True                             | cell-type annotations vary by sample                     | registry_confirmed_download_not_completed | feasibility_time_series_support | Not yet converted to project AnnData schema in this run.                                            |
+## Core Metrics
+
+| model                                 |   sinkhorn |    mmd_rbf |   energy |   celltype_composition_rmse |
+|:--------------------------------------|-----------:|-----------:|---------:|----------------------------:|
+| M0_linear_label_interpolation         |   0.281661 | 0.00822039 | 0.292374 |                  0.00396321 |
+| M0b_ot_interpolation                  |   0.255076 | 0.00878499 | 0.335883 |                  0.00348103 |
+| M10_shuffled_time_ot                  |   0.304366 | 0.00526067 | 0.213518 |                  0.014373   |
+| M11_random_lr_labels                  |   0.300051 | 0.0135742  | 0.450108 |                  0.0202327  |
+| M1_intrinsic_neural                   |   0.309283 | 0.0277509  | 0.917    |                  0.00420263 |
+| M2_ot_teacher_force                   |   0.29088  | 0.0120656  | 0.38817  |                  0.0039636  |
+| M3_ot_birth_death                     |   0.307424 | 0.0121     | 0.40647  |                  0.0210994  |
+| M4_ot_adaptive_diffusion              |   0.291023 | 0.0120433  | 0.387111 |                  0.00384322 |
+| M5_ot_swarm                           |   0.288679 | 0.013716   | 0.439041 |                  0.00402532 |
+| M6_ot_swarm_birth_death               |   0.306787 | 0.0132087  | 0.451684 |                  0.0224666  |
+| M7_ot_swarm_birth_death_diffusion     |   0.307358 | 0.014038   | 0.46045  |                  0.0219325  |
+| M8_ot_swarm_birth_death_diffusion_cci |   0.307362 | 0.0140396  | 0.460488 |                  0.0219325  |
+| M9_full_memory                        |   0.307017 | 0.0142543  | 0.468093 |                  0.0217414  |
 
 ## Limitations
 
-- Native moscot teacher extraction removes the toy-fallback blocker, but native downsample sensitivity and external validation remain incomplete.
-- Experimental lineage tracing, wet-lab validation, causal proof and high-impact readiness are not claimed.
+- Current results are computational hypotheses.
+- Some laws are encoded control-law recoveries and must not be written as independent biological discoveries.
+- Native moscot teacher extraction removes the toy-fallback blocker for teacher construction, but not the need for external validation.
+- No experimental validation or causal mechanism is claimed.
+
+## External Experiment E1
+
+Branch nucleation, interpreted as transient condensation-before-divergence, is supported internally under native moscot teacher sensitivity and receives external time-series support in MouseGastrulationData WT chimera sample 1. This remains computational evidence, not experimental validation.
+
+- selected external dataset: MouseGastrulationData WT chimera sample 1.
+- external teacher backend: native_moscot.
+- external validation tier: acceptable.
+- no experimental lineage tracing or experimental validation is claimed; causality and high-impact readiness are not established.
+- diffusion remains encoded control-law recovery; birth/death, memory and CCI remain unsupported.

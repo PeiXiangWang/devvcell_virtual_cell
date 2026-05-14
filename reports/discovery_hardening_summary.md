@@ -13,8 +13,6 @@
 | cci_branch_bias   | fail       | False       | False         |   0           |     0           |      0           |      1          |        1        | False                   | False                 | True            | False                            | unsupported                       | tables\cci_branch_bias.csv              | reports\discovery_cci_branch_bias.md   | executed |
 | phase_diagram     | weak       | False       | False         |   1           |     1           |      1           |      1          |        1        | False                   | True                  | True            | False                            | exploratory_sensitivity           | tables\phase_diagram.csv                | reports\discovery_phase_diagram.md     | executed |
 
-## v0.6 Summary
+## External Experiment E1
 
-- native moscot teacher sensitivity completed across 120, 250, 500 and 650 cells/time with epsilon 0.04, 0.08 and 0.12.
-- branch nucleation remains the retained computational hypothesis and is interpreted as transient condensation-before-divergence.
-- external validation has been initiated as a registry, not completed validation.
+MouseGastrulationData WT chimera sample 1 was ingested as an independent external developmental time-series dataset. Native moscot extracted five external transport pairs, and the external branch-nucleation validation tier is acceptable. The reproduced signature is computational time-series support only; no lineage barcode validation or experimental validation is claimed.

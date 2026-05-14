@@ -1,5 +1,5 @@
 # Claim Audit
 
-Prohibited claims were searched across manuscript and report markdown. Hits, if present, are allowed only as negated limitations or in this audit list.
+Prohibited positive claims were searched across manuscript and report markdown. Hits, if present, require negated limitation context.
 
 No prohibited positive claim strings were found outside audit context.

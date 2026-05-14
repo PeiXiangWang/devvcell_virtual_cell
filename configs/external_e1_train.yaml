@@ -1,0 +1,10 @@
+model_config: configs/external_e1_model.yaml
+discovery_config: configs/external_e1_discovery.yaml
+ablation_metrics_path: tables/external/e1_ablation_metrics.csv
+ablation_stats_path: tables/external/e1_ablation_statistical_tests.csv
+negative_results_report: reports/external/e1_negative_results.md
+ablation_report: reports/external/e1_ablation_interpretation.md
+random_seed: 17
+baseline_execution_matrix_path: reports/external/e1_baseline_execution_matrix.csv
+module_contribution_report: reports/external/e1_module_contribution_audit.md
+scientific_gap_report: reports/external/e1_scientific_gap_audit.md

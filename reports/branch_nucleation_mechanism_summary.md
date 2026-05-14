@@ -4,7 +4,7 @@
 - best_interpretation: transient_condensation_before_divergence
 - primary_model_hint: M5_ot_swarm
 - unsupported modules to exclude from main claim: birth/death, CCI, memory.
-- architectural controls can show related condensation signals, so the current evidence supports an order-parameter signature, not a causal proof that swarm or teacher terms are necessary.
+- architectural controls can show related condensation signals, so the current evidence supports an order-parameter signature, not proof that swarm or teacher terms are necessary by themselves.
 - Negative controls include temporal, velocity, lineage, fate, no-swarm, no-teacher and random-teacher controls.
 
 ## Model Comparison
@@ -27,3 +27,13 @@
 | no_swarm_model              |    -0.275622  |     -0.305429   |       -0.252852  | True                  | weak        | architectural negative/control comparator                                             |             0.2 |        0.7      | M2_ot_teacher_force  |
 | no_teacher_model            |    -0.475492  |     -0.500823   |       -0.450543  | True                  | weak        | architectural negative/control comparator                                             |             0.2 |        0.7      | M1_intrinsic_neural  |
 | random_teacher_velocity     |     0.065666  |     -0.0152877  |        0.136086  | True                  | weak        | architectural negative/control comparator                                             |             0.6 |        0.84     | M10_shuffled_time_ot |
+
+## External Experiment E1
+
+Branch nucleation, interpreted as transient condensation-before-divergence, is supported internally under native moscot teacher sensitivity and receives external time-series support in MouseGastrulationData WT chimera sample 1. This remains computational evidence, not experimental validation.
+
+- selected external dataset: MouseGastrulationData WT chimera sample 1.
+- external teacher backend: native_moscot.
+- external validation tier: acceptable.
+- no experimental lineage tracing or experimental validation is claimed; causality and high-impact readiness are not established.
+- diffusion remains encoded control-law recovery; birth/death, memory and CCI remain unsupported.

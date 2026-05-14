@@ -1,0 +1,1716 @@
+source_lineage,target_lineage,mass,source_time,target_time
+Allantois,Allantois,0.007821370847523212,8.0,8.25
+Allantois,Cardiomyocytes,5.075296212453395e-05,8.0,8.25
+Allantois,Def. endoderm,1.4171054331076419e-14,8.0,8.25
+Allantois,ExE mesoderm,0.0065664504654705524,8.0,8.25
+Allantois,Gut,2.0082362439666213e-09,8.0,8.25
+Allantois,Intermediate mesoderm,3.2036241464084014e-06,8.0,8.25
+Allantois,Mesenchyme,0.025089088827371597,8.0,8.25
+Allantois,Paraxial mesoderm,0.00016333973326254636,8.0,8.25
+Allantois,Pharyngeal mesoderm,0.0018632462015375495,8.0,8.25
+Allantois,Rostral neurectoderm,4.424504709277244e-07,8.0,8.25
+Allantois,Surface ectoderm,0.0001087780183297582,8.0,8.25
+Blood progenitors 2,Allantois,0.01615186408162117,8.0,8.25
+Blood progenitors 2,Cardiomyocytes,0.0001267765910597518,8.0,8.25
+Blood progenitors 2,Def. endoderm,1.096945884820899e-13,8.0,8.25
+Blood progenitors 2,ExE mesoderm,0.002745377365499735,8.0,8.25
+Blood progenitors 2,Gut,3.8557956827389717e-08,8.0,8.25
+Blood progenitors 2,Intermediate mesoderm,8.992844414024148e-06,8.0,8.25
+Blood progenitors 2,Mesenchyme,0.011440853588283062,8.0,8.25
+Blood progenitors 2,Paraxial mesoderm,0.011154843494296074,8.0,8.25
+Blood progenitors 2,Pharyngeal mesoderm,0.019281581044197083,8.0,8.25
+Blood progenitors 2,Rostral neurectoderm,0.0006075316341593862,8.0,8.25
+Blood progenitors 2,Surface ectoderm,0.00514878099784255,8.0,8.25
+Caudal Mesoderm,Allantois,0.0001718014245852828,8.0,8.25
+Caudal Mesoderm,Cardiomyocytes,0.0007781695458106697,8.0,8.25
+Caudal Mesoderm,Def. endoderm,2.181010094748359e-10,8.0,8.25
+Caudal Mesoderm,ExE mesoderm,0.005096930079162121,8.0,8.25
+Caudal Mesoderm,Gut,2.0060139149791212e-07,8.0,8.25
+Caudal Mesoderm,Intermediate mesoderm,0.008317636325955391,8.0,8.25
+Caudal Mesoderm,Mesenchyme,0.00224714120849967,8.0,8.25
+Caudal Mesoderm,Paraxial mesoderm,0.013333321548998356,8.0,8.25
+Caudal Mesoderm,Pharyngeal mesoderm,0.02077082358300686,8.0,8.25
+Caudal Mesoderm,Rostral neurectoderm,0.0013959076022729278,8.0,8.25
+Caudal Mesoderm,Surface ectoderm,0.02288796380162239,8.0,8.25
+Caudal epiblast,Allantois,6.243949610507116e-05,8.0,8.25
+Caudal epiblast,Cardiomyocytes,0.00016649519966449589,8.0,8.25
+Caudal epiblast,Def. endoderm,2.110728258841732e-11,8.0,8.25
+Caudal epiblast,ExE mesoderm,0.0018558449810370803,8.0,8.25
+Caudal epiblast,Gut,1.478452134051622e-07,8.0,8.25
+Caudal epiblast,Intermediate mesoderm,0.0006770045729354024,8.0,8.25
+Caudal epiblast,Mesenchyme,0.00226691085845232,8.0,8.25
+Caudal epiblast,Paraxial mesoderm,0.018236948177218437,8.0,8.25
+Caudal epiblast,Pharyngeal mesoderm,0.015810273587703705,8.0,8.25
+Caudal epiblast,Rostral neurectoderm,0.006839132402092218,8.0,8.25
+Caudal epiblast,Surface ectoderm,0.029084809124469757,8.0,8.25
+Caudal neurectoderm,Allantois,6.619416581088444e-06,8.0,8.25
+Caudal neurectoderm,Cardiomyocytes,6.031879092915915e-05,8.0,8.25
+Caudal neurectoderm,Def. endoderm,2.6967985136683303e-11,8.0,8.25
+Caudal neurectoderm,ExE mesoderm,0.00014209307846613228,8.0,8.25
+Caudal neurectoderm,Gut,8.617261215704275e-08,8.0,8.25
+Caudal neurectoderm,Intermediate mesoderm,2.1996333089191467e-05,8.0,8.25
+Caudal neurectoderm,Mesenchyme,0.0008880284149199724,8.0,8.25
+Caudal neurectoderm,Paraxial mesoderm,0.015124446712434292,8.0,8.25
+Caudal neurectoderm,Pharyngeal mesoderm,0.006375376135110855,8.0,8.25
+Caudal neurectoderm,Rostral neurectoderm,0.007301079109311104,8.0,8.25
+Caudal neurectoderm,Surface ectoderm,0.020079953595995903,8.0,8.25
+Def. endoderm,Allantois,1.6095976107521892e-08,8.0,8.25
+Def. endoderm,Cardiomyocytes,8.160772995324805e-05,8.0,8.25
+Def. endoderm,Def. endoderm,0.00022510153939947486,8.0,8.25
+Def. endoderm,ExE mesoderm,6.887272775202291e-06,8.0,8.25
+Def. endoderm,Gut,9.981686162063852e-05,8.0,8.25
+Def. endoderm,Intermediate mesoderm,3.839185467313655e-07,8.0,8.25
+Def. endoderm,Mesenchyme,0.00042662175837904215,8.0,8.25
+Def. endoderm,Paraxial mesoderm,0.005762415938079357,8.0,8.25
+Def. endoderm,Pharyngeal mesoderm,0.00027978295111097395,8.0,8.25
+Def. endoderm,Rostral neurectoderm,2.3754314497637097e-06,8.0,8.25
+Def. endoderm,Surface ectoderm,0.001448319060727954,8.0,8.25
+Erythroid1,Allantois,0.0039057296235114336,8.0,8.25
+Erythroid1,Cardiomyocytes,0.00018965627532452345,8.0,8.25
+Erythroid1,Def. endoderm,3.690329292149741e-13,8.0,8.25
+Erythroid1,ExE mesoderm,0.0006809649639762938,8.0,8.25
+Erythroid1,Gut,3.434788808931444e-08,8.0,8.25
+Erythroid1,Intermediate mesoderm,5.163497462490341e-06,8.0,8.25
+Erythroid1,Mesenchyme,0.0038495513144880533,8.0,8.25
+Erythroid1,Paraxial mesoderm,0.012970281764864922,8.0,8.25
+Erythroid1,Pharyngeal mesoderm,0.01322619803249836,8.0,8.25
+Erythroid1,Rostral neurectoderm,0.0012315231142565608,8.0,8.25
+Erythroid1,Surface ectoderm,0.005607571452856064,8.0,8.25
+ExE mesoderm,Allantois,0.008183681406080723,8.0,8.25
+ExE mesoderm,Cardiomyocytes,7.684716547373682e-05,8.0,8.25
+ExE mesoderm,Def. endoderm,4.927691081243503e-14,8.0,8.25
+ExE mesoderm,ExE mesoderm,0.019243594259023666,8.0,8.25
+ExE mesoderm,Gut,6.590434864506278e-09,8.0,8.25
+ExE mesoderm,Intermediate mesoderm,0.0003020262229256332,8.0,8.25
+ExE mesoderm,Mesenchyme,0.02563605271279812,8.0,8.25
+ExE mesoderm,Paraxial mesoderm,0.0006401867140084505,8.0,8.25
+ExE mesoderm,Pharyngeal mesoderm,0.004020772408694029,8.0,8.25
+ExE mesoderm,Rostral neurectoderm,2.5459189600951504e-06,8.0,8.25
+ExE mesoderm,Surface ectoderm,0.00022762523440178484,8.0,8.25
+Gut,Allantois,8.020105269679334e-06,8.0,8.25
+Gut,Cardiomyocytes,0.000519069260917604,8.0,8.25
+Gut,Def. endoderm,9.022563318694665e-08,8.0,8.25
+Gut,ExE mesoderm,0.0003428032505325973,8.0,8.25
+Gut,Gut,0.010630806908011436,8.0,8.25
+Gut,Intermediate mesoderm,8.033930498640984e-06,8.0,8.25
+Gut,Mesenchyme,0.011164729483425617,8.0,8.25
+Gut,Paraxial mesoderm,0.003912890329957008,8.0,8.25
+Gut,Pharyngeal mesoderm,0.003360845847055316,8.0,8.25
+Gut,Rostral neurectoderm,0.0005613267421722412,8.0,8.25
+Gut,Surface ectoderm,0.027824701741337776,8.0,8.25
+Haematoendothelial progenitors,Allantois,0.0024752712342888117,8.0,8.25
+Haematoendothelial progenitors,Cardiomyocytes,0.003887426108121872,8.0,8.25
+Haematoendothelial progenitors,Def. endoderm,1.3801994486542513e-12,8.0,8.25
+Haematoendothelial progenitors,ExE mesoderm,0.004723304882645607,8.0,8.25
+Haematoendothelial progenitors,Gut,4.8535333974086825e-08,8.0,8.25
+Haematoendothelial progenitors,Intermediate mesoderm,8.788809282123111e-06,8.0,8.25
+Haematoendothelial progenitors,Mesenchyme,0.044689252972602844,8.0,8.25
+Haematoendothelial progenitors,Paraxial mesoderm,0.002969888038933277,8.0,8.25
+Haematoendothelial progenitors,Pharyngeal mesoderm,0.007412849459797144,8.0,8.25
+Haematoendothelial progenitors,Rostral neurectoderm,2.2388676370610483e-06,8.0,8.25
+Haematoendothelial progenitors,Surface ectoderm,0.0004976958152838051,8.0,8.25
+Intermediate mesoderm,Allantois,0.00038409532862715423,8.0,8.25
+Intermediate mesoderm,Cardiomyocytes,0.00015822012210264802,8.0,8.25
+Intermediate mesoderm,Def. endoderm,2.6405668016732387e-12,8.0,8.25
+Intermediate mesoderm,ExE mesoderm,0.016841094940900803,8.0,8.25
+Intermediate mesoderm,Gut,1.580800379485936e-08,8.0,8.25
+Intermediate mesoderm,Intermediate mesoderm,0.014500977471470833,8.0,8.25
+Intermediate mesoderm,Mesenchyme,0.003465203335508704,8.0,8.25
+Intermediate mesoderm,Paraxial mesoderm,0.009530290961265564,8.0,8.25
+Intermediate mesoderm,Pharyngeal mesoderm,0.013079864904284477,8.0,8.25
+Intermediate mesoderm,Rostral neurectoderm,1.022362175717717e-05,8.0,8.25
+Intermediate mesoderm,Surface ectoderm,0.00036335139884613454,8.0,8.25
+Mesenchyme,Allantois,0.0036471914499998093,8.0,8.25
+Mesenchyme,Cardiomyocytes,8.431707829004154e-05,8.0,8.25
+Mesenchyme,Def. endoderm,7.451835033907804e-15,8.0,8.25
+Mesenchyme,ExE mesoderm,0.003055015578866005,8.0,8.25
+Mesenchyme,Gut,5.424990234814686e-09,8.0,8.25
+Mesenchyme,Intermediate mesoderm,1.3434606671580696e-06,8.0,8.25
+Mesenchyme,Mesenchyme,0.04194390028715134,8.0,8.25
+Mesenchyme,Paraxial mesoderm,0.00010516140901017934,8.0,8.25
+Mesenchyme,Pharyngeal mesoderm,0.001076898188330233,8.0,8.25
+Mesenchyme,Rostral neurectoderm,2.2230226193187264e-07,8.0,8.25
+Mesenchyme,Surface ectoderm,8.595405233791098e-05,8.0,8.25
+Notochord,Allantois,1.9759409042308107e-07,8.0,8.25
+Notochord,Cardiomyocytes,0.003995089326053858,8.0,8.25
+Notochord,Def. endoderm,0.02129579335451126,8.0,8.25
+Notochord,ExE mesoderm,0.00019666203297674656,8.0,8.25
+Notochord,Gut,2.2642228941549547e-05,8.0,8.25
+Notochord,Intermediate mesoderm,0.000859471270814538,8.0,8.25
+Notochord,Mesenchyme,0.00680305203422904,8.0,8.25
+Notochord,Paraxial mesoderm,0.014935996383428574,8.0,8.25
+Notochord,Pharyngeal mesoderm,0.0024708115961402655,8.0,8.25
+Notochord,Rostral neurectoderm,1.962878195627127e-05,8.0,8.25
+Notochord,Surface ectoderm,0.007733939681202173,8.0,8.25
+Paraxial mesoderm,Allantois,5.4042698138800915e-06,8.0,8.25
+Paraxial mesoderm,Cardiomyocytes,2.5296409148722887e-05,8.0,8.25
+Paraxial mesoderm,Def. endoderm,2.3227302026196384e-11,8.0,8.25
+Paraxial mesoderm,ExE mesoderm,5.067387246526778e-05,8.0,8.25
+Paraxial mesoderm,Gut,3.344695631568584e-09,8.0,8.25
+Paraxial mesoderm,Intermediate mesoderm,9.169380064122379e-06,8.0,8.25
+Paraxial mesoderm,Mesenchyme,0.00033820903627201915,8.0,8.25
+Paraxial mesoderm,Paraxial mesoderm,0.04757664352655411,8.0,8.25
+Paraxial mesoderm,Pharyngeal mesoderm,0.010263392701745033,8.0,8.25
+Paraxial mesoderm,Rostral neurectoderm,8.82455424289219e-06,8.0,8.25
+Paraxial mesoderm,Surface ectoderm,5.5738535593263805e-05,8.0,8.25
+Pharyngeal mesoderm,Allantois,2.2014250134816393e-05,8.0,8.25
+Pharyngeal mesoderm,Cardiomyocytes,0.0002165670448448509,8.0,8.25
+Pharyngeal mesoderm,Def. endoderm,2.7820007040234296e-13,8.0,8.25
+Pharyngeal mesoderm,ExE mesoderm,0.0002640561433508992,8.0,8.25
+Pharyngeal mesoderm,Gut,8.249243066416057e-09,8.0,8.25
+Pharyngeal mesoderm,Intermediate mesoderm,2.878886334656272e-06,8.0,8.25
+Pharyngeal mesoderm,Mesenchyme,0.002598995342850685,8.0,8.25
+Pharyngeal mesoderm,Paraxial mesoderm,0.00889511127024889,8.0,8.25
+Pharyngeal mesoderm,Pharyngeal mesoderm,0.021137021481990814,8.0,8.25
+Pharyngeal mesoderm,Rostral neurectoderm,1.670144047238864e-05,8.0,8.25
+Pharyngeal mesoderm,Surface ectoderm,0.00017998841940425336,8.0,8.25
+Rostral neurectoderm,Allantois,1.53116779983975e-05,8.0,8.25
+Rostral neurectoderm,Cardiomyocytes,1.832954330893699e-05,8.0,8.25
+Rostral neurectoderm,Def. endoderm,4.131841049859197e-11,8.0,8.25
+Rostral neurectoderm,ExE mesoderm,0.00016001374751795083,8.0,8.25
+Rostral neurectoderm,Gut,1.31240611267458e-07,8.0,8.25
+Rostral neurectoderm,Intermediate mesoderm,1.1578725207073148e-05,8.0,8.25
+Rostral neurectoderm,Mesenchyme,0.0003397743566893041,8.0,8.25
+Rostral neurectoderm,Paraxial mesoderm,0.011702483519911766,8.0,8.25
+Rostral neurectoderm,Pharyngeal mesoderm,0.008216431364417076,8.0,8.25
+Rostral neurectoderm,Rostral neurectoderm,0.009653582237660885,8.0,8.25
+Rostral neurectoderm,Surface ectoderm,0.019882362335920334,8.0,8.25
+Somitic mesoderm,Allantois,1.0584133633528836e-05,8.0,8.25
+Somitic mesoderm,Cardiomyocytes,7.031878340058029e-05,8.0,8.25
+Somitic mesoderm,Def. endoderm,7.966627357802736e-11,8.0,8.25
+Somitic mesoderm,ExE mesoderm,0.0018481031293049455,8.0,8.25
+Somitic mesoderm,Gut,2.7547619296797166e-08,8.0,8.25
+Somitic mesoderm,Intermediate mesoderm,0.007419237866997719,8.0,8.25
+Somitic mesoderm,Mesenchyme,0.0004911324358545244,8.0,8.25
+Somitic mesoderm,Paraxial mesoderm,0.02647184208035469,8.0,8.25
+Somitic mesoderm,Pharyngeal mesoderm,0.021847935393452644,8.0,8.25
+Somitic mesoderm,Rostral neurectoderm,1.3045179002801888e-05,8.0,8.25
+Somitic mesoderm,Surface ectoderm,0.00016114662867039442,8.0,8.25
+Spinal cord,Allantois,1.4289115824794862e-05,8.0,8.25
+Spinal cord,Cardiomyocytes,1.9830493329209276e-05,8.0,8.25
+Spinal cord,Def. endoderm,7.062237947219607e-12,8.0,8.25
+Spinal cord,ExE mesoderm,0.00014496876974590123,8.0,8.25
+Spinal cord,Gut,1.8716326266599026e-08,8.0,8.25
+Spinal cord,Intermediate mesoderm,2.1787951482110657e-05,8.0,8.25
+Spinal cord,Mesenchyme,0.00021254229068290442,8.0,8.25
+Spinal cord,Paraxial mesoderm,0.00687773572281003,8.0,8.25
+Spinal cord,Pharyngeal mesoderm,0.007723206654191017,8.0,8.25
+Spinal cord,Rostral neurectoderm,0.002692932728677988,8.0,8.25
+Spinal cord,Surface ectoderm,0.007292692083865404,8.0,8.25
+Stripped,Allantois,0.00011239339801250026,8.0,8.25
+Stripped,Cardiomyocytes,3.84308623324614e-05,8.0,8.25
+Stripped,Def. endoderm,1.4620188469160328e-14,8.0,8.25
+Stripped,ExE mesoderm,0.00024233886506408453,8.0,8.25
+Stripped,Gut,8.937036000133958e-09,8.0,8.25
+Stripped,Intermediate mesoderm,2.863029294530861e-06,8.0,8.25
+Stripped,Mesenchyme,0.000968386884778738,8.0,8.25
+Stripped,Paraxial mesoderm,0.0034053369890898466,8.0,8.25
+Stripped,Pharyngeal mesoderm,0.002357947174459696,8.0,8.25
+Stripped,Rostral neurectoderm,0.0003617306356318295,8.0,8.25
+Stripped,Surface ectoderm,0.0008439029916189611,8.0,8.25
+Surface ectoderm,Allantois,8.52666016726289e-06,8.0,8.25
+Surface ectoderm,Cardiomyocytes,0.00019168705330230296,8.0,8.25
+Surface ectoderm,Def. endoderm,3.7724198764799155e-12,8.0,8.25
+Surface ectoderm,ExE mesoderm,0.00030365571728907526,8.0,8.25
+Surface ectoderm,Gut,4.6804260023236566e-08,8.0,8.25
+Surface ectoderm,Intermediate mesoderm,7.261691644089296e-05,8.0,8.25
+Surface ectoderm,Mesenchyme,0.00870851706713438,8.0,8.25
+Surface ectoderm,Paraxial mesoderm,0.0012722474057227373,8.0,8.25
+Surface ectoderm,Pharyngeal mesoderm,0.0022031578700989485,8.0,8.25
+Surface ectoderm,Rostral neurectoderm,0.001533930073492229,8.0,8.25
+Surface ectoderm,Surface ectoderm,0.044038936495780945,8.0,8.25
+Anterior Primitive Streak,Anterior Primitive Streak,0.016917571425437927,7.0,7.25
+Anterior Primitive Streak,Def. endoderm,0.06408192217350006,7.0,7.25
+Anterior Primitive Streak,Epiblast,2.501294329704251e-05,7.0,7.25
+Anterior Primitive Streak,ExE mesoderm,0.00022800873557571322,7.0,7.25
+Anterior Primitive Streak,Haematoendothelial progenitors,0.0056381868198513985,7.0,7.25
+Anterior Primitive Streak,Mesenchyme,0.0010018236935138702,7.0,7.25
+Anterior Primitive Streak,Mixed mesoderm,0.0014488588785752654,7.0,7.25
+Anterior Primitive Streak,Nascent mesoderm,0.002778039313852787,7.0,7.25
+Anterior Primitive Streak,Notochord,0.015834476798772812,7.0,7.25
+Anterior Primitive Streak,Primitive Streak,0.0003629862330853939,7.0,7.25
+Anterior Primitive Streak,Rostral neurectoderm,1.5951385648804717e-05,7.0,7.25
+Anterior Primitive Streak,Stripped,3.956077989641926e-07,7.0,7.25
+Epiblast,Anterior Primitive Streak,0.0026591275818645954,7.0,7.25
+Epiblast,Def. endoderm,0.015106866136193275,7.0,7.25
+Epiblast,Epiblast,0.08054137229919434,7.0,7.25
+Epiblast,ExE mesoderm,0.0011857240460813046,7.0,7.25
+Epiblast,Haematoendothelial progenitors,0.01306716538965702,7.0,7.25
+Epiblast,Mesenchyme,0.005553055554628372,7.0,7.25
+Epiblast,Mixed mesoderm,0.0038501890376210213,7.0,7.25
+Epiblast,Nascent mesoderm,0.01708231121301651,7.0,7.25
+Epiblast,Notochord,0.002991207642480731,7.0,7.25
+Epiblast,Primitive Streak,0.07586242258548737,7.0,7.25
+Epiblast,Rostral neurectoderm,0.007099769078195095,7.0,7.25
+Epiblast,Stripped,9.088535648515972e-07,7.0,7.25
+ExE ectoderm,Anterior Primitive Streak,4.233872459735721e-06,7.0,7.25
+ExE ectoderm,Def. endoderm,9.951616448233835e-06,7.0,7.25
+ExE ectoderm,Epiblast,1.794955096556805e-06,7.0,7.25
+ExE ectoderm,ExE mesoderm,7.273634400917217e-05,7.0,7.25
+ExE ectoderm,Haematoendothelial progenitors,0.007636796683073044,7.0,7.25
+ExE ectoderm,Mesenchyme,0.00043123477371409535,7.0,7.25
+ExE ectoderm,Mixed mesoderm,0.0001077430642908439,7.0,7.25
+ExE ectoderm,Nascent mesoderm,4.899569830740802e-05,7.0,7.25
+ExE ectoderm,Notochord,1.2068447858837317e-06,7.0,7.25
+ExE ectoderm,Primitive Streak,7.801088941050693e-06,7.0,7.25
+ExE ectoderm,Rostral neurectoderm,3.906935489794705e-06,7.0,7.25
+ExE ectoderm,Stripped,6.935427791177062e-06,7.0,7.25
+Haematoendothelial progenitors,Anterior Primitive Streak,5.3697714719191936e-08,7.0,7.25
+Haematoendothelial progenitors,Def. endoderm,6.699889354422339e-08,7.0,7.25
+Haematoendothelial progenitors,Epiblast,3.8485870046400805e-10,7.0,7.25
+Haematoendothelial progenitors,ExE mesoderm,0.00026882419479079545,7.0,7.25
+Haematoendothelial progenitors,Haematoendothelial progenitors,0.05744754895567894,7.0,7.25
+Haematoendothelial progenitors,Mesenchyme,0.0003206580295227468,7.0,7.25
+Haematoendothelial progenitors,Mixed mesoderm,0.0002442354743834585,7.0,7.25
+Haematoendothelial progenitors,Nascent mesoderm,2.8239268431207165e-05,7.0,7.25
+Haematoendothelial progenitors,Notochord,1.2724450826340217e-08,7.0,7.25
+Haematoendothelial progenitors,Primitive Streak,1.3559981582034197e-08,7.0,7.25
+Haematoendothelial progenitors,Rostral neurectoderm,3.532131698236185e-09,7.0,7.25
+Haematoendothelial progenitors,Stripped,2.3708240405539982e-05,7.0,7.25
+Mesenchyme,Anterior Primitive Streak,7.733521378838759e-09,7.0,7.25
+Mesenchyme,Def. endoderm,4.485577420609843e-08,7.0,7.25
+Mesenchyme,Epiblast,2.5821947358117825e-10,7.0,7.25
+Mesenchyme,ExE mesoderm,0.001247237785719335,7.0,7.25
+Mesenchyme,Haematoendothelial progenitors,0.00030489236814901233,7.0,7.25
+Mesenchyme,Mesenchyme,0.006146613042801619,7.0,7.25
+Mesenchyme,Mixed mesoderm,0.0005540910642594099,7.0,7.25
+Mesenchyme,Nascent mesoderm,8.036939107114449e-05,7.0,7.25
+Mesenchyme,Notochord,7.0771459803609105e-09,7.0,7.25
+Mesenchyme,Primitive Streak,6.0927751732720026e-09,7.0,7.25
+Mesenchyme,Rostral neurectoderm,1.8751464825328412e-09,7.0,7.25
+Mesenchyme,Stripped,6.703689336973184e-08,7.0,7.25
+Mixed mesoderm,Anterior Primitive Streak,2.1456344256876037e-07,7.0,7.25
+Mixed mesoderm,Def. endoderm,4.205341156193754e-06,7.0,7.25
+Mixed mesoderm,Epiblast,6.582374822983184e-08,7.0,7.25
+Mixed mesoderm,ExE mesoderm,0.009398559108376503,7.0,7.25
+Mixed mesoderm,Haematoendothelial progenitors,0.01095530390739441,7.0,7.25
+Mixed mesoderm,Mesenchyme,0.01471109688282013,7.0,7.25
+Mixed mesoderm,Mixed mesoderm,0.005939610302448273,7.0,7.25
+Mixed mesoderm,Nascent mesoderm,0.008988380432128906,7.0,7.25
+Mixed mesoderm,Notochord,6.584107836715702e-08,7.0,7.25
+Mixed mesoderm,Primitive Streak,9.285605528930319e-07,7.0,7.25
+Mixed mesoderm,Rostral neurectoderm,2.2852722736388387e-07,7.0,7.25
+Mixed mesoderm,Stripped,1.3649905667989515e-06,7.0,7.25
+Nascent mesoderm,Anterior Primitive Streak,0.0004788907535839826,7.0,7.25
+Nascent mesoderm,Def. endoderm,0.0015474110841751099,7.0,7.25
+Nascent mesoderm,Epiblast,5.708279786631465e-05,7.0,7.25
+Nascent mesoderm,ExE mesoderm,0.00159704708494246,7.0,7.25
+Nascent mesoderm,Haematoendothelial progenitors,0.024597790092229843,7.0,7.25
+Nascent mesoderm,Mesenchyme,0.005427997559309006,7.0,7.25
+Nascent mesoderm,Mixed mesoderm,0.05756840854883194,7.0,7.25
+Nascent mesoderm,Nascent mesoderm,0.17158186435699463,7.0,7.25
+Nascent mesoderm,Notochord,0.0005487047601491213,7.0,7.25
+Nascent mesoderm,Primitive Streak,0.0032188883051276207,7.0,7.25
+Nascent mesoderm,Rostral neurectoderm,4.23061937908642e-05,7.0,7.25
+Nascent mesoderm,Stripped,3.880312817727827e-07,7.0,7.25
+PGC,Anterior Primitive Streak,8.502594539550046e-08,7.0,7.25
+PGC,Def. endoderm,2.5327799448859878e-05,7.0,7.25
+PGC,Epiblast,2.0700520053651417e-07,7.0,7.25
+PGC,ExE mesoderm,0.0026373895816504955,7.0,7.25
+PGC,Haematoendothelial progenitors,3.779614780796692e-05,7.0,7.25
+PGC,Mesenchyme,0.0005536433891393244,7.0,7.25
+PGC,Mixed mesoderm,0.00048176327254623175,7.0,7.25
+PGC,Nascent mesoderm,0.004499988164752722,7.0,7.25
+PGC,Notochord,9.161970228888094e-05,7.0,7.25
+PGC,Primitive Streak,3.667138116725255e-06,7.0,7.25
+PGC,Rostral neurectoderm,1.850235662459454e-06,7.0,7.25
+PGC,Stripped,3.02638469840133e-10,7.0,7.25
+Primitive Streak,Anterior Primitive Streak,0.0026220493018627167,7.0,7.25
+Primitive Streak,Def. endoderm,0.019036300480365753,7.0,7.25
+Primitive Streak,Epiblast,0.013815987855196,7.0,7.25
+Primitive Streak,ExE mesoderm,0.0013897885801270604,7.0,7.25
+Primitive Streak,Haematoendothelial progenitors,0.015673896297812462,7.0,7.25
+Primitive Streak,Mesenchyme,0.004650736227631569,7.0,7.25
+Primitive Streak,Mixed mesoderm,0.006645388435572386,7.0,7.25
+Primitive Streak,Nascent mesoderm,0.046530138701200485,7.0,7.25
+Primitive Streak,Notochord,0.003137449501082301,7.0,7.25
+Primitive Streak,Primitive Streak,0.0668095052242279,7.0,7.25
+Primitive Streak,Rostral neurectoderm,0.00286745629273355,7.0,7.25
+Primitive Streak,Stripped,0.00015473664097953588,7.0,7.25
+Rostral neurectoderm,Anterior Primitive Streak,0.0002790046273730695,7.0,7.25
+Rostral neurectoderm,Def. endoderm,0.0031961596105247736,7.0,7.25
+Rostral neurectoderm,Epiblast,0.004337450955063105,7.0,7.25
+Rostral neurectoderm,ExE mesoderm,0.0005003359983675182,7.0,7.25
+Rostral neurectoderm,Haematoendothelial progenitors,0.0014275646535679698,7.0,7.25
+Rostral neurectoderm,Mesenchyme,0.0009801593841984868,7.0,7.25
+Rostral neurectoderm,Mixed mesoderm,0.0006895092665217817,7.0,7.25
+Rostral neurectoderm,Nascent mesoderm,0.003618566319346428,7.0,7.25
+Rostral neurectoderm,Notochord,0.00031563176889903843,7.0,7.25
+Rostral neurectoderm,Primitive Streak,0.008302239701151848,7.0,7.25
+Rostral neurectoderm,Rostral neurectoderm,0.0013533250894397497,7.0,7.25
+Rostral neurectoderm,Stripped,6.024033893936576e-08,7.0,7.25
+Stripped,Anterior Primitive Streak,7.054702564346371e-06,7.0,7.25
+Stripped,Def. endoderm,0.0002041811094386503,7.0,7.25
+Stripped,Epiblast,0.004674349911510944,7.0,7.25
+Stripped,ExE mesoderm,0.003012290922924876,7.0,7.25
+Stripped,Haematoendothelial progenitors,0.00028282133280299604,7.0,7.25
+Stripped,Mesenchyme,4.074741082149558e-05,7.0,7.25
+Stripped,Mixed mesoderm,0.0002749330596998334,7.0,7.25
+Stripped,Nascent mesoderm,0.004338166676461697,7.0,7.25
+Stripped,Notochord,2.8034486604155973e-05,7.0,7.25
+Stripped,Primitive Streak,0.0059867436066269875,7.0,7.25
+Stripped,Rostral neurectoderm,1.6001918993424624e-05,7.0,7.25
+Stripped,Stripped,0.022801024839282036,7.0,7.25
+Surface ectoderm,Anterior Primitive Streak,2.4419958208454773e-05,7.0,7.25
+Surface ectoderm,Def. endoderm,0.000255894468864426,7.0,7.25
+Surface ectoderm,Epiblast,9.544656677462626e-06,7.0,7.25
+Surface ectoderm,ExE mesoderm,0.0014473951887339354,7.0,7.25
+Surface ectoderm,Haematoendothelial progenitors,0.0008415979100391269,7.0,7.25
+Surface ectoderm,Mesenchyme,0.006154813338071108,7.0,7.25
+Surface ectoderm,Mixed mesoderm,0.00264415773563087,7.0,7.25
+Surface ectoderm,Nascent mesoderm,0.0047684358432888985,7.0,7.25
+Surface ectoderm,Notochord,4.541814996628091e-05,7.0,7.25
+Surface ectoderm,Primitive Streak,0.0003801248676609248,7.0,7.25
+Surface ectoderm,Rostral neurectoderm,9.458770364290103e-05,7.0,7.25
+Surface ectoderm,Stripped,2.841514969986747e-07,7.0,7.25
+Anterior Primitive Streak,Blood progenitors 1,0.00010431647388031706,7.25,7.5
+Anterior Primitive Streak,Blood progenitors 2,0.00021435362577904016,7.25,7.5
+Anterior Primitive Streak,Caudal Mesoderm,0.00034213787876069546,7.25,7.5
+Anterior Primitive Streak,Caudal epiblast,0.0005323480581864715,7.25,7.5
+Anterior Primitive Streak,Caudal neurectoderm,0.00012323771079536527,7.25,7.5
+Anterior Primitive Streak,Def. endoderm,0.00978869292885065,7.25,7.5
+Anterior Primitive Streak,Epiblast,0.00017459092487115413,7.25,7.5
+Anterior Primitive Streak,ExE mesoderm,7.38314411137253e-05,7.25,7.5
+Anterior Primitive Streak,Gut,0.009131294675171375,7.25,7.5
+Anterior Primitive Streak,Haematoendothelial progenitors,0.00011488187010399997,7.25,7.5
+Anterior Primitive Streak,Intermediate mesoderm,6.814295920776203e-05,7.25,7.5
+Anterior Primitive Streak,Mesenchyme,0.00018105280469171703,7.25,7.5
+Anterior Primitive Streak,Mixed mesoderm,4.165397331234999e-05,7.25,7.5
+Anterior Primitive Streak,Nascent mesoderm,0.0002413736074231565,7.25,7.5
+Anterior Primitive Streak,Notochord,6.078226306271972e-06,7.25,7.5
+Anterior Primitive Streak,PGC,3.484231638140045e-05,7.25,7.5
+Anterior Primitive Streak,Paraxial mesoderm,3.738345913006924e-05,7.25,7.5
+Anterior Primitive Streak,Pharyngeal mesoderm,1.5276060366886668e-05,7.25,7.5
+Anterior Primitive Streak,Primitive Streak,0.00026793061988428235,7.25,7.5
+Anterior Primitive Streak,Rostral neurectoderm,0.00036425169673748314,7.25,7.5
+Anterior Primitive Streak,Somitic mesoderm,0.0003429831413086504,7.25,7.5
+Anterior Primitive Streak,Stripped,4.7825847104832064e-06,7.25,7.5
+Anterior Primitive Streak,Surface ectoderm,0.0007830634713172913,7.25,7.5
+Def. endoderm,Blood progenitors 1,3.3684027584968135e-05,7.25,7.5
+Def. endoderm,Blood progenitors 2,5.3955987823428586e-05,7.25,7.5
+Def. endoderm,Caudal Mesoderm,0.002008314011618495,7.25,7.5
+Def. endoderm,Caudal epiblast,0.0028429455123841763,7.25,7.5
+Def. endoderm,Caudal neurectoderm,0.0023885993286967278,7.25,7.5
+Def. endoderm,Def. endoderm,0.03890269994735718,7.25,7.5
+Def. endoderm,Epiblast,0.00022346089826896787,7.25,7.5
+Def. endoderm,ExE mesoderm,0.00011035165516659617,7.25,7.5
+Def. endoderm,Gut,0.03685535117983818,7.25,7.5
+Def. endoderm,Haematoendothelial progenitors,3.680368172354065e-05,7.25,7.5
+Def. endoderm,Intermediate mesoderm,0.0020220079459249973,7.25,7.5
+Def. endoderm,Mesenchyme,0.0006181119824759662,7.25,7.5
+Def. endoderm,Mixed mesoderm,4.3761108827311546e-05,7.25,7.5
+Def. endoderm,Nascent mesoderm,0.0001842347119236365,7.25,7.5
+Def. endoderm,Notochord,0.004658183548599482,7.25,7.5
+Def. endoderm,PGC,0.0015096652787178755,7.25,7.5
+Def. endoderm,Paraxial mesoderm,7.265998283401132e-05,7.25,7.5
+Def. endoderm,Pharyngeal mesoderm,3.755484794965014e-05,7.25,7.5
+Def. endoderm,Primitive Streak,0.0030267091933637857,7.25,7.5
+Def. endoderm,Rostral neurectoderm,0.001825041021220386,7.25,7.5
+Def. endoderm,Somitic mesoderm,0.003818273777142167,7.25,7.5
+Def. endoderm,Stripped,6.36260119790677e-06,7.25,7.5
+Def. endoderm,Surface ectoderm,0.0021695299074053764,7.25,7.5
+Epiblast,Blood progenitors 1,0.0007977364002726972,7.25,7.5
+Epiblast,Blood progenitors 2,0.00019689610053319484,7.25,7.5
+Epiblast,Caudal Mesoderm,0.002474599052220583,7.25,7.5
+Epiblast,Caudal epiblast,0.00501659233123064,7.25,7.5
+Epiblast,Caudal neurectoderm,0.009694848209619522,7.25,7.5
+Epiblast,Def. endoderm,0.0025648612063378096,7.25,7.5
+Epiblast,Epiblast,0.029980313032865524,7.25,7.5
+Epiblast,ExE mesoderm,3.6653265851782635e-05,7.25,7.5
+Epiblast,Gut,0.0009462792077101767,7.25,7.5
+Epiblast,Haematoendothelial progenitors,2.102133476000745e-05,7.25,7.5
+Epiblast,Intermediate mesoderm,0.00018540564633440226,7.25,7.5
+Epiblast,Mesenchyme,2.9062279281788506e-05,7.25,7.5
+Epiblast,Mixed mesoderm,0.00011202569294255227,7.25,7.5
+Epiblast,Nascent mesoderm,9.335972572444007e-05,7.25,7.5
+Epiblast,Notochord,2.5608431997170555e-07,7.25,7.5
+Epiblast,PGC,0.0010822388576343656,7.25,7.5
+Epiblast,Paraxial mesoderm,0.0001576729118824005,7.25,7.5
+Epiblast,Pharyngeal mesoderm,0.00010721162834670395,7.25,7.5
+Epiblast,Primitive Streak,0.0066076177172362804,7.25,7.5
+Epiblast,Rostral neurectoderm,0.019767777994275093,7.25,7.5
+Epiblast,Somitic mesoderm,3.64228653779719e-05,7.25,7.5
+Epiblast,Stripped,0.016756510362029076,7.25,7.5
+Epiblast,Surface ectoderm,0.006782937329262495,7.25,7.5
+ExE mesoderm,Blood progenitors 1,6.85609265929088e-05,7.25,7.5
+ExE mesoderm,Blood progenitors 2,2.0304019926697947e-05,7.25,7.5
+ExE mesoderm,Caudal Mesoderm,5.268517998047173e-05,7.25,7.5
+ExE mesoderm,Caudal epiblast,7.265360181918368e-06,7.25,7.5
+ExE mesoderm,Caudal neurectoderm,8.544449883629568e-06,7.25,7.5
+ExE mesoderm,Def. endoderm,2.610630326671526e-05,7.25,7.5
+ExE mesoderm,Epiblast,2.8518531962618e-06,7.25,7.5
+ExE mesoderm,ExE mesoderm,0.007931089960038662,7.25,7.5
+ExE mesoderm,Gut,2.3892498575150967e-05,7.25,7.5
+ExE mesoderm,Haematoendothelial progenitors,0.0001747073547448963,7.25,7.5
+ExE mesoderm,Intermediate mesoderm,0.002824044320732355,7.25,7.5
+ExE mesoderm,Mesenchyme,0.007710883393883705,7.25,7.5
+ExE mesoderm,Mixed mesoderm,0.00010341362212784588,7.25,7.5
+ExE mesoderm,Nascent mesoderm,0.00021007168106734753,7.25,7.5
+ExE mesoderm,Notochord,8.338307679878199e-07,7.25,7.5
+ExE mesoderm,PGC,0.0017270812531933188,7.25,7.5
+ExE mesoderm,Paraxial mesoderm,8.429379704466555e-06,7.25,7.5
+ExE mesoderm,Pharyngeal mesoderm,0.00014030048623681068,7.25,7.5
+ExE mesoderm,Primitive Streak,5.536107892112341e-07,7.25,7.5
+ExE mesoderm,Rostral neurectoderm,9.115027751249727e-06,7.25,7.5
+ExE mesoderm,Somitic mesoderm,0.00010744992323452607,7.25,7.5
+ExE mesoderm,Stripped,0.0008514213259331882,7.25,7.5
+ExE mesoderm,Surface ectoderm,0.000978891970589757,7.25,7.5
+Haematoendothelial progenitors,Blood progenitors 1,0.043497856706380844,7.25,7.5
+Haematoendothelial progenitors,Blood progenitors 2,0.03888339176774025,7.25,7.5
+Haematoendothelial progenitors,Caudal Mesoderm,9.842667168413755e-06,7.25,7.5
+Haematoendothelial progenitors,Caudal epiblast,7.924672900117002e-06,7.25,7.5
+Haematoendothelial progenitors,Caudal neurectoderm,1.0341958841308951e-05,7.25,7.5
+Haematoendothelial progenitors,Def. endoderm,6.535501142934663e-06,7.25,7.5
+Haematoendothelial progenitors,Epiblast,7.889964308560593e-07,7.25,7.5
+Haematoendothelial progenitors,ExE mesoderm,0.0008667204529047012,7.25,7.5
+Haematoendothelial progenitors,Gut,1.2091791177226696e-05,7.25,7.5
+Haematoendothelial progenitors,Haematoendothelial progenitors,0.05275053158402443,7.25,7.5
+Haematoendothelial progenitors,Intermediate mesoderm,0.00013418574235402048,7.25,7.5
+Haematoendothelial progenitors,Mesenchyme,0.0008845505071803927,7.25,7.5
+Haematoendothelial progenitors,Mixed mesoderm,0.00011433145118644461,7.25,7.5
+Haematoendothelial progenitors,Nascent mesoderm,2.0821851649088785e-05,7.25,7.5
+Haematoendothelial progenitors,Notochord,1.471941596387083e-10,7.25,7.5
+Haematoendothelial progenitors,PGC,2.954774390673265e-05,7.25,7.5
+Haematoendothelial progenitors,Paraxial mesoderm,8.64213416207349e-06,7.25,7.5
+Haematoendothelial progenitors,Pharyngeal mesoderm,0.0006004662136547267,7.25,7.5
+Haematoendothelial progenitors,Primitive Streak,2.4018538624659413e-06,7.25,7.5
+Haematoendothelial progenitors,Rostral neurectoderm,6.214452241692925e-06,7.25,7.5
+Haematoendothelial progenitors,Somitic mesoderm,2.5392332645424176e-06,7.25,7.5
+Haematoendothelial progenitors,Stripped,2.39424298342783e-05,7.25,7.5
+Haematoendothelial progenitors,Surface ectoderm,5.7381632359465584e-05,7.25,7.5
+Mesenchyme,Blood progenitors 1,0.0010748885106295347,7.25,7.5
+Mesenchyme,Blood progenitors 2,0.0003112819977104664,7.25,7.5
+Mesenchyme,Caudal Mesoderm,3.0351524401339702e-05,7.25,7.5
+Mesenchyme,Caudal epiblast,9.70694327406818e-06,7.25,7.5
+Mesenchyme,Caudal neurectoderm,1.4890525562805124e-05,7.25,7.5
+Mesenchyme,Def. endoderm,2.403996404609643e-05,7.25,7.5
+Mesenchyme,Epiblast,8.270370130958327e-07,7.25,7.5
+Mesenchyme,ExE mesoderm,0.0057418616488575935,7.25,7.5
+Mesenchyme,Gut,1.7307982489001006e-05,7.25,7.5
+Mesenchyme,Haematoendothelial progenitors,0.0033915950916707516,7.25,7.5
+Mesenchyme,Intermediate mesoderm,0.00022750944481231272,7.25,7.5
+Mesenchyme,Mesenchyme,0.029746048152446747,7.25,7.5
+Mesenchyme,Mixed mesoderm,7.819675374776125e-05,7.25,7.5
+Mesenchyme,Nascent mesoderm,3.443339664954692e-05,7.25,7.5
+Mesenchyme,Notochord,2.1910513403611276e-09,7.25,7.5
+Mesenchyme,PGC,9.420591231901199e-05,7.25,7.5
+Mesenchyme,Paraxial mesoderm,1.5830231859581545e-05,7.25,7.5
+Mesenchyme,Pharyngeal mesoderm,0.0014265241334214807,7.25,7.5
+Mesenchyme,Primitive Streak,1.8369993313172017e-06,7.25,7.5
+Mesenchyme,Rostral neurectoderm,9.267313544114586e-06,7.25,7.5
+Mesenchyme,Somitic mesoderm,4.982617610949092e-06,7.25,7.5
+Mesenchyme,Stripped,0.0008572351071052253,7.25,7.5
+Mesenchyme,Surface ectoderm,0.002864193171262741,7.25,7.5
+Mixed mesoderm,Blood progenitors 1,0.004478665068745613,7.25,7.5
+Mixed mesoderm,Blood progenitors 2,0.0029222003649920225,7.25,7.5
+Mixed mesoderm,Caudal Mesoderm,0.0004020153428427875,7.25,7.5
+Mixed mesoderm,Caudal epiblast,0.00022713589714840055,7.25,7.5
+Mixed mesoderm,Caudal neurectoderm,0.0004170453757978976,7.25,7.5
+Mixed mesoderm,Def. endoderm,0.0006333694327622652,7.25,7.5
+Mixed mesoderm,Epiblast,2.7044929083785973e-05,7.25,7.5
+Mixed mesoderm,ExE mesoderm,0.011274794116616249,7.25,7.5
+Mixed mesoderm,Gut,0.00011201824236195534,7.25,7.5
+Mixed mesoderm,Haematoendothelial progenitors,0.005035570356994867,7.25,7.5
+Mixed mesoderm,Intermediate mesoderm,0.005550354719161987,7.25,7.5
+Mixed mesoderm,Mesenchyme,0.009263303130865097,7.25,7.5
+Mixed mesoderm,Mixed mesoderm,0.013271885924041271,7.25,7.5
+Mixed mesoderm,Nascent mesoderm,0.0033591999672353268,7.25,7.5
+Mixed mesoderm,Notochord,1.3795003361849467e-08,7.25,7.5
+Mixed mesoderm,PGC,0.0016588596627116203,7.25,7.5
+Mixed mesoderm,Paraxial mesoderm,0.012216840870678425,7.25,7.5
+Mixed mesoderm,Pharyngeal mesoderm,0.006885150447487831,7.25,7.5
+Mixed mesoderm,Primitive Streak,4.578289735945873e-05,7.25,7.5
+Mixed mesoderm,Rostral neurectoderm,0.00027050470816902816,7.25,7.5
+Mixed mesoderm,Somitic mesoderm,0.0009099263697862625,7.25,7.5
+Mixed mesoderm,Stripped,3.0436794986599125e-05,7.25,7.5
+Mixed mesoderm,Surface ectoderm,0.0014676668215543032,7.25,7.5
+Nascent mesoderm,Blood progenitors 1,0.007873481139540672,7.25,7.5
+Nascent mesoderm,Blood progenitors 2,0.0069191232323646545,7.25,7.5
+Nascent mesoderm,Caudal Mesoderm,0.02433410845696926,7.25,7.5
+Nascent mesoderm,Caudal epiblast,0.015623566694557667,7.25,7.5
+Nascent mesoderm,Caudal neurectoderm,0.007423671428114176,7.25,7.5
+Nascent mesoderm,Def. endoderm,0.006122449412941933,7.25,7.5
+Nascent mesoderm,Epiblast,0.0009411529172211885,7.25,7.5
+Nascent mesoderm,ExE mesoderm,0.01526696141809225,7.25,7.5
+Nascent mesoderm,Gut,0.0005243088235147297,7.25,7.5
+Nascent mesoderm,Haematoendothelial progenitors,0.004901248030364513,7.25,7.5
+Nascent mesoderm,Intermediate mesoderm,0.036683253943920135,7.25,7.5
+Nascent mesoderm,Mesenchyme,0.009500809013843536,7.25,7.5
+Nascent mesoderm,Mixed mesoderm,0.027736932039260864,7.25,7.5
+Nascent mesoderm,Nascent mesoderm,0.03664584457874298,7.25,7.5
+Nascent mesoderm,Notochord,3.566414306988008e-05,7.25,7.5
+Nascent mesoderm,PGC,0.017268262803554535,7.25,7.5
+Nascent mesoderm,Paraxial mesoderm,0.012392262928187847,7.25,7.5
+Nascent mesoderm,Pharyngeal mesoderm,0.007384094875305891,7.25,7.5
+Nascent mesoderm,Primitive Streak,0.007927602156996727,7.25,7.5
+Nascent mesoderm,Rostral neurectoderm,0.004764522425830364,7.25,7.5
+Nascent mesoderm,Somitic mesoderm,0.010727865621447563,7.25,7.5
+Nascent mesoderm,Stripped,3.7827259802725166e-05,7.25,7.5
+Nascent mesoderm,Surface ectoderm,0.0033327576238662004,7.25,7.5
+Notochord,Blood progenitors 1,1.8786057154329683e-09,7.25,7.5
+Notochord,Blood progenitors 2,3.050400487758509e-10,7.25,7.5
+Notochord,Caudal Mesoderm,2.543412165323389e-07,7.25,7.5
+Notochord,Caudal epiblast,1.4989403496201703e-07,7.25,7.5
+Notochord,Caudal neurectoderm,7.445109417858475e-08,7.25,7.5
+Notochord,Def. endoderm,0.003081842791289091,7.25,7.5
+Notochord,Epiblast,1.1206434002986043e-08,7.25,7.5
+Notochord,ExE mesoderm,9.067671946638711e-09,7.25,7.5
+Notochord,Gut,8.400389560847543e-06,7.25,7.5
+Notochord,Haematoendothelial progenitors,1.6895252974435948e-09,7.25,7.5
+Notochord,Intermediate mesoderm,7.500985361730272e-07,7.25,7.5
+Notochord,Mesenchyme,9.752399137141765e-07,7.25,7.5
+Notochord,Mixed mesoderm,2.4696852563010907e-08,7.25,7.5
+Notochord,Nascent mesoderm,4.756611815537326e-08,7.25,7.5
+Notochord,Notochord,0.019875934347510338,7.25,7.5
+Notochord,PGC,2.571878212620504e-06,7.25,7.5
+Notochord,Paraxial mesoderm,5.058356578047096e-08,7.25,7.5
+Notochord,Pharyngeal mesoderm,1.7395531681785315e-09,7.25,7.5
+Notochord,Primitive Streak,1.2567785745432047e-07,7.25,7.5
+Notochord,Rostral neurectoderm,7.202914531490023e-08,7.25,7.5
+Notochord,Somitic mesoderm,1.6948662960203364e-05,7.25,7.5
+Notochord,Stripped,8.222733605123267e-09,7.25,7.5
+Notochord,Surface ectoderm,2.5166391992570425e-07,7.25,7.5
+Primitive Streak,Blood progenitors 1,0.00018899388669524342,7.25,7.5
+Primitive Streak,Blood progenitors 2,0.00032447470584884286,7.25,7.5
+Primitive Streak,Caudal Mesoderm,0.020247314125299454,7.25,7.5
+Primitive Streak,Caudal epiblast,0.025595935061573982,7.25,7.5
+Primitive Streak,Caudal neurectoderm,0.020862478762865067,7.25,7.5
+Primitive Streak,Def. endoderm,0.005535255651921034,7.25,7.5
+Primitive Streak,Epiblast,0.009978052228689194,7.25,7.5
+Primitive Streak,ExE mesoderm,0.0001750338706187904,7.25,7.5
+Primitive Streak,Gut,0.0022905494552105665,7.25,7.5
+Primitive Streak,Haematoendothelial progenitors,7.49872560845688e-05,7.25,7.5
+Primitive Streak,Intermediate mesoderm,0.002143125981092453,7.25,7.5
+Primitive Streak,Mesenchyme,0.00013857323210686445,7.25,7.5
+Primitive Streak,Mixed mesoderm,0.00011017690849257633,7.25,7.5
+Primitive Streak,Nascent mesoderm,0.0008461829274892807,7.25,7.5
+Primitive Streak,Notochord,0.0004775900160893798,7.25,7.5
+Primitive Streak,PGC,0.0010731329675763845,7.25,7.5
+Primitive Streak,Paraxial mesoderm,6.439343269448727e-05,7.25,7.5
+Primitive Streak,Pharyngeal mesoderm,4.455152520677075e-05,7.25,7.5
+Primitive Streak,Primitive Streak,0.03192480653524399,7.25,7.5
+Primitive Streak,Rostral neurectoderm,0.0302403774112463,7.25,7.5
+Primitive Streak,Somitic mesoderm,0.0006987784872762859,7.25,7.5
+Primitive Streak,Stripped,0.00017635243420954794,7.25,7.5
+Primitive Streak,Surface ectoderm,0.007708442397415638,7.25,7.5
+Rostral neurectoderm,Blood progenitors 1,0.00012271804735064507,7.25,7.5
+Rostral neurectoderm,Blood progenitors 2,7.353960972977802e-05,7.25,7.5
+Rostral neurectoderm,Caudal Mesoderm,0.00011743108188966289,7.25,7.5
+Rostral neurectoderm,Caudal epiblast,0.0001676042447797954,7.25,7.5
+Rostral neurectoderm,Caudal neurectoderm,0.0007492024451494217,7.25,7.5
+Rostral neurectoderm,Def. endoderm,5.59087420697324e-05,7.25,7.5
+Rostral neurectoderm,Epiblast,0.00036692223511636257,7.25,7.5
+Rostral neurectoderm,ExE mesoderm,0.00015417730901390314,7.25,7.5
+Rostral neurectoderm,Gut,0.0001450584240956232,7.25,7.5
+Rostral neurectoderm,Haematoendothelial progenitors,5.186904309084639e-05,7.25,7.5
+Rostral neurectoderm,Intermediate mesoderm,0.00014761145575903356,7.25,7.5
+Rostral neurectoderm,Mesenchyme,0.0002078438992612064,7.25,7.5
+Rostral neurectoderm,Mixed mesoderm,2.0590063286363147e-05,7.25,7.5
+Rostral neurectoderm,Nascent mesoderm,1.3039817531534936e-05,7.25,7.5
+Rostral neurectoderm,Notochord,7.010048985733874e-09,7.25,7.5
+Rostral neurectoderm,PGC,0.0005172737874090672,7.25,7.5
+Rostral neurectoderm,Paraxial mesoderm,5.045414582127705e-06,7.25,7.5
+Rostral neurectoderm,Pharyngeal mesoderm,1.0432917406433262e-05,7.25,7.5
+Rostral neurectoderm,Primitive Streak,0.00023150609922595322,7.25,7.5
+Rostral neurectoderm,Rostral neurectoderm,0.0011194705730304122,7.25,7.5
+Rostral neurectoderm,Somitic mesoderm,2.6617542516760295e-06,7.25,7.5
+Rostral neurectoderm,Stripped,1.658141627558507e-05,7.25,7.5
+Rostral neurectoderm,Surface ectoderm,0.007197761442512274,7.25,7.5
+Stripped,Blood progenitors 1,1.8168778481708614e-08,7.25,7.5
+Stripped,Blood progenitors 2,9.646447551858728e-08,7.25,7.5
+Stripped,Caudal Mesoderm,6.717947371726041e-07,7.25,7.5
+Stripped,Caudal epiblast,1.9299014297757822e-07,7.25,7.5
+Stripped,Caudal neurectoderm,9.746247542352648e-07,7.25,7.5
+Stripped,Def. endoderm,3.809814330679728e-08,7.25,7.5
+Stripped,Epiblast,5.910669187869644e-06,7.25,7.5
+Stripped,ExE mesoderm,2.5984865370531907e-09,7.25,7.5
+Stripped,Gut,1.2958014217190339e-08,7.25,7.5
+Stripped,Haematoendothelial progenitors,5.201762576234614e-09,7.25,7.5
+Stripped,Intermediate mesoderm,2.568775592237671e-08,7.25,7.5
+Stripped,Mesenchyme,3.0607303358465288e-09,7.25,7.5
+Stripped,Mixed mesoderm,4.2847618786368e-09,7.25,7.5
+Stripped,Nascent mesoderm,7.638944587995411e-09,7.25,7.5
+Stripped,Notochord,7.512819810706617e-10,7.25,7.5
+Stripped,PGC,1.9921928640087572e-07,7.25,7.5
+Stripped,Paraxial mesoderm,5.523936010831676e-07,7.25,7.5
+Stripped,Pharyngeal mesoderm,6.030906885001741e-09,7.25,7.5
+Stripped,Primitive Streak,1.2144792549406702e-07,7.25,7.5
+Stripped,Rostral neurectoderm,1.3472214277499006e-06,7.25,7.5
+Stripped,Somitic mesoderm,8.336807688635872e-09,7.25,7.5
+Stripped,Stripped,0.0229775570333004,7.25,7.5
+Stripped,Surface ectoderm,7.511826538575406e-07,7.25,7.5
+Allantois,Allantois,0.010047631338238716,7.75,8.0
+Allantois,Blood progenitors 2,3.4638912893569795e-07,7.75,8.0
+Allantois,Caudal Mesoderm,8.979803169495426e-06,7.75,8.0
+Allantois,Caudal epiblast,2.5462395569775254e-07,7.75,8.0
+Allantois,Caudal neurectoderm,6.737884206131639e-08,7.75,8.0
+Allantois,Def. endoderm,7.489558973006183e-11,7.75,8.0
+Allantois,Erythroid1,7.530145751388773e-08,7.75,8.0
+Allantois,ExE mesoderm,0.00894082896411419,7.75,8.0
+Allantois,Gut,2.729615573571209e-07,7.75,8.0
+Allantois,Haematoendothelial progenitors,0.0010862807976081967,7.75,8.0
+Allantois,Intermediate mesoderm,4.890465424978174e-05,7.75,8.0
+Allantois,Mesenchyme,0.004842001479119062,7.75,8.0
+Allantois,Notochord,3.497806488894639e-08,7.75,8.0
+Allantois,Paraxial mesoderm,3.1125603072723607e-06,7.75,8.0
+Allantois,Pharyngeal mesoderm,1.1451910722826142e-05,7.75,8.0
+Allantois,Rostral neurectoderm,1.0173478415254067e-07,7.75,8.0
+Allantois,Somitic mesoderm,5.895142862755165e-07,7.75,8.0
+Allantois,Spinal cord,2.7800300728131333e-08,7.75,8.0
+Allantois,Stripped,8.004903406799713e-09,7.75,8.0
+Allantois,Surface ectoderm,9.029085958900396e-06,7.75,8.0
+Blood progenitors 1,Allantois,9.11135648493655e-05,7.75,8.0
+Blood progenitors 1,Blood progenitors 2,0.007925132289528847,7.75,8.0
+Blood progenitors 1,Caudal Mesoderm,2.2057420210330747e-06,7.75,8.0
+Blood progenitors 1,Caudal epiblast,1.8733064734988147e-06,7.75,8.0
+Blood progenitors 1,Caudal neurectoderm,9.778548246686114e-07,7.75,8.0
+Blood progenitors 1,Def. endoderm,6.6251986535759144e-12,7.75,8.0
+Blood progenitors 1,Erythroid1,0.003804856678470969,7.75,8.0
+Blood progenitors 1,ExE mesoderm,0.0003377585089765489,7.75,8.0
+Blood progenitors 1,Gut,3.416862739413773e-07,7.75,8.0
+Blood progenitors 1,Haematoendothelial progenitors,0.011639418080449104,7.75,8.0
+Blood progenitors 1,Intermediate mesoderm,1.4073495549382642e-05,7.75,8.0
+Blood progenitors 1,Mesenchyme,7.252662180690095e-05,7.75,8.0
+Blood progenitors 1,Notochord,1.1220266493694453e-08,7.75,8.0
+Blood progenitors 1,Paraxial mesoderm,7.324439138756134e-06,7.75,8.0
+Blood progenitors 1,Pharyngeal mesoderm,1.2371287994028535e-05,7.75,8.0
+Blood progenitors 1,Rostral neurectoderm,1.7839787460616208e-06,7.75,8.0
+Blood progenitors 1,Somitic mesoderm,5.716226041840855e-06,7.75,8.0
+Blood progenitors 1,Spinal cord,2.7671285351971164e-06,7.75,8.0
+Blood progenitors 1,Stripped,0.0010787475621327758,7.75,8.0
+Blood progenitors 1,Surface ectoderm,1.0139020787391928e-06,7.75,8.0
+Blood progenitors 2,Allantois,5.602052510766953e-07,7.75,8.0
+Blood progenitors 2,Blood progenitors 2,0.03856491297483444,7.75,8.0
+Blood progenitors 2,Caudal Mesoderm,9.722101346198997e-09,7.75,8.0
+Blood progenitors 2,Caudal epiblast,2.2868025695288452e-08,7.75,8.0
+Blood progenitors 2,Caudal neurectoderm,1.620335154939312e-08,7.75,8.0
+Blood progenitors 2,Def. endoderm,2.2754921793935283e-15,7.75,8.0
+Blood progenitors 2,Erythroid1,0.017899109050631523,7.75,8.0
+Blood progenitors 2,ExE mesoderm,3.717688741744496e-06,7.75,8.0
+Blood progenitors 2,Gut,3.05379543874551e-09,7.75,8.0
+Blood progenitors 2,Haematoendothelial progenitors,1.6709773262846284e-05,7.75,8.0
+Blood progenitors 2,Intermediate mesoderm,9.438646486614743e-08,7.75,8.0
+Blood progenitors 2,Mesenchyme,4.901075953966938e-07,7.75,8.0
+Blood progenitors 2,Notochord,9.495857225538806e-12,7.75,8.0
+Blood progenitors 2,Paraxial mesoderm,8.752857638683054e-08,7.75,8.0
+Blood progenitors 2,Pharyngeal mesoderm,1.3928928410678054e-07,7.75,8.0
+Blood progenitors 2,Rostral neurectoderm,2.7240469435696468e-08,7.75,8.0
+Blood progenitors 2,Somitic mesoderm,6.342402159020821e-09,7.75,8.0
+Blood progenitors 2,Spinal cord,1.2395195092551603e-08,7.75,8.0
+Blood progenitors 2,Stripped,0.0018473999807611108,7.75,8.0
+Blood progenitors 2,Surface ectoderm,1.4298307426940937e-08,7.75,8.0
+Caudal Mesoderm,Allantois,5.2694245823659e-05,7.75,8.0
+Caudal Mesoderm,Blood progenitors 2,3.436372253418085e-07,7.75,8.0
+Caudal Mesoderm,Caudal Mesoderm,0.02821592427790165,7.75,8.0
+Caudal Mesoderm,Caudal epiblast,0.012400971725583076,7.75,8.0
+Caudal Mesoderm,Caudal neurectoderm,0.0013004137435927987,7.75,8.0
+Caudal Mesoderm,Def. endoderm,1.0906874514660103e-08,7.75,8.0
+Caudal Mesoderm,Erythroid1,7.262041776812111e-07,7.75,8.0
+Caudal Mesoderm,ExE mesoderm,0.0002678241871763021,7.75,8.0
+Caudal Mesoderm,Gut,0.0006222891388460994,7.75,8.0
+Caudal Mesoderm,Haematoendothelial progenitors,0.0002453973866067827,7.75,8.0
+Caudal Mesoderm,Intermediate mesoderm,0.0053114695474505424,7.75,8.0
+Caudal Mesoderm,Mesenchyme,2.163700628443621e-05,7.75,8.0
+Caudal Mesoderm,Notochord,2.331466748728417e-05,7.75,8.0
+Caudal Mesoderm,Paraxial mesoderm,0.00011891243775608018,7.75,8.0
+Caudal Mesoderm,Pharyngeal mesoderm,0.00010141593520529568,7.75,8.0
+Caudal Mesoderm,Rostral neurectoderm,0.0005471781478263438,7.75,8.0
+Caudal Mesoderm,Somitic mesoderm,0.006309987511485815,7.75,8.0
+Caudal Mesoderm,Spinal cord,0.0012121637118980289,7.75,8.0
+Caudal Mesoderm,Stripped,2.3748954802726985e-08,7.75,8.0
+Caudal Mesoderm,Surface ectoderm,0.0015806218143552542,7.75,8.0
+Caudal epiblast,Allantois,0.00011869262380059808,7.75,8.0
+Caudal epiblast,Blood progenitors 2,5.977855153105338e-07,7.75,8.0
+Caudal epiblast,Caudal Mesoderm,0.018278976902365685,7.75,8.0
+Caudal epiblast,Caudal epiblast,0.02540854923427105,7.75,8.0
+Caudal epiblast,Caudal neurectoderm,0.0032769960816949606,7.75,8.0
+Caudal epiblast,Def. endoderm,5.3849715797582576e-09,7.75,8.0
+Caudal epiblast,Erythroid1,1.767709591149469e-06,7.75,8.0
+Caudal epiblast,ExE mesoderm,0.0003937175788450986,7.75,8.0
+Caudal epiblast,Gut,0.0012949062511324883,7.75,8.0
+Caudal epiblast,Haematoendothelial progenitors,0.00013004963693674654,7.75,8.0
+Caudal epiblast,Intermediate mesoderm,0.0009497308637946844,7.75,8.0
+Caudal epiblast,Mesenchyme,3.6123434256296605e-05,7.75,8.0
+Caudal epiblast,Notochord,2.7637361199595034e-06,7.75,8.0
+Caudal epiblast,Paraxial mesoderm,0.00016034625878091902,7.75,8.0
+Caudal epiblast,Pharyngeal mesoderm,0.00020985398441553116,7.75,8.0
+Caudal epiblast,Rostral neurectoderm,0.002011833479627967,7.75,8.0
+Caudal epiblast,Somitic mesoderm,0.0008148320484906435,7.75,8.0
+Caudal epiblast,Spinal cord,0.002439041156321764,7.75,8.0
+Caudal epiblast,Stripped,1.1268193134128524e-07,7.75,8.0
+Caudal epiblast,Surface ectoderm,0.0028044411446899176,7.75,8.0
+Caudal neurectoderm,Allantois,6.424233288271353e-05,7.75,8.0
+Caudal neurectoderm,Blood progenitors 2,1.334840362687828e-06,7.75,8.0
+Caudal neurectoderm,Caudal Mesoderm,0.002709521446377039,7.75,8.0
+Caudal neurectoderm,Caudal epiblast,0.015674717724323273,7.75,8.0
+Caudal neurectoderm,Caudal neurectoderm,0.018048569560050964,7.75,8.0
+Caudal neurectoderm,Def. endoderm,2.3695376771826204e-09,7.75,8.0
+Caudal neurectoderm,Erythroid1,7.057878519844962e-06,7.75,8.0
+Caudal neurectoderm,ExE mesoderm,0.0002366562548559159,7.75,8.0
+Caudal neurectoderm,Gut,0.002138976939022541,7.75,8.0
+Caudal neurectoderm,Haematoendothelial progenitors,0.00015300553059205413,7.75,8.0
+Caudal neurectoderm,Intermediate mesoderm,0.00040533722494728863,7.75,8.0
+Caudal neurectoderm,Mesenchyme,1.9014434656128287e-05,7.75,8.0
+Caudal neurectoderm,Notochord,7.801800734341668e-07,7.75,8.0
+Caudal neurectoderm,Paraxial mesoderm,0.0005697379820048809,7.75,8.0
+Caudal neurectoderm,Pharyngeal mesoderm,0.00025291607016697526,7.75,8.0
+Caudal neurectoderm,Rostral neurectoderm,0.00956241600215435,7.75,8.0
+Caudal neurectoderm,Somitic mesoderm,0.00042900198604911566,7.75,8.0
+Caudal neurectoderm,Spinal cord,0.005605938844382763,7.75,8.0
+Caudal neurectoderm,Stripped,1.1149663805554155e-06,7.75,8.0
+Caudal neurectoderm,Surface ectoderm,0.002452984219416976,7.75,8.0
+Def. endoderm,Allantois,5.203633008932229e-06,7.75,8.0
+Def. endoderm,Blood progenitors 2,2.204455062937427e-09,7.75,8.0
+Def. endoderm,Caudal Mesoderm,7.143285620259121e-05,7.75,8.0
+Def. endoderm,Caudal epiblast,4.187812010059133e-06,7.75,8.0
+Def. endoderm,Caudal neurectoderm,5.261766546027502e-06,7.75,8.0
+Def. endoderm,Def. endoderm,0.004914608784019947,7.75,8.0
+Def. endoderm,Erythroid1,7.02528524243462e-08,7.75,8.0
+Def. endoderm,ExE mesoderm,5.332422006176785e-06,7.75,8.0
+Def. endoderm,Gut,0.001591380569152534,7.75,8.0
+Def. endoderm,Haematoendothelial progenitors,0.00010650678450474516,7.75,8.0
+Def. endoderm,Intermediate mesoderm,1.1089255167462397e-05,7.75,8.0
+Def. endoderm,Mesenchyme,1.400416931574e-05,7.75,8.0
+Def. endoderm,Notochord,0.009140781126916409,7.75,8.0
+Def. endoderm,Paraxial mesoderm,0.00015039648860692978,7.75,8.0
+Def. endoderm,Pharyngeal mesoderm,1.9916509700124152e-05,7.75,8.0
+Def. endoderm,Rostral neurectoderm,6.323856723611243e-06,7.75,8.0
+Def. endoderm,Somitic mesoderm,4.693614027928561e-05,7.75,8.0
+Def. endoderm,Spinal cord,1.7041537603290635e-06,7.75,8.0
+Def. endoderm,Stripped,1.3038224944139643e-09,7.75,8.0
+Def. endoderm,Surface ectoderm,0.0005715275183320045,7.75,8.0
+Erythroid1,Allantois,9.162280889540853e-08,7.75,8.0
+Erythroid1,Blood progenitors 2,0.020133817568421364,7.75,8.0
+Erythroid1,Caudal Mesoderm,4.949302745416162e-09,7.75,8.0
+Erythroid1,Caudal epiblast,1.197397381247356e-08,7.75,8.0
+Erythroid1,Caudal neurectoderm,9.362451258709825e-09,7.75,8.0
+Erythroid1,Def. endoderm,1.3672378082940553e-15,7.75,8.0
+Erythroid1,Erythroid1,0.019877508282661438,7.75,8.0
+Erythroid1,ExE mesoderm,8.738617225390044e-07,7.75,8.0
+Erythroid1,Gut,1.1582864667403214e-09,7.75,8.0
+Erythroid1,Haematoendothelial progenitors,9.026414318213938e-07,7.75,8.0
+Erythroid1,Intermediate mesoderm,4.9092570009179326e-08,7.75,8.0
+Erythroid1,Mesenchyme,2.0210703155498777e-07,7.75,8.0
+Erythroid1,Notochord,6.069065822816855e-12,7.75,8.0
+Erythroid1,Paraxial mesoderm,2.5518300361682122e-08,7.75,8.0
+Erythroid1,Pharyngeal mesoderm,4.278166798599159e-08,7.75,8.0
+Erythroid1,Rostral neurectoderm,2.083076466874445e-08,7.75,8.0
+Erythroid1,Somitic mesoderm,1.861579113082712e-09,7.75,8.0
+Erythroid1,Spinal cord,9.757712859936873e-09,7.75,8.0
+Erythroid1,Stripped,0.0016530787106603384,7.75,8.0
+Erythroid1,Surface ectoderm,9.838723613597722e-09,7.75,8.0
+ExE mesoderm,Allantois,0.013274839147925377,7.75,8.0
+ExE mesoderm,Blood progenitors 2,4.035071299313131e-07,7.75,8.0
+ExE mesoderm,Caudal Mesoderm,0.00038368531386367977,7.75,8.0
+ExE mesoderm,Caudal epiblast,1.726498521747999e-05,7.75,8.0
+ExE mesoderm,Caudal neurectoderm,3.113862021564273e-06,7.75,8.0
+ExE mesoderm,Def. endoderm,2.2603705018831022e-10,7.75,8.0
+ExE mesoderm,Erythroid1,1.9817433383195748e-07,7.75,8.0
+ExE mesoderm,ExE mesoderm,0.022152861580252647,7.75,8.0
+ExE mesoderm,Gut,1.961738007594249e-06,7.75,8.0
+ExE mesoderm,Haematoendothelial progenitors,0.0022289773914963007,7.75,8.0
+ExE mesoderm,Intermediate mesoderm,0.005958781111985445,7.75,8.0
+ExE mesoderm,Mesenchyme,0.005594203248620033,7.75,8.0
+ExE mesoderm,Notochord,3.7265687069520936e-07,7.75,8.0
+ExE mesoderm,Paraxial mesoderm,4.182992779533379e-05,7.75,8.0
+ExE mesoderm,Pharyngeal mesoderm,0.0001294867688557133,7.75,8.0
+ExE mesoderm,Rostral neurectoderm,2.933387349912664e-06,7.75,8.0
+ExE mesoderm,Somitic mesoderm,9.736299398355186e-05,7.75,8.0
+ExE mesoderm,Spinal cord,1.0695454193410114e-06,7.75,8.0
+ExE mesoderm,Stripped,1.621084244618487e-08,7.75,8.0
+ExE mesoderm,Surface ectoderm,0.00011062931298511103,7.75,8.0
+Gut,Allantois,9.127666089625563e-06,7.75,8.0
+Gut,Blood progenitors 2,2.5788262636439185e-09,7.75,8.0
+Gut,Caudal Mesoderm,8.02230933913961e-05,7.75,8.0
+Gut,Caudal epiblast,1.1562191502889618e-05,7.75,8.0
+Gut,Caudal neurectoderm,2.9850903956685215e-05,7.75,8.0
+Gut,Def. endoderm,0.0033426189329475164,7.75,8.0
+Gut,Erythroid1,4.30320206135093e-08,7.75,8.0
+Gut,ExE mesoderm,3.062826726818457e-05,7.75,8.0
+Gut,Gut,0.03648091480135918,7.75,8.0
+Gut,Haematoendothelial progenitors,0.0001378254673909396,7.75,8.0
+Gut,Intermediate mesoderm,3.083054980379529e-05,7.75,8.0
+Gut,Mesenchyme,2.0138215404585935e-05,7.75,8.0
+Gut,Notochord,0.00071336654946208,7.75,8.0
+Gut,Paraxial mesoderm,0.00020954541105311364,7.75,8.0
+Gut,Pharyngeal mesoderm,2.561519249866251e-05,7.75,8.0
+Gut,Rostral neurectoderm,2.7091700758319348e-05,7.75,8.0
+Gut,Somitic mesoderm,2.0552404748741537e-05,7.75,8.0
+Gut,Spinal cord,4.508843630901538e-06,7.75,8.0
+Gut,Stripped,1.058982013191212e-09,7.75,8.0
+Gut,Surface ectoderm,0.0004922046791762114,7.75,8.0
+Haematoendothelial progenitors,Allantois,0.0013117034686729312,7.75,8.0
+Haematoendothelial progenitors,Blood progenitors 2,1.6897327441256493e-05,7.75,8.0
+Haematoendothelial progenitors,Caudal Mesoderm,2.0591407519532368e-05,7.75,8.0
+Haematoendothelial progenitors,Caudal epiblast,1.6754262105678208e-05,7.75,8.0
+Haematoendothelial progenitors,Caudal neurectoderm,9.838539881457109e-06,7.75,8.0
+Haematoendothelial progenitors,Def. endoderm,3.3965527279633534e-08,7.75,8.0
+Haematoendothelial progenitors,Erythroid1,4.636407538782805e-06,7.75,8.0
+Haematoendothelial progenitors,ExE mesoderm,0.0026866558473557234,7.75,8.0
+Haematoendothelial progenitors,Gut,1.1868064575537574e-05,7.75,8.0
+Haematoendothelial progenitors,Haematoendothelial progenitors,0.03442896902561188,7.75,8.0
+Haematoendothelial progenitors,Intermediate mesoderm,0.0005287231178954244,7.75,8.0
+Haematoendothelial progenitors,Mesenchyme,0.0007609977619722486,7.75,8.0
+Haematoendothelial progenitors,Notochord,3.613472699726117e-06,7.75,8.0
+Haematoendothelial progenitors,Paraxial mesoderm,0.0007665076991543174,7.75,8.0
+Haematoendothelial progenitors,Pharyngeal mesoderm,0.0008798381313681602,7.75,8.0
+Haematoendothelial progenitors,Rostral neurectoderm,1.3140021110302769e-05,7.75,8.0
+Haematoendothelial progenitors,Somitic mesoderm,0.0001244617742486298,7.75,8.0
+Haematoendothelial progenitors,Spinal cord,3.2177292723645223e-06,7.75,8.0
+Haematoendothelial progenitors,Stripped,4.92527988171787e-07,7.75,8.0
+Haematoendothelial progenitors,Surface ectoderm,7.77538662077859e-05,7.75,8.0
+Intermediate mesoderm,Allantois,0.001165051944553852,7.75,8.0
+Intermediate mesoderm,Blood progenitors 2,4.603580237017013e-07,7.75,8.0
+Intermediate mesoderm,Caudal Mesoderm,0.006948946043848991,7.75,8.0
+Intermediate mesoderm,Caudal epiblast,0.0006995455478318036,7.75,8.0
+Intermediate mesoderm,Caudal neurectoderm,4.8048248572740704e-05,7.75,8.0
+Intermediate mesoderm,Def. endoderm,2.5314967899703333e-09,7.75,8.0
+Intermediate mesoderm,Erythroid1,9.307229902333347e-07,7.75,8.0
+Intermediate mesoderm,ExE mesoderm,0.004127976018935442,7.75,8.0
+Intermediate mesoderm,Gut,1.516134125267854e-05,7.75,8.0
+Intermediate mesoderm,Haematoendothelial progenitors,0.0010117278434336185,7.75,8.0
+Intermediate mesoderm,Intermediate mesoderm,0.023628419265151024,7.75,8.0
+Intermediate mesoderm,Mesenchyme,0.0004124392871744931,7.75,8.0
+Intermediate mesoderm,Notochord,2.5861560061457567e-05,7.75,8.0
+Intermediate mesoderm,Paraxial mesoderm,0.0005014317575842142,7.75,8.0
+Intermediate mesoderm,Pharyngeal mesoderm,0.0005713589489459991,7.75,8.0
+Intermediate mesoderm,Rostral neurectoderm,3.760874824365601e-05,7.75,8.0
+Intermediate mesoderm,Somitic mesoderm,0.00973566435277462,7.75,8.0
+Intermediate mesoderm,Spinal cord,4.265500319888815e-05,7.75,8.0
+Intermediate mesoderm,Stripped,3.642296775296927e-08,7.75,8.0
+Intermediate mesoderm,Surface ectoderm,0.0010266730096191168,7.75,8.0
+Mesenchyme,Allantois,0.011716230772435665,7.75,8.0
+Mesenchyme,Blood progenitors 2,1.0243248738106558e-07,7.75,8.0
+Mesenchyme,Caudal Mesoderm,2.317883809155319e-05,7.75,8.0
+Mesenchyme,Caudal epiblast,2.9139387152099516e-06,7.75,8.0
+Mesenchyme,Caudal neurectoderm,8.88679210220289e-07,7.75,8.0
+Mesenchyme,Def. endoderm,8.679087670770969e-09,7.75,8.0
+Mesenchyme,Erythroid1,1.4867657682771096e-07,7.75,8.0
+Mesenchyme,ExE mesoderm,0.007743988186120987,7.75,8.0
+Mesenchyme,Gut,5.571112069446826e-06,7.75,8.0
+Mesenchyme,Haematoendothelial progenitors,0.006267670542001724,7.75,8.0
+Mesenchyme,Intermediate mesoderm,0.00022291051573120058,7.75,8.0
+Mesenchyme,Mesenchyme,0.03574208915233612,7.75,8.0
+Mesenchyme,Notochord,1.4634119906986598e-06,7.75,8.0
+Mesenchyme,Paraxial mesoderm,1.2761294783558697e-05,7.75,8.0
+Mesenchyme,Pharyngeal mesoderm,9.202636283589527e-05,7.75,8.0
+Mesenchyme,Rostral neurectoderm,1.3855938050255645e-06,7.75,8.0
+Mesenchyme,Somitic mesoderm,9.826545465330128e-06,7.75,8.0
+Mesenchyme,Spinal cord,4.224737040203763e-07,7.75,8.0
+Mesenchyme,Stripped,8.665542949870542e-09,7.75,8.0
+Mesenchyme,Surface ectoderm,0.0048230672255158424,7.75,8.0
+Mixed mesoderm,Allantois,0.0004970878944732249,7.75,8.0
+Mixed mesoderm,Blood progenitors 2,2.0957469359927927e-07,7.75,8.0
+Mixed mesoderm,Caudal Mesoderm,0.000175612629391253,7.75,8.0
+Mixed mesoderm,Caudal epiblast,1.5050492947921157e-05,7.75,8.0
+Mixed mesoderm,Caudal neurectoderm,2.6540574253886007e-06,7.75,8.0
+Mixed mesoderm,Def. endoderm,2.1192219853971572e-11,7.75,8.0
+Mixed mesoderm,Erythroid1,3.935253403142269e-07,7.75,8.0
+Mixed mesoderm,ExE mesoderm,0.0034043865744024515,7.75,8.0
+Mixed mesoderm,Gut,1.3511743190974812e-06,7.75,8.0
+Mixed mesoderm,Haematoendothelial progenitors,0.0005415368359535933,7.75,8.0
+Mixed mesoderm,Intermediate mesoderm,0.0031593607272952795,7.75,8.0
+Mixed mesoderm,Mesenchyme,0.00034359050914645195,7.75,8.0
+Mixed mesoderm,Notochord,3.025666046596598e-07,7.75,8.0
+Mixed mesoderm,Paraxial mesoderm,1.5004855413280893e-05,7.75,8.0
+Mixed mesoderm,Pharyngeal mesoderm,4.099275975022465e-05,7.75,8.0
+Mixed mesoderm,Rostral neurectoderm,1.6941372678047628e-06,7.75,8.0
+Mixed mesoderm,Somitic mesoderm,8.121332211885601e-05,7.75,8.0
+Mixed mesoderm,Spinal cord,8.369498232241313e-07,7.75,8.0
+Mixed mesoderm,Stripped,1.6866378516056102e-08,7.75,8.0
+Mixed mesoderm,Surface ectoderm,5.203726323088631e-05,7.75,8.0
+Nascent mesoderm,Allantois,6.628178380196914e-05,7.75,8.0
+Nascent mesoderm,Blood progenitors 2,5.349928414943861e-06,7.75,8.0
+Nascent mesoderm,Caudal Mesoderm,0.0001373037666780874,7.75,8.0
+Nascent mesoderm,Caudal epiblast,0.00010149524314329028,7.75,8.0
+Nascent mesoderm,Caudal neurectoderm,2.0833189410041086e-05,7.75,8.0
+Nascent mesoderm,Def. endoderm,1.1844677461070319e-09,7.75,8.0
+Nascent mesoderm,Erythroid1,7.572964932478499e-06,7.75,8.0
+Nascent mesoderm,ExE mesoderm,0.0003483328328002244,7.75,8.0
+Nascent mesoderm,Gut,1.2517927643784788e-05,7.75,8.0
+Nascent mesoderm,Haematoendothelial progenitors,0.00031853094696998596,7.75,8.0
+Nascent mesoderm,Intermediate mesoderm,0.0007555734482593834,7.75,8.0
+Nascent mesoderm,Mesenchyme,2.4577113435952924e-05,7.75,8.0
+Nascent mesoderm,Notochord,2.6340815111325355e-06,7.75,8.0
+Nascent mesoderm,Paraxial mesoderm,0.0036550865042954683,7.75,8.0
+Nascent mesoderm,Pharyngeal mesoderm,0.001299852505326271,7.75,8.0
+Nascent mesoderm,Rostral neurectoderm,3.153746365569532e-05,7.75,8.0
+Nascent mesoderm,Somitic mesoderm,0.0015054724644869566,7.75,8.0
+Nascent mesoderm,Spinal cord,2.3269536541192792e-05,7.75,8.0
+Nascent mesoderm,Stripped,9.840267694016802e-07,7.75,8.0
+Nascent mesoderm,Surface ectoderm,1.6125779438880272e-05,7.75,8.0
+Notochord,Allantois,1.809800050978083e-05,7.75,8.0
+Notochord,Blood progenitors 2,1.4228102429569844e-07,7.75,8.0
+Notochord,Caudal Mesoderm,0.00010779330477816984,7.75,8.0
+Notochord,Caudal epiblast,5.890511238249019e-05,7.75,8.0
+Notochord,Caudal neurectoderm,2.5171115339617245e-05,7.75,8.0
+Notochord,Def. endoderm,5.02346119901631e-05,7.75,8.0
+Notochord,Erythroid1,1.911769686557818e-06,7.75,8.0
+Notochord,ExE mesoderm,0.0001205012813443318,7.75,8.0
+Notochord,Gut,0.0001057870322256349,7.75,8.0
+Notochord,Haematoendothelial progenitors,9.276870696339756e-05,7.75,8.0
+Notochord,Intermediate mesoderm,0.0001817483571358025,7.75,8.0
+Notochord,Mesenchyme,1.570927088323515e-05,7.75,8.0
+Notochord,Notochord,0.04776180535554886,7.75,8.0
+Notochord,Paraxial mesoderm,0.0006858735578134656,7.75,8.0
+Notochord,Pharyngeal mesoderm,0.0002969532215502113,7.75,8.0
+Notochord,Rostral neurectoderm,4.6153130824677646e-05,7.75,8.0
+Notochord,Somitic mesoderm,0.00032856539473868906,7.75,8.0
+Notochord,Spinal cord,3.115554864052683e-05,7.75,8.0
+Notochord,Stripped,1.478522051456821e-07,7.75,8.0
+Notochord,Surface ectoderm,7.055734749883413e-05,7.75,8.0
+PGC,Allantois,5.6735952966846526e-06,7.75,8.0
+PGC,Blood progenitors 2,1.4104521994795505e-09,7.75,8.0
+PGC,Caudal Mesoderm,0.007186993025243282,7.75,8.0
+PGC,Caudal epiblast,1.2874646017735358e-05,7.75,8.0
+PGC,Caudal neurectoderm,3.1357667467091233e-06,7.75,8.0
+PGC,Def. endoderm,1.0320584920009424e-07,7.75,8.0
+PGC,Erythroid1,4.15815577525791e-08,7.75,8.0
+PGC,ExE mesoderm,3.702546746353619e-05,7.75,8.0
+PGC,Gut,1.9897956008207984e-05,7.75,8.0
+PGC,Haematoendothelial progenitors,0.00015138134767767042,7.75,8.0
+PGC,Intermediate mesoderm,0.00014460418606176972,7.75,8.0
+PGC,Mesenchyme,4.818216439161915e-06,7.75,8.0
+PGC,Notochord,8.228883416450117e-06,7.75,8.0
+PGC,Paraxial mesoderm,7.784954050293891e-07,7.75,8.0
+PGC,Pharyngeal mesoderm,1.5529921029155958e-06,7.75,8.0
+PGC,Rostral neurectoderm,2.9723512398049934e-06,7.75,8.0
+PGC,Somitic mesoderm,1.0210918844677508e-05,7.75,8.0
+PGC,Spinal cord,4.0199782347372093e-07,7.75,8.0
+PGC,Stripped,5.933076807629334e-10,7.75,8.0
+PGC,Surface ectoderm,0.0007426372612826526,7.75,8.0
+Paraxial mesoderm,Allantois,0.0004478681366890669,7.75,8.0
+Paraxial mesoderm,Blood progenitors 2,3.212456022083643e-06,7.75,8.0
+Paraxial mesoderm,Caudal Mesoderm,0.00011300384358037263,7.75,8.0
+Paraxial mesoderm,Caudal epiblast,0.00016671484627295285,7.75,8.0
+Paraxial mesoderm,Caudal neurectoderm,0.0001906236429931596,7.75,8.0
+Paraxial mesoderm,Def. endoderm,1.5482739001981827e-07,7.75,8.0
+Paraxial mesoderm,Erythroid1,1.0389582712377887e-05,7.75,8.0
+Paraxial mesoderm,ExE mesoderm,0.0010982021922245622,7.75,8.0
+Paraxial mesoderm,Gut,6.95689013809897e-05,7.75,8.0
+Paraxial mesoderm,Haematoendothelial progenitors,0.0012886521872133017,7.75,8.0
+Paraxial mesoderm,Intermediate mesoderm,0.0007872616988606751,7.75,8.0
+Paraxial mesoderm,Mesenchyme,0.00022069003898650408,7.75,8.0
+Paraxial mesoderm,Notochord,1.3945079444965813e-05,7.75,8.0
+Paraxial mesoderm,Paraxial mesoderm,0.042399462312459946,7.75,8.0
+Paraxial mesoderm,Pharyngeal mesoderm,0.00707206828519702,7.75,8.0
+Paraxial mesoderm,Rostral neurectoderm,0.00030760429217480123,7.75,8.0
+Paraxial mesoderm,Somitic mesoderm,0.00382440909743309,7.75,8.0
+Paraxial mesoderm,Spinal cord,0.00011835052282549441,7.75,8.0
+Paraxial mesoderm,Stripped,7.064780334076204e-07,7.75,8.0
+Paraxial mesoderm,Surface ectoderm,0.00020043496624566615,7.75,8.0
+Pharyngeal mesoderm,Allantois,0.001608390943147242,7.75,8.0
+Pharyngeal mesoderm,Blood progenitors 2,1.120139131671749e-06,7.75,8.0
+Pharyngeal mesoderm,Caudal Mesoderm,0.00013440947805065662,7.75,8.0
+Pharyngeal mesoderm,Caudal epiblast,9.832406067289412e-05,7.75,8.0
+Pharyngeal mesoderm,Caudal neurectoderm,5.01154427183792e-05,7.75,8.0
+Pharyngeal mesoderm,Def. endoderm,3.673090631650666e-08,7.75,8.0
+Pharyngeal mesoderm,Erythroid1,2.7936218884860864e-06,7.75,8.0
+Pharyngeal mesoderm,ExE mesoderm,0.003069238970056176,7.75,8.0
+Pharyngeal mesoderm,Gut,3.520347672747448e-05,7.75,8.0
+Pharyngeal mesoderm,Haematoendothelial progenitors,0.0046801818534731865,7.75,8.0
+Pharyngeal mesoderm,Intermediate mesoderm,0.0019127202685922384,7.75,8.0
+Pharyngeal mesoderm,Mesenchyme,0.0010065280366688967,7.75,8.0
+Pharyngeal mesoderm,Notochord,7.429542165482417e-06,7.75,8.0
+Pharyngeal mesoderm,Paraxial mesoderm,0.007125490345060825,7.75,8.0
+Pharyngeal mesoderm,Pharyngeal mesoderm,0.02070382423698902,7.75,8.0
+Pharyngeal mesoderm,Rostral neurectoderm,0.00010393121920060366,7.75,8.0
+Pharyngeal mesoderm,Somitic mesoderm,0.0006203689845278859,7.75,8.0
+Pharyngeal mesoderm,Spinal cord,2.326515459571965e-05,7.75,8.0
+Pharyngeal mesoderm,Stripped,3.320911048376729e-07,7.75,8.0
+Pharyngeal mesoderm,Surface ectoderm,0.00048295798478648067,7.75,8.0
+Rostral neurectoderm,Allantois,7.291469228221104e-05,7.75,8.0
+Rostral neurectoderm,Blood progenitors 2,3.970139005105011e-06,7.75,8.0
+Rostral neurectoderm,Caudal Mesoderm,0.0015846514143049717,7.75,8.0
+Rostral neurectoderm,Caudal epiblast,0.007385561242699623,7.75,8.0
+Rostral neurectoderm,Caudal neurectoderm,0.011352861300110817,7.75,8.0
+Rostral neurectoderm,Def. endoderm,3.6010966653066134e-08,7.75,8.0
+Rostral neurectoderm,Erythroid1,2.2318217816064134e-05,7.75,8.0
+Rostral neurectoderm,ExE mesoderm,0.0002840568486135453,7.75,8.0
+Rostral neurectoderm,Gut,0.0015167751116678119,7.75,8.0
+Rostral neurectoderm,Haematoendothelial progenitors,0.00031532408320344985,7.75,8.0
+Rostral neurectoderm,Intermediate mesoderm,0.00023204572789836675,7.75,8.0
+Rostral neurectoderm,Mesenchyme,3.495451164781116e-05,7.75,8.0
+Rostral neurectoderm,Notochord,2.7256639896222623e-06,7.75,8.0
+Rostral neurectoderm,Paraxial mesoderm,0.0013708785409107804,7.75,8.0
+Rostral neurectoderm,Pharyngeal mesoderm,0.0006363050197251141,7.75,8.0
+Rostral neurectoderm,Rostral neurectoderm,0.016635753214359283,7.75,8.0
+Rostral neurectoderm,Somitic mesoderm,0.00034079086617566645,7.75,8.0
+Rostral neurectoderm,Spinal cord,0.006140770856291056,7.75,8.0
+Rostral neurectoderm,Stripped,7.960651373650762e-07,7.75,8.0
+Rostral neurectoderm,Surface ectoderm,0.0020664974581450224,7.75,8.0
+Somitic mesoderm,Allantois,1.9475643057376146e-05,7.75,8.0
+Somitic mesoderm,Blood progenitors 2,2.726794789964515e-08,7.75,8.0
+Somitic mesoderm,Caudal Mesoderm,0.0025942770298570395,7.75,8.0
+Somitic mesoderm,Caudal epiblast,0.00015277377679012716,7.75,8.0
+Somitic mesoderm,Caudal neurectoderm,1.7226020645466633e-05,7.75,8.0
+Somitic mesoderm,Def. endoderm,7.624233688829918e-09,7.75,8.0
+Somitic mesoderm,Erythroid1,1.1362897112121573e-07,7.75,8.0
+Somitic mesoderm,ExE mesoderm,0.0001605340075911954,7.75,8.0
+Somitic mesoderm,Gut,5.28417785972124e-06,7.75,8.0
+Somitic mesoderm,Haematoendothelial progenitors,7.863264909246936e-05,7.75,8.0
+Somitic mesoderm,Intermediate mesoderm,0.013080730102956295,7.75,8.0
+Somitic mesoderm,Mesenchyme,1.0902378562605008e-05,7.75,8.0
+Somitic mesoderm,Notochord,0.00020499482343439013,7.75,8.0
+Somitic mesoderm,Paraxial mesoderm,9.687017882242799e-05,7.75,8.0
+Somitic mesoderm,Pharyngeal mesoderm,4.8582707677269354e-05,7.75,8.0
+Somitic mesoderm,Rostral neurectoderm,7.110810201993445e-06,7.75,8.0
+Somitic mesoderm,Somitic mesoderm,0.033430300652980804,7.75,8.0
+Somitic mesoderm,Spinal cord,1.8853861547540873e-05,7.75,8.0
+Somitic mesoderm,Stripped,1.0060977828629802e-08,7.75,8.0
+Somitic mesoderm,Surface ectoderm,7.328752690227702e-05,7.75,8.0
+Spinal cord,Allantois,1.2209125998197123e-05,7.75,8.0
+Spinal cord,Blood progenitors 2,6.076287490941468e-07,7.75,8.0
+Spinal cord,Caudal Mesoderm,0.002188735641539097,7.75,8.0
+Spinal cord,Caudal epiblast,0.0064194039441645145,7.75,8.0
+Spinal cord,Caudal neurectoderm,0.003365163691341877,7.75,8.0
+Spinal cord,Def. endoderm,9.345515472602983e-09,7.75,8.0
+Spinal cord,Erythroid1,2.4434455099253682e-06,7.75,8.0
+Spinal cord,ExE mesoderm,8.166120096575469e-05,7.75,8.0
+Spinal cord,Gut,0.0005854634218849242,7.75,8.0
+Spinal cord,Haematoendothelial progenitors,4.156065551796928e-05,7.75,8.0
+Spinal cord,Intermediate mesoderm,0.00013785090413875878,7.75,8.0
+Spinal cord,Mesenchyme,5.302533736539772e-06,7.75,8.0
+Spinal cord,Notochord,7.154253012231493e-07,7.75,8.0
+Spinal cord,Paraxial mesoderm,0.00013217104424256831,7.75,8.0
+Spinal cord,Pharyngeal mesoderm,7.201869448181242e-05,7.75,8.0
+Spinal cord,Rostral neurectoderm,0.005861352663487196,7.75,8.0
+Spinal cord,Somitic mesoderm,0.0003410224453546107,7.75,8.0
+Spinal cord,Spinal cord,0.005008265376091003,7.75,8.0
+Spinal cord,Stripped,2.0162450198313309e-07,7.75,8.0
+Spinal cord,Surface ectoderm,0.0007438338361680508,7.75,8.0
+Stripped,Allantois,1.830311339290347e-05,7.75,8.0
+Stripped,Blood progenitors 2,8.32023204111465e-07,7.75,8.0
+Stripped,Caudal Mesoderm,0.001990437740460038,7.75,8.0
+Stripped,Caudal epiblast,0.003936209250241518,7.75,8.0
+Stripped,Caudal neurectoderm,0.009847383946180344,7.75,8.0
+Stripped,Def. endoderm,8.389216432647117e-09,7.75,8.0
+Stripped,Erythroid1,3.3198871278727893e-06,7.75,8.0
+Stripped,ExE mesoderm,0.00010993315663654357,7.75,8.0
+Stripped,Gut,0.00013317758566699922,7.75,8.0
+Stripped,Haematoendothelial progenitors,5.364212847780436e-05,7.75,8.0
+Stripped,Intermediate mesoderm,0.0002568192721810192,7.75,8.0
+Stripped,Mesenchyme,5.724874426960014e-06,7.75,8.0
+Stripped,Notochord,1.319872211524853e-07,7.75,8.0
+Stripped,Paraxial mesoderm,9.81014673016034e-05,7.75,8.0
+Stripped,Pharyngeal mesoderm,3.4779441193677485e-05,7.75,8.0
+Stripped,Rostral neurectoderm,0.009396516717970371,7.75,8.0
+Stripped,Somitic mesoderm,0.0001439826301066205,7.75,8.0
+Stripped,Spinal cord,0.0026405523531138897,7.75,8.0
+Stripped,Stripped,0.0037503924686461687,7.75,8.0
+Stripped,Surface ectoderm,0.000913164927624166,7.75,8.0
+Surface ectoderm,Allantois,0.0009204390225932002,7.75,8.0
+Surface ectoderm,Blood progenitors 2,1.9256026462244336e-06,7.75,8.0
+Surface ectoderm,Caudal Mesoderm,0.0020063286647200584,7.75,8.0
+Surface ectoderm,Caudal epiblast,0.002460464369505644,7.75,8.0
+Surface ectoderm,Caudal neurectoderm,0.0024349289014935493,7.75,8.0
+Surface ectoderm,Def. endoderm,1.806643865620572e-07,7.75,8.0
+Surface ectoderm,Erythroid1,1.4907348486303817e-05,7.75,8.0
+Surface ectoderm,ExE mesoderm,0.002120905090123415,7.75,8.0
+Surface ectoderm,Gut,0.0010797342984005809,7.75,8.0
+Surface ectoderm,Haematoendothelial progenitors,0.0008595999097451568,7.75,8.0
+Surface ectoderm,Intermediate mesoderm,0.0005828942521475255,7.75,8.0
+Surface ectoderm,Mesenchyme,0.0006505891215056181,7.75,8.0
+Surface ectoderm,Notochord,3.3073204122047173e-06,7.75,8.0
+Surface ectoderm,Paraxial mesoderm,0.00023591624631080776,7.75,8.0
+Surface ectoderm,Pharyngeal mesoderm,0.0007535626064054668,7.75,8.0
+Surface ectoderm,Rostral neurectoderm,0.0054272995330393314,7.75,8.0
+Surface ectoderm,Somitic mesoderm,0.00014840612129773945,7.75,8.0
+Surface ectoderm,Spinal cord,0.0016966902185231447,7.75,8.0
+Surface ectoderm,Stripped,8.489458309668407e-07,7.75,8.0
+Surface ectoderm,Surface ectoderm,0.03693440183997154,7.75,8.0
+Visceral endoderm,Allantois,0.00014818586350884289,7.75,8.0
+Visceral endoderm,Blood progenitors 2,1.4986055418830802e-07,7.75,8.0
+Visceral endoderm,Caudal Mesoderm,9.119159949477762e-05,7.75,8.0
+Visceral endoderm,Caudal epiblast,9.597873940947466e-06,7.75,8.0
+Visceral endoderm,Caudal neurectoderm,1.582366508046107e-06,7.75,8.0
+Visceral endoderm,Def. endoderm,4.633055596059421e-06,7.75,8.0
+Visceral endoderm,Erythroid1,3.1793450716577354e-07,7.75,8.0
+Visceral endoderm,ExE mesoderm,0.000605366425588727,7.75,8.0
+Visceral endoderm,Gut,0.012534189969301224,7.75,8.0
+Visceral endoderm,Haematoendothelial progenitors,0.0008182913297787309,7.75,8.0
+Visceral endoderm,Intermediate mesoderm,3.209080750821158e-05,7.75,8.0
+Visceral endoderm,Mesenchyme,0.00016986991977319121,7.75,8.0
+Visceral endoderm,Notochord,3.264507176936604e-05,7.75,8.0
+Visceral endoderm,Paraxial mesoderm,9.046015293279197e-06,7.75,8.0
+Visceral endoderm,Pharyngeal mesoderm,8.591997175244614e-05,7.75,8.0
+Visceral endoderm,Rostral neurectoderm,2.010353455261793e-06,7.75,8.0
+Visceral endoderm,Somitic mesoderm,4.3954100874543656e-06,7.75,8.0
+Visceral endoderm,Spinal cord,2.251815431009163e-06,7.75,8.0
+Visceral endoderm,Stripped,6.142145125842546e-10,7.75,8.0
+Visceral endoderm,Surface ectoderm,0.0021149241365492344,7.75,8.0
+Blood progenitors 1,Allantois,0.0004986049607396126,7.5,7.75
+Blood progenitors 1,Blood progenitors 1,0.012235567905008793,7.5,7.75
+Blood progenitors 1,Blood progenitors 2,0.02497246116399765,7.5,7.75
+Blood progenitors 1,Caudal Mesoderm,9.166121230919089e-07,7.5,7.75
+Blood progenitors 1,Caudal epiblast,1.1580219734241837e-06,7.5,7.75
+Blood progenitors 1,Caudal neurectoderm,4.666861741497996e-07,7.5,7.75
+Blood progenitors 1,Def. endoderm,2.2932590937330133e-08,7.5,7.75
+Blood progenitors 1,Erythroid1,0.01663399673998356,7.5,7.75
+Blood progenitors 1,ExE mesoderm,0.00017146949539892375,7.5,7.75
+Blood progenitors 1,Gut,2.1005966743814497e-08,7.5,7.75
+Blood progenitors 1,Haematoendothelial progenitors,0.003051746403798461,7.5,7.75
+Blood progenitors 1,Intermediate mesoderm,9.78264506557025e-06,7.5,7.75
+Blood progenitors 1,Mesenchyme,0.0005515638622455299,7.5,7.75
+Blood progenitors 1,Mixed mesoderm,6.579461114597507e-06,7.5,7.75
+Blood progenitors 1,Nascent mesoderm,2.826752051987569e-06,7.5,7.75
+Blood progenitors 1,Notochord,1.1644139021882438e-06,7.5,7.75
+Blood progenitors 1,PGC,1.9273944662501208e-09,7.5,7.75
+Blood progenitors 1,Paraxial mesoderm,2.422510806354694e-05,7.5,7.75
+Blood progenitors 1,Pharyngeal mesoderm,0.00016314227832481265,7.5,7.75
+Blood progenitors 1,Rostral neurectoderm,4.622303322321386e-07,7.5,7.75
+Blood progenitors 1,Somitic mesoderm,9.44021792292915e-07,7.5,7.75
+Blood progenitors 1,Spinal cord,3.8491040754706773e-07,7.5,7.75
+Blood progenitors 1,Stripped,6.161531018733513e-07,7.5,7.75
+Blood progenitors 1,Surface ectoderm,5.139958375366405e-06,7.5,7.75
+Blood progenitors 1,Visceral endoderm,6.896013360346842e-08,7.5,7.75
+Blood progenitors 2,Allantois,2.003978579523391e-06,7.5,7.75
+Blood progenitors 2,Blood progenitors 1,0.0005222159088589251,7.5,7.75
+Blood progenitors 2,Blood progenitors 2,0.027000203728675842,7.5,7.75
+Blood progenitors 2,Caudal Mesoderm,5.608733477657779e-09,7.5,7.75
+Blood progenitors 2,Caudal epiblast,8.349240410154835e-09,7.5,7.75
+Blood progenitors 2,Caudal neurectoderm,5.327815078004505e-09,7.5,7.75
+Blood progenitors 2,Def. endoderm,7.919567779346437e-11,7.5,7.75
+Blood progenitors 2,Erythroid1,0.022456150501966476,7.5,7.75
+Blood progenitors 2,ExE mesoderm,1.0084462473969324e-06,7.5,7.75
+Blood progenitors 2,Gut,2.1507783401486513e-11,7.5,7.75
+Blood progenitors 2,Haematoendothelial progenitors,1.5487159544136375e-05,7.5,7.75
+Blood progenitors 2,Intermediate mesoderm,9.225785646549411e-08,7.5,7.75
+Blood progenitors 2,Mesenchyme,2.3033419438434066e-06,7.5,7.75
+Blood progenitors 2,Mixed mesoderm,2.246658681315239e-08,7.5,7.75
+Blood progenitors 2,Nascent mesoderm,1.6683467052303058e-08,7.5,7.75
+Blood progenitors 2,Notochord,6.984528067022211e-09,7.5,7.75
+Blood progenitors 2,PGC,3.976052560111798e-12,7.5,7.75
+Blood progenitors 2,Paraxial mesoderm,1.736084271897198e-07,7.5,7.75
+Blood progenitors 2,Pharyngeal mesoderm,2.096787596883587e-07,7.5,7.75
+Blood progenitors 2,Rostral neurectoderm,5.248644185940066e-09,7.5,7.75
+Blood progenitors 2,Somitic mesoderm,4.46845538348839e-09,7.5,7.75
+Blood progenitors 2,Spinal cord,4.398637010183393e-09,7.5,7.75
+Blood progenitors 2,Stripped,7.67007612978432e-09,7.5,7.75
+Blood progenitors 2,Surface ectoderm,4.9782233446649116e-08,7.5,7.75
+Blood progenitors 2,Visceral endoderm,2.774183938125674e-10,7.5,7.75
+Caudal Mesoderm,Allantois,6.333506917144405e-06,7.5,7.75
+Caudal Mesoderm,Blood progenitors 1,9.998376526709762e-07,7.5,7.75
+Caudal Mesoderm,Blood progenitors 2,4.214631701415783e-07,7.5,7.75
+Caudal Mesoderm,Caudal Mesoderm,0.019568394869565964,7.5,7.75
+Caudal Mesoderm,Caudal epiblast,0.009680631570518017,7.5,7.75
+Caudal Mesoderm,Caudal neurectoderm,0.0004763549950439483,7.5,7.75
+Caudal Mesoderm,Def. endoderm,2.3809675440134015e-06,7.5,7.75
+Caudal Mesoderm,Erythroid1,6.870967013128393e-07,7.5,7.75
+Caudal Mesoderm,ExE mesoderm,5.181802043807693e-05,7.5,7.75
+Caudal Mesoderm,Gut,9.670724239185802e-07,7.5,7.75
+Caudal Mesoderm,Haematoendothelial progenitors,2.9975184588693082e-05,7.5,7.75
+Caudal Mesoderm,Intermediate mesoderm,0.005902469623833895,7.5,7.75
+Caudal Mesoderm,Mesenchyme,7.571639343950665e-06,7.5,7.75
+Caudal Mesoderm,Mixed mesoderm,3.1168914574664086e-05,7.5,7.75
+Caudal Mesoderm,Nascent mesoderm,9.470677468925714e-05,7.5,7.75
+Caudal Mesoderm,Notochord,0.00012281877570785582,7.5,7.75
+Caudal Mesoderm,PGC,5.6730468713794835e-06,7.5,7.75
+Caudal Mesoderm,Paraxial mesoderm,0.00010792264947667718,7.5,7.75
+Caudal Mesoderm,Pharyngeal mesoderm,6.242215749807656e-05,7.5,7.75
+Caudal Mesoderm,Rostral neurectoderm,0.0001849760883487761,7.5,7.75
+Caudal Mesoderm,Somitic mesoderm,0.01161354873329401,7.5,7.75
+Caudal Mesoderm,Spinal cord,0.0007706748438067734,7.5,7.75
+Caudal Mesoderm,Stripped,0.0010501670185476542,7.5,7.75
+Caudal Mesoderm,Surface ectoderm,0.0002268796815769747,7.5,7.75
+Caudal Mesoderm,Visceral endoderm,3.4547404936802195e-08,7.5,7.75
+Caudal epiblast,Allantois,2.4055807443801314e-05,7.5,7.75
+Caudal epiblast,Blood progenitors 1,8.864229130267631e-06,7.5,7.75
+Caudal epiblast,Blood progenitors 2,1.2591412996698637e-05,7.5,7.75
+Caudal epiblast,Caudal Mesoderm,0.012231513857841492,7.5,7.75
+Caudal epiblast,Caudal epiblast,0.016743242740631104,7.5,7.75
+Caudal epiblast,Caudal neurectoderm,0.004774805158376694,7.5,7.75
+Caudal epiblast,Def. endoderm,3.823423867288511e-06,7.5,7.75
+Caudal epiblast,Erythroid1,1.8500873920856975e-05,7.5,7.75
+Caudal epiblast,ExE mesoderm,0.00011413357424316928,7.5,7.75
+Caudal epiblast,Gut,2.733791689024656e-06,7.5,7.75
+Caudal epiblast,Haematoendothelial progenitors,0.0003030947409570217,7.5,7.75
+Caudal epiblast,Intermediate mesoderm,0.0018618378089740872,7.5,7.75
+Caudal epiblast,Mesenchyme,3.1846728234086186e-05,7.5,7.75
+Caudal epiblast,Mixed mesoderm,0.00011664415069390088,7.5,7.75
+Caudal epiblast,Nascent mesoderm,0.0004391424299683422,7.5,7.75
+Caudal epiblast,Notochord,0.0007023668731562793,7.5,7.75
+Caudal epiblast,PGC,3.4136505746573675e-06,7.5,7.75
+Caudal epiblast,Paraxial mesoderm,0.001294163754209876,7.5,7.75
+Caudal epiblast,Pharyngeal mesoderm,0.0003024990437552333,7.5,7.75
+Caudal epiblast,Rostral neurectoderm,0.00263496907427907,7.5,7.75
+Caudal epiblast,Somitic mesoderm,0.0009094051783904433,7.5,7.75
+Caudal epiblast,Spinal cord,0.005005955696105957,7.5,7.75
+Caudal epiblast,Stripped,0.0009614034788683057,7.5,7.75
+Caudal epiblast,Surface ectoderm,0.0014988505281507969,7.5,7.75
+Caudal epiblast,Visceral endoderm,1.4939861614493566e-07,7.5,7.75
+Caudal neurectoderm,Allantois,7.557891876786016e-06,7.5,7.75
+Caudal neurectoderm,Blood progenitors 1,1.27671955851838e-06,7.5,7.75
+Caudal neurectoderm,Blood progenitors 2,1.9585443169489736e-06,7.5,7.75
+Caudal neurectoderm,Caudal Mesoderm,0.0026592290960252285,7.5,7.75
+Caudal neurectoderm,Caudal epiblast,0.008774207904934883,7.5,7.75
+Caudal neurectoderm,Caudal neurectoderm,0.014736083336174488,7.5,7.75
+Caudal neurectoderm,Def. endoderm,3.6143896977591794e-06,7.5,7.75
+Caudal neurectoderm,Erythroid1,2.8048768854205264e-06,7.5,7.75
+Caudal neurectoderm,ExE mesoderm,5.2909799705957994e-05,7.5,7.75
+Caudal neurectoderm,Gut,2.3549384877696866e-06,7.5,7.75
+Caudal neurectoderm,Haematoendothelial progenitors,0.00014890996681060642,7.5,7.75
+Caudal neurectoderm,Intermediate mesoderm,0.00046411831863224506,7.5,7.75
+Caudal neurectoderm,Mesenchyme,1.0948503586405423e-05,7.5,7.75
+Caudal neurectoderm,Mixed mesoderm,3.695376653922722e-05,7.5,7.75
+Caudal neurectoderm,Nascent mesoderm,2.4827741071931086e-05,7.5,7.75
+Caudal neurectoderm,Notochord,4.412242924445309e-05,7.5,7.75
+Caudal neurectoderm,PGC,2.5873887352645397e-06,7.5,7.75
+Caudal neurectoderm,Paraxial mesoderm,0.00104010128416121,7.5,7.75
+Caudal neurectoderm,Pharyngeal mesoderm,0.00033768932917155325,7.5,7.75
+Caudal neurectoderm,Rostral neurectoderm,0.005511561408638954,7.5,7.75
+Caudal neurectoderm,Somitic mesoderm,9.718702494865283e-05,7.5,7.75
+Caudal neurectoderm,Spinal cord,0.003142750356346369,7.5,7.75
+Caudal neurectoderm,Stripped,0.0019406958017498255,7.5,7.75
+Caudal neurectoderm,Surface ectoderm,0.002622180851176381,7.5,7.75
+Caudal neurectoderm,Visceral endoderm,4.479183957073474e-08,7.5,7.75
+Def. endoderm,Allantois,0.0003599512274377048,7.5,7.75
+Def. endoderm,Blood progenitors 1,5.286037776386365e-06,7.5,7.75
+Def. endoderm,Blood progenitors 2,2.9504933536372846e-06,7.5,7.75
+Def. endoderm,Caudal Mesoderm,0.00011871117749251425,7.5,7.75
+Def. endoderm,Caudal epiblast,0.00017553288489580154,7.5,7.75
+Def. endoderm,Caudal neurectoderm,0.0003552167327143252,7.5,7.75
+Def. endoderm,Def. endoderm,0.013661036267876625,7.5,7.75
+Def. endoderm,Erythroid1,4.108781013201224e-06,7.5,7.75
+Def. endoderm,ExE mesoderm,0.00012154819705756381,7.5,7.75
+Def. endoderm,Gut,0.013880914077162743,7.5,7.75
+Def. endoderm,Haematoendothelial progenitors,0.0007955175824463367,7.5,7.75
+Def. endoderm,Intermediate mesoderm,6.371596100507304e-05,7.5,7.75
+Def. endoderm,Mesenchyme,0.0003114564169663936,7.5,7.75
+Def. endoderm,Mixed mesoderm,1.3164089068595786e-05,7.5,7.75
+Def. endoderm,Nascent mesoderm,8.448363223578781e-05,7.5,7.75
+Def. endoderm,Notochord,0.016103900969028473,7.5,7.75
+Def. endoderm,PGC,1.3439615941024385e-05,7.5,7.75
+Def. endoderm,Paraxial mesoderm,0.0026697092689573765,7.5,7.75
+Def. endoderm,Pharyngeal mesoderm,0.005110574886202812,7.5,7.75
+Def. endoderm,Rostral neurectoderm,0.0018287079874426126,7.5,7.75
+Def. endoderm,Somitic mesoderm,1.9125714970869012e-05,7.5,7.75
+Def. endoderm,Spinal cord,0.000118651645607315,7.5,7.75
+Def. endoderm,Stripped,3.37622914230451e-05,7.5,7.75
+Def. endoderm,Surface ectoderm,0.0028110663406550884,7.5,7.75
+Def. endoderm,Visceral endoderm,0.00800414104014635,7.5,7.75
+Epiblast,Allantois,9.525099449092522e-05,7.5,7.75
+Epiblast,Blood progenitors 1,1.736129888740834e-05,7.5,7.75
+Epiblast,Blood progenitors 2,1.6121719454531558e-05,7.5,7.75
+Epiblast,Caudal Mesoderm,0.00033536189584992826,7.5,7.75
+Epiblast,Caudal epiblast,0.0016229563625529408,7.5,7.75
+Epiblast,Caudal neurectoderm,0.0050354767590761185,7.5,7.75
+Epiblast,Def. endoderm,1.228540077136131e-05,7.5,7.75
+Epiblast,Erythroid1,3.17284902848769e-05,7.5,7.75
+Epiblast,ExE mesoderm,9.74193899310194e-05,7.5,7.75
+Epiblast,Gut,8.16343253973173e-06,7.5,7.75
+Epiblast,Haematoendothelial progenitors,0.00019032758427783847,7.5,7.75
+Epiblast,Intermediate mesoderm,0.00011436190106905997,7.5,7.75
+Epiblast,Mesenchyme,2.94603560178075e-05,7.5,7.75
+Epiblast,Mixed mesoderm,2.1337858925107867e-05,7.5,7.75
+Epiblast,Nascent mesoderm,0.00010755799303296953,7.5,7.75
+Epiblast,Notochord,0.00020447964197956026,7.5,7.75
+Epiblast,PGC,1.2610560588655062e-05,7.5,7.75
+Epiblast,Paraxial mesoderm,0.0009854207746684551,7.5,7.75
+Epiblast,Pharyngeal mesoderm,0.0006747758598066866,7.5,7.75
+Epiblast,Rostral neurectoderm,0.018714122474193573,7.5,7.75
+Epiblast,Somitic mesoderm,1.5405861631734297e-05,7.5,7.75
+Epiblast,Spinal cord,0.0027104285545647144,7.5,7.75
+Epiblast,Stripped,0.003772313939407468,7.5,7.75
+Epiblast,Surface ectoderm,0.006841471418738365,7.5,7.75
+Epiblast,Visceral endoderm,4.600015017786063e-07,7.5,7.75
+ExE mesoderm,Allantois,0.009837476536631584,7.5,7.75
+ExE mesoderm,Blood progenitors 1,5.235785465629306e-06,7.5,7.75
+ExE mesoderm,Blood progenitors 2,2.3411585061694495e-06,7.5,7.75
+ExE mesoderm,Caudal Mesoderm,3.561447374522686e-05,7.5,7.75
+ExE mesoderm,Caudal epiblast,2.666024556674529e-05,7.5,7.75
+ExE mesoderm,Caudal neurectoderm,5.021114702685736e-06,7.5,7.75
+ExE mesoderm,Def. endoderm,6.55686562822666e-07,7.5,7.75
+ExE mesoderm,Erythroid1,1.4757167718926212e-06,7.5,7.75
+ExE mesoderm,ExE mesoderm,0.021776452660560608,7.5,7.75
+ExE mesoderm,Gut,2.0064210559667117e-07,7.5,7.75
+ExE mesoderm,Haematoendothelial progenitors,0.0007497249753214419,7.5,7.75
+ExE mesoderm,Intermediate mesoderm,0.002142814453691244,7.5,7.75
+ExE mesoderm,Mesenchyme,0.004397875629365444,7.5,7.75
+ExE mesoderm,Mixed mesoderm,0.001454759854823351,7.5,7.75
+ExE mesoderm,Nascent mesoderm,9.574603609507903e-06,7.5,7.75
+ExE mesoderm,Notochord,4.598049144988181e-06,7.5,7.75
+ExE mesoderm,PGC,5.736833190894686e-05,7.5,7.75
+ExE mesoderm,Paraxial mesoderm,0.00022470433032140136,7.5,7.75
+ExE mesoderm,Pharyngeal mesoderm,0.0006086673820391297,7.5,7.75
+ExE mesoderm,Rostral neurectoderm,3.1543218028673436e-06,7.5,7.75
+ExE mesoderm,Somitic mesoderm,3.568228930816986e-05,7.5,7.75
+ExE mesoderm,Spinal cord,1.7478705558460206e-06,7.5,7.75
+ExE mesoderm,Stripped,1.2536923350126017e-05,7.5,7.75
+ExE mesoderm,Surface ectoderm,0.00027203455101698637,7.5,7.75
+ExE mesoderm,Visceral endoderm,2.8401504437169933e-07,7.5,7.75
+Gut,Allantois,0.0001403378410032019,7.5,7.75
+Gut,Blood progenitors 1,2.4726805349928327e-05,7.5,7.75
+Gut,Blood progenitors 2,2.016862708842382e-05,7.5,7.75
+Gut,Caudal Mesoderm,9.303061233367771e-05,7.5,7.75
+Gut,Caudal epiblast,0.00016655070066917688,7.5,7.75
+Gut,Caudal neurectoderm,8.920299296732992e-05,7.5,7.75
+Gut,Def. endoderm,0.002619409002363682,7.5,7.75
+Gut,Erythroid1,1.28513265735819e-05,7.5,7.75
+Gut,ExE mesoderm,0.0001501415390521288,7.5,7.75
+Gut,Gut,0.0276950653642416,7.5,7.75
+Gut,Haematoendothelial progenitors,0.0008928743773140013,7.5,7.75
+Gut,Intermediate mesoderm,5.8981269830837846e-05,7.5,7.75
+Gut,Mesenchyme,0.00040442339377477765,7.5,7.75
+Gut,Mixed mesoderm,3.4148262784583494e-05,7.5,7.75
+Gut,Nascent mesoderm,7.084088429110125e-05,7.5,7.75
+Gut,Notochord,0.0015281179221346974,7.5,7.75
+Gut,PGC,4.689019260695204e-05,7.5,7.75
+Gut,Paraxial mesoderm,0.0008545781020075083,7.5,7.75
+Gut,Pharyngeal mesoderm,0.0007400602335110307,7.5,7.75
+Gut,Rostral neurectoderm,0.00014592664956580848,7.5,7.75
+Gut,Somitic mesoderm,6.267165190365631e-06,7.5,7.75
+Gut,Spinal cord,5.925249934080057e-05,7.5,7.75
+Gut,Stripped,1.9578152205212973e-05,7.5,7.75
+Gut,Surface ectoderm,0.005517765413969755,7.5,7.75
+Gut,Visceral endoderm,0.00860881619155407,7.5,7.75
+Haematoendothelial progenitors,Allantois,0.004652169533073902,7.5,7.75
+Haematoendothelial progenitors,Blood progenitors 1,0.012063147500157356,7.5,7.75
+Haematoendothelial progenitors,Blood progenitors 2,0.006151777226477861,7.5,7.75
+Haematoendothelial progenitors,Caudal Mesoderm,3.2891643968468998e-06,7.5,7.75
+Haematoendothelial progenitors,Caudal epiblast,4.758904651680496e-06,7.5,7.75
+Haematoendothelial progenitors,Caudal neurectoderm,1.6318133475579089e-06,7.5,7.75
+Haematoendothelial progenitors,Def. endoderm,7.100026664375036e-07,7.5,7.75
+Haematoendothelial progenitors,Erythroid1,0.002351493574678898,7.5,7.75
+Haematoendothelial progenitors,ExE mesoderm,0.0015228928532451391,7.5,7.75
+Haematoendothelial progenitors,Gut,2.2858986881146848e-07,7.5,7.75
+Haematoendothelial progenitors,Haematoendothelial progenitors,0.02798812836408615,7.5,7.75
+Haematoendothelial progenitors,Intermediate mesoderm,8.079121471382678e-05,7.5,7.75
+Haematoendothelial progenitors,Mesenchyme,0.009983141906559467,7.5,7.75
+Haematoendothelial progenitors,Mixed mesoderm,0.00013633634080179036,7.5,7.75
+Haematoendothelial progenitors,Nascent mesoderm,5.9847766351595055e-06,7.5,7.75
+Haematoendothelial progenitors,Notochord,8.24326434667455e-06,7.5,7.75
+Haematoendothelial progenitors,PGC,4.42328662586533e-08,7.5,7.75
+Haematoendothelial progenitors,Paraxial mesoderm,0.0001717404811643064,7.5,7.75
+Haematoendothelial progenitors,Pharyngeal mesoderm,0.0014748554676771164,7.5,7.75
+Haematoendothelial progenitors,Rostral neurectoderm,1.5462977671631961e-06,7.5,7.75
+Haematoendothelial progenitors,Somitic mesoderm,5.499907729245024e-06,7.5,7.75
+Haematoendothelial progenitors,Spinal cord,1.1791260021709604e-06,7.5,7.75
+Haematoendothelial progenitors,Stripped,2.6792845346790273e-06,7.5,7.75
+Haematoendothelial progenitors,Surface ectoderm,5.363294985727407e-05,7.5,7.75
+Haematoendothelial progenitors,Visceral endoderm,7.564146358163271e-07,7.5,7.75
+Intermediate mesoderm,Allantois,0.0006791888736188412,7.5,7.75
+Intermediate mesoderm,Blood progenitors 1,1.61244088303647e-06,7.5,7.75
+Intermediate mesoderm,Blood progenitors 2,4.75392710086453e-07,7.5,7.75
+Intermediate mesoderm,Caudal Mesoderm,0.003291789209470153,7.5,7.75
+Intermediate mesoderm,Caudal epiblast,0.00022543132945429534,7.5,7.75
+Intermediate mesoderm,Caudal neurectoderm,2.9704162443522364e-05,7.5,7.75
+Intermediate mesoderm,Def. endoderm,5.201809472055174e-06,7.5,7.75
+Intermediate mesoderm,Erythroid1,4.2321829596403404e-07,7.5,7.75
+Intermediate mesoderm,ExE mesoderm,0.008515404537320137,7.5,7.75
+Intermediate mesoderm,Gut,9.618828471502638e-07,7.5,7.75
+Intermediate mesoderm,Haematoendothelial progenitors,0.00036494361120276153,7.5,7.75
+Intermediate mesoderm,Intermediate mesoderm,0.014942982234060764,7.5,7.75
+Intermediate mesoderm,Mesenchyme,0.0002559896092861891,7.5,7.75
+Intermediate mesoderm,Mixed mesoderm,0.0028035282157361507,7.5,7.75
+Intermediate mesoderm,Nascent mesoderm,2.741333628364373e-05,7.5,7.75
+Intermediate mesoderm,Notochord,9.422159928362817e-05,7.5,7.75
+Intermediate mesoderm,PGC,0.00032698619179427624,7.5,7.75
+Intermediate mesoderm,Paraxial mesoderm,0.00028376656700856984,7.5,7.75
+Intermediate mesoderm,Pharyngeal mesoderm,0.0002708893152885139,7.5,7.75
+Intermediate mesoderm,Rostral neurectoderm,1.1366410944901872e-05,7.5,7.75
+Intermediate mesoderm,Somitic mesoderm,0.01770622842013836,7.5,7.75
+Intermediate mesoderm,Spinal cord,1.0308005585102364e-05,7.5,7.75
+Intermediate mesoderm,Stripped,1.3005648725084029e-05,7.5,7.75
+Intermediate mesoderm,Surface ectoderm,0.00013773188402410597,7.5,7.75
+Intermediate mesoderm,Visceral endoderm,4.3527583670766035e-07,7.5,7.75
+Mesenchyme,Allantois,0.007398840971291065,7.5,7.75
+Mesenchyme,Blood progenitors 1,1.263718877453357e-05,7.5,7.75
+Mesenchyme,Blood progenitors 2,5.7088982430286705e-06,7.5,7.75
+Mesenchyme,Caudal Mesoderm,2.2060685296310112e-05,7.5,7.75
+Mesenchyme,Caudal epiblast,1.209792844747426e-05,7.5,7.75
+Mesenchyme,Caudal neurectoderm,2.7296293865219923e-06,7.5,7.75
+Mesenchyme,Def. endoderm,4.557849024422467e-05,7.5,7.75
+Mesenchyme,Erythroid1,3.286342462160974e-06,7.5,7.75
+Mesenchyme,ExE mesoderm,0.010839177295565605,7.5,7.75
+Mesenchyme,Gut,3.010248747159494e-06,7.5,7.75
+Mesenchyme,Haematoendothelial progenitors,0.0006793274078518152,7.5,7.75
+Mesenchyme,Intermediate mesoderm,0.0008733724243938923,7.5,7.75
+Mesenchyme,Mesenchyme,0.03619493171572685,7.5,7.75
+Mesenchyme,Mixed mesoderm,0.0004196835798211396,7.5,7.75
+Mesenchyme,Nascent mesoderm,6.62430829834193e-06,7.5,7.75
+Mesenchyme,Notochord,8.544966840418056e-05,7.5,7.75
+Mesenchyme,PGC,6.267876597121358e-05,7.5,7.75
+Mesenchyme,Paraxial mesoderm,0.0004066012625116855,7.5,7.75
+Mesenchyme,Pharyngeal mesoderm,0.0008793287561275065,7.5,7.75
+Mesenchyme,Rostral neurectoderm,6.362778094626265e-06,7.5,7.75
+Mesenchyme,Somitic mesoderm,3.324142744531855e-05,7.5,7.75
+Mesenchyme,Spinal cord,3.8910043258510996e-06,7.5,7.75
+Mesenchyme,Stripped,6.730850600433769e-06,7.5,7.75
+Mesenchyme,Surface ectoderm,0.00031420571031048894,7.5,7.75
+Mesenchyme,Visceral endoderm,1.576893737365026e-05,7.5,7.75
+Mixed mesoderm,Allantois,0.00016627085278742015,7.5,7.75
+Mixed mesoderm,Blood progenitors 1,2.025204958044924e-05,7.5,7.75
+Mixed mesoderm,Blood progenitors 2,9.891988156596199e-06,7.5,7.75
+Mixed mesoderm,Caudal Mesoderm,8.835730113787577e-05,7.5,7.75
+Mixed mesoderm,Caudal epiblast,6.608533294638619e-05,7.5,7.75
+Mixed mesoderm,Caudal neurectoderm,3.0512757803080603e-05,7.5,7.75
+Mixed mesoderm,Def. endoderm,3.336161626066314e-06,7.5,7.75
+Mixed mesoderm,Erythroid1,8.90142564458074e-06,7.5,7.75
+Mixed mesoderm,ExE mesoderm,0.0013765887124463916,7.5,7.75
+Mixed mesoderm,Gut,6.122683316789335e-06,7.5,7.75
+Mixed mesoderm,Haematoendothelial progenitors,0.002343510277569294,7.5,7.75
+Mixed mesoderm,Intermediate mesoderm,0.0035518850199878216,7.5,7.75
+Mixed mesoderm,Mesenchyme,0.00020092984777875245,7.5,7.75
+Mixed mesoderm,Mixed mesoderm,0.0002285381779074669,7.5,7.75
+Mixed mesoderm,Nascent mesoderm,0.0023328112438321114,7.5,7.75
+Mixed mesoderm,Notochord,0.0003632597508840263,7.5,7.75
+Mixed mesoderm,PGC,1.540972505154059e-07,7.5,7.75
+Mixed mesoderm,Paraxial mesoderm,0.018366631120443344,7.5,7.75
+Mixed mesoderm,Pharyngeal mesoderm,0.011771505698561668,7.5,7.75
+Mixed mesoderm,Rostral neurectoderm,4.590131720760837e-05,7.5,7.75
+Mixed mesoderm,Somitic mesoderm,0.00023237495042849332,7.5,7.75
+Mixed mesoderm,Spinal cord,3.1782557925907895e-05,7.5,7.75
+Mixed mesoderm,Stripped,5.4519456170964986e-05,7.5,7.75
+Mixed mesoderm,Surface ectoderm,0.0003662451636046171,7.5,7.75
+Mixed mesoderm,Visceral endoderm,2.912634613494447e-07,7.5,7.75
+Nascent mesoderm,Allantois,0.0001297098642680794,7.5,7.75
+Nascent mesoderm,Blood progenitors 1,2.7749794753617607e-05,7.5,7.75
+Nascent mesoderm,Blood progenitors 2,1.5049944522615988e-05,7.5,7.75
+Nascent mesoderm,Caudal Mesoderm,0.003432463388890028,7.5,7.75
+Nascent mesoderm,Caudal epiblast,0.0007142340182326734,7.5,7.75
+Nascent mesoderm,Caudal neurectoderm,0.00013968246639706194,7.5,7.75
+Nascent mesoderm,Def. endoderm,1.005357080430258e-05,7.5,7.75
+Nascent mesoderm,Erythroid1,3.081009708694182e-05,7.5,7.75
+Nascent mesoderm,ExE mesoderm,0.001068611047230661,7.5,7.75
+Nascent mesoderm,Gut,4.104274466953939e-06,7.5,7.75
+Nascent mesoderm,Haematoendothelial progenitors,0.0014620019355788827,7.5,7.75
+Nascent mesoderm,Intermediate mesoderm,0.008724448271095753,7.5,7.75
+Nascent mesoderm,Mesenchyme,0.0001774940174072981,7.5,7.75
+Nascent mesoderm,Mixed mesoderm,0.0007538724457845092,7.5,7.75
+Nascent mesoderm,Nascent mesoderm,0.0048012565821409225,7.5,7.75
+Nascent mesoderm,Notochord,0.000966993102338165,7.5,7.75
+Nascent mesoderm,PGC,2.0802317521884106e-06,7.5,7.75
+Nascent mesoderm,Paraxial mesoderm,0.007590252440422773,7.5,7.75
+Nascent mesoderm,Pharyngeal mesoderm,0.004462000913918018,7.5,7.75
+Nascent mesoderm,Rostral neurectoderm,0.0001298664865316823,7.5,7.75
+Nascent mesoderm,Somitic mesoderm,0.006198524497449398,7.5,7.75
+Nascent mesoderm,Spinal cord,0.0001423763605998829,7.5,7.75
+Nascent mesoderm,Stripped,0.0001635818916838616,7.5,7.75
+Nascent mesoderm,Surface ectoderm,0.0005186370690353215,7.5,7.75
+Nascent mesoderm,Visceral endoderm,8.154062243193039e-07,7.5,7.75
+Notochord,Allantois,1.3046202031012644e-13,7.5,7.75
+Notochord,Blood progenitors 1,1.2859411953791873e-14,7.5,7.75
+Notochord,Blood progenitors 2,9.976415462649825e-16,7.5,7.75
+Notochord,Caudal Mesoderm,1.173886959859871e-10,7.5,7.75
+Notochord,Caudal epiblast,3.6008522552588573e-11,7.5,7.75
+Notochord,Caudal neurectoderm,2.267596917529535e-12,7.5,7.75
+Notochord,Def. endoderm,2.1456149568166438e-07,7.5,7.75
+Notochord,Erythroid1,3.314626269854473e-15,7.5,7.75
+Notochord,ExE mesoderm,1.5779827531453572e-12,7.5,7.75
+Notochord,Gut,2.982670777029739e-09,7.5,7.75
+Notochord,Haematoendothelial progenitors,3.924912478359133e-11,7.5,7.75
+Notochord,Intermediate mesoderm,1.6194491581078552e-10,7.5,7.75
+Notochord,Mesenchyme,3.863132903847433e-12,7.5,7.75
+Notochord,Mixed mesoderm,1.6513427723765378e-13,7.5,7.75
+Notochord,Nascent mesoderm,1.0947258724525177e-12,7.5,7.75
+Notochord,Notochord,0.024999776855111122,7.5,7.75
+Notochord,PGC,4.882996090804781e-11,7.5,7.75
+Notochord,Paraxial mesoderm,6.273562919156817e-11,7.5,7.75
+Notochord,Pharyngeal mesoderm,4.552931816281802e-12,7.5,7.75
+Notochord,Rostral neurectoderm,5.848081133935645e-12,7.5,7.75
+Notochord,Somitic mesoderm,5.97035643146171e-10,7.5,7.75
+Notochord,Spinal cord,2.2347961155244622e-12,7.5,7.75
+Notochord,Stripped,2.9159810416984344e-12,7.5,7.75
+Notochord,Surface ectoderm,2.84497998076505e-11,7.5,7.75
+Notochord,Visceral endoderm,1.0524719984417175e-09,7.5,7.75
+PGC,Allantois,0.00020961175323463976,7.5,7.75
+PGC,Blood progenitors 1,1.2159347306806012e-06,7.5,7.75
+PGC,Blood progenitors 2,7.453091939169099e-07,7.5,7.75
+PGC,Caudal Mesoderm,0.0034056766889989376,7.5,7.75
+PGC,Caudal epiblast,0.000328646827256307,7.5,7.75
+PGC,Caudal neurectoderm,2.434185989841353e-05,7.5,7.75
+PGC,Def. endoderm,9.614107693778351e-05,7.5,7.75
+PGC,Erythroid1,1.43924637541204e-06,7.5,7.75
+PGC,ExE mesoderm,0.0016509988345205784,7.5,7.75
+PGC,Gut,2.258206222904846e-05,7.5,7.75
+PGC,Haematoendothelial progenitors,0.00011587846529437229,7.5,7.75
+PGC,Intermediate mesoderm,0.007042755372822285,7.5,7.75
+PGC,Mesenchyme,0.00011029541201423854,7.5,7.75
+PGC,Mixed mesoderm,0.0018233994487673044,7.5,7.75
+PGC,Nascent mesoderm,2.8666825528489426e-05,7.5,7.75
+PGC,Notochord,0.00011609938519541174,7.5,7.75
+PGC,PGC,0.006868166383355856,7.5,7.75
+PGC,Paraxial mesoderm,0.00015715646441094577,7.5,7.75
+PGC,Pharyngeal mesoderm,8.00765774329193e-05,7.5,7.75
+PGC,Rostral neurectoderm,1.731625889078714e-05,7.5,7.75
+PGC,Somitic mesoderm,0.002049807459115982,7.5,7.75
+PGC,Spinal cord,1.3958142517367378e-05,7.5,7.75
+PGC,Stripped,0.00015227276890072972,7.5,7.75
+PGC,Surface ectoderm,0.0006812214851379395,7.5,7.75
+PGC,Visceral endoderm,1.529773044239846e-06,7.5,7.75
+Paraxial mesoderm,Allantois,8.839356269163545e-06,7.5,7.75
+Paraxial mesoderm,Blood progenitors 1,1.1210631782887504e-06,7.5,7.75
+Paraxial mesoderm,Blood progenitors 2,2.775906011720508e-07,7.5,7.75
+Paraxial mesoderm,Caudal Mesoderm,7.4730851338244975e-06,7.5,7.75
+Paraxial mesoderm,Caudal epiblast,5.573995622398797e-06,7.5,7.75
+Paraxial mesoderm,Caudal neurectoderm,5.311597760737641e-06,7.5,7.75
+Paraxial mesoderm,Def. endoderm,9.854493328020908e-06,7.5,7.75
+Paraxial mesoderm,Erythroid1,2.816949233874766e-07,7.5,7.75
+Paraxial mesoderm,ExE mesoderm,1.9882249034708366e-05,7.5,7.75
+Paraxial mesoderm,Gut,2.6207678729406325e-06,7.5,7.75
+Paraxial mesoderm,Haematoendothelial progenitors,0.0009139959583990276,7.5,7.75
+Paraxial mesoderm,Intermediate mesoderm,0.00011042827827623114,7.5,7.75
+Paraxial mesoderm,Mesenchyme,2.5447663574595936e-05,7.5,7.75
+Paraxial mesoderm,Mixed mesoderm,3.1683885026723146e-06,7.5,7.75
+Paraxial mesoderm,Nascent mesoderm,6.0293878050288185e-05,7.5,7.75
+Paraxial mesoderm,Notochord,0.00026844171225093305,7.5,7.75
+Paraxial mesoderm,PGC,4.376374462822241e-08,7.5,7.75
+Paraxial mesoderm,Paraxial mesoderm,0.018549125641584396,7.5,7.75
+Paraxial mesoderm,Pharyngeal mesoderm,0.00483747199177742,7.5,7.75
+Paraxial mesoderm,Rostral neurectoderm,1.6366728232242167e-05,7.5,7.75
+Paraxial mesoderm,Somitic mesoderm,7.683719741180539e-05,7.5,7.75
+Paraxial mesoderm,Spinal cord,1.0547812053118832e-05,7.5,7.75
+Paraxial mesoderm,Stripped,4.314015313866548e-06,7.5,7.75
+Paraxial mesoderm,Surface ectoderm,6.224072421900928e-05,7.5,7.75
+Paraxial mesoderm,Visceral endoderm,3.944016313539578e-08,7.5,7.75
+Pharyngeal mesoderm,Allantois,0.00045149659854359925,7.5,7.75
+Pharyngeal mesoderm,Blood progenitors 1,4.621932021109387e-06,7.5,7.75
+Pharyngeal mesoderm,Blood progenitors 2,1.293341483687982e-06,7.5,7.75
+Pharyngeal mesoderm,Caudal Mesoderm,1.574375528434757e-05,7.5,7.75
+Pharyngeal mesoderm,Caudal epiblast,1.2825570593122393e-05,7.5,7.75
+Pharyngeal mesoderm,Caudal neurectoderm,4.903106400888646e-06,7.5,7.75
+Pharyngeal mesoderm,Def. endoderm,2.328182802102674e-07,7.5,7.75
+Pharyngeal mesoderm,Erythroid1,1.1573977189982543e-06,7.5,7.75
+Pharyngeal mesoderm,ExE mesoderm,0.000622966734226793,7.5,7.75
+Pharyngeal mesoderm,Gut,3.053767159144627e-07,7.5,7.75
+Pharyngeal mesoderm,Haematoendothelial progenitors,0.0008769684936851263,7.5,7.75
+Pharyngeal mesoderm,Intermediate mesoderm,0.0009163758950307965,7.5,7.75
+Pharyngeal mesoderm,Mesenchyme,0.002366310451179743,7.5,7.75
+Pharyngeal mesoderm,Mixed mesoderm,5.97364705754444e-05,7.5,7.75
+Pharyngeal mesoderm,Nascent mesoderm,7.498988270526752e-05,7.5,7.75
+Pharyngeal mesoderm,Notochord,4.633421485777944e-05,7.5,7.75
+Pharyngeal mesoderm,PGC,4.3878269906372225e-08,7.5,7.75
+Pharyngeal mesoderm,Paraxial mesoderm,0.0026931522879749537,7.5,7.75
+Pharyngeal mesoderm,Pharyngeal mesoderm,0.008336587809026241,7.5,7.75
+Pharyngeal mesoderm,Rostral neurectoderm,4.1234375203202944e-06,7.5,7.75
+Pharyngeal mesoderm,Somitic mesoderm,4.416791853145696e-05,7.5,7.75
+Pharyngeal mesoderm,Spinal cord,3.592694156395737e-06,7.5,7.75
+Pharyngeal mesoderm,Stripped,9.78849857347086e-06,7.5,7.75
+Pharyngeal mesoderm,Surface ectoderm,0.00011866784916492179,7.5,7.75
+Pharyngeal mesoderm,Visceral endoderm,2.7814178338303464e-07,7.5,7.75
+Primitive Streak,Allantois,1.1810398063971661e-05,7.5,7.75
+Primitive Streak,Blood progenitors 1,6.226667210285086e-06,7.5,7.75
+Primitive Streak,Blood progenitors 2,9.767858500708826e-06,7.5,7.75
+Primitive Streak,Caudal Mesoderm,0.007306346669793129,7.5,7.75
+Primitive Streak,Caudal epiblast,0.011647526174783707,7.5,7.75
+Primitive Streak,Caudal neurectoderm,0.012161261402070522,7.5,7.75
+Primitive Streak,Def. endoderm,7.4045419751200825e-06,7.5,7.75
+Primitive Streak,Erythroid1,1.4771562746318523e-05,7.5,7.75
+Primitive Streak,ExE mesoderm,6.56029733363539e-05,7.5,7.75
+Primitive Streak,Gut,4.005795744888019e-06,7.5,7.75
+Primitive Streak,Haematoendothelial progenitors,0.0002254262362839654,7.5,7.75
+Primitive Streak,Intermediate mesoderm,0.000526571529917419,7.5,7.75
+Primitive Streak,Mesenchyme,2.4842800485203043e-05,7.5,7.75
+Primitive Streak,Mixed mesoderm,7.433021528413519e-05,7.5,7.75
+Primitive Streak,Nascent mesoderm,0.0001238297118106857,7.5,7.75
+Primitive Streak,Notochord,0.0006336382357403636,7.5,7.75
+Primitive Streak,PGC,5.682708888343768e-06,7.5,7.75
+Primitive Streak,Paraxial mesoderm,0.0009252422605641186,7.5,7.75
+Primitive Streak,Pharyngeal mesoderm,0.00034335299278609455,7.5,7.75
+Primitive Streak,Rostral neurectoderm,0.00768287293612957,7.5,7.75
+Primitive Streak,Somitic mesoderm,0.00011501800327096134,7.5,7.75
+Primitive Streak,Spinal cord,0.0040894076228141785,7.5,7.75
+Primitive Streak,Stripped,0.0015654346207156777,7.5,7.75
+Primitive Streak,Surface ectoderm,0.002429307671263814,7.5,7.75
+Primitive Streak,Visceral endoderm,3.169562035054696e-07,7.5,7.75
+Rostral neurectoderm,Allantois,1.0733553608588409e-05,7.5,7.75
+Rostral neurectoderm,Blood progenitors 1,3.0263317967182957e-06,7.5,7.75
+Rostral neurectoderm,Blood progenitors 2,4.732994966616388e-06,7.5,7.75
+Rostral neurectoderm,Caudal Mesoderm,0.0045911590568721294,7.5,7.75
+Rostral neurectoderm,Caudal epiblast,0.006974377669394016,7.5,7.75
+Rostral neurectoderm,Caudal neurectoderm,0.014036365784704685,7.5,7.75
+Rostral neurectoderm,Def. endoderm,1.1720284419425298e-05,7.5,7.75
+Rostral neurectoderm,Erythroid1,9.959157978300937e-06,7.5,7.75
+Rostral neurectoderm,ExE mesoderm,4.6421038859989494e-05,7.5,7.75
+Rostral neurectoderm,Gut,8.528936632501427e-06,7.5,7.75
+Rostral neurectoderm,Haematoendothelial progenitors,0.00017470122838858515,7.5,7.75
+Rostral neurectoderm,Intermediate mesoderm,0.0003984506183769554,7.5,7.75
+Rostral neurectoderm,Mesenchyme,2.479025351931341e-05,7.5,7.75
+Rostral neurectoderm,Mixed mesoderm,3.371645289007574e-05,7.5,7.75
+Rostral neurectoderm,Nascent mesoderm,2.738727562245913e-05,7.5,7.75
+Rostral neurectoderm,Notochord,0.00013066032261122018,7.5,7.75
+Rostral neurectoderm,PGC,4.050422830914613e-06,7.5,7.75
+Rostral neurectoderm,Paraxial mesoderm,0.001380818779580295,7.5,7.75
+Rostral neurectoderm,Pharyngeal mesoderm,0.00038738359580747783,7.5,7.75
+Rostral neurectoderm,Rostral neurectoderm,0.012082639150321484,7.5,7.75
+Rostral neurectoderm,Somitic mesoderm,8.627284114481881e-05,7.5,7.75
+Rostral neurectoderm,Spinal cord,0.007756420876830816,7.5,7.75
+Rostral neurectoderm,Stripped,0.0028383976314216852,7.5,7.75
+Rostral neurectoderm,Surface ectoderm,0.007310234010219574,7.5,7.75
+Rostral neurectoderm,Visceral endoderm,3.7853422441003204e-07,7.5,7.75
+Somitic mesoderm,Allantois,5.79012123580469e-07,7.5,7.75
+Somitic mesoderm,Blood progenitors 1,3.668342785090317e-08,7.5,7.75
+Somitic mesoderm,Blood progenitors 2,5.173892869692054e-09,7.5,7.75
+Somitic mesoderm,Caudal Mesoderm,0.0006770838517695665,7.5,7.75
+Somitic mesoderm,Caudal epiblast,3.518931407597847e-05,7.5,7.75
+Somitic mesoderm,Caudal neurectoderm,1.672415351094969e-06,7.5,7.75
+Somitic mesoderm,Def. endoderm,2.6217508093395736e-06,7.5,7.75
+Somitic mesoderm,Erythroid1,9.183747096130901e-09,7.5,7.75
+Somitic mesoderm,ExE mesoderm,1.1166257536388002e-05,7.5,7.75
+Somitic mesoderm,Gut,9.113310284192266e-07,7.5,7.75
+Somitic mesoderm,Haematoendothelial progenitors,1.5764446288812906e-05,7.5,7.75
+Somitic mesoderm,Intermediate mesoderm,0.0017044791020452976,7.5,7.75
+Somitic mesoderm,Mesenchyme,2.1035573354311055e-06,7.5,7.75
+Somitic mesoderm,Mixed mesoderm,9.91998786048498e-06,7.5,7.75
+Somitic mesoderm,Nascent mesoderm,4.951338269165717e-06,7.5,7.75
+Somitic mesoderm,Notochord,0.0033618868328630924,7.5,7.75
+Somitic mesoderm,PGC,9.895202879306453e-08,7.5,7.75
+Somitic mesoderm,Paraxial mesoderm,6.347198359435424e-05,7.5,7.75
+Somitic mesoderm,Pharyngeal mesoderm,2.7927801056648605e-05,7.5,7.75
+Somitic mesoderm,Rostral neurectoderm,1.2824358464058605e-06,7.5,7.75
+Somitic mesoderm,Somitic mesoderm,0.0107343178242445,7.5,7.75
+Somitic mesoderm,Spinal cord,4.540345798886847e-06,7.5,7.75
+Somitic mesoderm,Stripped,3.2949267279036576e-06,7.5,7.75
+Somitic mesoderm,Surface ectoderm,3.3299152164545376e-06,7.5,7.75
+Somitic mesoderm,Visceral endoderm,2.080123984171678e-08,7.5,7.75
+Stripped,Allantois,7.312723028007895e-05,7.5,7.75
+Stripped,Blood progenitors 1,6.587273446712061e-07,7.5,7.75
+Stripped,Blood progenitors 2,1.0161218000348526e-07,7.5,7.75
+Stripped,Caudal Mesoderm,1.3469328905557632e-06,7.5,7.75
+Stripped,Caudal epiblast,4.772282409248874e-06,7.5,7.75
+Stripped,Caudal neurectoderm,0.005667726043611765,7.5,7.75
+Stripped,Def. endoderm,6.65467232465744e-05,7.5,7.75
+Stripped,Erythroid1,1.5791808039011812e-07,7.5,7.75
+Stripped,ExE mesoderm,1.6030548067647032e-05,7.5,7.75
+Stripped,Gut,8.844283911457751e-06,7.5,7.75
+Stripped,Haematoendothelial progenitors,8.609948963567149e-06,7.5,7.75
+Stripped,Intermediate mesoderm,7.517122071476479e-07,7.5,7.75
+Stripped,Mesenchyme,0.009942431002855301,7.5,7.75
+Stripped,Mixed mesoderm,1.1532141286352271e-07,7.5,7.75
+Stripped,Nascent mesoderm,4.0551302760150065e-08,7.5,7.75
+Stripped,Notochord,3.880476015183376e-06,7.5,7.75
+Stripped,PGC,9.176429011859e-05,7.5,7.75
+Stripped,Paraxial mesoderm,7.75774969952181e-06,7.5,7.75
+Stripped,Pharyngeal mesoderm,6.208776994753862e-06,7.5,7.75
+Stripped,Rostral neurectoderm,1.3598139958048705e-05,7.5,7.75
+Stripped,Somitic mesoderm,4.2513212861194916e-07,7.5,7.75
+Stripped,Spinal cord,7.855788680899423e-06,7.5,7.75
+Stripped,Stripped,0.02044176124036312,7.5,7.75
+Stripped,Surface ectoderm,0.00529692554846406,7.5,7.75
+Stripped,Visceral endoderm,5.271070676826639e-06,7.5,7.75
+Surface ectoderm,Allantois,0.00022861963952891529,7.5,7.75
+Surface ectoderm,Blood progenitors 1,3.4101274195563747e-06,7.5,7.75
+Surface ectoderm,Blood progenitors 2,5.079737547930563e-06,7.5,7.75
+Surface ectoderm,Caudal Mesoderm,0.00048266202793456614,7.5,7.75
+Surface ectoderm,Caudal epiblast,0.0011492121266201138,7.5,7.75
+Surface ectoderm,Caudal neurectoderm,0.0007966737030074,7.5,7.75
+Surface ectoderm,Def. endoderm,0.00010388944065198302,7.5,7.75
+Surface ectoderm,Erythroid1,8.899126441974659e-06,7.5,7.75
+Surface ectoderm,ExE mesoderm,0.0017048788722604513,7.5,7.75
+Surface ectoderm,Gut,2.360828875680454e-05,7.5,7.75
+Surface ectoderm,Haematoendothelial progenitors,0.00029359685140661895,7.5,7.75
+Surface ectoderm,Intermediate mesoderm,0.0005265361396595836,7.5,7.75
+Surface ectoderm,Mesenchyme,0.001590828993357718,7.5,7.75
+Surface ectoderm,Mixed mesoderm,0.000273813318926841,7.5,7.75
+Surface ectoderm,Nascent mesoderm,8.027623152884189e-06,7.5,7.75
+Surface ectoderm,Notochord,0.00016312186198774725,7.5,7.75
+Surface ectoderm,PGC,0.0008318980108015239,7.5,7.75
+Surface ectoderm,Paraxial mesoderm,0.0005549006746150553,7.5,7.75
+Surface ectoderm,Pharyngeal mesoderm,0.000797330285422504,7.5,7.75
+Surface ectoderm,Rostral neurectoderm,0.000995685113593936,7.5,7.75
+Surface ectoderm,Somitic mesoderm,3.969940735260025e-05,7.5,7.75
+Surface ectoderm,Spinal cord,0.0011310906847938895,7.5,7.75
+Surface ectoderm,Stripped,0.0003157327009830624,7.5,7.75
+Surface ectoderm,Surface ectoderm,0.021272970363497734,7.5,7.75
+Surface ectoderm,Visceral endoderm,3.117108281003311e-05,7.5,7.75

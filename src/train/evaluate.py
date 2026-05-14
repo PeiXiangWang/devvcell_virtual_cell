@@ -18,7 +18,7 @@ from src.utils.config import ensure_dir, load_config, write_text
 
 CORE = ["sinkhorn", "mmd_rbf", "energy", "celltype_composition_rmse"]
 OT_REFERENCE = "M0b_ot_interpolation"
-PRIMARY_AGENT = "M9_full_memory"
+PRIMARY_AGENT = "M5_ot_swarm"
 
 
 def _best_model(metrics: pd.DataFrame) -> str:
@@ -269,7 +269,7 @@ def _teacher_backend_status(model_cfg: dict, table_dir: Path, report_dir: Path) 
                 f"- native moscot status: {native_status}",
                 "- clean native stack: `reproducibility/native_moscot_requirements.txt`",
                 "- Native moscot/WOT teacher claims are allowed only when `native_teacher_available=True`.",
-                "- Strong biological claims remain forbidden without external, lineage, perturbation or wet-lab validation.",
+                "- Strong biological claims remain forbidden without external, lineage, perturbation or experimental validation.",
                 "- Nature-level claims are forbidden for the current prototype.",
                 "",
             ]
@@ -417,7 +417,7 @@ def _write_reports(
         "- Current results are computational hypotheses.",
         "- Some laws are encoded control-law recoveries and must not be written as independent biological discoveries.",
         "- Native moscot teacher extraction removes the toy-fallback blocker for teacher construction, but not the need for external validation.",
-        "- No wet-lab validation or causal mechanism is claimed.",
+        "- No experimental validation or causal mechanism is claimed.",
         "",
     ]
     out_path = "manuscript/final_retained_results_and_methods.quick_fixture.md" if quick_fixture else "manuscript/final_retained_results_and_methods.md"

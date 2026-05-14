@@ -1,6 +1,7 @@
 # Output Integrity Audit
 
-- quick fixture outputs are isolated under reports/tables/figures/quick_fixture.
-- main teacher backend is native_moscot; quick fixture may still use toy_sinkhorn_fallback for smoke tests.
-- native sensitivity outputs are kept in processed/native_sensitivity and summarized into tables/reports.
-- fallback and native outputs are labelled separately.
+- Main internal outputs remain under top-level reports/tables.
+- External E1 outputs are under `processed/external`, `tables/external*`, `reports/external*`, and `figures/external`.
+- External generated h5ad/couplings are not committed because processed data are gitignored.
+- Registry-only fallback candidates are not described as validation results.
+- Native and fallback teacher backends are reported explicitly.

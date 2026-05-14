@@ -2,7 +2,7 @@
 
 `M0b_ot_interpolation` is an oracle-like OT teacher/reference interpolation. The finite-agent model is evaluated by teacher fidelity, emergent-law robustness and mechanistic usefulness, not by beating the OT reference.
 
-- Primary `M9_full_memory` tier: acceptable; relative_sinkhorn=1.204; relative_mmd=1.623; composition=0.0217.
+- Primary `M5_ot_swarm` tier: acceptable; relative_sinkhorn=1.132; relative_mmd=1.561; composition=0.0040.
 - Negative controls are marked as expected-to-fail controls and cannot pass as normal evaluated models.
 
 ## Metrics

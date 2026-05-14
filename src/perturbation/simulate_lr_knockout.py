@@ -55,7 +55,7 @@ def main() -> None:
     text = [
         "# LR Knockout Simulation",
         "",
-        "This is an exploratory control-layer perturbation report. It is not wet-lab validation.",
+        "This is an exploratory control-layer perturbation report. It is not experimental validation.",
         "",
         frame.to_markdown(index=False),
         "",

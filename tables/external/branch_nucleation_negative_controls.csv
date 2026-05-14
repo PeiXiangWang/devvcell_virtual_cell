@@ -1,0 +1,8 @@
+control,effect_size,effect_ci_low,effect_ci_high,seed_stability_pass,gate_tier,reason,permutation_p,permutation_q,variant
+shuffled_temporal_order,0.06414678589304613,0.04548731428325416,0.08304354736998308,False,fail,"permutation/shuffle null control, expected not to reproduce retained branch signature",0.8,0.9333333333333335,
+shuffled_velocity,-0.635999445170575,-0.635999445170575,-0.635999445170575,False,fail,"permutation/shuffle null control, expected not to reproduce retained branch signature",0.6,0.8400000000000001,
+shuffled_lineage_labels,0.031105903394558602,0.008962131946552642,0.053622760407349035,False,fail,"permutation/shuffle null control, expected not to reproduce retained branch signature",1.0,1.0,
+shuffled_fate_probabilities,-0.6592900569996725,-0.6612737741770097,-0.6567235504105416,False,fail,"permutation/shuffle null control, expected not to reproduce retained branch signature",0.4,0.7000000000000001,
+no_swarm_model,-1.120758271510552,-1.1558867823565708,-1.0909476601682073,True,weak,architectural negative/control comparator,0.2,0.46666666666666673,M2_ot_teacher_force
+no_teacher_model,-1.088572803005921,-1.134834390986678,-1.0439391657570825,True,weak,architectural negative/control comparator,0.2,0.46666666666666673,M1_intrinsic_neural
+random_teacher_velocity,1.0148943290861023,0.7184735705069941,1.305825229053756,True,weak,architectural negative/control comparator,0.2,0.46666666666666673,M10_shuffled_time_ot

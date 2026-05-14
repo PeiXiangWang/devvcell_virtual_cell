@@ -1,0 +1,32 @@
+teacher_fidelity:
+  strong:
+    relative_sinkhorn_max: 1.1
+    relative_mmd_max: 1.5
+    composition_rmse_max: 0.005
+    manifold_escape_rate_max: 0.08
+  acceptable:
+    relative_sinkhorn_max: 1.25
+    relative_mmd_max: 2.5
+    composition_rmse_max: 0.025
+    manifold_escape_rate_max: 0.2
+  weak:
+    relative_sinkhorn_max: 1.5
+    relative_mmd_max: 4.0
+    composition_rmse_max: 0.05
+    manifold_escape_rate_max: 0.35
+  fail_above_weak: true
+emergent_law:
+  min_seed_count: 5
+  quick_min_seed_count: 2
+  min_effect_size_for_acceptable: 0.01
+  min_effect_size_for_strong: 0.03
+  max_permutation_q_for_acceptable: 0.1
+  max_permutation_q_for_strong: 0.05
+  require_negative_control_for_strong: true
+  require_rollout_based_evidence_for_strong: true
+  permutation_repeats: 100
+  bootstrap_repeats: 500
+output:
+  tables_dir: tables/external
+  reports_dir: reports/external
+  figures_dir: figures/external

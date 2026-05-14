@@ -1,6 +1,6 @@
 # LR Knockout Simulation
 
-This is an exploratory control-layer perturbation report. It is not wet-lab validation.
+This is an exploratory control-layer perturbation report. It is not experimental validation.
 
 | ligand   | receptor   |   mean_cci_score |   predicted_entropy_change |   predicted_growth_change |   baseline_ot_entropy | status                |
 |:---------|:-----------|-----------------:|---------------------------:|--------------------------:|----------------------:|:----------------------|

@@ -1,0 +1,29 @@
+# Branch Nucleation Mechanism Summary
+
+- branch_nucleation_tier: strong
+- best_interpretation: transient_condensation_before_divergence
+- primary_model_hint: M5_ot_swarm
+- unsupported modules to exclude from main claim: birth/death, CCI, memory.
+- architectural controls can show related condensation signals, so the current evidence supports an order-parameter signature, not proof that swarm or teacher terms are necessary by themselves.
+- Negative controls include temporal, velocity, lineage, fate, no-swarm, no-teacher and random-teacher controls.
+
+## Model Comparison
+
+| variant                               | branch_nucleation_tier   |   lineage_separation_effect |   effect_ci_low |   effect_ci_high |   permutation_p |   permutation_q | seed_stability_pass   |   sign_consistency |   n_seed_windows |   local_velocity_alignment_A_effect |   branch_cohesion_C_effect |   lineage_separation_S_effect |   fate_entropy_H_effect |   branch_imbalance_B_effect |   local_density_mean_effect |   n_agents_effect | best_interpretation                      |
+|:--------------------------------------|:-------------------------|----------------------------:|----------------:|-----------------:|----------------:|----------------:|:----------------------|-------------------:|-----------------:|------------------------------------:|---------------------------:|------------------------------:|------------------------:|----------------------------:|----------------------------:|------------------:|:-----------------------------------------|
+| M5_ot_swarm                           | strong                   |                   -1.12489  |       -1.1593   |        -1.09214  |      0.00990099 |      0.00990099 | True                  |                  1 |                5 |                           0.0195907 |                 0.00198555 |                     -1.12489  |               0         |                   0         |                   0.0126772 |               0   | transient_condensation_before_divergence |
+| M7_ot_swarm_birth_death_diffusion     | strong                   |                   -0.462958 |       -0.67038  |        -0.244143 |      0.00990099 |      0.00990099 | True                  |                  1 |                5 |                          -0.0237617 |                 0.0427506  |                     -0.462958 |               0.0195787 |                   0.0725124 |                   0.0129022 |            -122.8 | unsupported                              |
+| M8_ot_swarm_birth_death_diffusion_cci | strong                   |                   -0.463157 |       -0.670567 |        -0.244336 |      0.00990099 |      0.00990099 | True                  |                  1 |                5 |                          -0.023421  |                 0.0428264  |                     -0.463157 |               0.0195787 |                   0.0725124 |                   0.0126544 |            -122.8 | unsupported                              |
+| M9_full_memory                        | strong                   |                   -0.492997 |       -0.69845  |        -0.275667 |      0.00990099 |      0.00990099 | True                  |                  1 |                5 |                          -0.0217552 |                 0.0430745  |                     -0.492997 |               0.0195787 |                   0.0725124 |                   0.0128991 |            -122.8 | unsupported                              |
+
+## Negative Controls
+
+| control                     |   effect_size |   effect_ci_low |   effect_ci_high | seed_stability_pass   | gate_tier   | reason                                                                                |   permutation_p |   permutation_q | variant              |
+|:----------------------------|--------------:|----------------:|-----------------:|:----------------------|:------------|:--------------------------------------------------------------------------------------|----------------:|----------------:|:---------------------|
+| shuffled_temporal_order     |     0.0641468 |      0.0454873  |        0.0830435 | False                 | fail        | permutation/shuffle null control, expected not to reproduce retained branch signature |             0.8 |        0.933333 | nan                  |
+| shuffled_velocity           |    -0.635999  |     -0.635999   |       -0.635999  | False                 | fail        | permutation/shuffle null control, expected not to reproduce retained branch signature |             0.6 |        0.84     | nan                  |
+| shuffled_lineage_labels     |     0.0311059 |      0.00896213 |        0.0536228 | False                 | fail        | permutation/shuffle null control, expected not to reproduce retained branch signature |             1   |        1        | nan                  |
+| shuffled_fate_probabilities |    -0.65929   |     -0.661274   |       -0.656724  | False                 | fail        | permutation/shuffle null control, expected not to reproduce retained branch signature |             0.4 |        0.7      | nan                  |
+| no_swarm_model              |    -1.12076   |     -1.15589    |       -1.09095   | True                  | weak        | architectural negative/control comparator                                             |             0.2 |        0.466667 | M2_ot_teacher_force  |
+| no_teacher_model            |    -1.08857   |     -1.13483    |       -1.04394   | True                  | weak        | architectural negative/control comparator                                             |             0.2 |        0.466667 | M1_intrinsic_neural  |
+| random_teacher_velocity     |     1.01489   |      0.718474   |        1.30583   | True                  | weak        | architectural negative/control comparator                                             |             0.2 |        0.466667 | M10_shuffled_time_ot |

@@ -1,0 +1,5 @@
+variant,modules,lineage_separation_effect,delta_vs_M5,unsupported_module_burden,interpretation
+M5_ot_swarm,swarm,-1.1248865582615797,0.0,0,swarm_sufficient
+M7_ot_swarm_birth_death_diffusion,swarm+birth_death+diffusion,-0.4629577421252197,0.66192881613636,1,added_modules_not_required_for_main_claim
+M8_ot_swarm_birth_death_diffusion_cci,swarm+birth_death+diffusion+cci,-0.4631569434015777,0.661729614860002,2,added_modules_not_required_for_main_claim
+M9_full_memory,swarm+birth_death+diffusion+cci+memory,-0.49299653689392287,0.6318900213676568,3,added_modules_not_required_for_main_claim

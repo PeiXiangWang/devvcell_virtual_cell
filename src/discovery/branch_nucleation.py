@@ -371,7 +371,7 @@ def run(config: str = "configs/train.yaml", quick_fixture: bool = False):
             f"- best_interpretation: {best_interpretation}",
             f"- primary_model_hint: {primary_hint}",
             "- unsupported modules to exclude from main claim: birth/death, CCI, memory.",
-            "- architectural controls can show related condensation signals, so the current evidence supports an order-parameter signature, not a causal proof that swarm or teacher terms are necessary.",
+            "- architectural controls can show related condensation signals, so the current evidence supports an order-parameter signature, not proof that swarm or teacher terms are necessary by themselves.",
             "- Negative controls include temporal, velocity, lineage, fate, no-swarm, no-teacher and random-teacher controls.",
             "",
             "## Model Comparison",
