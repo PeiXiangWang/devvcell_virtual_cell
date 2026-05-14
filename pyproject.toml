@@ -18,6 +18,7 @@ dependencies = [
   "pyyaml",
   "scikit-learn",
   "scipy",
+  "streamlit",
   "torch"
 ]
 
