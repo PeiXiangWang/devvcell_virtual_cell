@@ -1,7 +1,7 @@
 # Output Integrity Audit
 
-- Main outputs are written to tables/reports/manuscript and figures/main.
-- Quick fixture outputs remain isolated under quick_fixture paths by the existing run_all quick mode.
-- Native outputs and fallback outputs are labelled separately; E1 and internal main teacher backends are native_moscot.
-- L1 and E2 proxy analyses are not labelled as native teacher successes.
-- Bash/WSL validation is not available in this Windows environment; PowerShell quick fixture is the executed reproducibility path.
+- L2 raw and processed h5ad files are under ignored data/processed paths.
+- Committed artifacts are code, reports and CSV summaries.
+- E1 and internal teacher backends remain labelled separately from L2 results.
+- L2 reports the actual validation tier and does not promote failed/weak results.
+- Bash/WSL quick-fixture validation was attempted but unavailable in this Windows environment; the PowerShell quick-fixture path passed.

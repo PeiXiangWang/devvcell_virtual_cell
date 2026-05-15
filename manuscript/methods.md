@@ -1,7 +1,7 @@
 # Methods
 
-The internal teacher was built with native moscot TemporalProblem transport extraction on downsampled time points. Sensitivity varied cells per time point and epsilon. The primary finite-agent analysis uses M5_ot_swarm, selected by teacher fidelity, branch-nucleation evidence and unsupported-module burden.
+Branch nucleation receives internal native-teacher support and related mouse gastrulation external time-series support, but clone-aware validation remains unsupported in the tested datasets.
 
-External E1 used local MouseGastrulationData WT chimera sample 1 components converted to AnnData with standardized time and lineage fields. External L1 used scLTdb Kim_2020_CellReports.h5ad for a clone-aware association test. E2 used local GSE212050 components as a weak cross-system feasibility analysis.
+L2 selected dataset: Biddy_2018_Nature / GSE99915 CellTag reprogramming. Usable clones: 214. Condensation-to-clone-splitting Spearman: -0.3525. L2 tier: fail.
 
-Branch-nucleation analysis computes local velocity alignment, branch cohesion, lineage separation, fate entropy, branch imbalance, local density and population size across rollout or time windows. The retained interpretation requires a negative lineage-separation effect in the branch event window with compatible alignment dynamics and failed shuffle controls.
+Primary model remains M5_ot_swarm. Diffusion remains an encoded control-law recovery. Birth/death, memory and CCI remain unsupported and excluded from the main claim. The manuscript does not claim OT replacement, experimental confirmation or biological causality.

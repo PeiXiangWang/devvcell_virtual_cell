@@ -1,10 +1,8 @@
 # Scientific Gap Audit
 
-The strongest retained claim is a native-teacher and E1-supported computational branch-nucleation order-parameter signature. The current evidence is not clone-resolved and not experimentally established.
+Branch nucleation receives internal native-teacher support and related mouse gastrulation external time-series support, but clone-aware validation remains unsupported in the tested datasets.
 
-Major gaps:
-
-- L1 Kim clone-aware analysis did not support condensation exposure as a predictor of clone branch splitting.
-- Swarm necessity is not established because no-swarm/no-teacher controls still show condensation-like shifts.
-- E2 cross-system evidence is weak/proxy only.
-- Birth/death, memory and CCI remain unsupported.
+- E1 remains acceptable time-series support.
+- L2 clone-aware tier: fail; usable clones: 214; effect: -0.3525.
+- Swarm-specific necessity remains unresolved.
+- Diffusion is encoded recovery; birth/death, memory and CCI remain unsupported.

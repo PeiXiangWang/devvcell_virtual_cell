@@ -1,0 +1,2 @@
+dataset_id,validation_tier,teacher_backend,clone_metadata_loaded,usable_clone_count,condensation_spearman,condensation_spearman_p,condensation_pearson,condensation_pearson_p,condensation_permutation_p,negative_controls_pass,sensitivity_stable,condensation_predicts_clone_branch_splitting,interpretation
+L2_biddy_2018_nature,fail,fallback_sinkhorn,True,214,-0.3524960852113655,1.1746991113505566e-07,-0.351000863229652,1.3394080907794634e-07,0.000999000999000999,True,True,False,Clone-aware validation does not support the hypothesis in Biddy_2018 under this operationalization.

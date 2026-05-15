@@ -1,0 +1,5 @@
+claim,tier,l2_tier,allowed_language,usable_clones,effect
+branch nucleation signature,strong_internal_acceptable_E1,fail,Retained computational hypothesis with internal native and E1 time-series support.,,
+clone-level branch splitting association,fail,,L2 does not support the clone-level association under the current operationalization.,214.0,-0.3524960852113655
+diffusion,encoded_recovery,,Encoded control-law recovery only.,,
+birth/death memory CCI,unsupported,,Excluded from main conclusions.,,

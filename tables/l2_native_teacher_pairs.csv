@@ -1,0 +1,6 @@
+method_label,source_time,target_time,file,n_source,n_target,solver,teacher_backend,transport_cost,mean_entropy,mean_growth,runtime_seconds,native_moscot_available,native_moscot_used,fallback_used,native_max_cells_per_time,epsilon
+teacher,6.0,9.0,processed\external_l2\ot_couplings\teacher_t6_to_t9.npz,87,120,numpy_sinkhorn,toy_sinkhorn_fallback,0.6152513052693838,0.607323169708252,6.2066874504089355,0.09936230001039803,False,False,True,120,0.08
+teacher,9.0,12.0,processed\external_l2\ot_couplings\teacher_t9_to_t12.npz,120,120,numpy_sinkhorn,toy_sinkhorn_fallback,0.5873997912082256,0.596860945224762,1.1307189464569092,0.09936230001039803,False,False,True,120,0.08
+teacher,12.0,15.0,processed\external_l2\ot_couplings\teacher_t12_to_t15.npz,120,120,numpy_sinkhorn,toy_sinkhorn_fallback,0.5401611228976847,0.5766075253486633,0.9965568780899048,0.09936230001039803,False,False,True,120,0.08
+teacher,15.0,21.0,processed\external_l2\ot_couplings\teacher_t15_to_t21.npz,120,120,numpy_sinkhorn,toy_sinkhorn_fallback,0.8632399081313216,0.8211290836334229,1.6750260591506958,0.09936230001039803,False,False,True,120,0.08
+teacher,21.0,28.0,processed\external_l2\ot_couplings\teacher_t21_to_t28.npz,120,120,numpy_sinkhorn,toy_sinkhorn_fallback,0.6451122175645669,0.6668779850006104,1.597344160079956,0.09936230001039803,False,False,True,120,0.08
