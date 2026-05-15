@@ -1,0 +1,15 @@
+model_or_control,role,evidence_source,status,branch_event_detected,separation_effect,alignment_effect,normalized_condensation_score,seed_stability,teacher_fidelity,composition_drift,negative_control_pass
+M0b_ot_interpolation,reference,not_rollout_control,not_executed,False,,,,False,strong,,False
+M1_intrinsic_neural,control,available_from_no_teacher_model,approximated_existing_control,True,-0.4754919124416872,,0.4754919124416872,True,weak,,False
+M2_ot_teacher_force,control,available_from_no_swarm_model,approximated_existing_control,True,-0.2756224609669161,,0.2756224609669161,True,weak,,False
+M5_ot_swarm,candidate,available,executed,True,-0.2658223551991732,0.0369052052497863,0.2658223551991732,True,acceptable,,False
+M5_no_alignment,module_drop,not_executed_blocker,not_executed,False,,,,False,,,False
+M5_no_cohesion,module_drop,not_executed_blocker,not_executed,False,,,,False,,,False
+M5_no_separation,module_drop,not_executed_blocker,not_executed,False,,,,False,,,False
+M5_random_neighbor_graph,control,not_executed_blocker,not_executed,False,,,,False,,,False
+M5_shuffled_velocity,control,available_as_shuffled_velocity,executed_control,True,-0.2262485633427572,,0.2262485633427572,False,,,False
+M5_shuffled_time,control,available_as_shuffled_temporal_order,executed_control,False,0.0251302056111383,,-0.0251302056111383,False,,,True
+M5_shuffled_fate,control,available_as_shuffled_fate_probabilities,executed_control,True,-0.2302239688840617,,0.2302239688840617,False,,,False
+M5_random_teacher_velocity,control,available_as_random_teacher_velocity,executed_control,False,0.0656659720441105,,-0.0656659720441105,True,,,True
+M5_same_teacher_no_swarm,control,approximated_by_M2_ot_teacher_force,approximated_existing_control,True,-0.2756224609669161,,0.2756224609669161,True,,,False
+M5_swarm_only_no_teacher,control,approximated_by_M1_intrinsic_neural,approximated_existing_control,True,-0.4754919124416872,,0.4754919124416872,True,,,False

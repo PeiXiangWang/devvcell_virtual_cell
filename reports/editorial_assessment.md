@@ -1,18 +1,5 @@
 # Editorial Assessment
 
-Current evidence level: discovery-hardened computational research prototype.
+SwarmLineage-OT v1.0 is a substantially stronger computational evidence package than the toy fallback stage because native moscot teacher extraction, sensitivity analysis and E1 external time-series support are available. It is still not ready for high-impact biological claims because clone-resolved support, prospective experimental testing and swarm-specific necessity remain unresolved.
 
-- teacher_fidelity_tier: acceptable
-- emergent_law_tier: weak
-- mechanistic_usefulness_tier: weak
-- Not ready for high-impact submission without external teacher validation and biological validation.
-
-## External Experiment E1
-
-Branch nucleation, interpreted as transient condensation-before-divergence, is supported internally under native moscot teacher sensitivity and receives external time-series support in MouseGastrulationData WT chimera sample 1. This remains computational evidence, not experimental validation.
-
-- selected external dataset: MouseGastrulationData WT chimera sample 1.
-- external teacher backend: native_moscot.
-- external validation tier: acceptable.
-- no experimental lineage tracing or experimental validation is claimed; causality and high-impact readiness are not established.
-- diffusion remains encoded control-law recovery; birth/death, memory and CCI remain unsupported.
+The manuscript should be framed as a computational method and hypothesis generator centered on one retained mechanism hypothesis, not as a validated biological mechanism paper.

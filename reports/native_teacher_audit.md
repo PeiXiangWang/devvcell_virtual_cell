@@ -1,9 +1,9 @@
 # Native Teacher Audit
 
-| teacher_backend   | native_teacher_available   | external_teacher_validation   | native_teacher_claims_allowed   | strong_biological_claims_allowed   | nature_level_claim_allowed   |   native_temporalproblem_pairs | native_requirements_file                       | status                                                       |
-|:------------------|:---------------------------|:------------------------------|:--------------------------------|:-----------------------------------|:-----------------------------|-------------------------------:|:-----------------------------------------------|:-------------------------------------------------------------|
-| native_moscot     | True                       | False                         | True                            | False                              | False                        |                              6 | reproducibility/native_moscot_requirements.txt | native teacher available; external validation still required |
-
-- native pair metrics rows: 72
-- native downsample limitation: current main native teacher uses 120 cells/time; sensitivity evaluates larger settings where successful.
-- holdout gap bridge edges must be labelled and interpreted separately from adjacent observed edges.
+- Internal teacher_backend: native_moscot.
+- Native sensitivity settings completed: 12/12.
+- Downsample settings: 120, 250, 500 and 650 cells per time.
+- E1 external teacher_backend: native_moscot.
+- L1 teacher_backend: not_run_clone_proxy.
+- E2 teacher_backend: not_run_temporal_proxy.
+- No proxy analysis is reported as native moscot success.

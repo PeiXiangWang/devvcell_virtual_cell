@@ -1,0 +1,6 @@
+control,effect,permutation_p,pass_expected_failure
+clone_id_shuffle,0.0,1.0,True
+branch_label_shuffle,0.0036200789151250388,0.6686626746506986,True
+time_shuffle,0.0,1.0,True
+random_teacher_velocity,0.0,1.0,True
+no_swarm_control,0.0,1.0,True

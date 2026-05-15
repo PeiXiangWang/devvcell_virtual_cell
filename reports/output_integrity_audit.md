@@ -1,7 +1,7 @@
 # Output Integrity Audit
 
-- Main internal outputs remain under top-level reports/tables.
-- External E1 outputs are under `processed/external`, `tables/external*`, `reports/external*`, and `figures/external`.
-- External generated h5ad/couplings are not committed because processed data are gitignored.
-- Registry-only fallback candidates are not described as validation results.
-- Native and fallback teacher backends are reported explicitly.
+- Main outputs are written to tables/reports/manuscript and figures/main.
+- Quick fixture outputs remain isolated under quick_fixture paths by the existing run_all quick mode.
+- Native outputs and fallback outputs are labelled separately; E1 and internal main teacher backends are native_moscot.
+- L1 and E2 proxy analyses are not labelled as native teacher successes.
+- Bash/WSL validation is not available in this Windows environment; PowerShell quick fixture is the executed reproducibility path.

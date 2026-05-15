@@ -1,5 +1,6 @@
 # Claim Audit
 
-Prohibited positive claims were searched across manuscript and report markdown. Hits, if present, require negated limitation context.
+- files scanned: 84
+- prohibited positive-claim hits: 0
 
-No prohibited positive claim strings were found outside audit context.
+No prohibited positive claim strings were found outside explicit forbidden-language/audit contexts.

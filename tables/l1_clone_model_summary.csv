@@ -1,0 +1,2 @@
+dataset_id,lineage_validation_tier,teacher_backend,clone_count_tested,condensation_to_clone_splitting_spearman,condensation_permutation_p,density_to_clone_splitting_spearman,density_spearman_p,negative_controls_pass,interpretation,status
+L1_kim_2020_cellreports,fail,not_run_clone_proxy,21,-0.10458447039490885,0.6686626746506986,-0.5174588477671496,0.016286291181206676,True,"Clone metadata were analyzed, but condensation exposure did not predict clone branch splitting under this operationalization.",analyzed_not_supportive

@@ -1,14 +1,7 @@
 # Leakage Audit
 
-- split_mode: strict_time_holdout
-- native teacher excludes obs rows marked `eval_holdout` in `run_native_moscot_teacher`.
-- holdout gap bridge edge is labelled below and must not be described as an ordinary adjacent observed edge.
-
-|   source_time |   target_time | teacher_backend   | edge_type              |
-|--------------:|--------------:|:------------------|:-----------------------|
-|            13 |            14 | native_moscot     | adjacent_observed_edge |
-|            12 |            13 | native_moscot     | adjacent_observed_edge |
-|            14 |            16 | native_moscot     | holdout_gap_bridge     |
-|            18 |            19 | native_moscot     | adjacent_observed_edge |
-|            17 |            18 | native_moscot     | adjacent_observed_edge |
-|            16 |            17 | native_moscot     | adjacent_observed_edge |
+- Internal strict holdout remains governed by configs/train.yaml and configs/data.yaml.
+- E1 preprocessing was fit only on the external MouseGastrulationData component.
+- E1 does not use internal teacher information.
+- L1 and E2 analyses use separate external files and do not import internal labels or teacher couplings.
+- Holdout bridge edges, where present in internal runs, must be interpreted as bridge edges rather than ordinary adjacent observed edges.

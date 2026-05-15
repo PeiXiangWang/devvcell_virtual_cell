@@ -1,18 +1,8 @@
 # Discovery Hardening Summary
 
-| teacher_fidelity_tier   | emergent_law_tier   | mechanistic_usefulness_tier   | mechanistic_gate_pass   | strong_gate   |   laws_at_least_acceptable |   laws_strong | native_or_external_teacher_validation   |
-|:------------------------|:--------------------|:------------------------------|:------------------------|:--------------|---------------------------:|--------------:|:----------------------------------------|
-| acceptable              | weak                | weak                          | False                   | False         |                          2 |             1 | True                                    |
-
-| law               | tier       | gate_pass   | strong_gate   |   effect_size |   effect_ci_low |   effect_ci_high |   permutation_p |   permutation_q | negative_control_pass   | seed_stability_pass   | rollout_based   | directly_supervised_or_encoded   | interpretation_level              | table                                   | report                                 | status   |
-|:------------------|:-----------|:------------|:--------------|--------------:|----------------:|-----------------:|----------------:|----------------:|:------------------------|:----------------------|:----------------|:---------------------------------|:----------------------------------|:----------------------------------------|:---------------------------------------|:---------|
-| diffusion         | acceptable | True        | False         |   0.0265607   |     0.0262808   |      0.0268474   |      0.00990099 |        0.029703 | True                    | True                  | False           | True                             | encoded_control_law_recovery      | tables\diffusion_law_regression.csv     | reports\discovery_diffusion_law.md     | executed |
-| birth_death       | fail       | False       | False         |   7.89754e-05 |    -0.000477091 |      0.000584699 |      0.019802   |        0.039604 | True                    | False                 | True            | False                            | unsupported                       | tables\birth_death_law.csv              | reports\discovery_birth_death_law.md   | executed |
-| branch_nucleation | strong     | True        | True          |  -0.226249    |    -0.259899    |     -0.193552    |      0.00990099 |        0.029703 | True                    | True                  | True            | False                            | retained_computational_hypothesis | tables\swarm_order_parameters.csv       | reports\discovery_branch_nucleation.md | executed |
-| memory_hysteresis | fail       | False       | False         |   0           |     0           |      0           |      1          |        1        | False                   | False                 | True            | False                            | unsupported                       | tables\memory_hysteresis_experiment.csv | reports\discovery_memory_hysteresis.md | executed |
-| cci_branch_bias   | fail       | False       | False         |   0           |     0           |      0           |      1          |        1        | False                   | False                 | True            | False                            | unsupported                       | tables\cci_branch_bias.csv              | reports\discovery_cci_branch_bias.md   | executed |
-| phase_diagram     | weak       | False       | False         |   1           |     1           |      1           |      1          |        1        | False                   | True                  | True            | False                            | exploratory_sensitivity           | tables\phase_diagram.csv                | reports\discovery_phase_diagram.md     | executed |
-
-## External Experiment E1
-
-MouseGastrulationData WT chimera sample 1 was ingested as an independent external developmental time-series dataset. Native moscot extracted five external transport pairs, and the external branch-nucleation validation tier is acceptable. The reproduced signature is computational time-series support only; no lineage barcode validation or experimental validation is claimed.
+- Internal branch nucleation remains the primary retained computational hypothesis.
+- Native teacher sensitivity supports the branch signature at an acceptable tier.
+- E1 gives acceptable related external time-series support.
+- L1 Kim_2020 clone-aware analysis is not supportive under the current operationalization.
+- E2 GSE212050 is weak/proxy feasibility support only.
+- Swarm-specific necessity is not established.
