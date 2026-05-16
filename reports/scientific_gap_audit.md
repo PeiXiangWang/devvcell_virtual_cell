@@ -11,11 +11,9 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 
 ## Remaining Gaps
 
-- v1.3 does not establish a topological-neighbour-specific mechanism. Topological and metric neighbours both reproduce parts of the branch signature.
-- Random-neighbour controls are not fully clean, so the branch signature may still reflect OT geometry or latent/time structure.
-- Swarm necessity is unresolved; previous attribution remains compatible with teacher geometry or generic rollout artifacts.
-- L2 CellTag clone-aware analysis remains a failed test for the primary condensation exposure.
-- Additional clone-aware developmental datasets are required before clone-level language can be considered.
+- Native moscot was available for the internal teacher but timed out on import in this clone-developmental expansion round, so Jindal/Weinreb use fallback centroid teacher and cannot exceed weak evidence.
+- Jindal LSK provides weak feasibility support for primary condensation exposure; Weinreb does not support the primary exposure; Xie lacks time/stage metadata for branch-window validation.
+- Biddy/CellTag L2 remains a failed clone-aware result.
 - CCI, memory and birth/death remain unsupported and excluded from the main claim.
 - No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.
-- High-impact biological mechanism claims remain unsupported without clone-aware developmental validation or experimental perturbation.
+- High-impact mechanism claims remain unsupported without native-teacher clone-aware developmental validation and stronger negative controls.

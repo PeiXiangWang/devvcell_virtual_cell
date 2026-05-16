@@ -1,0 +1,8 @@
+dataset_id,definition,required_metadata,usable_clone_count,limitations,whether_primary_or_secondary
+Weinreb_2020_Science,terminal_fate_entropy,celltype at terminal time,1373,cell type proxy for fate; terminal sampling depth varies,primary
+Weinreb_2020_Science,terminal_lineage_entropy,lineage/celltype at terminal time,1373,cell type proxy for fate; terminal sampling depth varies,secondary
+Weinreb_2020_Science,clone_multilineage_score,number of terminal cell types,1373,cell type proxy for fate; terminal sampling depth varies,secondary
+Weinreb_2020_Science,clone_branch_count,terminal branch count,1373,cell type proxy for fate; terminal sampling depth varies,secondary
+Weinreb_2020_Science,clone_fate_diversification_index,1 - dominant terminal fate fraction,1373,cell type proxy for fate; terminal sampling depth varies,secondary
+Weinreb_2020_Science,clone_reprogramming_success_split,system-specific success split if available,1373,cell type proxy for fate; terminal sampling depth varies,secondary
+Weinreb_2020_Science,clone_state_transition_entropy,cell type entropy across all sampled times,1373,cell type proxy for fate; terminal sampling depth varies,secondary

@@ -1,0 +1,4 @@
+claim,tier,teacher_backend,usable_clones,primary_condensation_support,primary_effect,primary_q,covariate_adjusted_effect,allowed_language,forbidden_language
+clone_aware_validation_Jindal_2023_NatureBiotechnology_LSK_RNA,weak,fallback_centroid_teacher,379.0,True,0.3409829702166089,1.0068269364961147e-10,0.4173690236868807,weak feasibility support only,clone splitting predicted or validated
+clone_aware_validation_Weinreb_2020_Science,weak,fallback_centroid_teacher,1373.0,False,0.0265662818790785,0.4194260580971723,0.1449693473988601,weak feasibility support only,clone splitting predicted or validated
+clone_aware_validation_Xie_2023_NatureMethods_Organoid,fail,fallback_centroid_teacher,,,,,,not usable/support not established,clone splitting predicted or validated

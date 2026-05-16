@@ -1,0 +1,4 @@
+dataset_id,teacher_backend,n_time_points,usable_clones,primary_condensation_support,primary_effect,primary_q,primary_covariate_adjusted_effect,secondary_feature_support_count,validation_tier,interpretation,reason_if_not_usable
+Jindal_2023_NatureBiotechnology_LSK_RNA,fallback_centroid_teacher,2,379.0,True,0.34098297021660895,1.0068269364961147e-10,0.4173690236868807,1.0,weak,primary_condensation_support,
+Weinreb_2020_Science,fallback_centroid_teacher,3,1373.0,False,0.02656628187907857,0.4194260580971723,0.1449693473988601,1.0,weak,secondary_branch_window_features_only,
+Xie_2023_NatureMethods_Organoid,fallback_centroid_teacher,0,,,,,,,fail,not_time_series_usable,no_time_or_stage_for_branch_window

@@ -1,11 +1,19 @@
-# SwarmLineage-OT v1.3
+# Final Retained Results and Methods
 
-The current evidence supports a restrained story. Native moscot provides an OT pseudo-lineage teacher, and M5_ot_swarm remains the evidence-selected primary finite-agent realization. The retained branch-nucleation signature is transient condensation-before-divergence, supported internally and by E1 external time-series analysis.
+## Retained Claim
 
-The v1.3 mechanism audit asks whether this signature can be explained by a minimal local topological-neighbour rule. The answer is not strong enough for a topological-specific claim. Topological kNN rules can reproduce the order-parameter signature, but metric-radius rules also reproduce it and random controls are not consistently clean. The local-rule origin therefore remains unresolved.
+SwarmLineage-OT retains a branch-nucleation / transient condensation-before-divergence time-series order-parameter hypothesis. Internal native moscot teacher analysis and E1 MouseGastrulationData support remain the strongest evidence.
 
-A high-susceptibility branch-window diagnostic and a minimal pairwise model provide useful computational structure, but neither establishes a biological mechanism. Local perturbation propagation is localized in silico and remains exploratory.
+## New Clone-Aware Developmental Expansion
 
-The L2 CellTag clone-aware result remains a failed test: condensation exposure does not support clone branch splitting under the current definitions, and several sensitivity analyses preserve this limitation. Diffusion remains an encoded control-law recovery; birth/death, memory and CCI remain unsupported.
+Three prioritized clone-aware datasets were downloaded and audited from scLTdb Zenodo:
 
-The main conclusion is that SwarmLineage-OT produces a rigorous computational branch-nucleation hypothesis with external time-series support, while topological-neighbour specificity, swarm necessity and clone-level support remain unresolved.
+- Jindal_2023_NatureBiotechnology_LSK_RNA: usable clone/barcode data with two ordered stages; fallback centroid teacher; weak positive primary condensation association.
+- Weinreb_2020_Science: usable clone/barcode data with three ordered stages; fallback centroid teacher; primary condensation not supported, secondary fate-entropy/teacher-bias features associated.
+- Xie_2023_NatureMethods_Organoid: clone/barcode data present but no explicit time/stage field in the processed h5ad, so branch-window validation is not possible here.
+
+Because native moscot import timed out in this round, new clone-aware evidence cannot exceed weak tier. Jindal provides feasibility support, but not an established clone-level claim. Weinreb and prior Biddy/CellTag results prevent claiming broad clone-level generalization.
+
+## Still Excluded
+
+Diffusion remains an encoded control-law recovery. Birth/death, memory and CCI remain unsupported. The local topological-neighbour mechanism and swarm-required attribution remain unresolved.

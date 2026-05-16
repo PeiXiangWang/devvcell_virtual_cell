@@ -1,11 +1,11 @@
-# SwarmLineage-OT v1.3
+# SwarmLineage-OT Clone-Aware Developmental Validation
 
-The current evidence supports a restrained story. Native moscot provides an OT pseudo-lineage teacher, and M5_ot_swarm remains the evidence-selected primary finite-agent realization. The retained branch-nucleation signature is transient condensation-before-divergence, supported internally and by E1 external time-series analysis.
+Jindal LSK, Weinreb LARRY and Xie organoid were downloaded from the scLTdb Zenodo record and inspected as external clone-aware datasets. Jindal and Weinreb contain expression matrices, metadata, clone/barcode fields and ordered time/stage information; Xie contains clone/barcode fields but lacks an explicit time/stage field in the processed h5ad used here.
 
-The v1.3 mechanism audit asks whether this signature can be explained by a minimal local topological-neighbour rule. The answer is not strong enough for a topological-specific claim. Topological kNN rules can reproduce the order-parameter signature, but metric-radius rules also reproduce it and random controls are not consistently clean. The local-rule origin therefore remains unresolved.
+Jindal LSK gives a weak clone-aware computational signal: the primary branch-window condensation exposure is positively associated with terminal clone fate entropy after covariate adjustment. This cannot be upgraded beyond weak because native moscot timed out in this round and the processed data contain only two ordered stages.
 
-A high-susceptibility branch-window diagnostic and a minimal pairwise model provide useful computational structure, but neither establishes a biological mechanism. Local perturbation propagation is localized in silico and remains exploratory.
+Weinreb LARRY does not support the primary condensation exposure. It shows secondary associations for fate-entropy and teacher-bias features, which suggest branch-window uncertainty may be informative, but they do not rescue the original condensation-to-clone-diversification claim. Xie organoid is not usable for branch-window validation without time/stage metadata.
 
-The L2 CellTag clone-aware result remains a failed test: condensation exposure does not support clone branch splitting under the current definitions, and several sensitivity analyses preserve this limitation. Diffusion remains an encoded control-law recovery; birth/death, memory and CCI remain unsupported.
+The retained project-level conclusion is therefore conservative: branch nucleation remains a time-series order-parameter hypothesis with internal native and E1 support, plus weak clone-aware feasibility in Jindal. Clone-level fate-diversification support is not established as a main claim.
 
-The main conclusion is that SwarmLineage-OT produces a rigorous computational branch-nucleation hypothesis with external time-series support, while topological-neighbour specificity, swarm necessity and clone-level support remain unresolved.
+Diffusion remains an encoded control-law recovery. Birth/death, memory and CCI remain unsupported. The local topological-neighbour mechanism and swarm-required attribution remain unresolved.

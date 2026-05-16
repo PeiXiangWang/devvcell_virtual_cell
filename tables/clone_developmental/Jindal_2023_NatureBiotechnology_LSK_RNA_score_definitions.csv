@@ -1,0 +1,8 @@
+dataset_id,definition,required_metadata,usable_clone_count,limitations,whether_primary_or_secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,terminal_fate_entropy,celltype at terminal time,379,cell type proxy for fate; terminal sampling depth varies,primary
+Jindal_2023_NatureBiotechnology_LSK_RNA,terminal_lineage_entropy,lineage/celltype at terminal time,379,cell type proxy for fate; terminal sampling depth varies,secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_multilineage_score,number of terminal cell types,379,cell type proxy for fate; terminal sampling depth varies,secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_branch_count,terminal branch count,379,cell type proxy for fate; terminal sampling depth varies,secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_fate_diversification_index,1 - dominant terminal fate fraction,379,cell type proxy for fate; terminal sampling depth varies,secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_reprogramming_success_split,system-specific success split if available,379,cell type proxy for fate; terminal sampling depth varies,secondary
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_state_transition_entropy,cell type entropy across all sampled times,379,cell type proxy for fate; terminal sampling depth varies,secondary
