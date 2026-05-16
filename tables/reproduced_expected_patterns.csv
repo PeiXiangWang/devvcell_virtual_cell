@@ -1,0 +1,21 @@
+pattern,dataset,supported,effect_size,ci,negative_control,interpretation,allowed_claim
+R1_fate_commitment_entropy_decreases_after_branch_event,E1,False,0.05907508278429441,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R2_local_alignment_rises_before_branch_event,E1,True,0.08823687178834416,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R3_branch_separation_follows_transient_condensation,E1,True,-1.117968385514307,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R4_topological_rule_robust_to_downsampling_than_metric_radius,E1,True,-0.4600290081405807,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R5_unsupported_modules_remain_unsupported,E1,True,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R1_fate_commitment_entropy_decreases_after_branch_event,E2,False,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R2_local_alignment_rises_before_branch_event,E2,False,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R3_branch_separation_follows_transient_condensation,E2,False,1.5086143390913873,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R4_topological_rule_robust_to_downsampling_than_metric_radius,E2,True,0.99022821868554,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R5_unsupported_modules_remain_unsupported,E2,True,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R1_fate_commitment_entropy_decreases_after_branch_event,L2,False,0.09667453732044184,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R2_local_alignment_rises_before_branch_event,L2,False,-0.22262383669077734,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R3_branch_separation_follows_transient_condensation,L2,False,5.390824686057335,not_bootstrapped,see neighbor_rule_comparison/random controls,not_reproduced,data-internal pattern only; not a biological law
+R4_topological_rule_robust_to_downsampling_than_metric_radius,L2,True,2.469803250539803,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R5_unsupported_modules_remain_unsupported,L2,True,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R1_fate_commitment_entropy_decreases_after_branch_event,internal,True,-0.5144722725867827,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R2_local_alignment_rises_before_branch_event,internal,True,0.006210896629258382,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R3_branch_separation_follows_transient_condensation,internal,True,-0.38623049136083176,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R4_topological_rule_robust_to_downsampling_than_metric_radius,internal,True,-0.8146261183649476,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law
+R5_unsupported_modules_remain_unsupported,internal,True,0.0,not_bootstrapped,see neighbor_rule_comparison/random controls,data_internal_reproduction,data-internal pattern only; not a biological law

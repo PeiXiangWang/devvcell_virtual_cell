@@ -1,0 +1,10 @@
+# v1.2 Evidence Matrix
+
+| claim                               | tier       | status                                                | allowed_language                                                           |
+|:------------------------------------|:-----------|:------------------------------------------------------|:---------------------------------------------------------------------------|
+| topological developmental neighbors | weak       | dataset_specific                                      | Topological-neighbor minimal rules are reported at the observed tier only. |
+| optimal topological k               | weak       | best_k=2; topological_neighbor_scale_dataset_specific | Do not preset k=7; report fitted k and stability.                          |
+| high-susceptibility branch window   | weak       | scale-free not established                            | Use high-susceptibility wording unless finite-size scaling is shown.       |
+| maxent minimal model                | acceptable | prototype                                             | Minimal pairwise model is a diagnostic, not a mechanistic proof.           |
+| local perturbation propagation      | weak       | perturbation_response_localized                       | In silico graph-response diagnostic only.                                  |
+| L2 clone-aware support              | fail       | retained_fail                                         | Clone-level support remains not established.                               |

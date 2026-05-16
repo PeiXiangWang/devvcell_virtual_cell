@@ -12,4 +12,10 @@ Figure 5: E1 MouseGastrulationData external time-series support, with lineage_va
 
 Figure 6: L1 clone-aware attempt or blocker; current Kim_2020 analysis does not support clone-level condensation prediction.
 
-Extended Data: diffusion encoded recovery, unsupported birth/death, memory and CCI, phase diagram exploratory, native stack, registries and audits.
+Figure 7: Topological-k versus metric-radius, random, label-restricted and mixed neighbour rules.
+
+Figure 8: Developmental velocity-correlation and branch-window susceptibility diagnostics.
+
+Figure 9: Maximum-entropy minimal pairwise topological model, predicted versus observed order-parameter shifts.
+
+Extended Data: diffusion encoded recovery, unsupported birth/death, memory and CCI, phase diagram exploratory, native stack, registries, L2 clone-aware fail status, and audits.
