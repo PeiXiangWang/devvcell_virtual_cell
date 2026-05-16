@@ -1,0 +1,7 @@
+exposure_definition,n_clones,standardized_exposure_coefficient,r2,direction_supports_hypothesis_after_covariates
+condensation_exposure,214,-0.18182021194322326,0.3786017638556628,False
+alignment_exposure,214,0.07078764667283134,0.3557039986142059,True
+entropy_exposure,214,0.5575593703900215,0.6353204833415667,True
+density_exposure,214,-0.11939164722398861,0.3636617321278325,False
+post_divergence,214,0.12523776884902701,0.3665468043614949,True
+absolute_condensation,214,0.18182021194322326,0.3786017638556628,True

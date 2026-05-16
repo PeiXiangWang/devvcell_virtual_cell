@@ -1,0 +1,6 @@
+neighbor_rule,internal_condensation_rate,E1_condensation_rate,L2_condensation_rate,downsample_condensation_rate,mean_internal_effect,mean_E1_effect,negative_control_clean,conclusion
+topological,1.0,1.0,0.0,1.0,-0.7097195645033736,-0.3761482574488625,True,topological_and_metric_both_supported_but_not_specific
+metric,1.0,1.0,0.0,0.9666666666666667,-0.4248553421949704,-0.28662774545639413,True,topological_and_metric_both_supported_but_not_specific
+random,0.4,1.0,0.0,0.7333333333333333,0.010595591469737469,-0.10528952079974634,False,topological_and_metric_both_supported_but_not_specific
+label,0.0,1.0,0.0,,0.0,-0.6832826286778055,True,topological_and_metric_both_supported_but_not_specific
+mixed,1.0,1.0,0.7,,-0.7500316958921065,-0.2936948949385788,True,topological_and_metric_both_supported_but_not_specific

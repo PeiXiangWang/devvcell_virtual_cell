@@ -1,0 +1,13 @@
+dataset_id,biological_system,source,barcode_type,time_or_stage_likely_available,expression_matrix_available,metadata_available,clone_or_barcode_available,locally_loaded_or_analyzed,status,verification_url,selected_for_immediate_claim
+Biddy_2018_Nature,CellTag reprogramming,GSE99915 / scLTdb Zenodo,CellTag,True,True,True,True,True,loaded_and_failed_L2,https://zenodo.org/records/12176634,True
+Kim_2020_CellReports,embryoid body genetic recording,scLTdb Zenodo,recombination barcode,True,True,True,True,True,loaded_previous_L1_fail,https://zenodo.org/records/12176634,False
+Wei_2020_GenomeResearch,small multiomic lineage candidate,scLTdb Zenodo,retrospective/barcode,False,True,True,True,True,loaded_but_too_small_or_time_limited,https://zenodo.org/records/12176634,False
+Jindal_2023_NatureBiotechnology_iEP_RNA,CellTag-multi reprogramming iEP,scLTdb Zenodo / Nat Biotech,CellTag-Multi,True,True,True,True,False,public_h5ad_large_not_downloaded,https://www.nature.com/articles/s41587-023-01931-4,False
+Jindal_2023_NatureBiotechnology_LSK_RNA,CellTag-multi hematopoiesis,scLTdb Zenodo / Nat Biotech,CellTag-Multi,True,True,True,True,False,public_h5ad_large_not_downloaded,https://www.nature.com/articles/s41587-023-01931-4,False
+Weinreb_2020_Science,LARRY hematopoiesis,scLTdb Zenodo,LARRY,True,True,True,True,False,public_h5ad_large_not_downloaded,https://zenodo.org/records/12176634,False
+Rodriguez-Fraticelli_2020_Nature,hematopoietic clonal tracing,scLTdb Zenodo,LARRY/lineage barcode,True,True,True,True,False,public_h5ad_not_downloaded,https://zenodo.org/records/12176634,False
+Spanjaard_2018_NatureBiotechnology,LINNAEUS zebrafish,scLTdb Zenodo,LINNAEUS,True,True,True,True,False,public_h5ad_not_downloaded,https://zenodo.org/records/12176634,False
+Wagner_2018_Science,TracerSeq zebrafish,scLTdb Zenodo,TracerSeq,True,True,True,True,False,public_h5ad_not_downloaded,https://zenodo.org/records/12176634,False
+Raj_2018_NatureBiotechnology,scGESTALT zebrafish,scLTdb Zenodo,scGESTALT,True,True,True,True,False,public_h5ad_not_downloaded,https://zenodo.org/records/12176634,False
+Wojtowicz_2023_GenomeBiology,lineage tracing dataset,scLTdb Zenodo,listed scLT technology,,True,True,True,False,zip_public_not_downloaded,https://zenodo.org/records/12176634,False
+Xie_2023_NatureMethods_Organoid,organoid lineage tracing,scLTdb Zenodo,pandaCREST/snapCREST,True,True,True,True,False,public_h5ad_large_not_downloaded,https://zenodo.org/records/12176634,False

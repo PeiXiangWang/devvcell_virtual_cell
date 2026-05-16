@@ -18,4 +18,10 @@ Figure 8: Developmental velocity-correlation and branch-window susceptibility di
 
 Figure 9: Maximum-entropy minimal pairwise topological model, predicted versus observed order-parameter shifts.
 
+Figure 10: v1.3 neighbour-rule specificity audit showing topological, metric and random-rule limitations.
+
+Figure 11: L2 clone-aware reverse-result diagnostic across exposure definitions.
+
+Figure 12: v1.3 mechanism-tier summary across the ten explored directions.
+
 Extended Data: diffusion encoded recovery, unsupported birth/death, memory and CCI, phase diagram exploratory, native stack, registries, L2 clone-aware fail status, and audits.

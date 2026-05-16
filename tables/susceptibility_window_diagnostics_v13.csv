@@ -1,0 +1,5 @@
+dataset,peak_ratio,control_pass,finite_size_scaling_tested,supports_high_susceptibility_window,supports_critical_scaling
+E1,1.3826844151066537,True,False,True,False
+E2,1.0000000000000002,False,False,False,False
+L2,1.2223565228501567,True,False,True,False
+internal,2.945086229094521,False,False,False,False
