@@ -48,6 +48,22 @@ class DatasetSpec:
 
 DATASETS = [
     DatasetSpec(
+        dataset_id="E5_CellRank_Farrell_zebrafish_axial_mesoderm",
+        dataset_name="CellRank/Farrell zebrafish axial mesoderm embryogenesis subset",
+        source_path="data/external_developmental/E5_CellRank_Farrell_zebrafish/zebrafish_cellrank.h5ad",
+        source_type="downloaded_public_figshare_cellrank",
+        system="zebrafish embryogenesis axial mesoderm time-series",
+        accession="Farrell_2018_Science; GSE106587; CellRank figshare file 27265280",
+        url="https://ndownloader.figshare.com/files/27265280",
+        time_col="Stage",
+        cell_type_col="lineages",
+        lineage_col="lineages",
+        max_total_cells=2200,
+        max_cells_per_time=120,
+        independence_tier="independent_non_e1_system",
+        notes="Public CellRank AnnData subset of Farrell et al. zebrafish embryogenesis restricted to axial mesoderm, with 12 ordered stages and lineage labels. Downloaded locally from Figshare for this atlas validation.",
+    ),
+    DatasetSpec(
         dataset_id="E2_GSE212050_gastruloid_native_atlas",
         dataset_name="GSE212050 gastruloid/organoid developmental time-series",
         source_path="data/processed/devguard/GSE212050_strict_sample_13285.h5ad",
@@ -95,6 +111,217 @@ DATASETS = [
         independence_tier="independent_candidate_unusable_metadata",
         notes="Local preview lacks usable ordered time/stage and cell-type metadata; retained as a blocker audit row.",
     ),
+]
+
+
+CANDIDATE_AUDITS = [
+    {
+        "dataset_id": "C1_Farrell_2018_zebrafish_full_SCP162_GSE106587",
+        "dataset_name": "Farrell 2018 zebrafish embryogenesis full atlas",
+        "source_type": "public_single_cell_portal_geo",
+        "accession": "SCP162; GSE106587",
+        "url": "https://singlecell.broadinstitute.org/single_cell/study/SCP162/single-cell-reconstruction-of-developmental-trajectories-during-zebrafish-embryogenesis",
+        "system": "zebrafish embryogenesis full 12-stage atlas",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "38731x17239 reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "full portal/GEO matrix verified but not downloaded because CellRank/Figshare subset was the feasible analyzable independent zebrafish representation",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_non_e1_system",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": False,
+        "metadata_available": True,
+        "notes": "Primary full Farrell atlas remains a verified source; the downloaded CellRank subset is analyzed as E5.",
+    },
+    {
+        "dataset_id": "C2_ZMAP_zebrafish_meta_atlas",
+        "dataset_name": "ZMAP zebrafish meta-atlas",
+        "source_type": "public_h5ad_portal",
+        "accession": "ZMAP",
+        "url": "https://wagnerlabucsf.github.io/zmap/",
+        "system": "zebrafish embryogenesis integrated multi-study atlas",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "798790 cells across 15 time windows reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "processed h5ad verified but recommended file is 3.5GB and full file is about 25GB; not downloaded in this pass",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_non_e1_system",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": True,
+        "metadata_available": True,
+        "notes": "High-value future source for zebrafish cross-study validation when large download and storage are approved.",
+    },
+    {
+        "dataset_id": "C3_ZESTA_zebrafish_spatiotemporal_STDS0000057",
+        "dataset_name": "ZESTA zebrafish embryogenesis spatiotemporal transcriptomic atlas",
+        "source_type": "public_stomics_h5ad",
+        "accession": "STDS0000057",
+        "url": "https://db.cngb.org/stomics/datasets/STDS0000057/data",
+        "system": "zebrafish embryogenesis scRNA/spatiotemporal stages",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "stage h5ad files 471-708MB each reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "multiple large per-stage h5ad files verified; not downloaded because total multi-stage download exceeds current quick validation scope",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_non_e1_system",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": True,
+        "metadata_available": True,
+        "notes": "Best spatial-linked zebrafish candidate for a later resource-approved run.",
+    },
+    {
+        "dataset_id": "C4_Daniocell_zebrafish_62_stage_atlas",
+        "dataset_name": "Daniocell zebrafish development atlas",
+        "source_type": "public_web_atlas",
+        "accession": "Daniocell; Sur_2023_Developmental_Cell",
+        "url": "https://daniocell.nichd.nih.gov/",
+        "system": "whole-animal zebrafish development 62 stages",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "489686 cells across 62 stages reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "atlas and stage/cell-type metadata verified; direct small h5ad subset was not identified during this pass",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_non_e1_system",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": "unclear_direct_subset",
+        "metadata_available": True,
+        "notes": "Good candidate if a stable downloadable object or selected-stage subset is obtained.",
+    },
+    {
+        "dataset_id": "C5_Packer_2019_Celegans_embryogenesis_h5ad",
+        "dataset_name": "Packer 2019 C. elegans embryogenesis h5ad",
+        "source_type": "public_caltechdata_h5ad",
+        "accession": "GSE126954; CaltechDATA 10.22002/D1.1945",
+        "url": "https://data.caltech.edu/records/b1kj4-nh475",
+        "system": "C. elegans embryogenesis lineage-resolved developmental time-series",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "89701 cells, 20222 genes reported in transposed h5ad",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "processed h5ad verified but 682MB and transposed; not downloaded because zebrafish E5 was the prioritized independent dataset for this pass",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_non_e1_system_nonvertebrate",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": True,
+        "metadata_available": True,
+        "notes": "Strong future adjudication dataset for branch-window detector outside vertebrate gastrulation.",
+    },
+    {
+        "dataset_id": "C6_Gastruloid_multimodal_GSE229386_Zenodo7858557",
+        "dataset_name": "Multimodal murine gastruloid development",
+        "source_type": "public_geo_zenodo_methods",
+        "accession": "GSE229386; Zenodo 10.5281/zenodo.7858557",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1934590923001704",
+        "system": "murine gastruloid scRNA-seq time course 0-120h",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "time-course scRNA-seq reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "processed annotated matrix location not resolved to a small direct h5ad during this pass",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_gastruloid_candidate",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": "unresolved",
+        "metadata_available": True,
+        "notes": "Potentially important gastruloid validation; requires resolving author pipeline or processed object.",
+    },
+    {
+        "dataset_id": "C7_GSE154572_mouse_embryoid_body",
+        "dataset_name": "Mouse embryoid body differentiation scRNA-seq",
+        "source_type": "public_geo",
+        "accession": "GSE154572",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE154572",
+        "system": "mouse embryoid body differentiation time course",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "timepoints 0,4,7,10 reported",
+        "time_or_stage_available": True,
+        "cell_type_available": "requires_processing",
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "GEO time-course verified but cell-type annotations are not available as ready h5ad in current local workspace",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_embryoid_body_candidate",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": False,
+        "metadata_available": "partial",
+        "notes": "Requires raw matrix processing and annotation before branch-window detector can be applied fairly.",
+    },
+    {
+        "dataset_id": "C8_GSE123187_spatial_tomo_seq",
+        "dataset_name": "GSE123187 spatial/tomographic developmental time-series",
+        "source_type": "public_geo_spatial_preview",
+        "accession": "GSE123187",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE123187",
+        "system": "spatial/tomographic embryo development",
+        "source_path": "data/processed/devguard/GSE123187_tomo_3files.h5ad",
+        "file_exists": True,
+        "matrix_loaded": True,
+        "shape": "1146x37581 local preview",
+        "time_or_stage_available": False,
+        "cell_type_available": False,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "local preview lacks ordered stage and cell-type fields",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_spatial_candidate_unusable_metadata",
+        "download_attempted": True,
+        "download_success": True,
+        "processed_h5ad_available": True,
+        "metadata_available": False,
+        "notes": "Retained as spatial validation blocker rather than evidence.",
+    },
+    {
+        "dataset_id": "C9_STDS0000074_gastruloid_spatial_somitogenesis",
+        "dataset_name": "Single-cell and spatial transcriptomics reveal somitogenesis in gastruloids",
+        "source_type": "public_stomics_spatial_scrna",
+        "accession": "STDS0000074",
+        "url": "https://db.cngb.org/stomics/datasets/STDS0000074/summary",
+        "system": "mouse gastruloid somitogenesis scRNA/spatial",
+        "source_path": "",
+        "file_exists": False,
+        "matrix_loaded": False,
+        "shape": "processed sample-level data reported",
+        "time_or_stage_available": True,
+        "cell_type_available": True,
+        "usable_for_branch_window_atlas": False,
+        "reason_if_not_usable": "dataset verified but sample-level processed download plan needs separate large-file staging",
+        "selected_for_analysis": False,
+        "independence_tier": "independent_gastruloid_spatial_candidate",
+        "download_attempted": False,
+        "download_success": False,
+        "processed_h5ad_available": True,
+        "metadata_available": True,
+        "notes": "High-priority spatial/gastruloid follow-up if file staging is approved.",
+    },
 ]
 
 
@@ -213,14 +440,19 @@ def _registry_row(spec: DatasetSpec) -> dict:
         "cell_type_available": bool("lineage" in obs and obs["lineage"].astype(str).nunique() >= 2),
         "usable_for_branch_window_atlas": bool(usable),
         "reason_if_not_usable": reason,
-        "selected_for_analysis": bool(usable and spec.dataset_id.startswith(("E2_", "E3_"))),
+        "selected_for_analysis": bool(usable and spec.dataset_id.startswith(("E2_", "E3_", "E5_"))),
         "independence_tier": spec.independence_tier,
+        "download_attempted": bool(spec.dataset_id.startswith("E5_")),
+        "download_success": bool(spec.dataset_id.startswith("E5_") and exists),
+        "processed_h5ad_available": exists,
+        "metadata_available": bool("time_numeric" in obs and "lineage" in obs),
         "notes": spec.notes,
     }
 
 
 def build_registry() -> pd.DataFrame:
     rows = [_registry_row(spec) for spec in DATASETS]
+    rows.extend(CANDIDATE_AUDITS)
     registry = pd.DataFrame(rows)
     ensure_dir(ROOT / "tables")
     registry.to_csv(ROOT / "tables/developmental_time_series_dataset_registry.csv", index=False)
@@ -373,6 +605,81 @@ def run_teacher(spec: DatasetSpec, input_path: str, timeout: int, python_exe: st
     }
 
 
+def run_teacher_sensitivity(spec: DatasetSpec, input_path: str, timeout: int, python_exe: str) -> pd.DataFrame:
+    """Small native-teacher sensitivity for newly downloaded independent datasets."""
+    if not spec.dataset_id.startswith("E5_"):
+        return pd.DataFrame()
+    rows = []
+    for eps in (0.04, 0.12):
+        tag = f"{spec.dataset_id}_eps{str(eps).replace('.', 'p')}"
+        outdir = f"{OUTPUT_ROOT}_sensitivity/{tag}"
+        cfg = {
+            "adata_path": input_path,
+            "teacher_path": f"{outdir}/ot_teacher.h5ad",
+            "couplings_dir": f"{outdir}/ot_couplings",
+            "fate_probabilities_path": f"{outdir}/ot_fate_probabilities.parquet",
+            "teacher_index_path": f"{outdir}/ot_couplings/teacher_coupling_index.csv",
+            "time_key": "time_numeric",
+            "time_label_key": "time_point",
+            "cell_type_key": "lineage",
+            "latent_key": "X_pca",
+            "epsilon": eps,
+            "max_cells_per_time": spec.max_cells_per_time,
+            "native_moscot_timeout_seconds": 120,
+            "use_native_moscot": True,
+            "native_max_cells_per_time": spec.max_cells_per_time,
+            "native_max_iterations": 350,
+            "native_jit": False,
+            "native_device": "cpu",
+            "random_seed": 17,
+            "split_mode": "none",
+            "teacher_backend": "native_moscot",
+            "figure_dir": f"figures/developmental_atlas_sensitivity/{tag}",
+            "report_dir": f"reports/developmental_atlas_sensitivity/{tag}",
+            "table_dir": f"tables/developmental_atlas_sensitivity/{tag}",
+            "summary_path": f"{outdir}/ot_teacher_summary.json",
+        }
+        cfg_path = ROOT / "configs" / f"developmental_atlas_sensitivity_{tag}_ot_teacher.yaml"
+        ensure_dir(cfg_path.parent)
+        cfg_path.write_text(yaml.safe_dump(cfg, sort_keys=False), encoding="utf-8")
+        start = time.time()
+        try:
+            proc = subprocess.run([python_exe, "-m", "src.ot_teacher.run_moscot", "--config", str(cfg_path), "--try-native"], cwd=ROOT, capture_output=True, text=True, timeout=timeout)
+            if proc.returncode == 0:
+                build_teacher(cfg)
+        except Exception as exc:
+            proc = subprocess.CompletedProcess(args=[], returncode=1, stdout="", stderr=f"{type(exc).__name__}:{exc}")
+        summary_path = ROOT / outdir / "ot_couplings" / "moscot_run_summary.json"
+        summary = json.loads(summary_path.read_text(encoding="utf-8")) if summary_path.exists() else {}
+        pairs = summary.get("pairs", [])
+        shapes = []
+        for item in pairs:
+            if "plan_shape" in item:
+                shapes.append(str(tuple(item["plan_shape"])))
+            elif "shape" in item:
+                shapes.append(str(tuple(item["shape"])))
+        if not shapes:
+            coupling_dir = ROOT / outdir / "ot_couplings"
+            for npz_path in sorted(coupling_dir.glob("teacher_native_moscot_*.npz")) + sorted(coupling_dir.glob("teacher_toy_sinkhorn_*.npz")):
+                raw = np.load(npz_path, allow_pickle=True)
+                if "plan" in raw:
+                    shapes.append(str(tuple(raw["plan"].shape)))
+        rows.append(
+            {
+                "dataset_id": spec.dataset_id,
+                "epsilon": eps,
+                "config_path": _rel(cfg_path),
+                "native_moscot_success": bool(summary.get("native_moscot_used", False) and summary.get("teacher_backend") == "native_moscot"),
+                "teacher_backend": str(summary.get("teacher_backend", "failed")),
+                "runtime_seconds": float(time.time() - start),
+                "n_pairs": int(len(pairs)),
+                "plan_shapes": ";".join(shapes),
+                "failure_reason": "" if getattr(proc, "returncode", 1) == 0 else (str(getattr(proc, "stdout", "")) + str(getattr(proc, "stderr", "")))[-600:],
+            }
+        )
+    return pd.DataFrame(rows)
+
+
 def _unit(x: np.ndarray) -> np.ndarray:
     return x / np.maximum(np.linalg.norm(x, axis=1, keepdims=True), 1e-8)
 
@@ -498,6 +805,7 @@ def _baseline_scores(order: pd.DataFrame, event: dict) -> pd.DataFrame:
     event_time = event.get("event_time_numeric", np.nan)
     for metric, col in [
         ("fate_entropy_alone", "fate_entropy_H"),
+        ("OT_transition_entropy", "fate_entropy_H"),
         ("celltype_composition_change", "composition_change_next"),
         ("lineage_separation_only", "lineage_separation_S"),
         ("alignment_alone", "local_velocity_alignment_A"),
@@ -513,6 +821,12 @@ def _baseline_scores(order: pd.DataFrame, event: dict) -> pd.DataFrame:
             detected_time = float(order.iloc[vals.idxmax()]["time_numeric"])
             rank_match = bool(np.isclose(detected_time, event_time))
         rows.append({"baseline": metric, "detected_time_numeric": detected_time, "matches_branch_window": rank_match})
+    times = pd.to_numeric(order["time_numeric"], errors="coerce").dropna().to_numpy()
+    if times.size:
+        midpoint_time = float(times[len(times) // 2])
+        rows.append({"baseline": "simple_time_midpoint_detector", "detected_time_numeric": midpoint_time, "matches_branch_window": bool(np.isclose(midpoint_time, event_time))})
+    rows.append({"baseline": "pseudotime_change", "detected_time_numeric": np.nan, "matches_branch_window": False, "available": False, "reason": "no_dataset_native_pseudotime_column"})
+    rows.append({"baseline": "CellRank_like_fate_probability", "detected_time_numeric": np.nan, "matches_branch_window": False, "available": False, "reason": "not_run_to_avoid_mixing_external_CellRank_estimator_with_OT_teacher_audit"})
     return pd.DataFrame(rows)
 
 
@@ -554,12 +868,18 @@ def analyze_dataset(spec: DatasetSpec, teacher_info: dict) -> tuple[pd.DataFrame
     event_row = {"dataset_id": spec.dataset_id, **event}
     controls = []
     rng = np.random.default_rng(17)
+    shuffled_z = z.copy()
+    for col in range(shuffled_z.shape[1]):
+        shuffled_z[:, col] = rng.permutation(shuffled_z[:, col])
+    coarse_labels = obs["lineage"].astype(str).str.replace(r"[_:/].*$", "", regex=True).str.split().str[0].replace({"nan": "unknown", "": "unknown"})
     control_specs = {
-        "time_shuffle": {"labels": obs["lineage"], "z": z, "velocity": velocity, "time_shuffle": True, "random_graph": False},
-        "velocity_shuffle": {"labels": obs["lineage"], "z": z, "velocity": velocity[rng.permutation(adata.n_obs)], "time_shuffle": False, "random_graph": False},
-        "lineage_label_shuffle": {"labels": pd.Series(rng.permutation(obs["lineage"].astype(str).to_numpy())), "z": z, "velocity": velocity, "time_shuffle": False, "random_graph": False},
-        "random_teacher_velocity": {"labels": obs["lineage"], "z": z, "velocity": rng.normal(size=velocity.shape), "time_shuffle": False, "random_graph": False},
-        "random_graph": {"labels": obs["lineage"], "z": z, "velocity": velocity, "time_shuffle": False, "random_graph": True},
+        "time_shuffle": {"category": "negative_control", "labels": obs["lineage"], "z": z, "velocity": velocity, "time_shuffle": True, "random_graph": False},
+        "velocity_shuffle": {"category": "negative_control", "labels": obs["lineage"], "z": z, "velocity": velocity[rng.permutation(adata.n_obs)], "time_shuffle": False, "random_graph": False},
+        "lineage_label_shuffle": {"category": "negative_control", "labels": pd.Series(rng.permutation(obs["lineage"].astype(str).to_numpy())), "z": z, "velocity": velocity, "time_shuffle": False, "random_graph": False},
+        "random_teacher_velocity": {"category": "negative_control", "labels": obs["lineage"], "z": z, "velocity": rng.normal(size=velocity.shape), "time_shuffle": False, "random_graph": False},
+        "random_graph": {"category": "negative_control", "labels": obs["lineage"], "z": z, "velocity": velocity, "time_shuffle": False, "random_graph": True},
+        "embedding_pca_component_shuffle": {"category": "negative_control", "labels": obs["lineage"], "z": shuffled_z, "velocity": velocity, "time_shuffle": False, "random_graph": False},
+        "coarse_taxonomy_sensitivity": {"category": "sensitivity", "labels": coarse_labels, "z": z, "velocity": velocity, "time_shuffle": False, "random_graph": False},
     }
     for name, payload in control_specs.items():
         tmp = adata.copy()
@@ -578,6 +898,7 @@ def analyze_dataset(spec: DatasetSpec, teacher_info: dict) -> tuple[pd.DataFrame
             {
                 "dataset_id": spec.dataset_id,
                 "control": name,
+                "control_category": payload["category"],
                 "control_branch_event_detected": bool(cevent.get("branch_event_detected", False)),
                 "control_normalized_separation_effect": cevent.get("normalized_separation_effect", np.nan),
                 "control_direction_match": bool(cevent.get("condensation_before_divergence", False)),
@@ -597,7 +918,11 @@ def analyze_dataset(spec: DatasetSpec, teacher_info: dict) -> tuple[pd.DataFrame
 def _support_tier(row: pd.Series, controls: pd.DataFrame, baselines: pd.DataFrame, teacher_backend: str, independence: str) -> tuple[str, str]:
     event = bool(row.get("branch_event_detected", False))
     direction = bool(row.get("condensation_before_divergence", False))
-    control_pass = bool(not controls.empty and controls["negative_control_pass"].mean() >= 0.6)
+    if not controls.empty and "control_category" in controls:
+        negative_controls = controls[controls["control_category"].eq("negative_control")]
+    else:
+        negative_controls = controls
+    control_pass = bool(not negative_controls.empty and negative_controls["negative_control_pass"].mean() >= 0.6)
     baseline_match_count = int(baselines["matches_branch_window"].sum()) if not baselines.empty else 0
     native = teacher_backend == "native_moscot"
     if native and event and direction and control_pass and baseline_match_count < 3 and independence == "independent_non_e1_system":
@@ -632,7 +957,7 @@ def _plot_summary(summary: pd.DataFrame) -> None:
     plt.close(fig)
 
 
-def _write_reports(registry: pd.DataFrame, prepared: pd.DataFrame, teachers: pd.DataFrame, summary: pd.DataFrame, baselines: pd.DataFrame) -> None:
+def _write_reports(registry: pd.DataFrame, prepared: pd.DataFrame, teachers: pd.DataFrame, sensitivity: pd.DataFrame, summary: pd.DataFrame, baselines: pd.DataFrame) -> None:
     support = summary[summary["external_support_tier"].isin(["acceptable", "strong"])]
     independent_support = support[support["independence_tier"].eq("independent_non_e1_system")]
     if support.shape[0] >= 2 and independent_support.shape[0] >= 1:
@@ -674,6 +999,8 @@ def _write_reports(registry: pd.DataFrame, prepared: pd.DataFrame, teachers: pd.
         f"{prepared.to_markdown(index=False) if not prepared.empty else '_No prepared datasets._'}\n\n"
         "## Native Teacher Runs\n\n"
         f"{teachers.to_markdown(index=False) if not teachers.empty else '_No teacher runs._'}\n\n"
+        "## Native Teacher Sensitivity\n\n"
+        f"{sensitivity.to_markdown(index=False) if not sensitivity.empty else '_No extra sensitivity rows beyond the primary epsilon=0.08 run._'}\n\n"
         "## Branch-Window Summary\n\n"
         f"{summary.to_markdown(index=False) if not summary.empty else '_No branch-window rows._'}\n\n"
         "## Baseline Specificity\n\n"
@@ -705,7 +1032,7 @@ def _write_reports(registry: pd.DataFrame, prepared: pd.DataFrame, teachers: pd.
         "# Final Retained Results and Methods\n\n"
         "## Retained Main Claim\n\n"
         "SwarmLineage-OT converts native OT-inferred developmental maps into finite-agent virtual-cell dynamics and reveals a branch-window order-parameter signature, transient condensation-before-divergence, in developmental time-series data.\n\n"
-        "The strongest evidence remains internal native moscot plus E1 MouseGastrulationData. This round adds a developmental time-series atlas analysis that tests GSE212050 gastruloid/organoid data and a related MouseGastrulationData full stage-mapped set using the same pre-registered order-parameter detector, native teacher attempts, negative controls and baseline comparisons.\n\n"
+        "The strongest evidence remains internal native moscot plus E1 MouseGastrulationData. This round expands the developmental atlas audit to a downloaded independent zebrafish embryogenesis dataset (CellRank/Farrell axial mesoderm), GSE212050 gastruloid/organoid data, a related MouseGastrulationData full stage-mapped set, and additional verified public-data candidates. All analyzed datasets use the same pre-registered order-parameter detector, native teacher attempts, negative controls and baseline comparisons.\n\n"
         f"Current developmental branch-window tier: `{overall_tier}`. {overall}\n\n"
         "## Boundary Conditions\n\n"
         "- Clone-aware fate-diversification prediction is not retained; Biddy, Jindal and Weinreb remain stress tests rather than main support.\n"
@@ -757,6 +1084,7 @@ def run(timeout: int, python_exe: str, seed: int) -> None:
     registry = build_registry()
     prepared_rows = []
     teacher_rows = []
+    sensitivity_tables = []
     order_tables = []
     event_tables = []
     control_tables = []
@@ -768,6 +1096,9 @@ def run(timeout: int, python_exe: str, seed: int) -> None:
             continue
         teacher = run_teacher(spec, prep["input_path"], timeout, python_exe)
         teacher_rows.append(teacher)
+        sens = run_teacher_sensitivity(spec, prep["input_path"], timeout, python_exe)
+        if not sens.empty:
+            sensitivity_tables.append(sens)
         order, event, controls, baselines = analyze_dataset(spec, teacher)
         if not order.empty:
             order_tables.append(order)
@@ -785,21 +1116,24 @@ def run(timeout: int, python_exe: str, seed: int) -> None:
             baseline_tables.append(baselines)
     prepared = pd.DataFrame(prepared_rows)
     teachers = pd.DataFrame(teacher_rows)
+    sensitivity = pd.concat(sensitivity_tables, ignore_index=True) if sensitivity_tables else pd.DataFrame()
     order_all = pd.concat(order_tables, ignore_index=True) if order_tables else pd.DataFrame()
     summary = pd.concat(event_tables, ignore_index=True) if event_tables else pd.DataFrame()
     controls = pd.concat(control_tables, ignore_index=True) if control_tables else pd.DataFrame()
     baselines = pd.concat(baseline_tables, ignore_index=True) if baseline_tables else pd.DataFrame()
     if not summary.empty and not controls.empty:
-        pass_rates = controls.groupby("dataset_id")["negative_control_pass"].mean().rename("negative_control_pass_rate")
+        control_for_rate = controls[controls["control_category"].eq("negative_control")] if "control_category" in controls else controls
+        pass_rates = control_for_rate.groupby("dataset_id")["negative_control_pass"].mean().rename("negative_control_pass_rate")
         summary = summary.merge(pass_rates, on="dataset_id", how="left")
     ensure_dir(ROOT / "tables")
     prepared.to_csv(ROOT / "tables/developmental_time_series_prepared.csv", index=False)
     teachers.to_csv(ROOT / "tables/developmental_time_series_teacher_runs.csv", index=False)
+    sensitivity.to_csv(ROOT / "tables/developmental_time_series_native_sensitivity.csv", index=False)
     order_all.to_csv(ROOT / "tables/developmental_branch_window_order_parameters.csv", index=False)
     summary.to_csv(ROOT / "tables/developmental_branch_window_summary.csv", index=False)
     controls.to_csv(ROOT / "tables/developmental_branch_window_negative_controls.csv", index=False)
     baselines.to_csv(ROOT / "tables/developmental_branch_window_baselines.csv", index=False)
-    _write_reports(registry, prepared, teachers, summary, baselines)
+    _write_reports(registry, prepared, teachers, sensitivity, summary, baselines)
 
 
 def main() -> None:

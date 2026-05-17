@@ -1,3 +1,4 @@
 dataset_id,config_path,native_attempted,native_moscot_success,teacher_backend,runtime_seconds,n_pairs,plan_shapes,failure_reason
-E2_GSE212050_gastruloid_native_atlas,configs/developmental_atlas_E2_GSE212050_gastruloid_native_atlas_ot_teacher.yaml,True,True,native_moscot,10.566460371017456,4,"(120, 120);(120, 120);(120, 120);(120, 120)",
-E3_MouseGastrulationData_wt_chimera_full_stage_mapped,configs/developmental_atlas_E3_MouseGastrulationData_wt_chimera_full_stage_mapped_ot_teacher.yaml,True,True,native_moscot,22.857889413833618,7,"(19, 120);(120, 120);(120, 120);(120, 120);(120, 120);(120, 120);(120, 120)",
+E5_CellRank_Farrell_zebrafish_axial_mesoderm,configs/developmental_atlas_E5_CellRank_Farrell_zebrafish_axial_mesoderm_ot_teacher.yaml,True,True,native_moscot,16.877174377441406,8,"(120, 115);(120, 111);(111, 120);(120, 120);(120, 120);(120, 120);(120, 120);(120, 120)",
+E2_GSE212050_gastruloid_native_atlas,configs/developmental_atlas_E2_GSE212050_gastruloid_native_atlas_ot_teacher.yaml,True,True,native_moscot,15.229314804077148,4,"(120, 120);(120, 120);(120, 120);(120, 120)",
+E3_MouseGastrulationData_wt_chimera_full_stage_mapped,configs/developmental_atlas_E3_MouseGastrulationData_wt_chimera_full_stage_mapped_ot_teacher.yaml,True,True,native_moscot,45.15876579284668,7,"(19, 120);(120, 120);(120, 120);(120, 120);(120, 120);(120, 120);(120, 120)",

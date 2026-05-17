@@ -1,0 +1,36 @@
+source_lineage,target_lineage,mass,source_time,target_time
+Notochord,Notochord,0.3606458902359009,9.0,10.0
+Notochord,Prechordal Plate,0.1393541395664215,9.0,10.0
+Prechordal Plate,Notochord,0.13920943439006805,9.0,10.0
+Prechordal Plate,Prechordal Plate,0.36079055070877075,9.0,10.0
+Early Blastomeres,Early Blastomeres,0.6916667819023132,3.8,4.3
+Early Blastomeres,Notochord,0.14999991655349731,3.8,4.3
+Early Blastomeres,Prechordal Plate,0.15833330154418945,3.8,4.3
+Early Blastomeres,Notochord,0.019516857340931892,5.3,7.0
+Early Blastomeres,Prechordal Plate,0.030483148992061615,5.3,7.0
+Notochord,Notochord,0.31593596935272217,5.3,7.0
+Notochord,Prechordal Plate,0.21739737689495087,5.3,7.0
+Prechordal Plate,Notochord,0.1646178960800171,5.3,7.0
+Prechordal Plate,Prechordal Plate,0.2520487308502197,5.3,7.0
+Early Blastomeres,Early Blastomeres,1.0,3.3,3.8
+Notochord,Notochord,0.34633973240852356,8.0,9.0
+Notochord,Prechordal Plate,0.15366029739379883,8.0,9.0
+Prechordal Plate,Notochord,0.1536848247051239,8.0,9.0
+Prechordal Plate,Prechordal Plate,0.3463151454925537,8.0,9.0
+Early Blastomeres,Early Blastomeres,0.043791648000478745,4.3,5.3
+Early Blastomeres,Notochord,0.37977537512779236,4.3,5.3
+Early Blastomeres,Prechordal Plate,0.26809969544410706,4.3,5.3
+Notochord,Early Blastomeres,0.003951149061322212,4.3,5.3
+Notochord,Notochord,0.08716972172260284,4.3,5.3
+Notochord,Prechordal Plate,0.05887909233570099,4.3,5.3
+Prechordal Plate,Early Blastomeres,0.0022587706334888935,4.3,5.3
+Prechordal Plate,Notochord,0.06639821082353592,4.3,5.3
+Prechordal Plate,Prechordal Plate,0.08967633545398712,4.3,5.3
+Notochord,Notochord,0.4285286068916321,10.0,12.0
+Notochord,Prechordal Plate,0.07147137820720673,10.0,12.0
+Prechordal Plate,Notochord,0.18012982606887817,10.0,12.0
+Prechordal Plate,Prechordal Plate,0.3198701739311218,10.0,12.0
+Notochord,Notochord,0.34210503101348877,7.0,8.0
+Notochord,Prechordal Plate,0.157895028591156,7.0,8.0
+Prechordal Plate,Notochord,0.15790919959545135,7.0,8.0
+Prechordal Plate,Prechordal Plate,0.3420907258987427,7.0,8.0

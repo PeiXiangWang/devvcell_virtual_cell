@@ -1,6 +1,6 @@
 # Scientific Gap Audit
 
-OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.
+OT gives the developmental map; SwarmLineage-OT converts it into finite-agent dynamics and audits branch-window order parameters in developmental time-series data.
 
 - best mean-rank reconstruction row: `M0b_ot_interpolation`
 - OT reference row: `M0b_ot_interpolation`
@@ -34,9 +34,12 @@ Clone-aware analyses are stress tests for the time-series branch signature, not 
 ## Developmental Time-Series Atlas
 
 - atlas_tier: `weak`
-- datasets_attempted: 3
-- datasets_analyzed: 2
+- datasets_attempted: 13
+- datasets_analyzed: 3
 - acceptable_external_datasets: 0
+- analyzed_datasets: E5_CellRank_Farrell_zebrafish_axial_mesoderm, E2_GSE212050_gastruloid_native_atlas, E3_MouseGastrulationData_wt_chimera_full_stage_mapped
+- downloaded_new_dataset: E5_CellRank_Farrell_zebrafish_axial_mesoderm
+- independent_native_analyzed: E5_CellRank_Farrell_zebrafish_axial_mesoderm, E2_GSE212050_gastruloid_native_atlas, E3_MouseGastrulationData_wt_chimera_full_stage_mapped
 - interpretation: internal/E1 remains the main support; new time-series support is weak or unresolved
 
-The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation.
+The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation. A detected branch-like window without condensation-before-divergence, or with unclean controls, does not upgrade the retained claim.

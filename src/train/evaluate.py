@@ -369,12 +369,44 @@ def _developmental_atlas_context() -> dict | None:
     if table.empty:
         return None
     row = table.iloc[0].to_dict()
+    summary_path = Path("tables/developmental_branch_window_summary.csv")
+    registry_path = Path("tables/developmental_time_series_dataset_registry.csv")
+    analyzed: list[str] = []
+    downloaded: list[str] = []
+    independent_native: list[str] = []
+    weak_or_failed: list[str] = []
+    if summary_path.exists():
+        try:
+            summary = pd.read_csv(summary_path)
+            analyzed = summary.get("dataset_id", pd.Series(dtype=str)).astype(str).tolist()
+            independent_native = summary[
+                summary.get("independence_tier", pd.Series(dtype=str)).astype(str).str.contains("independent", na=False)
+                & summary.get("teacher_backend", pd.Series(dtype=str)).astype(str).eq("native_moscot")
+            ].get("dataset_id", pd.Series(dtype=str)).astype(str).tolist()
+            weak_or_failed = summary[
+                summary.get("external_support_tier", pd.Series(dtype=str)).astype(str).isin(["weak", "fail"])
+            ].get("dataset_id", pd.Series(dtype=str)).astype(str).tolist()
+        except Exception:
+            analyzed = []
+    if registry_path.exists():
+        try:
+            registry = pd.read_csv(registry_path)
+            downloaded = registry[
+                registry.get("download_success", pd.Series(dtype=bool)).astype(str).str.lower().eq("true")
+                & registry.get("selected_for_analysis", pd.Series(dtype=bool)).astype(str).str.lower().eq("true")
+            ].get("dataset_id", pd.Series(dtype=str)).astype(str).tolist()
+        except Exception:
+            downloaded = []
     return {
         "tier": str(row.get("developmental_branch_window_overall_tier", "unknown")),
         "interpretation": str(row.get("interpretation", "No interpretation recorded.")),
         "new_datasets_attempted": int(row.get("new_datasets_attempted", 0)),
         "new_datasets_analyzed": int(row.get("new_datasets_analyzed", 0)),
         "acceptable_external_datasets": int(row.get("acceptable_external_datasets", 0)),
+        "analyzed_datasets": analyzed,
+        "downloaded_datasets": downloaded,
+        "independent_native_analyzed": independent_native,
+        "weak_or_failed_datasets": weak_or_failed,
     }
 
 
@@ -393,9 +425,12 @@ def _developmental_atlas_report_lines(ctx: dict | None) -> list[str]:
         f"- datasets_attempted: {ctx['new_datasets_attempted']}",
         f"- datasets_analyzed: {ctx['new_datasets_analyzed']}",
         f"- acceptable_external_datasets: {ctx['acceptable_external_datasets']}",
+        f"- analyzed_datasets: {', '.join(ctx.get('analyzed_datasets', [])) or 'none'}",
+        f"- downloaded_new_dataset: {', '.join(ctx.get('downloaded_datasets', [])) or 'none'}",
+        f"- independent_native_analyzed: {', '.join(ctx.get('independent_native_analyzed', [])) or 'none'}",
         f"- interpretation: {ctx['interpretation']}",
         "",
-        "The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation.",
+        "The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation. A detected branch-like window without condensation-before-divergence, or with unclean controls, does not upgrade the retained claim.",
         "",
     ]
 
@@ -466,7 +501,7 @@ def _write_reports(
             [
                 "# Scientific Gap Audit",
                 "",
-                "OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.",
+                "OT gives the developmental map; SwarmLineage-OT converts it into finite-agent dynamics and audits branch-window order parameters in developmental time-series data.",
                 "",
                 f"- best mean-rank reconstruction row: `{_best_model(metrics)}`",
                 f"- OT reference row: `{OT_REFERENCE}`",
@@ -493,7 +528,7 @@ def _write_reports(
         "",
         "## Central Claim",
         "",
-        "OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent rules that realize the map and reveal emergent developmental laws.",
+        "SwarmLineage-OT converts native OT-inferred developmental maps into finite-agent virtual-cell dynamics and currently retains a branch-window order-parameter hypothesis, transient condensation-before-divergence, rather than a clone-fate, CCI, memory, birth/death or topological-specific mechanism claim.",
         "",
         "`M0b_ot_interpolation` is an oracle-like OT teacher/reference interpolation. The finite-agent model is evaluated by teacher fidelity, emergent-law robustness and mechanistic usefulness, not by beating the OT reference.",
         "",
@@ -548,6 +583,8 @@ def _write_reports(
                 "" if quick_fixture else "- Clone-aware fate-diversification support is not a retained main claim unless the latest clone audit reaches acceptable cross-dataset support.",
                 "" if quick_fixture or not clone_ctx else f"- latest clone audit: {clone_ctx['status']} ({clone_ctx['tier']}); {clone_ctx['interpretation']}",
                 "" if quick_fixture or not atlas_ctx else f"- developmental atlas: {atlas_ctx['tier']}; {atlas_ctx['interpretation']}",
+                "" if quick_fixture or not atlas_ctx else f"- developmental atlas analyzed datasets: {', '.join(atlas_ctx.get('analyzed_datasets', [])) or 'none'}",
+                "" if quick_fixture or not atlas_ctx else "- E5 zebrafish is independent and native-moscot analyzed, but did not reproduce condensation-before-divergence and controls were not clean; it is boundary evidence, not validation.",
                 "",
             ]
         ),
