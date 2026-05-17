@@ -358,6 +358,48 @@ def _clone_boundary_report_lines(ctx: dict | None) -> list[str]:
     ]
 
 
+def _developmental_atlas_context() -> dict | None:
+    path = Path("tables/developmental_branch_window_atlas_final_summary.csv")
+    if not path.exists():
+        return None
+    try:
+        table = pd.read_csv(path)
+    except Exception:
+        return None
+    if table.empty:
+        return None
+    row = table.iloc[0].to_dict()
+    return {
+        "tier": str(row.get("developmental_branch_window_overall_tier", "unknown")),
+        "interpretation": str(row.get("interpretation", "No interpretation recorded.")),
+        "new_datasets_attempted": int(row.get("new_datasets_attempted", 0)),
+        "new_datasets_analyzed": int(row.get("new_datasets_analyzed", 0)),
+        "acceptable_external_datasets": int(row.get("acceptable_external_datasets", 0)),
+    }
+
+
+def _developmental_atlas_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## Developmental Time-Series Atlas",
+            "",
+            "No finalized developmental branch-window atlas summary was found. The retained time-series claim remains based on internal native moscot and E1 support only.",
+            "",
+        ]
+    return [
+        "## Developmental Time-Series Atlas",
+        "",
+        f"- atlas_tier: `{ctx['tier']}`",
+        f"- datasets_attempted: {ctx['new_datasets_attempted']}",
+        f"- datasets_analyzed: {ctx['new_datasets_analyzed']}",
+        f"- acceptable_external_datasets: {ctx['acceptable_external_datasets']}",
+        f"- interpretation: {ctx['interpretation']}",
+        "",
+        "The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -374,6 +416,8 @@ def _write_reports(
     mean = metrics.groupby("model")[CORE].mean()
     clone_ctx = None if quick_fixture else _clone_boundary_context()
     clone_lines = [] if quick_fixture else _clone_boundary_report_lines(clone_ctx)
+    atlas_ctx = None if quick_fixture else _developmental_atlas_context()
+    atlas_lines = [] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -441,6 +485,7 @@ def _write_reports(
                 "",
             ]
             + ([] if quick_fixture else _clone_boundary_report_lines(clone_ctx))
+            + ([] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx))
         ),
     )
     final_lines = [
@@ -461,6 +506,7 @@ def _write_reports(
         retained[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not retained.empty else "None retained at acceptable evidence level.",
         "",
         *clone_lines,
+        *atlas_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -501,6 +547,7 @@ def _write_reports(
                 "- Not ready for high-impact submission without external teacher validation and biological validation.",
                 "" if quick_fixture else "- Clone-aware fate-diversification support is not a retained main claim unless the latest clone audit reaches acceptable cross-dataset support.",
                 "" if quick_fixture or not clone_ctx else f"- latest clone audit: {clone_ctx['status']} ({clone_ctx['tier']}); {clone_ctx['interpretation']}",
+                "" if quick_fixture or not atlas_ctx else f"- developmental atlas: {atlas_ctx['tier']}; {atlas_ctx['interpretation']}",
                 "",
             ]
         ),

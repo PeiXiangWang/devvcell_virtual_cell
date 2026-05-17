@@ -30,3 +30,13 @@ Retained: branch nucleation / transient condensation-before-divergence as a time
 Not retained: clone-level fate-diversification prediction from condensation, topological-neighbour-specific mechanism, swarm-required causality, birth/death, memory, CCI, or diffusion as an independent discovery.
 
 Clone-aware analyses are stress tests for the time-series branch signature, not the retained main claim. They do not justify presenting condensation as a clone-level predictor unless the primary outcome is supported across datasets after covariate, matched and negative-control analyses.
+
+## Developmental Time-Series Atlas
+
+- atlas_tier: `weak`
+- datasets_attempted: 3
+- datasets_analyzed: 2
+- acceptable_external_datasets: 0
+- interpretation: internal/E1 remains the main support; new time-series support is weak or unresolved
+
+The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation.

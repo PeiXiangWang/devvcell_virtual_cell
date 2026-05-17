@@ -1,0 +1,12 @@
+source_lineage,target_lineage,mass,source_time,target_time
+mesodermal,mesodermal,0.5002288222312927,4.0,4.5
+mesodermal,neural,0.4997711777687073,4.0,4.5
+mesodermal,neural,0.5,3.0,3.5
+neural,neural,0.5,3.0,3.5
+mesodermal,intermediate,0.15540866553783417,4.5,5.0
+mesodermal,mesodermal,0.19329549372196198,4.5,5.0
+mesodermal,neural,0.15129581093788147,4.5,5.0
+neural,intermediate,0.17790812253952026,4.5,5.0
+neural,mesodermal,0.14006459712982178,4.5,5.0
+neural,neural,0.18202731013298035,4.5,5.0
+neural,mesodermal,1.0,3.5,4.0

@@ -1,0 +1,4 @@
+dataset_id,prepared,input_path,n_cells,n_genes,n_time_points,n_lineages,time_points,reason
+E2_GSE212050_gastruloid_native_atlas,True,processed/developmental_atlas/E2_GSE212050_gastruloid_native_atlas/swarmlineage_input.h5ad,2400.0,30406.0,5.0,61.0,3.0;3.5;4.0;4.5;5.0,
+E3_MouseGastrulationData_wt_chimera_full_stage_mapped,True,processed/developmental_atlas/E3_MouseGastrulationData_wt_chimera_full_stage_mapped/swarmlineage_input.h5ad,2400.0,29453.0,8.0,38.0,E6.5;E7.0;E7.25;E7.5;E7.75;E8.0;E8.25;E8.5,
+E4_GSE123187_tomo_local_blocker,False,,,,,,,fewer_than_four_ordered_time_or_stage_points
