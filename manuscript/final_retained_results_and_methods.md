@@ -68,6 +68,18 @@ The atlas is used to define the current external boundary of the branch-window o
 - interpretation: No new biological mechanism reached strong evidence; the defensible upgrade is branch-window taxonomy, agent rollout interpretability and evidence-boundary auditing.
 - boundary: this is a computational taxonomy and hypothesis-generation framework, not a causal biological mechanism claim.
 
+## Communication-Niche Search
+
+- communication_niche_tier: `acceptable`
+- conclusion: `communication_niche_priming_is_cross_dataset_candidate`
+- analyzed_datasets: 6
+- acceptable_datasets: 2
+- activation_support_datasets: 2
+- receiver_priming_support_datasets: 1
+- strongest_module_candidate: `morphogen_patterning`
+- module_detail: morphogen_patterning: positive activation in internal_native;E1_MouseGastrulationData;GSE154572_EB_WT
+- boundary: this is a candidate extracellular-niche annotation layer. It does not establish confirmed ligand-receptor signalling, communication-driven cause-effect, or experimental perturbation support.
+
 ## Exploratory / Demonstration Only
 
 | law           | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |

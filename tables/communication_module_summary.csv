@@ -1,0 +1,5 @@
+module,support_datasets,datasets,activation_support_datasets,activation_datasets,receiver_priming_support_datasets,receiver_priming_datasets,has_internal,has_e1,has_independent,activation_has_internal,activation_has_e1,activation_has_independent,mean_activation,mean_post_divergence
+chemokine_growth_factor,1,GSE154572_EB_WT,1,GSE154572_EB_WT,1,GSE154572_EB_WT,False,False,True,False,False,True,0.0018069046909036574,0.0016078294901826675
+ecm_adhesion_guidance,1,GSE154572_EB_WT,2,internal_native;GSE154572_EB_WT,2,internal_native;GSE154572_EB_WT,False,False,True,True,False,True,0.03797382145053364,0.005604733909990567
+morphogen_patterning,2,E1_MouseGastrulationData;GSE154572_EB_WT,3,internal_native;E1_MouseGastrulationData;GSE154572_EB_WT,2,internal_native;GSE154572_EB_WT,False,True,True,True,True,True,0.04239948600503117,0.0030009992372265716
+notch_delta,0,,1,GSE154572_EB_WT,1,GSE154572_EB_WT,False,False,False,False,False,True,0.021442612072417336,-0.0004890471451499885

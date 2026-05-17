@@ -533,6 +533,85 @@ def _breakthrough_report_lines(ctx: dict | None) -> list[str]:
     ]
 
 
+def _communication_context() -> dict | None:
+    summary_path = Path("tables/communication_niche_cross_dataset_summary.csv")
+    module_path = Path("tables/communication_module_summary.csv")
+    if not summary_path.exists():
+        return None
+    try:
+        summary = pd.read_csv(summary_path)
+    except Exception:
+        return None
+    if summary.empty:
+        return None
+    row = summary.iloc[0].to_dict()
+    best_module = "none"
+    module_detail = "no module-level summary"
+    if module_path.exists():
+        try:
+            modules = pd.read_csv(module_path)
+            internal_series = (
+                modules["activation_has_internal"]
+                if "activation_has_internal" in modules
+                else pd.Series(False, index=modules.index)
+            )
+            e1_series = (
+                modules["activation_has_e1"]
+                if "activation_has_e1" in modules
+                else pd.Series(False, index=modules.index)
+            )
+            independent_series = (
+                modules["activation_has_independent"]
+                if "activation_has_independent" in modules
+                else pd.Series(False, index=modules.index)
+            )
+            candidates = modules[
+                (internal_series.astype(str).str.lower().isin(["true", "1"]))
+                & (e1_series.astype(str).str.lower().isin(["true", "1"]))
+                & (independent_series.astype(str).str.lower().isin(["true", "1"]))
+            ].sort_values("activation_support_datasets", ascending=False)
+            if not candidates.empty:
+                mod = candidates.iloc[0]
+                best_module = str(mod["module"])
+                module_detail = f"{best_module}: positive activation in {mod['activation_datasets']}"
+        except Exception:
+            pass
+    return {
+        "tier": str(row.get("tier", "unknown")),
+        "conclusion": str(row.get("conclusion", "unknown")),
+        "analyzed_datasets": int(row.get("analyzed_datasets", 0)),
+        "acceptable_datasets": int(row.get("acceptable_datasets", 0)),
+        "activation_support_datasets": int(row.get("activation_support_datasets", 0)),
+        "receiver_priming_support_datasets": int(row.get("receiver_priming_support_datasets", 0)),
+        "best_module": best_module,
+        "module_detail": module_detail,
+    }
+
+
+def _communication_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## Communication-Niche Search",
+            "",
+            "No finalized communication-niche search summary was found.",
+            "",
+        ]
+    return [
+        "## Communication-Niche Search",
+        "",
+        f"- communication_niche_tier: `{ctx['tier']}`",
+        f"- conclusion: `{ctx['conclusion']}`",
+        f"- analyzed_datasets: {ctx['analyzed_datasets']}",
+        f"- acceptable_datasets: {ctx['acceptable_datasets']}",
+        f"- activation_support_datasets: {ctx['activation_support_datasets']}",
+        f"- receiver_priming_support_datasets: {ctx['receiver_priming_support_datasets']}",
+        f"- strongest_module_candidate: `{ctx['best_module']}`",
+        f"- module_detail: {ctx['module_detail']}",
+        "- boundary: this is a candidate extracellular-niche annotation layer. It does not establish confirmed ligand-receptor signalling, communication-driven cause-effect, or experimental perturbation support.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -555,6 +634,8 @@ def _write_reports(
     grn_lines = [] if quick_fixture else _grn_report_lines(grn_ctx)
     breakthrough_ctx = None if quick_fixture else _breakthrough_context()
     breakthrough_lines = [] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx)
+    communication_ctx = None if quick_fixture else _communication_context()
+    communication_lines = [] if quick_fixture else _communication_report_lines(communication_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -625,6 +706,7 @@ def _write_reports(
             + ([] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx))
             + ([] if quick_fixture else _grn_report_lines(grn_ctx))
             + ([] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx))
+            + ([] if quick_fixture else _communication_report_lines(communication_ctx))
         ),
     )
     final_lines = [
@@ -648,6 +730,7 @@ def _write_reports(
         *atlas_lines,
         *grn_lines,
         *breakthrough_lines,
+        *communication_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -693,6 +776,7 @@ def _write_reports(
                 "" if quick_fixture or not atlas_ctx else "- E5 zebrafish is independent and native-moscot analyzed, but did not reproduce condensation-before-divergence and controls were not clean; it is boundary evidence, not validation.",
                 "" if quick_fixture or not grn_ctx else f"- GRN/regulon audit: {grn_ctx['grn_tier']}; {grn_ctx['grn_allowed']}",
                 "" if quick_fixture or not breakthrough_ctx else f"- Breakthrough sprint: {breakthrough_ctx['interpretation']}",
+                "" if quick_fixture or not communication_ctx else f"- Communication-niche search: {communication_ctx['tier']}; {communication_ctx['conclusion']}; strongest module candidate: {communication_ctx['best_module']}.",
                 "",
             ]
         ),

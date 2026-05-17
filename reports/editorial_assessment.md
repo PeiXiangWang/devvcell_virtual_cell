@@ -13,3 +13,4 @@ Current evidence level: discovery-hardened computational research prototype.
 - E5 zebrafish is independent and native-moscot analyzed, but did not reproduce condensation-before-divergence and controls were not clean; it is boundary evidence, not validation.
 - GRN/regulon audit: fail; GRN features do not currently strengthen the branch-window mechanism beyond expression/OT geometry.
 - Breakthrough sprint: No new biological mechanism reached strong evidence; the defensible upgrade is branch-window taxonomy, agent rollout interpretability and evidence-boundary auditing.
+- Communication-niche search: acceptable; communication_niche_priming_is_cross_dataset_candidate; strongest module candidate: morphogen_patterning.
