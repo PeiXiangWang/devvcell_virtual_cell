@@ -11,9 +11,11 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 
 ## Remaining Gaps
 
-- Native moscot was available for the internal teacher but timed out on import in this clone-developmental expansion round, so Jindal/Weinreb use fallback centroid teacher and cannot exceed weak evidence.
-- Jindal LSK provides weak feasibility support for primary condensation exposure; Weinreb does not support the primary exposure; Xie lacks time/stage metadata for branch-window validation.
+- Jindal and Weinreb now have downsampled native moscot checks, but those checks do not support clone-level fate-diversification claims.
+- Jindal's weak full-data fallback signal is not native-stable under the current downsampled run.
+- Weinreb contradicts the primary condensation-only clone association and does not support the revised branch-window feature sets in the native downsample.
+- Xie lacks time/stage metadata for branch-window validation in the processed h5ad.
 - Biddy/CellTag L2 remains a failed clone-aware result.
 - CCI, memory and birth/death remain unsupported and excluded from the main claim.
 - No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.
-- High-impact mechanism claims remain unsupported without native-teacher clone-aware developmental validation and stronger negative controls.
+- High-impact mechanism claims remain unsupported without stronger clone-aware developmental validation and cleaner attribution controls.

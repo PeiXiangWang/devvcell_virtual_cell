@@ -4,15 +4,13 @@
 
 SwarmLineage-OT retains a branch-nucleation / transient condensation-before-divergence time-series order-parameter hypothesis. Internal native moscot teacher analysis and E1 MouseGastrulationData support remain the strongest evidence.
 
-## New Clone-Aware Developmental Expansion
+## Clone-Aware Developmental Expansion
 
-Three prioritized clone-aware datasets were downloaded and audited from scLTdb Zenodo:
+Three prioritized clone-aware datasets were downloaded and audited from the scLTdb Zenodo record. Jindal LSK and Weinreb LARRY contain expression matrices, metadata, clone/barcode fields and ordered time/stage information. Xie organoid contains clone/barcode fields but lacks an explicit time/stage field in the processed h5ad used here.
 
-- Jindal_2023_NatureBiotechnology_LSK_RNA: usable clone/barcode data with two ordered stages; fallback centroid teacher; weak positive primary condensation association.
-- Weinreb_2020_Science: usable clone/barcode data with three ordered stages; fallback centroid teacher; primary condensation not supported, secondary fate-entropy/teacher-bias features associated.
-- Xie_2023_NatureMethods_Organoid: clone/barcode data present but no explicit time/stage field in the processed h5ad, so branch-window validation is not possible here.
+Jindal LSK initially showed weak full-data fallback feasibility: branch-window condensation was positively associated with terminal clone fate entropy after covariate adjustment. A clean `.venv_moscot_native` run then produced a downsampled native moscot teacher for 1,000 cells and 42 usable clones; under this native check, the primary association did not persist. Weinreb LARRY produced a downsampled native moscot teacher for 1,500 cells and 95 usable clones; primary condensation was not supported and was negative after covariate adjustment. Revised two-phase and uncertainty-gated features were not supported in the native downsample.
 
-Because native moscot import timed out in this round, new clone-aware evidence cannot exceed weak tier. Jindal provides feasibility support, but not an established clone-level claim. Weinreb and prior Biddy/CellTag results prevent claiming broad clone-level generalization.
+The clone-aware conclusion is therefore conservative: clone-level fate-diversification support is not established. The retained project-level claim remains a time-series order-parameter hypothesis, not a clone-level fate-prediction claim.
 
 ## Still Excluded
 

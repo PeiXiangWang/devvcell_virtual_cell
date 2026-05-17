@@ -1,0 +1,24 @@
+dataset_id,prepared,path,n_obs,times,attempted,returncode,native_moscot_used,teacher_backend,pairs,detail,started_utc,config_path
+Jindal_2023_NatureBiotechnology_LSK_RNA,True,processed/external_l4_native/Jindal_2023_NatureBiotechnology_LSK_RNA/native_input.h5ad,1000,"[2.5, 5.0]",True,0,True,native_moscot,1,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 120
+  }
+}",2026-05-17 04:08:57.649238+00:00,configs/clone_native_Jindal_2023_NatureBiotechnology_LSK_RNA.yaml
+Weinreb_2020_Science,True,processed/external_l4_native/Weinreb_2020_Science/native_input.h5ad,1500,"[2.0, 4.0, 6.0]",True,0,True,native_moscot,2,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 120
+  }
+}",2026-05-17 04:09:15.743664+00:00,configs/clone_native_Weinreb_2020_Science.yaml

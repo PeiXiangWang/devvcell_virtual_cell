@@ -4,16 +4,16 @@
 
 | Dataset | Status | Teacher | Clone result |
 |---|---|---|---|
-| Jindal LSK CellTag-Multi | analyzed | fallback centroid teacher | weak positive primary condensation association; limited by two stages and native timeout |
-| Weinreb LARRY | analyzed | fallback centroid teacher | primary condensation not supported; secondary fate-entropy and teacher-bias associations |
+| Jindal LSK CellTag-Multi | analyzed in full-data fallback and downsampled native moscot | fallback centroid plus downsampled native moscot | fallback weak positive did not persist in native downsample |
+| Weinreb LARRY | analyzed in full-data fallback and downsampled native moscot | fallback centroid plus downsampled native moscot | primary condensation not supported; native downsample is negative |
 | Xie organoid | loaded/audited | not applicable for branch-window | clone metadata present but no explicit time/stage field |
 
 ## Project-Level Interpretation
 
-The new evidence moves the project slightly forward but not to an established clone-aware claim. Jindal provides weak feasibility support for a branch-window condensation association with clone fate diversification. Weinreb does not support the primary condensation exposure, and Xie cannot test the branch-window question from the processed metadata.
+The clone-aware developmental expansion does not establish clone-level fate-diversification support. The strongest retained project claim remains the time-series branch-nucleation order-parameter hypothesis supported by internal native moscot and E1 MouseGastrulationData.
 
-The appropriate conclusion is: branch nucleation remains a time-series order-parameter hypothesis with internal native and E1 support, plus weak clone-aware feasibility in one developmental hematopoiesis dataset. Clone-level fate-diversification support is not established as a main claim.
+The revised two-phase and uncertainty-gated branch-window models were also tested in the native downsample and were not supported in Jindal or Weinreb. The appropriate conclusion is that clone-level fate-diversification support is not established in the tested clone-aware datasets.
 
 ## Required Next Step
 
-The next decisive experiment is to rerun Jindal and Weinreb with native moscot or another validated temporal teacher, then test whether Jindal's weak positive signal survives teacher replacement, time-window sensitivity and stricter clone-size/time-span matching.
+The next decisive experiment is either a larger native-teacher Jindal/Weinreb run with stronger clone coverage or a developmental clone dataset with richer ordered sampling, clone/barcode metadata and sufficient clones spanning the branch window.
