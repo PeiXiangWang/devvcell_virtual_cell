@@ -19,6 +19,20 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 | diffusion         | acceptable | encoded_control_law_recovery      | False           | True                             |
 | branch_nucleation | strong     | retained_computational_hypothesis | True            | False                            |
 
+## Clone-Aware Evidence Boundary
+
+- latest_audit_source: `outcome_preserving`
+- final_clone_aware_status: `weinreb_sampling_specific_condensation_signal`
+- final_clone_aware_tier: `weak`
+- interpretation: Weinreb retains a sampling-specific primary condensation signal, but Jindal does not recover support after outcome-preserving native sampling; no general clone-aware support is established.
+- boundary: Clone-level fate-diversification prediction is not supported under current tested datasets and native sampling strategies.
+
+Retained: branch nucleation / transient condensation-before-divergence as a time-series order-parameter computational hypothesis, supported by internal native moscot and E1 MouseGastrulationData with M5_ot_swarm as the evidence-selected primary model.
+
+Not retained: clone-level fate-diversification prediction from condensation, topological-neighbour-specific mechanism, swarm-required causality, birth/death, memory, CCI, or diffusion as an independent discovery.
+
+Clone-aware analyses are stress tests for the time-series branch signature, not the retained main claim. They do not justify presenting condensation as a clone-level predictor unless the primary outcome is supported across datasets after covariate, matched and negative-control analyses.
+
 ## Exploratory / Demonstration Only
 
 | law           | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |

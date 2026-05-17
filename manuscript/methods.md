@@ -1,7 +1,5 @@
-# Methods v1.3
+# Methods
 
-v1.3 uses a pre-registered exploration loop: define a mechanism hypothesis, define success and failure criteria, test internal native data, test E1 external time-series data, include L2 for clone-aware claims, run negative controls, evaluate stability and assign a tier.
+Native moscot teachers were used for the internal dataset and for downsampled clone-aware Jindal/Weinreb audits where feasible. The final outcome-preserving clone audit sampled cells to preserve terminal clone fate entropy estimability before running native moscot. Associations were evaluated on outcome-estimable clones only, using raw Spearman effects, covariate-adjusted regression, within-start-time, clone-size and time-span matched analyses, bootstrap intervals and permutation controls.
 
-Neighbour rules include topological kNN, metric-radius neighbours, random neighbours, label-restricted neighbours and mixed latent/fate neighbours. Downsample stability is computed for internal and E1 datasets using matched fractions and seeds. Susceptibility diagnostics use developmental velocity-fluctuation correlations and negative controls. The minimal pairwise model estimates local label-coupling and velocity-alignment parameters without branch event labels. L2 clone diagnostics test multiple exposure definitions and covariate-adjusted regressions.
-
-All outputs are tiered as strong, acceptable, weak or fail. Clone-aware support is not assigned unless clone metadata are present and the association supports the hypothesis after controls.
+The primary clone-aware test was branch-window condensation exposure predicting terminal clone fate entropy. Secondary models included post-event divergence, fate entropy, teacher velocity bias, condensation plus divergence and uncertainty plus teacher bias. Secondary associations were reported as sensitivity analyses and were not allowed to rescue a failed primary claim.

@@ -302,6 +302,62 @@ def _mechanistic_tier(teacher_tier: str, laws: pd.DataFrame, native_validated: b
     return "fail"
 
 
+def _clone_boundary_context() -> dict | None:
+    """Return the latest clone-aware evidence boundary, preferring the outcome-preserving audit."""
+    candidates = [
+        ("outcome_preserving", Path("tables/clone_outcome_preserving_native_final_summary.csv")),
+        ("clone_stratified", Path("tables/clone_stratified_native_final_summary.csv")),
+    ]
+    for source, path in candidates:
+        if not path.exists():
+            continue
+        try:
+            table = pd.read_csv(path)
+        except Exception:
+            continue
+        if table.empty:
+            continue
+        row = table.iloc[0].to_dict()
+        return {
+            "source": source,
+            "status": str(row.get("final_clone_aware_status", "unknown")),
+            "tier": str(row.get("final_clone_aware_tier", "unknown")),
+            "interpretation": str(row.get("interpretation", "No interpretation recorded.")),
+        }
+    return None
+
+
+def _clone_boundary_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## Clone-Aware Evidence Boundary",
+            "",
+            "No finalized clone-aware audit table was found. Clone-level fate-diversification support is not retained by default.",
+            "",
+        ]
+    boundary = (
+        "Clone-level fate-diversification prediction is not supported under current tested datasets and native sampling strategies."
+        if ctx["tier"] in {"fail", "weak"}
+        else "Clone-aware support is a computational candidate that still requires independent validation."
+    )
+    return [
+        "## Clone-Aware Evidence Boundary",
+        "",
+        f"- latest_audit_source: `{ctx['source']}`",
+        f"- final_clone_aware_status: `{ctx['status']}`",
+        f"- final_clone_aware_tier: `{ctx['tier']}`",
+        f"- interpretation: {ctx['interpretation']}",
+        f"- boundary: {boundary}",
+        "",
+        "Retained: branch nucleation / transient condensation-before-divergence as a time-series order-parameter computational hypothesis, supported by internal native moscot and E1 MouseGastrulationData with M5_ot_swarm as the evidence-selected primary model.",
+        "",
+        "Not retained: clone-level fate-diversification prediction from condensation, topological-neighbour-specific mechanism, swarm-required causality, birth/death, memory, CCI, or diffusion as an independent discovery.",
+        "",
+        "Clone-aware analyses are stress tests for the time-series branch signature, not the retained main claim. They do not justify presenting condensation as a clone-level predictor unless the primary outcome is supported across datasets after covariate, matched and negative-control analyses.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -316,6 +372,8 @@ def _write_reports(
     quick_fixture: bool,
 ) -> None:
     mean = metrics.groupby("model")[CORE].mean()
+    clone_ctx = None if quick_fixture else _clone_boundary_context()
+    clone_lines = [] if quick_fixture else _clone_boundary_report_lines(clone_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -379,8 +437,10 @@ def _write_reports(
                 "- CCI and memory are computational probes; experimental validation is absent.",
                 "- No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.",
                 "- High-impact submission claims remain unsupported without external lineage, perturbation or experimental validation.",
+                "" if quick_fixture else "- Clone-level fate-diversification prediction is not retained; the current main line remains a time-series order-parameter hypothesis.",
                 "",
             ]
+            + ([] if quick_fixture else _clone_boundary_report_lines(clone_ctx))
         ),
     )
     final_lines = [
@@ -400,6 +460,7 @@ def _write_reports(
         "",
         retained[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not retained.empty else "None retained at acceptable evidence level.",
         "",
+        *clone_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -438,6 +499,8 @@ def _write_reports(
                 f"- emergent_law_tier: {emergent_tier}",
                 f"- mechanistic_usefulness_tier: {mechanistic_tier}",
                 "- Not ready for high-impact submission without external teacher validation and biological validation.",
+                "" if quick_fixture else "- Clone-aware fate-diversification support is not a retained main claim unless the latest clone audit reaches acceptable cross-dataset support.",
+                "" if quick_fixture or not clone_ctx else f"- latest clone audit: {clone_ctx['status']} ({clone_ctx['tier']}); {clone_ctx['interpretation']}",
                 "",
             ]
         ),

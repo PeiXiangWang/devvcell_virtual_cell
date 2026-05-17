@@ -1,0 +1,11 @@
+dataset_id,sampling_strategy,native_attempted,native_returncode,native_moscot_success,teacher_backend,fallback_used,runtime_seconds,n_pairs,plan_shapes,failure_reason
+Jindal_2023_NatureBiotechnology_LSK_RNA,terminal_outcome_preserving_native,True,0,True,native_moscot,False,17.604583263397217,1,"(500, 500)",
+Jindal_2023_NatureBiotechnology_LSK_RNA,early_terminal_balanced_native,True,0,True,native_moscot,False,8.027997493743896,1,"(500, 500)",
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_outcome_quality_native,True,0,True,native_moscot,False,8.398026466369629,1,"(500, 500)",
+Jindal_2023_NatureBiotechnology_LSK_RNA,fate_entropy_preserving_native,True,0,True,native_moscot,False,8.312909841537476,1,"(500, 500)",
+Jindal_2023_NatureBiotechnology_LSK_RNA,max_outcome_quality_feasible_native,True,0,True,native_moscot,False,9.205740451812744,1,"(650, 650)",
+Weinreb_2020_Science,terminal_outcome_preserving_native,True,0,True,native_moscot,False,10.708931684494019,2,"(500, 500);(500, 500)",
+Weinreb_2020_Science,early_terminal_balanced_native,True,0,True,native_moscot,False,10.052678108215332,2,"(500, 500);(500, 500)",
+Weinreb_2020_Science,clone_outcome_quality_native,True,0,True,native_moscot,False,10.2345871925354,2,"(500, 500);(500, 500)",
+Weinreb_2020_Science,fate_entropy_preserving_native,True,0,True,native_moscot,False,10.799309015274048,2,"(500, 500);(500, 500)",
+Weinreb_2020_Science,max_outcome_quality_feasible_native,True,0,True,native_moscot,False,12.395804405212402,2,"(650, 650);(650, 650)",
