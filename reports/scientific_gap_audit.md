@@ -11,11 +11,7 @@ OT gives the developmental map; SwarmLineage-OT learns microscopic finite-agent 
 
 ## Remaining Gaps
 
-- Jindal and Weinreb now have downsampled native moscot checks, but those checks do not support clone-level fate-diversification claims.
-- Jindal's weak full-data fallback signal is not native-stable under the current downsampled run.
-- Weinreb contradicts the primary condensation-only clone association and does not support the revised branch-window feature sets in the native downsample.
-- Xie lacks time/stage metadata for branch-window validation in the processed h5ad.
-- Biddy/CellTag L2 remains a failed clone-aware result.
-- CCI, memory and birth/death remain unsupported and excluded from the main claim.
+- Native moscot/WOT or external teacher validation status is reported in `teacher_backend_status.csv`.
+- CCI and memory are computational probes; experimental validation is absent.
 - No manuscript claim may frame SwarmLineage-OT as surpassing the OT reference.
-- High-impact mechanism claims remain unsupported without stronger clone-aware developmental validation and cleaner attribution controls.
+- High-impact submission claims remain unsupported without external lineage, perturbation or experimental validation.

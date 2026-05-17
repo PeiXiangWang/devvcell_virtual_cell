@@ -1,0 +1,116 @@
+dataset_id,sampling_strategy,native_attempted,native_returncode,native_moscot_success,teacher_backend,fallback_used,runtime_seconds,n_pairs,plan_shapes,failure_reason,detail
+Jindal_2023_NatureBiotechnology_LSK_RNA,cell_random_native,True,0,True,native_moscot,False,9.804195880889893,1,"(500, 500)",,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_stratified_native,True,0,True,native_moscot,False,10.167405366897583,1,"(500, 500)",,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_time_balanced_native,True,0,True,native_moscot,False,11.261957883834839,1,"(500, 500)",,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Jindal_2023_NatureBiotechnology_LSK_RNA,clone_fate_balanced_native,True,0,True,native_moscot,False,10.013851881027222,1,"(500, 500)",,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Jindal_2023_NatureBiotechnology_LSK_RNA,max_feasible_native,True,0,True,native_moscot,False,9.698346614837646,1,"(650, 650)",,"INFO     Solving `1` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(650, 650)].
+{
+  ""teacher_pairs"": 1,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Weinreb_2020_Science,cell_random_native,True,0,True,native_moscot,False,9.649205207824707,2,"(500, 500);(500, 500)",,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Weinreb_2020_Science,clone_stratified_native,True,0,True,native_moscot,False,12.843064785003662,2,"(500, 500);(500, 500)",,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Weinreb_2020_Science,clone_time_balanced_native,True,0,True,native_moscot,False,13.11479115486145,2,"(500, 500);(500, 500)",,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Weinreb_2020_Science,clone_fate_balanced_native,True,0,True,native_moscot,False,11.84998631477356,2,"(500, 500);(500, 500)",,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(500, 500)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"
+Weinreb_2020_Science,max_feasible_native,True,0,True,native_moscot,False,12.636585474014282,2,"(650, 650);(650, 650)",,"INFO     Solving `2` problems
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(650, 650)].
+INFO     Solving problem BirthDeathProblem[stage='prepared', shape=(650, 650)].
+{
+  ""teacher_pairs"": 2,
+  ""teacher_backend"": ""native_moscot"",
+  ""native"": {
+    ""available"": true,
+    ""detail"": ""{\""version\"": \""0.3.5\""}"",
+    ""timeout_seconds"": 180
+  }
+}"

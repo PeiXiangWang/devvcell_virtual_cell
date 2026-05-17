@@ -1,8 +1,7 @@
 # Clone Developmental Claim Audit
 
-- clone-aware data were genuinely downloaded for Jindal LSK, Weinreb LARRY and Xie organoid.
-- native moscot was run in a clean environment for downsampled Jindal and Weinreb inputs.
-- Jindal's weak full-data fallback signal is not upgraded because it did not persist in the native downsample.
-- Weinreb is negative for the primary condensation exposure under the native downsample.
+- Jindal and Weinreb were rerun with clone-stratified native moscot sampling.
+- Jindal's full-data fallback signal is not upgraded because it did not persist in clone-stratified native validation.
+- Weinreb has strategy-specific native positives, but these do not establish a cross-dataset clone-level claim.
 - no result is described as experimental confirmation.
-- primary condensation exposure must support the primary clone score after covariates before clone-level support can be claimed.
+- primary condensation exposure must support the primary clone score after covariates and matched analyses across datasets before clone-level support can be claimed.
