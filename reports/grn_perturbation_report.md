@@ -1,6 +1,6 @@
 # In silico GRN perturbation report
 
-Perturbations are activity-rescaling sensitivity probes on fallback regulon activities, not experimental validation or causal proof.
+Perturbations are activity-rescaling sensitivity probes on fallback regulon activities, not experimental validation or causal evidence by themselves.
 
 | dataset                       | perturbation                  | tf      |   baseline_branch_window_score |   perturbed_branch_window_score_proxy |   score_shift_proxy | interpretation                                            |
 |:------------------------------|:------------------------------|:--------|-------------------------------:|--------------------------------------:|--------------------:|:----------------------------------------------------------|

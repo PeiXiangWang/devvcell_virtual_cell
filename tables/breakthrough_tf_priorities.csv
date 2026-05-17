@@ -1,0 +1,26 @@
+tf,n_datasets,datasets,mean_abs_proxy_shift,programs,priority_tier,claim_boundary
+Lhx1,2,E3_MouseGastrulationData_full;GSE154572_EB_proxy,0.25000000000000755,primitive_streak_mesendoderm,candidate,future validation candidate only; not perturbation validated
+Sox1,2,E3_MouseGastrulationData_full;GSE154572_EB_proxy,0.25000000000000666,neural_ectoderm,candidate,future validation candidate only; not perturbation validated
+Pou3f1,2,E1_MouseGastrulationData;E3_MouseGastrulationData_full,0.2500000000000028,neural_ectoderm,candidate,future validation candidate only; not perturbation validated
+Eomes,2,GSE154572_EB_proxy;internal_native,0.2500000000000011,primitive_streak_mesendoderm,candidate,future validation candidate only; not perturbation validated
+Otx2,2,E1_MouseGastrulationData;internal_native,0.2500000000000006,neural_ectoderm,candidate,future validation candidate only; not perturbation validated
+Msgn1,1,E3_MouseGastrulationData_full,0.250000000000041,mesoderm_emt,exploratory,future validation candidate only; not perturbation validated
+CEBPA,1,E5_zebrafish_Farrell,0.2500000000000169,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+Irf8,1,internal_native,0.2500000000000162,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+TFCP2L1,1,E5_zebrafish_Farrell,0.250000000000012,pluripotency,exploratory,future validation candidate only; not perturbation validated
+SOX3,1,E5_zebrafish_Farrell,0.2500000000000089,neural_ectoderm,exploratory,future validation candidate only; not perturbation validated
+Tfcp2l1,1,internal_native,0.2500000000000069,pluripotency,exploratory,future validation candidate only; not perturbation validated
+Gata1,1,internal_native,0.2500000000000065,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+ESRRB,1,E5_zebrafish_Farrell,0.2500000000000062,pluripotency,exploratory,future validation candidate only; not perturbation validated
+SOX7,1,E5_zebrafish_Farrell,0.2500000000000058,endoderm,exploratory,future validation candidate only; not perturbation validated
+CEBPB,1,E5_zebrafish_Farrell,0.2500000000000053,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+Gata4,1,GSE154572_EB_proxy,0.2500000000000035,endoderm,exploratory,future validation candidate only; not perturbation validated
+Foxa2,1,E3_MouseGastrulationData_full,0.2500000000000033,primitive_streak_mesendoderm,exploratory,future validation candidate only; not perturbation validated
+Gsc,1,GSE154572_EB_proxy,0.2500000000000031,primitive_streak_mesendoderm,exploratory,future validation candidate only; not perturbation validated
+Sox7,1,E3_MouseGastrulationData_full,0.2500000000000024,endoderm,exploratory,future validation candidate only; not perturbation validated
+Hand1,1,E1_MouseGastrulationData,0.2500000000000019,mesoderm_emt,exploratory,future validation candidate only; not perturbation validated
+Runx1,1,internal_native,0.2500000000000011,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+T,1,GSE154572_EB_proxy,0.2500000000000009,primitive_streak_mesendoderm,exploratory,future validation candidate only; not perturbation validated
+Mesp1,1,E1_MouseGastrulationData,0.2500000000000007,primitive_streak_mesendoderm,exploratory,future validation candidate only; not perturbation validated
+Lmo2,1,E1_MouseGastrulationData,0.2500000000000006,hematopoietic,exploratory,future validation candidate only; not perturbation validated
+Snai1,1,E1_MouseGastrulationData,0.2500000000000003,mesoderm_emt,exploratory,future validation candidate only; not perturbation validated

@@ -59,6 +59,15 @@ The atlas is used to define the current external boundary of the branch-window o
 - interpretation: GRN features do not currently strengthen the branch-window mechanism beyond expression/OT geometry.
 - boundary: GRN/regulon analysis is a computational audit and candidate-generation layer. It does not establish causal GRN control, validated TF perturbation, experimental validation, or a proven regulatory mechanism.
 
+## Breakthrough Sprint Final Story
+
+- selected_story: `computational branch-window framework with taxonomy and failure-boundary audit`
+- directions_at_least_acceptable: 6
+- strong_directions: 0
+- main_story_directions: branch_window_taxonomy, agent_value_over_teacher_only, failure_boundary_atlas, final_story_selection
+- interpretation: No new biological mechanism reached strong evidence; the defensible upgrade is branch-window taxonomy, agent rollout interpretability and evidence-boundary auditing.
+- boundary: this is a computational taxonomy and hypothesis-generation framework, not a causal biological mechanism claim.
+
 ## Exploratory / Demonstration Only
 
 | law           | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |

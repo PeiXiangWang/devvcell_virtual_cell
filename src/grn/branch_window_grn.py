@@ -750,7 +750,7 @@ def _reports(outputs: dict[str, pd.DataFrame]) -> None:
     write_text(
         ROOT / "reports" / "grn_perturbation_report.md",
         "# In silico GRN perturbation report\n\n"
-        "Perturbations are activity-rescaling sensitivity probes on fallback regulon activities, not experimental validation or causal proof.\n\n"
+        "Perturbations are activity-rescaling sensitivity probes on fallback regulon activities, not experimental validation or causal evidence by themselves.\n\n"
         + (outputs["perturb"].head(30).to_markdown(index=False) if not outputs["perturb"].empty else "No perturbation rows were produced.\n"),
     )
     write_text(

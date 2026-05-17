@@ -1,0 +1,33 @@
+dataset,program,n_tfs,example_tfs,known_biology_annotation,support_tier,allowed_claim
+E1_MouseGastrulationData,endoderm,1,Sox17,definitive/endoderm lineage commitment program,weak,candidate developmental TF program recovery; not a new mechanism
+E1_MouseGastrulationData,hematopoietic,2,Tal1;Lmo2,hematopoietic fate regulator program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E1_MouseGastrulationData,mesoderm_emt,2,Snai1;Hand1,mesoderm or EMT-like transition program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E1_MouseGastrulationData,neural_ectoderm,2,Otx2;Pou3f1,neural/ectoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E1_MouseGastrulationData,pluripotency,2,Pou5f1;Sox2,pluripotency or pre-commitment state program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E1_MouseGastrulationData,primitive_streak_mesendoderm,4,T;Mixl1;Mesp1;Lhx1,"primitive streak, mesendoderm, gastrulation transition program",acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,endoderm,5,Sox17;Gata4;Gata6;Sox7;Hhex,definitive/endoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,hematopoietic,10,Tal1;Runx1;Gata1;Gata2;Lmo2;Spi1;Irf8;Cebpa,hematopoietic fate regulator program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,mesoderm_emt,9,Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Msgn1;Hand1,mesoderm or EMT-like transition program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,neural_ectoderm,7,Sox1;Sox3;Pax6;Otx2;Pou3f1;Neurog1;Neurog2,neural/ectoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,pluripotency,7,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42,pluripotency or pre-commitment state program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,primitive_streak_mesendoderm,8,T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1,"primitive streak, mesendoderm, gastrulation transition program",acceptable,candidate developmental TF program recovery; not a new mechanism
+E3_MouseGastrulationData_full,zebrafish_mesendoderm,1,Gata5,zebrafish mesendoderm/notochord-associated developmental program,weak,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,endoderm,5,SOX17;GATA4;GATA6;SOX7;HHEX,definitive/endoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,hematopoietic,7,TAL1;RUNX1;LMO2;IRF8;CEBPA;CEBPB;KLF1,hematopoietic fate regulator program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,mesoderm_emt,4,SNAI2;TBX6;MSGN1;HAND2,mesoderm or EMT-like transition program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,neural_ectoderm,4,SOX3;OTX2;POU3F1;NEUROG1,neural/ectoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,pluripotency,5,NANOG;SOX2;KLF4;ESRRB;TFCP2L1,pluripotency or pre-commitment state program,acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,primitive_streak_mesendoderm,3,MIXL1;FOXA2;GSC,"primitive streak, mesendoderm, gastrulation transition program",acceptable,candidate developmental TF program recovery; not a new mechanism
+E5_zebrafish_Farrell,zebrafish_mesendoderm,4,SOX32;GATA5;MESPAA;MESPAB,zebrafish mesendoderm/notochord-associated developmental program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,endoderm,5,Sox17;Gata4;Gata6;Sox7;Hhex,definitive/endoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,hematopoietic,9,Tal1;Runx1;Gata1;Gata2;Lmo2;Spi1;Irf8;Cebpb,hematopoietic fate regulator program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,mesoderm_emt,8,Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Hand1;Hand2,mesoderm or EMT-like transition program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,neural_ectoderm,5,Sox1;Sox3;Pax6;Otx2;Pou3f1,neural/ectoderm lineage commitment program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,pluripotency,7,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42,pluripotency or pre-commitment state program,acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,primitive_streak_mesendoderm,8,T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1,"primitive streak, mesendoderm, gastrulation transition program",acceptable,candidate developmental TF program recovery; not a new mechanism
+GSE154572_EB_proxy,zebrafish_mesendoderm,1,Gata5,zebrafish mesendoderm/notochord-associated developmental program,weak,candidate developmental TF program recovery; not a new mechanism
+internal_native,endoderm,1,Gata4,definitive/endoderm lineage commitment program,weak,candidate developmental TF program recovery; not a new mechanism
+internal_native,hematopoietic,7,Tal1;Runx1;Gata1;Gata2;Lmo2;Spi1;Irf8,hematopoietic fate regulator program,acceptable,candidate developmental TF program recovery; not a new mechanism
+internal_native,neural_ectoderm,1,Otx2,neural/ectoderm lineage commitment program,weak,candidate developmental TF program recovery; not a new mechanism
+internal_native,pluripotency,2,Esrrb;Tfcp2l1,pluripotency or pre-commitment state program,acceptable,candidate developmental TF program recovery; not a new mechanism
+internal_native,primitive_streak_mesendoderm,3,T;Eomes;Lhx1,"primitive streak, mesendoderm, gastrulation transition program",acceptable,candidate developmental TF program recovery; not a new mechanism

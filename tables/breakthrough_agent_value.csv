@@ -1,0 +1,5 @@
+model,role,teacher_fidelity_tier,relative_sinkhorn_to_ot_reference,composition_rmse,branch_window_taxonomy_available,value_conclusion
+M0b_ot_interpolation,teacher_reference,strong,1.0,0.0034810292302347,False,"reference map, not competitor"
+M2_ot_teacher_force,agent_or_control,weak,1.140367305754616,0.0039635950952872,False,limited or exploratory contribution
+M5_ot_swarm,agent_or_control,acceptable,1.1317365547042475,0.0040253218733119,True,adds rollout order-parameter interpretability
+M9_full_memory,agent_or_control,acceptable,1.2036307706484026,0.0217414313759374,True,limited or exploratory contribution

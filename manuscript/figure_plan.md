@@ -13,3 +13,7 @@ Figure 5: Final validation sprint: GSE154572 weak cluster-proxy EB analysis and 
 Figure 6: Stress-test boundary: clone-aware fail/weak, topological specificity unresolved and unsupported modules excluded.
 
 Extended Data Figure 7: GRN/regulon audit: method availability, fallback regulon branch-window scores, known TF program recovery, perturbation-proxy sensitivity and negative controls. This figure is explicitly labelled as computational candidate generation, not regulatory validation.
+
+Figure 7: Breakthrough synthesis: branch-window taxonomy across internal/E1/developmental atlas datasets, direction-tier matrix for the ten explored hypotheses, and the final retained story. This figure should emphasize that the framework's strongest upgrade is taxonomy plus evidence-boundary auditing, not a new causal mechanism.
+
+Extended Data Figure 8: Failure-boundary atlas: clone, topological, swarm-causality, GRN, birth/death, memory, CCI, spatial and independent-atlas limitations with data/method/biology categories.

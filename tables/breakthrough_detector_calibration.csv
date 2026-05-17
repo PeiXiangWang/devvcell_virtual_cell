@@ -1,0 +1,4 @@
+dataset,detector_event,detector_support_tier,negative_control_pass_rate,baseline_match_rate,calibration_conclusion
+E5_CellRank_Farrell_zebrafish_axial_mesoderm,True,weak,0.1666666666666666,0.0,unreliable_or_weak
+E2_GSE212050_gastruloid_native_atlas,False,fail,0.8333333333333334,0.125,unreliable_or_weak
+E3_MouseGastrulationData_wt_chimera_full_stage_mapped,True,weak,0.1666666666666666,0.0,unreliable_or_weak

@@ -489,6 +489,50 @@ def _grn_report_lines(ctx: dict | None) -> list[str]:
     ]
 
 
+def _breakthrough_context() -> dict | None:
+    path = Path("tables/breakthrough_direction_summary.csv")
+    if not path.exists():
+        return None
+    try:
+        table = pd.read_csv(path)
+    except Exception:
+        return None
+    if table.empty:
+        return None
+    enters = table["enters_main_story"] if "enters_main_story" in table else pd.Series(False, index=table.index)
+    main = table[enters.astype(str).str.lower().isin(["true", "1"])]
+    acceptable = int(table["tier"].astype(str).isin(["acceptable", "strong"]).sum())
+    strong = int(table["tier"].astype(str).eq("strong").sum())
+    return {
+        "acceptable_or_strong": acceptable,
+        "strong": strong,
+        "main_directions": ", ".join(main["direction"].astype(str).tolist()) if not main.empty else "none",
+        "selected_story": "computational branch-window framework with taxonomy and failure-boundary audit",
+        "interpretation": "No new biological mechanism reached strong evidence; the defensible upgrade is branch-window taxonomy, agent rollout interpretability and evidence-boundary auditing.",
+    }
+
+
+def _breakthrough_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## Breakthrough Sprint Final Story",
+            "",
+            "No finalized breakthrough direction summary was found.",
+            "",
+        ]
+    return [
+        "## Breakthrough Sprint Final Story",
+        "",
+        f"- selected_story: `{ctx['selected_story']}`",
+        f"- directions_at_least_acceptable: {ctx['acceptable_or_strong']}",
+        f"- strong_directions: {ctx['strong']}",
+        f"- main_story_directions: {ctx['main_directions']}",
+        f"- interpretation: {ctx['interpretation']}",
+        "- boundary: this is a computational taxonomy and hypothesis-generation framework, not a causal biological mechanism claim.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -509,6 +553,8 @@ def _write_reports(
     atlas_lines = [] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx)
     grn_ctx = None if quick_fixture else _grn_context()
     grn_lines = [] if quick_fixture else _grn_report_lines(grn_ctx)
+    breakthrough_ctx = None if quick_fixture else _breakthrough_context()
+    breakthrough_lines = [] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -578,6 +624,7 @@ def _write_reports(
             + ([] if quick_fixture else _clone_boundary_report_lines(clone_ctx))
             + ([] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx))
             + ([] if quick_fixture else _grn_report_lines(grn_ctx))
+            + ([] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx))
         ),
     )
     final_lines = [
@@ -600,6 +647,7 @@ def _write_reports(
         *clone_lines,
         *atlas_lines,
         *grn_lines,
+        *breakthrough_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -644,6 +692,7 @@ def _write_reports(
                 "" if quick_fixture or not atlas_ctx else f"- developmental atlas analyzed datasets: {', '.join(atlas_ctx.get('analyzed_datasets', [])) or 'none'}",
                 "" if quick_fixture or not atlas_ctx else "- E5 zebrafish is independent and native-moscot analyzed, but did not reproduce condensation-before-divergence and controls were not clean; it is boundary evidence, not validation.",
                 "" if quick_fixture or not grn_ctx else f"- GRN/regulon audit: {grn_ctx['grn_tier']}; {grn_ctx['grn_allowed']}",
+                "" if quick_fixture or not breakthrough_ctx else f"- Breakthrough sprint: {breakthrough_ctx['interpretation']}",
                 "",
             ]
         ),

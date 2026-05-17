@@ -1,0 +1,6 @@
+dataset,entropy_effect,high_uncertainty_window,support_context,controls_clean
+internal_native,0.0,False,internal,True
+E1_MouseGastrulationData,0.0,False,E1,True
+E5_CellRank_Farrell_zebrafish_axial_mesoderm,-0.0024806261062622,False,developmental_atlas,False
+E2_GSE212050_gastruloid_native_atlas,-0.0405249595642089,False,developmental_atlas,True
+E3_MouseGastrulationData_wt_chimera_full_stage_mapped,0.1005545854568481,True,developmental_atlas,False
