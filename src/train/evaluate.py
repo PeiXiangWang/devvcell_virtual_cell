@@ -450,6 +450,44 @@ def _developmental_atlas_report_lines(ctx: dict | None) -> list[str]:
     ]
 
 
+def _grn_context() -> dict | None:
+    path = Path("tables/grn_evidence_matrix.csv")
+    if not path.exists():
+        return None
+    try:
+        table = pd.read_csv(path)
+    except Exception:
+        return None
+    if table.empty:
+        return None
+    grn = table[table["claim"].astype(str).str.contains("GRN/regulon", case=False, na=False)]
+    known = table[table["claim"].astype(str).str.contains("Known developmental", case=False, na=False)]
+    return {
+        "grn_tier": str(grn.iloc[0].get("tier", "unknown")) if not grn.empty else "unknown",
+        "grn_allowed": str(grn.iloc[0].get("allowed_language", "No GRN interpretation recorded.")) if not grn.empty else "No GRN interpretation recorded.",
+        "known_tier": str(known.iloc[0].get("tier", "unknown")) if not known.empty else "unknown",
+    }
+
+
+def _grn_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## GRN / Regulon Evidence Boundary",
+            "",
+            "No finalized GRN evidence matrix was found. Regulatory mechanism support is not retained by default.",
+            "",
+        ]
+    return [
+        "## GRN / Regulon Evidence Boundary",
+        "",
+        f"- final_GRN_tier: `{ctx['grn_tier']}`",
+        f"- known_TF_program_recovery_tier: `{ctx['known_tier']}`",
+        f"- interpretation: {ctx['grn_allowed']}",
+        "- boundary: GRN/regulon analysis is a computational audit and candidate-generation layer. It does not establish causal GRN control, validated TF perturbation, experimental validation, or a proven regulatory mechanism.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -468,6 +506,8 @@ def _write_reports(
     clone_lines = [] if quick_fixture else _clone_boundary_report_lines(clone_ctx)
     atlas_ctx = None if quick_fixture else _developmental_atlas_context()
     atlas_lines = [] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx)
+    grn_ctx = None if quick_fixture else _grn_context()
+    grn_lines = [] if quick_fixture else _grn_report_lines(grn_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -536,6 +576,7 @@ def _write_reports(
             ]
             + ([] if quick_fixture else _clone_boundary_report_lines(clone_ctx))
             + ([] if quick_fixture else _developmental_atlas_report_lines(atlas_ctx))
+            + ([] if quick_fixture else _grn_report_lines(grn_ctx))
         ),
     )
     final_lines = [
@@ -557,6 +598,7 @@ def _write_reports(
         "",
         *clone_lines,
         *atlas_lines,
+        *grn_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -600,6 +642,7 @@ def _write_reports(
                 "" if quick_fixture or not atlas_ctx else f"- developmental atlas: {atlas_ctx['tier']}; {atlas_ctx['interpretation']}",
                 "" if quick_fixture or not atlas_ctx else f"- developmental atlas analyzed datasets: {', '.join(atlas_ctx.get('analyzed_datasets', [])) or 'none'}",
                 "" if quick_fixture or not atlas_ctx else "- E5 zebrafish is independent and native-moscot analyzed, but did not reproduce condensation-before-divergence and controls were not clean; it is boundary evidence, not validation.",
+                "" if quick_fixture or not grn_ctx else f"- GRN/regulon audit: {grn_ctx['grn_tier']}; {grn_ctx['grn_allowed']}",
                 "",
             ]
         ),

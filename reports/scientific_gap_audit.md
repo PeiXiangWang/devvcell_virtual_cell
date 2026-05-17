@@ -48,3 +48,10 @@ Clone-aware analyses are stress tests for the time-series branch signature, not 
 - final_manuscript_line: internal native plus E1 support retained; independent EB/spatial sprint did not upgrade cross-system support
 
 The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation. A detected branch-like window without condensation-before-divergence, or with unclean controls, does not upgrade the retained claim.
+
+## GRN / Regulon Evidence Boundary
+
+- final_GRN_tier: `fail`
+- known_TF_program_recovery_tier: `acceptable`
+- interpretation: GRN features do not currently strengthen the branch-window mechanism beyond expression/OT geometry.
+- boundary: GRN/regulon analysis is a computational audit and candidate-generation layer. It does not establish causal GRN control, validated TF perturbation, experimental validation, or a proven regulatory mechanism.

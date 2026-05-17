@@ -6,3 +6,4 @@
 - Figure 4: E1 MouseGastrulationData support ready.
 - Figure 5: final EB/spatial validation sprint should be shown as weak/blocker, not as positive validation.
 - Figure 6: stress-test boundary: clone-aware, topological specificity and unsupported modules excluded.
+- Extended GRN figure: ready as a regulatory audit figure showing fallback method boundaries, candidate TF programs, GRN branch-window scores, perturbation-proxy outputs and unclean controls. It must not be framed as causal regulatory validation.
