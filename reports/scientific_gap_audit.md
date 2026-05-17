@@ -40,6 +40,11 @@ Clone-aware analyses are stress tests for the time-series branch signature, not 
 - analyzed_datasets: E5_CellRank_Farrell_zebrafish_axial_mesoderm, E2_GSE212050_gastruloid_native_atlas, E3_MouseGastrulationData_wt_chimera_full_stage_mapped
 - downloaded_new_dataset: E5_CellRank_Farrell_zebrafish_axial_mesoderm
 - independent_native_analyzed: E5_CellRank_Farrell_zebrafish_axial_mesoderm, E2_GSE212050_gastruloid_native_atlas, E3_MouseGastrulationData_wt_chimera_full_stage_mapped
-- interpretation: internal/E1 remains the main support; new time-series support is weak or unresolved
+- interpretation: generalization beyond internal/E1 remains unresolved after the final independent EB and spatial/time-series sprint
+- v2_final_sprint_directions_attempted: 2
+- v2_final_sprint_usable_datasets: 1
+- v2_final_sprint_acceptable_datasets: 0
+- v2_spatial_validation_status: unavailable_with_current_metadata
+- final_manuscript_line: internal native plus E1 support retained; independent EB/spatial sprint did not upgrade cross-system support
 
 The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation. A detected branch-like window without condensation-before-divergence, or with unclean controls, does not upgrade the retained claim.

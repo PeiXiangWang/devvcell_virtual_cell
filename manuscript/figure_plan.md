@@ -1,27 +1,13 @@
 # Figure Plan
 
-Figure 1: SwarmLineage-OT framework and evidence audit.
+Figure 1: SwarmLineage-OT framework: native OT teacher to finite-agent virtual cells and branch-window order parameters.
 
-Figure 2: Native moscot teacher sensitivity across downsampling and epsilon.
+Figure 2: Internal native teacher, M5 primary model and teacher fidelity.
 
-Figure 3: Evidence-selected primary model; M5 is retained over the fuller M9 because unsupported modules are excluded from the main claim.
+Figure 3: Internal transient condensation-before-divergence event-window signature.
 
-Figure 4: Internal branch nucleation order-parameter signature and controls.
+Figure 4: E1 MouseGastrulationData external time-series support.
 
-Figure 5: E1 MouseGastrulationData external time-series support, with lineage_validated set to false.
+Figure 5: Final validation sprint: GSE154572 weak cluster-proxy EB analysis and STDS0000074/GSE123187 spatial blocker.
 
-Figure 6: L1 clone-aware attempt or blocker; current Kim_2020 analysis does not support clone-level condensation prediction.
-
-Figure 7: Topological-k versus metric-radius, random, label-restricted and mixed neighbour rules.
-
-Figure 8: Developmental velocity-correlation and branch-window susceptibility diagnostics.
-
-Figure 9: Maximum-entropy minimal pairwise topological model, predicted versus observed order-parameter shifts.
-
-Figure 10: v1.3 neighbour-rule specificity audit showing topological, metric and random-rule limitations.
-
-Figure 11: L2 clone-aware reverse-result diagnostic across exposure definitions.
-
-Figure 12: v1.3 mechanism-tier summary across the ten explored directions.
-
-Extended Data: diffusion encoded recovery, unsupported birth/death, memory and CCI, phase diagram exploratory, native stack, registries, L2 clone-aware fail status, and audits.
+Figure 6: Stress-test boundary: clone-aware fail/weak, topological specificity unresolved and unsupported modules excluded.

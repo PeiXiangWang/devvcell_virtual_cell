@@ -403,6 +403,11 @@ def _developmental_atlas_context() -> dict | None:
         "new_datasets_attempted": int(row.get("new_datasets_attempted", 0)),
         "new_datasets_analyzed": int(row.get("new_datasets_analyzed", 0)),
         "acceptable_external_datasets": int(row.get("acceptable_external_datasets", 0)),
+        "v2_final_sprint_directions_attempted": int(row.get("v2_final_sprint_directions_attempted", 0)),
+        "v2_final_sprint_usable_datasets": int(row.get("v2_final_sprint_usable_datasets", 0)),
+        "v2_final_sprint_acceptable_datasets": int(row.get("v2_final_sprint_acceptable_datasets", 0)),
+        "v2_spatial_validation_status": str(row.get("v2_spatial_validation_status", "")),
+        "final_manuscript_line": str(row.get("final_manuscript_line", "")),
         "analyzed_datasets": analyzed,
         "downloaded_datasets": downloaded,
         "independent_native_analyzed": independent_native,
@@ -418,6 +423,15 @@ def _developmental_atlas_report_lines(ctx: dict | None) -> list[str]:
             "No finalized developmental branch-window atlas summary was found. The retained time-series claim remains based on internal native moscot and E1 support only.",
             "",
         ]
+    v2_lines = []
+    if int(ctx.get("v2_final_sprint_directions_attempted", 0)) > 0:
+        v2_lines = [
+            f"- v2_final_sprint_directions_attempted: {ctx['v2_final_sprint_directions_attempted']}",
+            f"- v2_final_sprint_usable_datasets: {ctx['v2_final_sprint_usable_datasets']}",
+            f"- v2_final_sprint_acceptable_datasets: {ctx['v2_final_sprint_acceptable_datasets']}",
+            f"- v2_spatial_validation_status: {ctx['v2_spatial_validation_status'] or 'not_recorded'}",
+            f"- final_manuscript_line: {ctx['final_manuscript_line'] or 'not_recorded'}",
+        ]
     return [
         "## Developmental Time-Series Atlas",
         "",
@@ -429,6 +443,7 @@ def _developmental_atlas_report_lines(ctx: dict | None) -> list[str]:
         f"- downloaded_new_dataset: {', '.join(ctx.get('downloaded_datasets', [])) or 'none'}",
         f"- independent_native_analyzed: {', '.join(ctx.get('independent_native_analyzed', [])) or 'none'}",
         f"- interpretation: {ctx['interpretation']}",
+        *v2_lines,
         "",
         "The atlas is used to define the current external boundary of the branch-window order-parameter hypothesis. Weak or failed atlas rows must not be written as cross-dataset validation. A detected branch-like window without condensation-before-divergence, or with unclean controls, does not upgrade the retained claim.",
         "",

@@ -1,0 +1,9 @@
+dataset_id,baseline,detected_time_numeric,matches_branch_window,available,reason
+V2_GSE154572_EB_WT_cluster_proxy,fate_entropy_alone,0.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,OT_transition_entropy,0.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,celltype_composition_change,0.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,lineage_separation_only,0.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,alignment_alone,0.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,simple_time_midpoint_detector,7.0,False,,
+V2_GSE154572_EB_WT_cluster_proxy,pseudotime_change,,False,False,no_dataset_native_pseudotime_column
+V2_GSE154572_EB_WT_cluster_proxy,CellRank_like_fate_probability,,False,False,not_run_to_avoid_mixing_external_CellRank_estimator_with_OT_teacher_audit

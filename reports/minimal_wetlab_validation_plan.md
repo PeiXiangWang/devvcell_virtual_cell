@@ -1,17 +1,3 @@
-# Minimal Experimental Validation Plan
+# Minimal Future Validation Plan
 
-Biological system: mouse gastruloid or embryoid body differentiation with lineage barcoding.
-
-Time window: sample densely around the predicted branch-nucleation event.
-
-Readouts: time-series scRNA-seq, optional live imaging, and optional CellTag or equivalent clone barcoding.
-
-Hypothesis: cells show transient condensation-before-divergence before branch splitting.
-
-Quantitative readouts: local velocity alignment, latent or spatial condensation, fate entropy, clone branch entropy and post-event lineage separation.
-
-Perturbation: perturb local migration, matrix remodeling or density context only where biologically justified and ethically appropriate.
-
-Success criterion: pre-event condensation and alignment exposures predict later clone branch splitting better than shuffled clone/time/branch controls.
-
-Failure interpretation: the current signature may reflect computational geometry rather than a biological mechanism.
+The next decisive experiment is a spatially resolved gastruloid or embryoid-body time course around the inferred branch window, with single-cell expression, cell-type annotations and live or fixed-position readouts. The primary computational readouts should be lineage-separation contraction, post-window divergence, local alignment, fate entropy and spatial proximity. A perturbation or lineage barcode would test whether the order-parameter window predicts later fate diversification, but that is future work and is not claimed here.
