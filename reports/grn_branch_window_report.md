@@ -7,6 +7,7 @@ GRN features do not currently strengthen the branch-window mechanism beyond expr
 Method boundary:
 - pySCENIC_or_GRNBoost2_style: not_installed_or_not_importable; tier cap not_claimed.
 - CellOracle_style: not_installed_or_not_importable; tier cap not_claimed.
+- PathwayFinder_OmniPath_CollecTRI_DoRothEA_prior: local_prior_reused; tier cap acceptable.
 - lightweight_TF_target_correlation_fallback: implemented_fallback; tier cap acceptable.
 - OT_coupled_time_lagged_GRN_proxy: implemented_fallback; tier cap acceptable.
 
@@ -18,4 +19,4 @@ Dataset status:
 - GSE154572_EB_proxy: analyzed; cells=1200; genes=14285; matched TFs=43.
 - E2_GSE212050_gastruloid: limited_tf_overlap; cells=2400; genes=30406; matched TFs=0.
 
-Interpretation boundary: this analysis can support a computational regulatory order-parameter hypothesis. It does not establish causal GRN control, experimental validation, direct lineage validation, or model superiority over OT.
+Interpretation boundary: this analysis can support a computational regulatory order-parameter hypothesis using reused PathwayFinder/OmniPath TF-target priors. It does not establish causal GRN control, experimental validation, direct lineage validation, or model superiority over OT.

@@ -19,6 +19,9 @@ from src.utils.config import ensure_dir, write_text
 
 
 ROOT = Path(__file__).resolve().parents[2]
+PATHWAYFINDER_ROOT = ROOT.parent / "PathwayFinder"
+PATHWAYFINDER_OMNIPATH_DIR = PATHWAYFINDER_ROOT / "data" / "raw" / "knowledge" / "omnipath"
+PATHWAYFINDER_KG_AUDIT = PATHWAYFINDER_ROOT / "artifacts" / "knowledge_graph_2023q4" / "kg_omnipath_pre2024_audit.csv"
 
 
 @dataclass(frozen=True)
@@ -183,12 +186,69 @@ def _match_tfs(a: ad.AnnData) -> tuple[list[str], list[int], dict[str, str]]:
     return matched, idxs, program_by_tf
 
 
+def _load_pathwayfinder_prior() -> tuple[dict[str, dict[str, float]], pd.DataFrame]:
+    rows = []
+    prior: dict[str, dict[str, float]] = {}
+    files = [
+        ("collectri", PATHWAYFINDER_OMNIPATH_DIR / "collectri_genesymbols.tsv"),
+        ("dorothea", PATHWAYFINDER_OMNIPATH_DIR / "dorothea_genesymbols.tsv"),
+    ]
+    for resource, path in files:
+        row = {
+            "resource": resource,
+            "path": str(path),
+            "available": path.exists(),
+            "edge_count_loaded": 0,
+            "source": "PathwayFinder local OmniPath gene-symbol export",
+        }
+        if not path.exists():
+            rows.append(row)
+            continue
+        usecols = ["source_genesymbol", "target_genesymbol", "is_stimulation", "is_inhibition"]
+        try:
+            table = pd.read_csv(path, sep="\t", usecols=lambda c: c in usecols)
+        except Exception as exc:
+            row["available"] = False
+            row["load_error"] = str(exc)
+            rows.append(row)
+            continue
+        table = table.dropna(subset=["source_genesymbol", "target_genesymbol"])
+        for r in table.itertuples(index=False):
+            src = str(getattr(r, "source_genesymbol")).upper()
+            tgt = str(getattr(r, "target_genesymbol")).upper()
+            if not src or not tgt or "_" in src or "COMPLEX" in src:
+                continue
+            sign = 1.0
+            if str(getattr(r, "is_inhibition", "")).lower() == "true" and str(getattr(r, "is_stimulation", "")).lower() != "true":
+                sign = -1.0
+            prior.setdefault(src, {})[tgt] = sign
+        row["edge_count_loaded"] = int(len(table))
+        rows.append(row)
+    audit_available = PATHWAYFINDER_KG_AUDIT.exists()
+    rows.append(
+        {
+            "resource": "pathwayfinder_kg_2023q4_audit",
+            "path": str(PATHWAYFINDER_KG_AUDIT),
+            "available": audit_available,
+            "edge_count_loaded": int(sum(len(v) for v in prior.values())),
+            "source": "PathwayFinder strict KG audit" if audit_available else "missing",
+        }
+    )
+    return prior, pd.DataFrame(rows)
+
+
 def _activity_matrix(a: ad.AnnData, tf_idxs: list[int]) -> np.ndarray:
     x = _to_dense(a.X[:, tf_idxs])
     return _zscore(x)
 
 
-def _infer_target_modules(a: ad.AnnData, tf_activity: np.ndarray, tf_names: list[str], max_targets: int = 25) -> tuple[np.ndarray, pd.DataFrame]:
+def _infer_target_modules(
+    a: ad.AnnData,
+    tf_activity: np.ndarray,
+    tf_names: list[str],
+    prior: dict[str, dict[str, float]],
+    max_targets: int = 25,
+) -> tuple[np.ndarray, pd.DataFrame]:
     if not tf_names:
         return tf_activity, pd.DataFrame()
     n = a.n_obs
@@ -206,16 +266,44 @@ def _infer_target_modules(a: ad.AnnData, tf_activity: np.ndarray, tf_names: list
     tf_sample = tf_activity[cell_idx]
     target_rows = []
     module_activity = tf_activity.copy()
+    symbol_upper_to_idx = {s.upper(): i for i, s in enumerate(symbols)}
     for t, tf in enumerate(tf_names):
         y = tf_sample[:, t]
+        prior_targets = []
+        for target, sign in prior.get(tf.upper(), {}).items():
+            gi = symbol_upper_to_idx.get(target)
+            if gi is not None and symbols[gi] != tf:
+                prior_targets.append((gi, sign))
+            if len(prior_targets) >= max_targets:
+                break
+        target_source = "pathwayfinder_omnipath_prior"
+        chosen = [gi for gi, _ in prior_targets]
+        signs = np.array([sign for _, sign in prior_targets], dtype=float)
         cor = np.nan_to_num((x_sample.T @ y) / max(len(y) - 1, 1))
-        order = np.argsort(cor)[::-1]
-        chosen = [sample[o] for o in order if symbols[sample[o]] != tf and cor[o] > 0.05][:max_targets]
+        if not chosen:
+            order = np.argsort(cor)[::-1]
+            chosen = [sample[o] for o in order if symbols[sample[o]] != tf and cor[o] > 0.05][:max_targets]
+            signs = np.ones(len(chosen), dtype=float)
+            target_source = "coexpression_fallback"
         if chosen:
             target_x = _zscore(_to_dense(a.X[:, chosen]))
-            module_activity[:, t] = 0.55 * tf_activity[:, t] + 0.45 * np.nanmean(target_x, axis=1)
+            signed_targets = target_x * signs.reshape(1, -1)
+            module_activity[:, t] = 0.45 * tf_activity[:, t] + 0.55 * np.nanmean(signed_targets, axis=1)
         for rank, gi in enumerate(chosen[:10], start=1):
-            target_rows.append({"tf": tf, "target": symbols[gi], "rank": rank, "correlation_proxy": float(cor[np.where(sample == gi)[0][0]]) if gi in sample else np.nan})
+            cor_proxy = np.nan
+            hit = np.where(sample == gi)[0]
+            if len(hit):
+                cor_proxy = float(cor[hit[0]])
+            target_rows.append(
+                {
+                    "tf": tf,
+                    "target": symbols[gi],
+                    "rank": rank,
+                    "target_source": target_source,
+                    "signed_prior": float(signs[rank - 1]) if rank - 1 < len(signs) else 1.0,
+                    "correlation_proxy": cor_proxy,
+                }
+            )
     return _zscore(module_activity), pd.DataFrame(target_rows)
 
 
@@ -399,6 +487,7 @@ def _tier(summary: pd.DataFrame, controls: pd.DataFrame, baseline: dict, dataset
 
 
 def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
+    prior, prior_audit = _load_pathwayfinder_prior()
     if not spec.path.exists():
         return {
             "availability": pd.DataFrame([{"dataset": spec.dataset_id, "status": "missing_h5ad", "path": str(spec.path)}]),
@@ -410,6 +499,7 @@ def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
             "biology": pd.DataFrame(),
             "perturb": pd.DataFrame(),
             "baseline": pd.DataFrame(),
+            "prior_audit": prior_audit.assign(dataset=spec.dataset_id),
         }
     a = ad.read_h5ad(spec.path)
     if a.n_vars == 0 or "time_numeric" not in a.obs:
@@ -433,6 +523,7 @@ def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
             "biology": pd.DataFrame(),
             "perturb": pd.DataFrame(),
             "baseline": pd.DataFrame(),
+            "prior_audit": prior_audit.assign(dataset=spec.dataset_id),
         }
     if a.n_obs > spec.max_cells:
         rng = np.random.default_rng(31)
@@ -459,6 +550,8 @@ def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
                 "matched_tfs": ";".join(tf_names[:30]),
                 "teacher_backend": "native_moscot" if "swarmlineage_ot_teacher" in a.uns else "fallback_or_unknown",
                 "independence_tier": spec.independence_tier,
+                "pathwayfinder_prior_available": bool(prior),
+                "pathwayfinder_prior_tfs_overlap": int(sum(1 for tf in tf_names if tf.upper() in prior)),
             }
         ]
     )
@@ -473,9 +566,10 @@ def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
             "biology": pd.DataFrame(),
             "perturb": pd.DataFrame(),
             "baseline": pd.DataFrame(),
+            "prior_audit": prior_audit.assign(dataset=spec.dataset_id),
         }
     tf_activity = _activity_matrix(a, tf_idxs)
-    activity, target_df = _infer_target_modules(a, tf_activity, tf_names)
+    activity, target_df = _infer_target_modules(a, tf_activity, tf_names, prior)
     order, event = _order_parameters(a, activity, tf_names, program_by_tf)
     controls = _controls(a, activity, tf_names, program_by_tf)
     baseline = _expression_baseline(a)
@@ -507,6 +601,7 @@ def analyze_dataset(spec: DatasetSpec) -> dict[str, pd.DataFrame]:
         "biology": biology,
         "perturb": perturb,
         "baseline": baseline_df,
+        "prior_audit": prior_audit.assign(dataset=spec.dataset_id),
     }
 
 
@@ -515,10 +610,23 @@ def _method_availability() -> pd.DataFrame:
     checks = {
         "pySCENIC_or_GRNBoost2_style": ["pyscenic", "arboreto"],
         "CellOracle_style": ["celloracle"],
+        "PathwayFinder_OmniPath_CollecTRI_DoRothEA_prior": [],
         "lightweight_TF_target_correlation_fallback": [],
         "OT_coupled_time_lagged_GRN_proxy": [],
     }
     for method, mods in checks.items():
+        if method.startswith("PathwayFinder"):
+            prior, audit = _load_pathwayfinder_prior()
+            ok = bool(prior) and bool(audit["available"].any())
+            rows.append(
+                {
+                    "method": method,
+                    "available": ok,
+                    "status": "local_prior_reused" if ok else "pathwayfinder_prior_missing",
+                    "evidence_tier_cap": "acceptable",
+                }
+            )
+            continue
         if not mods:
             rows.append({"method": method, "available": True, "status": "implemented_fallback", "evidence_tier_cap": "acceptable"})
             continue
@@ -593,7 +701,7 @@ def _reports(outputs: dict[str, pd.DataFrame]) -> None:
                 "tier": final_tier,
                 "allowed_language": final_interp,
                 "forbidden_language": "GRN proves causal developmental mechanism or experimentally validated TF control",
-                "native_or_fallback_boundary": "pySCENIC/CellOracle native GRN not claimed unless available and run; current main evidence uses fallback TF-target correlation and OT/time-lag proxy",
+                "native_or_fallback_boundary": "pySCENIC/CellOracle native GRN not claimed unless available and run; current main evidence prioritizes PathwayFinder local OmniPath CollecTRI/DoRothEA TF-target priors with co-expression fallback and OT/time-lag proxy",
             },
             {
                 "claim": "Known developmental TF programs recovered",
@@ -634,7 +742,7 @@ def _reports(outputs: dict[str, pd.DataFrame]) -> None:
     lines.extend(
         [
             "",
-            "Interpretation boundary: this analysis can support a computational regulatory order-parameter hypothesis. It does not establish causal GRN control, experimental validation, direct lineage validation, or model superiority over OT.",
+            "Interpretation boundary: this analysis can support a computational regulatory order-parameter hypothesis using reused PathwayFinder/OmniPath TF-target priors. It does not establish causal GRN control, experimental validation, direct lineage validation, or model superiority over OT.",
         ]
     )
     write_text(ROOT / "reports" / "grn_evidence_matrix.md", "\n".join(lines) + "\n")
@@ -655,7 +763,7 @@ def run() -> None:
     ensure_dir(ROOT / "tables")
     ensure_dir(ROOT / "reports")
     ensure_dir(ROOT / "figures" / "grn")
-    collected: dict[str, list[pd.DataFrame]] = {k: [] for k in ["availability", "order", "summary", "controls", "tf", "targets", "biology", "perturb", "baseline"]}
+    collected: dict[str, list[pd.DataFrame]] = {k: [] for k in ["availability", "order", "summary", "controls", "tf", "targets", "biology", "perturb", "baseline", "prior_audit"]}
     for spec in DATASETS:
         result = analyze_dataset(spec)
         for key, value in result.items():
@@ -672,6 +780,7 @@ def run() -> None:
         "controls": "grn_negative_controls.csv",
         "tf": "grn_tf_candidates.csv",
         "targets": "grn_inferred_tf_targets.csv",
+        "prior_audit": "grn_pathwayfinder_prior_audit.csv",
         "biology": "grn_known_biology_mapping.csv",
         "perturb": "grn_perturbation_simulation.csv",
         "baseline": "grn_expression_vs_regulon_detector.csv",

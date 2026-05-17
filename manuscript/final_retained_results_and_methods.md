@@ -55,6 +55,7 @@ The atlas is used to define the current external boundary of the branch-window o
 
 - final_GRN_tier: `fail`
 - known_TF_program_recovery_tier: `acceptable`
+- prior_source: PathwayFinder local OmniPath CollecTRI/DoRothEA TF-target gene-symbol priors, with co-expression fallback only for missing prior targets.
 - interpretation: GRN features do not currently strengthen the branch-window mechanism beyond expression/OT geometry.
 - boundary: GRN/regulon analysis is a computational audit and candidate-generation layer. It does not establish causal GRN control, validated TF perturbation, experimental validation, or a proven regulatory mechanism.
 

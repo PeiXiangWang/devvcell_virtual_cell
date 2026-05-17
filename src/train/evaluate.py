@@ -482,6 +482,7 @@ def _grn_report_lines(ctx: dict | None) -> list[str]:
         "",
         f"- final_GRN_tier: `{ctx['grn_tier']}`",
         f"- known_TF_program_recovery_tier: `{ctx['known_tier']}`",
+        "- prior_source: PathwayFinder local OmniPath CollecTRI/DoRothEA TF-target gene-symbol priors, with co-expression fallback only for missing prior targets.",
         f"- interpretation: {ctx['grn_allowed']}",
         "- boundary: GRN/regulon analysis is a computational audit and candidate-generation layer. It does not establish causal GRN control, validated TF perturbation, experimental validation, or a proven regulatory mechanism.",
         "",

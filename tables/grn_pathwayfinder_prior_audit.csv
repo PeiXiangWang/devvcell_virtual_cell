@@ -1,0 +1,19 @@
+resource,path,available,edge_count_loaded,source,dataset
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,internal_native
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,internal_native
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,internal_native
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,E1_MouseGastrulationData
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,E1_MouseGastrulationData
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,E1_MouseGastrulationData
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,E3_MouseGastrulationData_full
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,E3_MouseGastrulationData_full
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,E3_MouseGastrulationData_full
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,E5_zebrafish_Farrell
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,E5_zebrafish_Farrell
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,E5_zebrafish_Farrell
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,GSE154572_EB_proxy
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,GSE154572_EB_proxy
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,GSE154572_EB_proxy
+collectri,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\collectri_genesymbols.tsv,True,64723,PathwayFinder local OmniPath gene-symbol export,E2_GSE212050_gastruloid
+dorothea,C:\Users\14915\PycharmProjects\PathwayFinder\data\raw\knowledge\omnipath\dorothea_genesymbols.tsv,True,278677,PathwayFinder local OmniPath gene-symbol export,E2_GSE212050_gastruloid
+pathwayfinder_kg_2023q4_audit,C:\Users\14915\PycharmProjects\PathwayFinder\artifacts\knowledge_graph_2023q4\kg_omnipath_pre2024_audit.csv,True,308820,PathwayFinder strict KG audit,E2_GSE212050_gastruloid

@@ -1,7 +1,7 @@
-dataset,status,n_cells,n_genes,n_time_points,n_lineages,matched_tf_count,matched_tfs,teacher_backend,independence_tier
-internal_native,analyzed,2600,2000,8,3,14,Esrrb;Tfcp2l1;T;Eomes;Lhx1;Gata4;Otx2;Tal1;Runx1;Gata1;Gata2;Lmo2;Spi1;Irf8,native_moscot,internal_reference
-E1_MouseGastrulationData,analyzed,1800,2000,6,31,13,Pou5f1;Sox2;T;Mixl1;Mesp1;Lhx1;Sox17;Snai1;Hand1;Otx2;Pou3f1;Tal1;Lmo2,native_moscot,related_mouse_gastrulation_sample
-E3_MouseGastrulationData_full,analyzed,2400,29453,8,38,47,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42;T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1;Sox17;Gata4;Gata6;Sox7;Hhex;Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Msgn1;Hand1;Hand2;Sox1,native_moscot,related_mouse_gastrulation_atlas
-E5_zebrafish_Farrell,analyzed,2200,23974,9,3,32,NANOG;SOX2;KLF4;ESRRB;TFCP2L1;MIXL1;FOXA2;GSC;SOX17;GATA4;GATA6;SOX7;HHEX;SNAI2;TBX6;MSGN1;HAND2;SOX3;OTX2;POU3F1;NEUROG1;TAL1;RUNX1;LMO2;IRF8;CEBPA;CEBPB;KLF1;SOX32;GATA5,native_moscot,independent_cross_species
-GSE154572_EB_proxy,analyzed,1200,14285,4,23,43,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42;T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1;Sox17;Gata4;Gata6;Sox7;Hhex;Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Hand1;Hand2;Sox1;Sox3,native_moscot,independent_cluster_proxy
-E2_GSE212050_gastruloid,limited_tf_overlap,2400,30406,5,61,0,,fallback_or_unknown,independent_but_gene_matrix_unavailable
+dataset,status,n_cells,n_genes,n_time_points,n_lineages,matched_tf_count,matched_tfs,teacher_backend,independence_tier,pathwayfinder_prior_available,pathwayfinder_prior_tfs_overlap
+internal_native,analyzed,2600,2000,8,3,14,Esrrb;Tfcp2l1;T;Eomes;Lhx1;Gata4;Otx2;Tal1;Runx1;Gata1;Gata2;Lmo2;Spi1;Irf8,native_moscot,internal_reference,True,13
+E1_MouseGastrulationData,analyzed,1800,2000,6,31,13,Pou5f1;Sox2;T;Mixl1;Mesp1;Lhx1;Sox17;Snai1;Hand1;Otx2;Pou3f1;Tal1;Lmo2,native_moscot,related_mouse_gastrulation_sample,True,12
+E3_MouseGastrulationData_full,analyzed,2400,29453,8,38,47,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42;T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1;Sox17;Gata4;Gata6;Sox7;Hhex;Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Msgn1;Hand1;Hand2;Sox1,native_moscot,related_mouse_gastrulation_atlas,True,46
+E5_zebrafish_Farrell,analyzed,2200,23974,9,3,32,NANOG;SOX2;KLF4;ESRRB;TFCP2L1;MIXL1;FOXA2;GSC;SOX17;GATA4;GATA6;SOX7;HHEX;SNAI2;TBX6;MSGN1;HAND2;SOX3;OTX2;POU3F1;NEUROG1;TAL1;RUNX1;LMO2;IRF8;CEBPA;CEBPB;KLF1;SOX32;GATA5,native_moscot,independent_cross_species,True,29
+GSE154572_EB_proxy,analyzed,1200,14285,4,23,43,Pou5f1;Nanog;Sox2;Klf4;Esrrb;Tfcp2l1;Zfp42;T;Eomes;Mixl1;Mesp1;Mesp2;Foxa2;Gsc;Lhx1;Sox17;Gata4;Gata6;Sox7;Hhex;Snai1;Snai2;Twist1;Zeb1;Zeb2;Tbx6;Hand1;Hand2;Sox1;Sox3,native_moscot,independent_cluster_proxy,True,42
+E2_GSE212050_gastruloid,limited_tf_overlap,2400,30406,5,61,0,,fallback_or_unknown,independent_but_gene_matrix_unavailable,True,0
