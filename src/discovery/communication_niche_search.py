@@ -318,6 +318,8 @@ def _window_metrics(df: pd.DataFrame, pre: float, event: float, post: float, shu
     pre_comm = float(pre_m["comm_field"].mean())
     event_comm = float(event_m["comm_field"].mean())
     post_comm = float(post_m["comm_field"].mean())
+    pre_sender = float(pre_m["sender_neighbor_score"].mean()) if "sender_neighbor_score" in pre_m else np.nan
+    event_sender = float(event_m["sender_neighbor_score"].mean()) if "sender_neighbor_score" in event_m else np.nan
     pre_receiver = float(pre_m["receiver_score"].mean())
     event_receiver = float(event_m["receiver_score"].mean())
     pre_div = _lineage_divergence(pre_m["comm_field"].to_numpy(), pre_m["lineage"].astype(str).to_numpy())
@@ -329,6 +331,7 @@ def _window_metrics(df: pd.DataFrame, pre: float, event: float, post: float, shu
         "event_comm": event_comm,
         "post_comm": post_comm,
         "communication_activation_effect": event_comm - pre_comm,
+        "sender_neighbor_activity_effect": event_sender - pre_sender,
         "communication_relaxation_effect": post_comm - event_comm,
         "receiver_priming_effect": event_receiver - pre_receiver,
         "pre_lineage_comm_divergence": pre_div,

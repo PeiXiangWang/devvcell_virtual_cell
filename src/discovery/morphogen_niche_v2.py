@@ -208,7 +208,7 @@ def _candidate_pairs(
                 "known_developmental_relevance": _known_relevance(str(row.ligand), str(row.receptor), module.name),
                 "confidence_tier": "candidate",
                 "allowed_claim": "candidate spatial or perturbation target",
-                "forbidden_claim": "established signalling mechanism",
+                "forbidden_claim": "not_a_retained_mechanism",
             }
         )
     return pd.DataFrame(rows).sort_values("event_pair_score", ascending=False).head(10)

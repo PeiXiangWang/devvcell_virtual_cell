@@ -1,0 +1,7 @@
+dataset,pre_time,event_time,post_time,sender_neighbor_activity_effect,receiver_priming_effect,sender_receiver_product_effect,post_event_comm_divergence_effect,time_shuffle_pass,primary_driver
+E1_MouseGastrulationData,7.25,7.5,7.75,0.0745146027506095,0.103884231815221,0.0924154386787102,0.0098114117542299,True,sender_and_receiver_product
+E2_GSE212050_gastruloid,3.5,4.0,4.5,0.0,0.0,0.0,0.0,False,not_supported
+E3_MouseGastrulationData_full,7.25,7.5,7.75,-0.0081130631800986,0.0206463186594117,-0.0011837444780821,-0.0047292182701883,True,receiver_only_without_product_support
+E5_zebrafish_Farrell,4.3,5.3,7.0,0.1152241735653752,-0.0332983452249681,0.0641429014035212,-0.0205107454292133,True,sender_weighted_product
+GSE154572_EB_WT,4.0,7.0,10.0,0.2169693864782172,0.2642548625040615,0.2293794265062797,0.0123240982038282,True,sender_and_receiver_product
+internal_native,17.0,18.0,19.0,0.0760813655547135,0.070868248546703,0.0669384025211391,-0.0023684281920397,True,sender_and_receiver_product

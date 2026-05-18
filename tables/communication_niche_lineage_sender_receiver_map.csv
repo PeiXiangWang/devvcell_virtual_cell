@@ -1,0 +1,12 @@
+dataset,module,ligand,receptor,sender_lineage_proxy,receiver_lineage_proxy,event_pair_score,module_support_tier
+E1_MouseGastrulationData,FGF_niche,FGF3,FGFR1,Haematoendothelial progenitors,Nascent mesoderm,0.2911958164334233,acceptable
+E1_MouseGastrulationData,FGF_niche,FGF8,FGFR1,Primitive Streak,Nascent mesoderm,0.2750615536288489,acceptable
+GSE154572_EB_WT,WNT_niche,WNT11,FZD7,cluster_res3_11,cluster_res3_15,0.0694653570927366,acceptable
+GSE154572_EB_WT,WNT_niche,WNT11,LRP6,cluster_res3_11,cluster_res3_13,0.0551676088704806,acceptable
+GSE154572_EB_WT,WNT_niche,WNT9A,LRP6,cluster_res3_1,cluster_res3_13,0.0503609063699739,acceptable
+GSE154572_EB_WT,WNT_niche,WNT3,FZD7,cluster_res3_4,cluster_res3_15,0.041972814129998,acceptable
+E1_MouseGastrulationData,ECM_adhesion_guidance_niche,MDK,NCL,Def. endoderm,Epiblast,0.4706297508083997,weak
+E1_MouseGastrulationData,ECM_adhesion_guidance_niche,FN1,ITGB1,Mixed mesoderm,Haematoendothelial progenitors,0.4166389322567755,weak
+E1_MouseGastrulationData,ECM_adhesion_guidance_niche,MDK,ITGB1,Def. endoderm,Haematoendothelial progenitors,0.3933397458122873,weak
+E5_zebrafish_Farrell,FGF_niche,FGF4,FGFR4,Notochord,Notochord,0.101015254455221,weak
+E5_zebrafish_Farrell,FGF_niche,FGF17,FGFR4,Prechordal Plate,Notochord,0.0768610838355671,weak

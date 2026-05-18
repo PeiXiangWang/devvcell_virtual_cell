@@ -1,0 +1,10 @@
+control,status,evidence
+broad_random_gene_sets,pass_for_E1_and_EB,random_gene_control_q=0 for E1 and GSE154572 EB; internal does not pass
+module_random_gene_sets,partial,E1 FGF and EB WNT pass; most strict families remain weak/fail
+time_shuffle_windows,partial,stored per module in morphogen_niche_module_scan.csv
+lineage_label_shuffle,not_decisive,lineage divergence is secondary; activation is the more robust signal
+neighbor_graph_randomization,not_run_in_v2,requires additional rerun; current result remains candidate annotation
+module_dropout_jackknife,not_run_in_v2,future hardening needed before pathway-specific claims
+alternative_knn_k,not_run_in_v2,future hardening needed before pathway-specific claims
+expression_abundance_matched_random_modules,approximated_not_strict,"random module controls run, but expression-abundance matching is not yet exact"
+degree_matched_random_lr_pairs,not_run_in_v2,strict LR degree-matched null remains future work
