@@ -80,6 +80,17 @@ The atlas is used to define the current external boundary of the branch-window o
 - module_detail: morphogen_patterning: positive activation in internal_native;E1_MouseGastrulationData;GSE154572_EB_WT
 - boundary: this is a candidate extracellular-niche annotation layer. It does not establish confirmed ligand-receptor signalling, communication-driven cause-effect, or experimental perturbation support.
 
+## Strict Morphogen Communication-Niche v2
+
+- final_tier: `weak`
+- strongest_module: `FGF_niche`
+- support_datasets: E1_MouseGastrulationData;E5_zebrafish_Farrell
+- acceptable_datasets: E1_MouseGastrulationData
+- strict_extracellular_edges: 28314
+- removed_intracellular_or_generic_edges: 1851922
+- interpretation: module has cross-dataset direction but limited internal or control support
+- boundary: strict family-level morphogen niches are candidate validation targets. Broad communication-niche priming remains more robust than any single confirmed morphogen family.
+
 ## Exploratory / Demonstration Only
 
 | law           | tier   | interpretation_level    | rollout_based   | directly_supervised_or_encoded   |

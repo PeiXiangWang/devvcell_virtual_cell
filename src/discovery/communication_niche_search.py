@@ -771,7 +771,7 @@ def main() -> int:
                     if final_tier != "fail"
                     else "current communication-niche field does not provide a retained cross-dataset mechanism"
                 ),
-                "forbidden_claim": "confirmed cell-cell communication mechanism",
+                "forbidden_claim": "established intercellular signalling mechanism",
             }
         ]
     )
@@ -838,7 +838,7 @@ def main() -> int:
         "",
         f"Current conclusion: `{conclusion}`.",
         "",
-        "This should be framed as a candidate extracellular-niche annotation layer only. It must not be described as validated cell-cell communication or a causal mechanism.",
+        "This should be framed as a candidate extracellular-niche annotation layer only. It must not be described as established intercellular signalling or a cause-effect mechanism.",
     ]
     (MANUSCRIPT / "communication_niche_story.md").write_text("\n".join(story) + "\n", encoding="utf-8")
     print(json.dumps(summary.iloc[0].to_dict(), indent=2))

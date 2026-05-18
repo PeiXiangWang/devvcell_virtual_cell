@@ -1,0 +1,13 @@
+metric,count
+total_omnipath_joined_intercell_edges,1880236
+strict_extracellular_edges,28314
+removed_intracellular_or_generic_edges,1851922
+suspicious_intercell_genes_flagged,223
+FGF_niche_strict_edges,93
+WNT_niche_strict_edges,143
+BMP_niche_strict_edges,95
+TGF_NODAL_ACTIVIN_niche_strict_edges,33
+SHH_niche_strict_edges,13
+Notch_Delta_niche_strict_edges,20
+ECM_adhesion_guidance_niche_strict_edges,346
+chemokine_growth_factor_niche_strict_edges,266

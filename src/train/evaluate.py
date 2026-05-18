@@ -612,6 +612,72 @@ def _communication_report_lines(ctx: dict | None) -> list[str]:
     ]
 
 
+def _morphogen_niche_v2_context() -> dict | None:
+    tier_path = Path("tables/morphogen_niche_module_tiers.csv")
+    prior_path = Path("tables/morphogen_niche_strict_prior_audit.csv")
+    if not tier_path.exists():
+        return None
+    try:
+        tiers = pd.read_csv(tier_path)
+    except Exception:
+        return None
+    if tiers.empty:
+        return None
+    ranked = tiers.copy()
+    ranked["tier_rank"] = ranked["tier"].map({"strong": 3, "acceptable": 2, "weak": 1, "fail": 0}).fillna(0)
+    if "support_dataset_count" not in ranked:
+        ranked["support_dataset_count"] = ranked["support_datasets"].fillna("").astype(str).apply(lambda x: len([v for v in x.split(";") if v]))
+    has_e1 = ranked["has_e1"] if "has_e1" in ranked else pd.Series(False, index=ranked.index)
+    has_independent = (
+        ranked["has_independent"] if "has_independent" in ranked else pd.Series(False, index=ranked.index)
+    )
+    ranked["e1_independent_bonus"] = has_e1.astype(int) + has_independent.astype(int)
+    ranked = ranked.sort_values(["tier_rank", "support_dataset_count", "e1_independent_bonus"], ascending=False)
+    best = ranked.iloc[0]
+    strict_edges = "unknown"
+    removed = "unknown"
+    if prior_path.exists():
+        try:
+            prior = pd.read_csv(prior_path)
+            counts = dict(zip(prior["metric"].astype(str), prior["count"]))
+            strict_edges = counts.get("strict_extracellular_edges", "unknown")
+            removed = counts.get("removed_intracellular_or_generic_edges", "unknown")
+        except Exception:
+            pass
+    return {
+        "final_tier": str(best["tier"]) if str(best["tier"]) in {"strong", "acceptable"} else "weak",
+        "strongest_module": str(best["module"]),
+        "support_datasets": str(best.get("support_datasets", "")),
+        "acceptable_datasets": str(best.get("acceptable_datasets", "")),
+        "strict_edges": strict_edges,
+        "removed_edges": removed,
+        "interpretation": str(best.get("interpretation", "")),
+    }
+
+
+def _morphogen_niche_v2_report_lines(ctx: dict | None) -> list[str]:
+    if not ctx:
+        return [
+            "## Strict Morphogen Communication-Niche v2",
+            "",
+            "No finalized strict morphogen-niche v2 summary was found.",
+            "",
+        ]
+    return [
+        "## Strict Morphogen Communication-Niche v2",
+        "",
+        f"- final_tier: `{ctx['final_tier']}`",
+        f"- strongest_module: `{ctx['strongest_module']}`",
+        f"- support_datasets: {ctx['support_datasets'] or 'none'}",
+        f"- acceptable_datasets: {ctx['acceptable_datasets'] or 'none'}",
+        f"- strict_extracellular_edges: {ctx['strict_edges']}",
+        f"- removed_intracellular_or_generic_edges: {ctx['removed_edges']}",
+        f"- interpretation: {ctx['interpretation']}",
+        "- boundary: strict family-level morphogen niches are candidate validation targets. Broad communication-niche priming remains more robust than any single confirmed morphogen family.",
+        "",
+    ]
+
+
 def _write_reports(
     metrics: pd.DataFrame,
     fidelity: pd.DataFrame,
@@ -636,6 +702,8 @@ def _write_reports(
     breakthrough_lines = [] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx)
     communication_ctx = None if quick_fixture else _communication_context()
     communication_lines = [] if quick_fixture else _communication_report_lines(communication_ctx)
+    morphogen_ctx = None if quick_fixture else _morphogen_niche_v2_context()
+    morphogen_lines = [] if quick_fixture else _morphogen_niche_v2_report_lines(morphogen_ctx)
     mech = pd.DataFrame(
         [
             {
@@ -707,6 +775,7 @@ def _write_reports(
             + ([] if quick_fixture else _grn_report_lines(grn_ctx))
             + ([] if quick_fixture else _breakthrough_report_lines(breakthrough_ctx))
             + ([] if quick_fixture else _communication_report_lines(communication_ctx))
+            + ([] if quick_fixture else _morphogen_niche_v2_report_lines(morphogen_ctx))
         ),
     )
     final_lines = [
@@ -731,6 +800,7 @@ def _write_reports(
         *grn_lines,
         *breakthrough_lines,
         *communication_lines,
+        *morphogen_lines,
         "## Exploratory / Demonstration Only",
         "",
         exploratory[["law", "tier", "interpretation_level", "rollout_based", "directly_supervised_or_encoded"]].to_markdown(index=False) if not exploratory.empty else "None.",
@@ -777,6 +847,7 @@ def _write_reports(
                 "" if quick_fixture or not grn_ctx else f"- GRN/regulon audit: {grn_ctx['grn_tier']}; {grn_ctx['grn_allowed']}",
                 "" if quick_fixture or not breakthrough_ctx else f"- Breakthrough sprint: {breakthrough_ctx['interpretation']}",
                 "" if quick_fixture or not communication_ctx else f"- Communication-niche search: {communication_ctx['tier']}; {communication_ctx['conclusion']}; strongest module candidate: {communication_ctx['best_module']}.",
+                "" if quick_fixture or not morphogen_ctx else f"- Strict morphogen-niche v2: {morphogen_ctx['final_tier']}; strongest module: {morphogen_ctx['strongest_module']}; broad niche signal remains stronger than family-level support.",
                 "",
             ]
         ),

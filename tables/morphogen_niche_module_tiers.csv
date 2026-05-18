@@ -1,0 +1,9 @@
+module,tier,support_dataset_count,support_datasets,acceptable_datasets,has_internal,has_e1,has_independent,mean_activation_effect,mean_post_event_divergence_effect,interpretation
+SHH_niche,fail,0,,,False,False,False,-0.001989876921775146,-0.0016520932140754797,no reliable module-specific branch-window niche signal
+chemokine_growth_factor_niche,fail,0,,,False,False,False,-0.0044620608511652775,0.0027367329554775534,no reliable module-specific branch-window niche signal
+BMP_niche,weak,1,E5_zebrafish_Farrell,,False,False,True,-0.030825223689078415,0.00375526778273715,dataset-specific candidate only
+ECM_adhesion_guidance_niche,weak,1,E1_MouseGastrulationData,,False,True,False,-0.024678265915718495,0.004620320387027981,dataset-specific candidate only
+FGF_niche,weak,2,E1_MouseGastrulationData;E5_zebrafish_Farrell,E1_MouseGastrulationData,False,True,True,-0.013985798436392412,0.0020175695464999975,module has cross-dataset direction but limited internal or control support
+Notch_Delta_niche,weak,1,GSE154572_EB_WT,,False,False,True,-0.0030037654977208305,0.001061038413818421,dataset-specific candidate only
+TGF_NODAL_ACTIVIN_niche,weak,2,E3_MouseGastrulationData_full;E5_zebrafish_Farrell,,False,False,True,0.001096256374299905,0.0027895003820433873,dataset-specific candidate only
+WNT_niche,weak,1,GSE154572_EB_WT,GSE154572_EB_WT,False,False,True,-0.004133857826950749,0.0031671974304115463,dataset-specific candidate only

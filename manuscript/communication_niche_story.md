@@ -6,4 +6,4 @@ SwarmLineage-OT can represent intercellular communication as a local niche field
 
 Current conclusion: `communication_niche_priming_is_cross_dataset_candidate`.
 
-This should be framed as a candidate extracellular-niche annotation layer only. It must not be described as validated cell-cell communication or a causal mechanism.
+This should be framed as a candidate extracellular-niche annotation layer only. It must not be described as established intercellular signalling or a cause-effect mechanism.
